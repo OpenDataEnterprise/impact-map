@@ -1,0 +1,30 @@
+[
+  {
+    "region": "North America",
+    "orgs": 560
+  },
+  {
+    "region": "Europe and Central Asia",
+    "orgs": 400
+  },
+  {
+    "region": "East Asia and Pacific",
+    "orgs": 207
+  },
+  {
+    "region": "Latin America and The Caribbean",
+    "orgs": 264
+  },
+  {
+    "region": "South Asia",
+    "orgs": 90
+  },
+  {
+    "region": "Sub-Saharan Asia",
+    "orgs": 50
+  },
+  {
+    "region": "Middle East and North Africa",
+    "orgs": 12
+  }
+]

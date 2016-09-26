@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!-- This site was created in Webflow. http://www.webflow.com-->
+<!-- Last Published: Mon Sep 26 2016 18:03:15 GMT+0000 (UTC) -->
+<html data-wf-page="57b5d8dd1f986d4879b25400" data-wf-site="577440f9dee5efd30ed38e59">
+<head>
+  <meta charset="utf-8">
+  <title>Governance</title>
+  <meta content="Governance" property="og:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/open-data-impact-map.webflow.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script type="text/javascript">
+    WebFont.load({
+      google: {
+        families: ["Palanquin:100,200,300,regular,500,600,700"]
+      }
+    });
+  </script>
+  <script src="js/modernizr.js" type="text/javascript"></script>
+  <link href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png" rel="apple-touch-icon">
+  <style>
+    li { display: list-item; }
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <!-- added by Noah - stylesheet for viz -->
+  <link href="css-custom/viz-style.css" rel="stylesheet" type="text/css">
+  <!-- added by Noah - load D3 -->
+  <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+  <!-- Noah - code for getting stat number -->
+  <script type="text/javascript" src="js-custom/countUp/sector/Gov/getGovStat.js"></script>
+</head>
+<body>
+  <div class="navigation">
+    <div class="mobile-navigation-container w-clearfix"><a class="mobile-menu-button" data-ix="open-mobile-menu" href="#"><span class="fontawesome-icon"></span> Menu</a><a class="close-menu-button" data-ix="close-mobile-menu" href="#"><span class="fontawesome-icon"></span> Close</a>
+      <div class="mobile-navigation-title">Open Data Impact Map</div>
+    </div>
+    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="current-navigation navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a><a class="navigation-link secondary-navigation-link" href="/map/survey"><span class="fontawesome-icon"></span>&nbsp;Submit Survey</a>
+    </div>
+  </div>
+  <ol class="leftnav w-hidden-medium w-hidden-small w-hidden-tiny">
+    <li class="leftnavlistitem">
+      <a class="lefnavlink w-inline-block" href="#findings">
+        <div class="leftnavlinktext">TOP</div>
+      </a>
+    </li>
+    <li class="leftnavlistitem">
+      <a class="lefnavlink w-inline-block" href="#visualizations">
+        <div class="leftnavlinktext">VISUALIZATIONS</div>
+      </a>
+    </li>
+    <li class="leftnavlistitem">
+      <a class="lefnavlink w-inline-block" href="#caseStudies">
+        <div class="leftnavlinktext">USE CASES</div>
+      </a>
+    </li>
+  </ol>
+  <div class="navigation-space-fix"></div>
+  <div class="mobile-menu w-clearfix"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="http://54.210.82.88/ode-prod/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="#"><span class="fontawesome-icon"></span>&nbsp;SUBMIT SURVEY</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
+  </div>
+  <div class="governance-header sector-detail-header-background" id="findings">
+    <h1 class="sector-detail-header">Governance</h1>
+  </div>
+  <div class="text-container w-clearfix">
+    <div class="sidebar-container">
+      <div class="stat-circle">
+        <div class="stat-inner-circle">
+          <div class="stat" id="stattss"></div>
+          <div class="stat-description">Organizations in this Sector</div>
+        </div>
+      </div><a class="button download w-button" href="#">Download fact sheet &nbsp;<span class="fontawesome-icon"></span></a><a class="button download w-button" data-ix="showhide-json-csv-button" href="#">Download DATA &nbsp;<span class="fontawesome-icon"></span></a>
+      <div class="data_buttons w-clearfix"><a class="button data-format-button download left_data w-button" href="http://54.210.82.88/ode-prod/js-custom/indi_data_download/sector/Gov/download_json.php">&nbsp;JSON &nbsp;<span class="fontawesome-icon"></span></a><a class="button data-format-button download right_data w-button" data-ix="showhide-json-csv-button" href="http://54.210.82.88/ode-prod/js-custom/indi_data_download/sector/Gov/download_csv.php">CSV &nbsp;<span class="fontawesome-icon"></span></a>
+      </div>
+    </div>
+    <p class="callout-text">A large number of organizations worldwide use open data in this sector to improve governance. They are primarily nonprofits that use open data to monitor budgets, spending and elections, evaluate performance, and conduct issue-based advocacy. The most used types open data include budget, spending and election data, legal and demographic and social.</p>
+    <p class="body-copy">From Nigeria to Ukraine, organizations use data on budgets and spending to expose and prevent mismanagement and corruption. An increasing number are monitoring government contracting and procurement as well. Other good-governance organizations use open demographic and voting information to improve voter registration and representation, as well as to provide information on polling and candidates.</p>
+    <p class="body-copy">Open data is also a critical tool for issue-based advocacy and citizen engagement. For example, organizations use spending and performance information on health or education to reveal and deter corruption that can keep institutions from getting the funds they’re entitled to.</p>
+    <div class="large-chart" id="dataTypeBar">
+      <h1 class="viztitle" id="visualizations">Types of Data Most Used</h1>
+      <div class="sectorbarexplains">Hover over the bars and labels to show more information</div>
+    </div>
+    <div class="large-chart" id="threePie">
+      <h1 class="viztitle">Size, Type &amp; Founding Year</h1>
+    </div>
+    <div class="large-chart" id="appBar">
+      <h1 class="viztitle">How Organizations Use Open Data</h1>
+      <div class="sectorbarexplains">Hover over the bars and labels to show more information</div>
+    </div><img class="section-heading-topper" id="caseStudies" src="images/section-header-topper-2@2x.png">
+    <h2 class="section-header">Use Cases</h2><img class="section-heading-bottom" src="images/section-header-bottom-2@2x.png">
+    <div class="case-study-1">
+      <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" sizes="(max-width: 479px) 75vw, 200px" src="images/DeOlhoNasMetas_gov_lac.png" srcset="images/DeOlhoNasMetas_gov_lac-p-500x328.png 500w, images/DeOlhoNasMetas_gov_lac-p-800x525.png 800w, images/DeOlhoNasMetas_gov_lac.png 1030w">
+        <h3 class="case-study-title">De Olho nas Metas</h3>
+        <div class="case-study-subtitle">Platform for monitoring the progress of municipal projects in São Paulo, Brazil</div>
+        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a target="_blank" href="http://deolhonasmetas.org.br">http://deolhonasmetas.org.br</a>
+        </div>
+        <p><strong>Country:&nbsp;</strong>Brazil</p>
+        <p><strong>Impact:</strong> Helps civil society monitor municipal projects in their community</p>
+        <p><strong>Data Used:</strong> Education data from the Brazilian Ministry of Education and Instituto Brasileiro de Geografia e Estatística, government operations data from the municipality of São Paulo</p>
+      </div><a class="read-more-button-1 w-button" data-ix="show-case-study-1" href="#">Read More &nbsp;<span class="fontawesome-icon"></span></a>
+      <div class="case-study-body-1">
+        <p>According to Brazilian law, in every mandate the mayor of a municipality is obliged to submit a plan describing the goals that will be implemented during his administration. These goals cover various topics ranging from environment to education, or any other areas of intervention in the city. In 2013, a new legislation enabled the creation of Participatory Councils, civil society groups that , among other things, monitor the execution of the municipal budget, public services performance indicators, and the implementation of the proposed plan within their geographical area.</p><img class="case-study-image" sizes="100vw" src="images/DeOlhoNasMetas_gov_lac.png" srcset="images/DeOlhoNasMetas_gov_lac-p-500x328.png 500w, images/DeOlhoNasMetas_gov_lac-p-800x525.png 800w, images/DeOlhoNasMetas_gov_lac.png 1030w">
+        <p>Relying on data pulled from the municipality of São Paulo <a target="_blank" href="http://planejasampa.prefeitura.sp.gov.br/">website, </a>the platform “De Olho nas Metas” was created to facilitate monitoring of the progress of municipal projects. The tool also aims to &nbsp;improve communication between citizens, Participatory Councils, and public officials. For a more complete and transparent view of projects, the platform also incorporates data from the Treasury Court of São Paulo and displays information on the companies that were contracted for the execution of each project.</p>
+        <p>“De olho nas metas” has also produced <a href="http://www.todospelaeducacao.org.br//arquivos/biblioteca/de_olho_nas_metas_2013_141.pdf" target="_blank">reports </a>providing recommendations for the improvement of the Brazilian education system supported by the analysis of open education data (e.g. literacy rates, education budgeting) from the Ministry of Education, and the Brazilian Institute of Geography and Statistics (IBGE).</p>
+      </div><a class="show-less-button-1 w-button" data-ix="hide-case-study-1" href="#">Show Less &nbsp;<span class="fontawesome-icon"></span></a>
+    </div>
+    <div class="case-study-2">
+      <div class="case-study-intro-2 w-clearfix"><img class="case-study-thumbnail-image-2" sizes="(max-width: 479px) 60vw, 200px" src="images/CGPA_gov_sar.jpeg" srcset="images/CGPA_gov_sar-p-500x409.jpeg 500w, images/CGPA_gov_sar-p-800x655.jpeg 800w, images/CGPA_gov_sar.jpeg 960w">
+        <h3 class="case-study-title small-case-study-title">Centre for Governance &amp; Public Accountability</h3>
+        <div class="case-study-subtitle">Civil society organization working for promotion of public accountability and good governance in Pakistan</div>
+        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a target="_blank" href="http://www.c-gpa.org/">http://www.c-gpa.org/</a>
+        </div>
+        <p><strong>Country: </strong>Pakistan</p>
+        <p><strong>Impact:</strong> Promotion of citizens’ voices on key governance issues and strengthening state response to citizens’ grievances</p>
+        <p><strong>Data Used:</strong> District level education budget of various districts in Pakistan; Municipal budget data of Peshawar District; Education, health, police, legal data from Khyber Pakhtunkhwa District</p>
+      </div><a class="read-more-button-2 w-button" data-ix="show-case-study-2" href="#">READ MORE &nbsp;<span class="fontawesome-icon"></span></a>
+      <div class="case-study-body-2">
+        <p>The Centre for Governance and Public Accountability (CGPA) was established in 2011 to improve the levels of trust between state and society in Pakistan. CGPA’s work can be grouped into 6 main areas: open governance, rule of law, democratic governance, decentralization and devolution, promotion of pluralism, and social accountability. Since the enactment of the Freedom of Information (FOI) legislation in 2013, the CGPA has focused on the implementation of this law and published extensive research on the response by government agencies in different districts in Pakistan to information requests.</p><img class="case-study-image" sizes="100vw" src="images/CGPA_gov_sar.jpeg" srcset="images/CGPA_gov_sar-p-500x409.jpeg 500w, images/CGPA_gov_sar-p-800x655.jpeg 800w, images/CGPA_gov_sar.jpeg 960w">
+        <p>As a promoter of open governance and open data, the CGPA has produced several studies on <a target="_blank" href="http://www.c-gpa.org/images/publications/FATA_BA_Report.pdf">education budgeting</a>, <a target="_blank" href="http://www.c-gpa.org/images/publications/budget_analysis_town_iii_peshawar_district.pdf">municipal budgeting</a>, and <a target="_blank" href="http://www.c-gpa.org/images/publications/social_audit_water_senitation.pdf">others </a>which have contributed with analyses on areas such as public education <a target="_blank" href="http://www.c-gpa.org/index.php?option=com_content&amp;view=article&amp;id=129:improving-primary-education-governance-in-khyber-pukhtunkhwa&amp;catid=27&amp;Itemid=221">governance </a>and <a target="_blank" href="http://www.c-gpa.org/index.php?option=com_content&amp;view=article&amp;id=127:improving-public-education-service-delivery-in-kp-and-fata&amp;catid=27&amp;Itemid=221">service delivery</a>, the <a target="_blank" href="http://www.c-gpa.org/index.php?option=com_content&amp;view=article&amp;id=126:social-audit-of-water-and-sanitation-schemes-in-mardan-district-of-khyber-pakhtunkhwa-province-pakistan&amp;catid=27&amp;Itemid=221">right to drinking safe &nbsp;water and sanitation, and public accountability</a> at the local level. The CGPA is also dedicated to making public data, such as data from the School Census, available in machine-readable format for everyone to access and use. To do so, it has plans to build its own data portal to make more data available to the citizens of Pakistan.</p>
+      </div><a class="show-less-button-2 w-button" data-ix="hide-case-study-2" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
+    </div>
+    <div class="case-study-3">
+      <div class="case-study-body-3">
+        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
+        <ul>
+          <li>Mauris egestas, nisi vitae cursus tincidunt</li>
+          <li>Nulla egestas adipiscing fermentum</li>
+          <li>Vivamus laoreet nulla diam</li>
+        </ul>
+        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
+        <div class="ordered-list-item w-clearfix">
+          <div class="ordered-list-number">1.</div>
+          <div class="ordered-list-text">Mauris egestas, nisi vitae cursus tincidunt</div>
+        </div>
+        <div class="ordered-list-item w-clearfix">
+          <div class="ordered-list-number">2.</div>
+          <div class="ordered-list-text">Nulla egestas adipiscing fermentum</div>
+        </div>
+        <div class="ordered-list-item w-clearfix">
+          <div class="ordered-list-number">3.</div>
+          <div class="ordered-list-text">Vivamus laoreet nulla diam</div>
+        </div>
+        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
+      </div><a class="show-less-button-3 w-button" data-ix="hide-case-study-3" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
+    </div>
+  </div>
+  <div class="share">
+    <div class="share-links-container w-clearfix">
+      <div class="share-label">Share</div>
+      <a class="share-button-outer-circle w-inline-block" href="#">
+        <div class="share-button-inner-circle">
+          <div class="share-button-text"></div>
+        </div>
+      </a>
+      <a class="share-button-outer-circle w-inline-block" href="#">
+        <div class="share-button-inner-circle">
+          <div class="share-button-text"></div>
+        </div>
+      </a>
+      <a class="share-button-outer-circle w-inline-block" href="#">
+        <div class="share-button-inner-circle">
+          <div class="share-button-text"></div>
+        </div>
+      </a>
+      <a class="share-button-outer-circle w-inline-block" href="#">
+        <div class="share-button-inner-circle">
+          <div class="share-button-text"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="footer">
+    <p class="footer-text">The Open Data Impact Map, a project of the <a class="footer-link" href="http://www.opendataenterprise.org/">Center for Open Data Enterprise</a>, is supported by the <a class="footer-link" href="http://od4d.net/">Open Data for Development (OD4D)</a> program, a partnership funded by Canada’s <a class="footer-link" href="http://www.idrc.ca/EN/AboutUs/Pages/default.aspx">International Development Research Centre (IDRC)</a>, the <a class="footer-link" href="http://www.worldbank.org/">World Bank</a>, United Kingdom’s <a class="footer-link" href="https://www.gov.uk/government/organisations/department-for-international-development">Department for International Development (DFID)</a>, and <a class="footer-link" href="http://www.international.gc.ca/department-ministere/index.aspx?lang=eng">Global Affairs Canada (GAC)</a>. The Open Data Impact Map is licensed under <a class="footer-link" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-Share Alike 4.0 International License.</a>
+    </p>
+    <div class="footer-logos-container w-clearfix"><img class="footer-logo" src="images/footer-open-data-enterprise-logo@2x.png" width="94"><img class="footer-logo idrc" src="images/idrc-footer-logo@2x.jpg" width="78"><img class="footer-logo" src="images/footer-open-data-logo@2x.png" width="101"><img class="cc footer-logo" src="images/footer-creative-commons-logo@2x.png" width="78">
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  <!-- Noah - code for two charts -->
+  <script type="text/javascript" src="js-custom/viz/sectorViz/Gov/viz-Gov-appBar.js"></script>
+  <script type="text/javascript" src="js-custom/viz/sectorViz/Gov/viz-Gov-pie.js"></script>
+  <script type="text/javascript" src="js-custom/viz/sectorViz/Gov/viz-Gov-dataTypeBar.js"></script>
+  <!-- Noah - code for stat number counting up animation -->
+  <script type="text/javascript" src="js-custom/countUp/countIndiNumber.js"></script>
+</body>
+</html>
