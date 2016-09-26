@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
 <!-- Last Published: Mon Sep 26 2016 23:30:32 GMT+0000 (UTC) -->
-<html data-wf-page="57a110f2866aa0fd26f5f8f7" data-wf-site="577440f9dee5efd30ed38e59">
+<html data-wf-page="57a1427997a71d9618725690" data-wf-site="577440f9dee5efd30ed38e59">
 <head>
   <meta charset="utf-8">
-  <title>Survey</title>
-  <meta content="Survey" property="og:title">
+  <title>Template - Map</title>
+  <meta content="Template - Map" property="og:title">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="../css/normalize.css" rel="stylesheet" type="text/css">
@@ -38,7 +38,53 @@
   <div class="navigation-space-fix"></div>
   <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="../index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="http://54.210.82.88/ode-prod/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="../regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="../sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="../usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="../contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
   </div>
-  <div class="survey-goes-here"></div>
+  <div class="data-container w-clearfix"><img class="tablet-map-image" sizes="100vw" src="../images/german-style-map-tablet@2x.png" srcset="../images/german-style-map-tablet%402x-p-500x376.png 500w, ../images/german-style-map-tablet%402x-p-800x601.png 800w, ../images/german-style-map-tablet%402x-p-1080x811.png 1080w, ../images/german-style-map-tablet@2x.png 1468w"><img class="mobile-map-image" sizes="100vw" src="../images/german-style-map-mobile@2x.png" srcset="../images/german-style-map-mobile%402x-p-500x667.png 500w, ../images/german-style-map-mobile@2x.png 726w">
+    <div class="data-sidebar">
+      <div class="w-form">
+        <form class="w-clearfix" data-name="Email Form" id="email-form" name="email-form">
+          <input class="search-field w-input" data-name="Organization" id="Organization" maxlength="256" name="Organization" placeholder="Search for Organization" type="text">
+          <input class="search-submit w-button" data-wait="Please wait..." type="submit" value="">
+        </form>
+        <div class="w-form-done">
+          <div>Thank you! Your submission has been received!</div>
+        </div>
+        <div class="w-form-fail">
+          <div>Oops! Something went wrong while submitting the form</div>
+        </div>
+      </div>
+      <div class="fake-dropdown w-clearfix">
+        <div class="fake-dropdown-text">Region</div>
+        <div class="fake-dropdown-arrow"></div>
+      </div>
+      <div class="fake-dropdown w-clearfix">
+        <div class="fake-dropdown-text">Country</div>
+        <div class="fake-dropdown-arrow"></div>
+      </div>
+      <div class="fake-dropdown w-clearfix">
+        <div class="fake-dropdown-text">Organization Type</div>
+        <div class="fake-dropdown-arrow"></div>
+      </div>
+      <div class="fake-dropdown w-clearfix">
+        <div class="fake-dropdown-text">Type of Data Used</div>
+        <div class="fake-dropdown-arrow"></div>
+      </div>
+      <div class="fake-dropdown w-clearfix">
+        <div class="fake-dropdown-text">Data Source</div>
+        <div class="fake-dropdown-arrow"></div>
+      </div>
+      <div class="fake-dropdown w-clearfix">
+        <div class="fake-dropdown-text">Application</div>
+        <div class="fake-dropdown-arrow"></div>
+      </div><a class="clear-filters-button" href="#"><span class="fontawesome-icon"></span>&nbsp;Clear Filters</a><a class="map-text-link" href="#"><span class="fontawesome-icon"></span> Download FIltered Data (Csv)</a><a class="map-text-link" href="#"><span class="fontawesome-icon"></span> Download FIltered Data (JSON)</a><a class="map-text-link" href="#"><span class="fontawesome-icon"></span> Export Map</a>
+      <div class="submit-survey-block">
+        <p class="submit-survey-text">Have data to contribute?</p><a class="button submit-survey-button w-button" href="#"><span class="fontawesome-icon"></span> Submit Survey</a>
+      </div>
+    </div>
+    <div class="map-table-toggle-box"><a class="map-toggle" href="#"><span class="fontawesome-icon"></span> Map View</a>
+    </div>
+    <div class="table-toggle-box"><a class="map-toggle" href="#"><span class="fontawesome-icon"></span>&nbsp;Table View</a>
+    </div>
+  </div>
   <div class="share">
     <div class="share-links-container w-clearfix">
       <div class="share-label">Share</div>

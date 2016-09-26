@@ -1436,6 +1436,10 @@ li {
   font-size: 17px;
 }
 
+.case-study-title.title-small {
+  font-size: 16px;
+}
+
 .case-study-subtitle {
   display: block;
   margin-bottom: 10px;
@@ -2573,6 +2577,54 @@ li {
   display: block;
 }
 
+.modal-wrapper.younginnovations-modal {
+  display: none;
+}
+
+.modal-wrapper.yeleman-modal {
+  display: block;
+}
+
+.modal-wrapper.yeleman1-modal {
+  display: none;
+}
+
+.modal-wrapper.twaweza-modal {
+  display: none;
+}
+
+.modal-wrapper.thinknum-modal {
+  display: none;
+}
+
+.modal-wrapper.teri-modal {
+  display: none;
+}
+
+.modal-wrapper.test_modal {
+  display: none;
+}
+
+.modal-wrapper.test_modal_1 {
+  display: none;
+}
+
+.modal-wrapper.test_modal_2 {
+  display: none;
+}
+
+.modal-wrapper.test_modal_3 {
+  display: none;
+}
+
+.modal-wrapper.test_modal_4 {
+  display: none;
+}
+
+.modal-wrapper.test_modal_5 {
+  display: none;
+}
+
 .case-wrapper {
   display: block;
   width: 1000px;
@@ -2827,6 +2879,47 @@ li {
 }
 
 .use-case-container {
+  display: inline-block;
+}
+
+.use-case-container.aidin-con {
+  display: inline-block;
+}
+
+.test-container {
+  display: inline-block;
+}
+
+.teri-con {
+  display: inline-block;
+}
+
+.test_container {
+  display: inline-block;
+}
+
+.test_modal {
+  position: fixed;
+  display: block;
+}
+
+.test_container_1 {
+  display: inline-block;
+}
+
+.test_container_2 {
+  display: inline-block;
+}
+
+.test_container_3 {
+  display: inline-block;
+}
+
+.test_container_4 {
+  display: inline-block;
+}
+
+.test_container_5 {
   display: inline-block;
 }
 
@@ -3533,6 +3626,9 @@ li {
   }
   .ordered-list-text {
     margin-bottom: 14px;
+  }
+  .data_buttons {
+    display: none;
   }
 }
 
