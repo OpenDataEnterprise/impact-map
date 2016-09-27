@@ -54,9 +54,8 @@ textdomain($domain);
       </div>
       
     </div>
-    <div id="survey_intro">
-        Information collected will be reviewed before it is displayed on the Map and made available as open data.
-    </div>
+    <!-- <div id="survey_intro">
+    </div> -->
 <br />
 
     <div class="col-md-12" role="orgInfo-titlebar"  id="role-orgInfo-titlebar">
@@ -96,6 +95,9 @@ textdomain($domain);
             </label>
             <label class="btn btn-default">
                 <input type="radio" name="org_type" id="Developer_group" value="Developer group"> Developer group
+            </label>
+            <label class="btn btn-default">
+                <input type="radio" name="org_type" id="Academic_institution" value="Academic institution"> Academic institution
             </label>
             <label class="btn btn-default">
                 <input type="radio" name="org_type" id="Other" value="Other"> Other
@@ -145,29 +147,9 @@ textdomain($domain);
   
       <!-- Industry/category of organization -->
       <div class="form-group col-md-12">
-        <label for="industry_id">Industry/category of the organization <small class="required">(select 1)*</small></label>
+        <label for="industry_id">Sector of the organization <small class="required">(select 1)*</small></label>
         <label id="industry_id-error" class="error" for="industry_id"></label>
-        <fieldset>
-        <div class="col-md-4" id="industry_id_col-1">
-          <input type="radio" name="industry_id" class="industry_id" value="Agriculture" required>&nbsp; Agriculture
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Arts, culture and tourism">&nbsp; Arts, culture and tourism
-          <br /><input id="industry_id_cul" type="radio" name="industry_id" class="industry_id" value="Business, research and consulting" required>&nbsp; Business, research and consulting
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Consumer">&nbsp; Consumer
-          <br /><input type="radio" name="industry_id" class="industry_id" value="IT and geospatial">&nbsp; IT and geospatial
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Education">&nbsp; Education
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Energy and climate">&nbsp; Energy and climate
-        </div>
-        <div class="col-md-4" id="industry_id_col-2">
-        <input type="radio" name="industry_id" class="industry_id" value="Finance, investment and insurance">&nbsp; Finance, investment and insurance
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Governance">&nbsp; Governance
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Health">&nbsp; Health
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Housing, construction and real estate">&nbsp; Housing, construction and real estate
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Media and communications">&nbsp; Media and communications
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Transportation and logistics">&nbsp; Transportation and logistics
-          <br /><input type="radio" name="industry_id" class="industry_id" id="industr_id_other" value="Other">&nbsp; Other
-                <input type="text" class="form-control" style="display:none" id="industry_other" name="industry_other" placeholder="Describe other">
-        </div>
-        </fieldset>
+        <?php include __DIR__.'/'.'survey_sector.php'; ?>
       </div>
 
       <!-- Founding year -->    
@@ -262,8 +244,8 @@ textdomain($domain);
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Legal">&nbsp; <span>Legal</span>
         </div>
         <div class="col-md-4" id="data_type_col-3">
-            <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Manufacturing">&nbsp; <span>Manufacturing</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Science and research">&nbsp; <span>Science and research</span>
+            <!-- <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Manufacturing">&nbsp; <span>Manufacturing</span> -->
+            <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Science and research">&nbsp; <span>Science and research</span>
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Public safety">&nbsp; <span>Public safety</span>
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Tourism">&nbsp; <span>Tourism</span>
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Transportation">&nbsp; <span>Transportation</span>
@@ -275,7 +257,7 @@ textdomain($domain);
 <br />
       <!-- Sources of open data -->
       <div class="form-group col-md-12">
-        <label for="data_country_count">How many countries does your organization use open data from? <small class="required">*</small></label>
+        <label for="data_country_count">Number of countries from which open data is used <small class="required">*</small></label>
         <label id="data_country_count-error" class="error" for="data_country_count"></label>
         <div class="col-md-12">
           <div class="btn-group" data-toggle="buttons">
@@ -390,14 +372,14 @@ textdomain($domain);
       <br />
 
     <div class="col-md-12" role="submit-note" id="role-submit-note">
-      <!-- <div style="text-align:center;font-size:16px;margin-top:20px;">
-        <b><i>All submissions will be reviewed before public display on the Open Data Impact Map.</i></b>
-      </div> -->
+      <div style="text-align:center;font-size:16px;margin-top:20px;">
+        <b>Information collected will be reviewed before it is displayed on the Map and made available as open data.</b>
+      </div>
       <br />
     </div>
 
     <div class="col-md-12" style="text-align:center;">    
-      <button class="btn btn-primary" style="padding:1em 2em 1em 2em; width:200px; background-color: rgb(53, 162, 227);" id="btnSubmit" type="submit" name="submit" value="submit">SUBMIT</button>
+      <button class="btn btn-primary" id="btnSubmit" type="submit" name="submit" value="submit">SUBMIT</button>
     </div>
 
     <!-- <div class="w-section attribution" style="margin-top:12px;">

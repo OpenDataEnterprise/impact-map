@@ -25,7 +25,7 @@ p, p.muted {
 	margin-bottom: 0px;
 	margin-top: 8px;
 	font-family: Palanquin, sans-serif;
-	font-size: 1em;
+	font-size: 18px;
 	color: black;
 }
 
@@ -274,4 +274,10 @@ label {
 
 .footer {
 	margin-top: 10px;
+}
+
+#btnSubmit {
+	padding:1em 2em 1em 2em; 
+	width:200px; 
+	background-color: #376D86;
 }

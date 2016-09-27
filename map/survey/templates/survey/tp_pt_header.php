@@ -31,7 +31,13 @@
   
   <div class="navigation">
     <div class="navigation-container w-clearfix w-hidden-medium w-hidden-small w-hidden-tiny">
-      <a class="navigation-link" href="/index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="http://54.210.82.88/ode-prod/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="navigation-link" href="/regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="navigation-link" href="/sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="/contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a><a class="navigation-link secondary-navigation-link" href="/survey.html"><span class="fontawesome-icon"></span>&nbsp;Submit Survey</a>
+      <a class="navigation-link" href="/index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a>
+      <a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a>
+      <a class="navigation-link" href="/regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a>
+      <a class="navigation-link" href="/sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Sector</a>
+      <a class="last-left navigation-link" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a>
+      <a class="navigation-link secondary-navigation-link" href="/contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a>
+      <a class="navigation-link secondary-navigation-link" href="/survey.html"><span class="fontawesome-icon"></span>&nbsp;Submit Survey</a>
     </div>
     <div class="mobile-navigation-container w-clearfix w-hidden-main"><a class="mobile-menu-button" data-ix="open-mobile-menu" href="#"><span class="fontawesome-icon"></span> Menu</a><a class="close-menu-button" data-ix="close-mobile-menu" href="#"><span class="fontawesome-icon"></span> Close</a>
       <div class="mobile-navigation-title">Open Data Impact Map Survey</div>

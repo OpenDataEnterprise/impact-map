@@ -23,7 +23,7 @@ textdomain($domain);
       <div style="text-align:center;font-size:1.1em;margin-top:20px;">
                 
         Thank you for participating in the Open Data Impact Map. All edits will be reviewed before they are displayed.
-
+        <br />If you have any questions, email us at map@odenterprise.org. 
       </div>
       <br />
     </div>
@@ -67,6 +67,9 @@ textdomain($domain);
             </label>
             <label class="btn btn-default <?php if ("Developer group" == $org_profile[0]['org_type']) {echo "active";} ?>">
                 <input type="radio" name="org_type" id="Developer group" value="Developer group" <?php if ("Developer group" == $org_profile[0]['org_type']) {echo "checked";} ?>> Developer group
+            </label>
+            <label class="btn btn-default <?php if ("Academic institution" == $org_profile[0]['org_type']) {echo "active";} ?>">
+                <input type="radio" name="org_type" id="Academic institution" value="Academic institution" <?php if ("Academic institution" == $org_profile[0]['org_type']) {echo "checked";} ?>> Academic institution
             </label>
             <label class="btn btn-default <?php if ("Other" == $org_profile[0]['org_type']) {echo "active";} ?>">
                 <input type="radio" name="org_type" id="Other" value="Other" <?php if ("Other" == $org_profile[0]['org_type']) {echo "checked";} ?>> Other
@@ -118,22 +121,22 @@ textdomain($domain);
   
       <!-- Industry/category of organization -->
       <div class="form-group col-md-12">
-        <label for="industry_id">Industry/category of the organization <small class="required">(select 1)*</small></label>
+        <label for="industry_id">Sector of the organization <small class="required">(select 1)*</small></label>
         <fieldset>
         <div class="col-md-4" id="industry_id_col-1">
           <input type="radio" name="industry_id" class="industry_id" value="Agriculture" <?php if ("Agriculture" == $org_profile[0]['industry_id']) {echo "checked";} ?>>&nbsp; Agriculture
           <br /><input type="radio" name="industry_id" class="industry_id" value="Arts, culture and tourism" <?php if ("Arts, culture and tourism" == $org_profile[0]['industry_id']) {echo "checked";} ?>>&nbsp; Arts, culture and tourism
           <br /><input id="industry_id_cul" type="radio" name="industry_id" class="industry_id" value="Business, research and consulting" required <?php if ("Business, research and consulting" == $org_profile[0]['industry_id']) {echo "checked";} ?>>&nbsp; Business, research and consulting
           <br /><input type="radio" name="industry_id" class="industry_id" value="Consumer" <?php if ("Consumer" == $org_profile[0]['industry_id']) {echo "checked";} ?>>&nbsp; Consumer
-          <br /><input type="radio" name="industry_id" class="industry_id" value="IT and geospatial" <?php if ("IT and geospatial" == $org_profile[0]['industry_id']) {echo "checked";} ?>>&nbsp; IT and geospatial
           <br /><input type="radio" name="industry_id" class="industry_id" value="Education" <?php if ("Education" == $org_profile[0]['industry_id']) {echo "checked";} ?>>&nbsp; Education
           <br /><input type="radio" name="industry_id" class="industry_id" value="Energy and climate" <?php if ("Energy and climate" == $org_profile[0]['industry_id']) {echo "checked";} ?>>&nbsp; Energy and climate
+          <br /><input type="radio" name="industry_id" class="industry_id" value="Finance and insurance" <?php if ("Finance and insurance" == $org_profile[0]['industry_id']) {echo "checked";} ?>>&nbsp;  Finance and insurance
         </div>
         <div class="col-md-4" id="industry_id_col-2">
-          <input type="radio" name="industry_id" class="industry_id" value=" Finance, investment and insurance">&nbsp;  Finance, investment and insurance
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Governance" <?php if ("Governance" == $org_profile[0]['industry_id']) {echo "checked";} ?>>&nbsp; Governance
+          <input type="radio" name="industry_id" class="industry_id" value="Governance" <?php if ("Governance" == $org_profile[0]['industry_id']) {echo "checked";} ?>>&nbsp; Governance
           <br /><input type="radio" name="industry_id" class="industry_id" value="Health" <?php if ("Health" == $org_profile[0]['industry_id']) {echo "checked";} ?>>&nbsp; Health
           <br /><input type="radio" name="industry_id" class="industry_id" value="Housing, construction and real estate" <?php if ("Housing, construction and real estate" == $org_profile[0]['industry_id']) {echo "checked";} ?>>&nbsp; Housing, construction and real estate
+          <br /><input type="radio" name="industry_id" class="industry_id" value="IT and geospatial" <?php if ("IT and geospatial" == $org_profile[0]['industry_id']) {echo "checked";} ?>>&nbsp; IT and geospatial
           <br /><input type="radio" name="industry_id" class="industry_id" value="Media and communications" <?php if ("Media and communications" == $org_profile[0]['industry_id']) {echo "checked";} ?>>&nbsp; Media and communications
           <br /><input type="radio" name="industry_id" class="industry_id" value="Transportation and logistics " <?php if ("Transportation and logistics " == $org_profile[0]['industry_id']) {echo "checked";} ?>>&nbsp; Transportation and logistics 
           <br /><input type="radio" name="industry_id" class="industry_id" value="Other" <?php if ("Other" == $org_profile[0]['industry_id']) {echo "checked";} ?>>&nbsp; Other
@@ -234,8 +237,8 @@ textdomain($domain);
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Legal" <?php if (in_array("Legal", $org_data_use1)) {echo "checked";} ?>>&nbsp; Legal
         </div>
         <div class="col-md-4" id="data_type_col-3">
-            <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Manufacturing" <?php if (in_array("Manufacturing", $org_data_use1)) {echo "checked";} ?>>&nbsp; Manufacturing
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Science and research" <?php if (in_array("Science and research", $org_data_use1)) {echo "checked";} ?>>&nbsp; Science and research
+            <!-- <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Manufacturing" <?php if (in_array("Manufacturing", $org_data_use1)) {echo "checked";} ?>>&nbsp; Manufacturing -->
+            <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Science and research" <?php if (in_array("Science and research", $org_data_use1)) {echo "checked";} ?>>&nbsp; Science and research
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Public safety" <?php if (in_array("Public safety", $org_data_use1)) {echo "checked";} ?>>&nbsp; Public safety
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Tourism" <?php if (in_array("Tourism", $org_data_use1)) {echo "checked";} ?>>&nbsp; Tourism
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Transportation" <?php if (in_array("Tra", $org_data_use1)) {echo "checked";} ?>>&nbsp; Transportation
@@ -254,7 +257,7 @@ textdomain($domain);
         }
       ?>
       <div class="form-group col-md-12">
-        <label for="data_country_count">Number of countries from which open data is provided<small class="required">*</small></label>
+        <label for="data_country_count">Number of countries from which open data is used <small class="required">*</small></label>
         <div class="col-md-12">
           <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default" <?php if ("1" == $org_data_use[0]['data_country_count']) {echo "active";} ?>>
@@ -371,6 +374,12 @@ textdomain($domain);
       
       <br />
 
+    <div class="col-md-12" role="submit-note" id="role-submit-note">
+      <div style="text-align:center;font-size:16px;margin-top:20px;">
+        <b>Information collected will be reviewed before it is displayed on the Map and made available as open data.</b>
+      </div>
+      <br />
+    </div>
     <div class="col-md-12" style="text-align:center;">    
       <button class="btn btn-primary" style="padding:1em 2em 1em 2em; width:200px; background-color: rgb(53, 162, 227);" id="btnSubmit" type="submit" name="submit" value="submit">SUBMIT</button>
     </div>
