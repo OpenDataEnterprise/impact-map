@@ -2262,7 +2262,7 @@ li {
 }
 
 .data_buttons {
-  display: block;
+  display: none;
   width: 221px;
   margin-right: auto;
   margin-left: auto;
