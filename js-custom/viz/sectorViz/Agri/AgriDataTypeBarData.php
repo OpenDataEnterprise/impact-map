@@ -336,23 +336,23 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 			$data[] = $obj;
 	}}
 
-// 17 'Other'
-	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
-		where org_data_use.profile_id = org_profiles.profile_id
-		and industry_id = 'Agriculture'
-		and data_type = 'Other'";
+// // 17 'Other'
+// 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
+// 		where org_data_use.profile_id = org_profiles.profile_id
+// 		and industry_id = 'Agriculture'
+// 		and data_type = 'Other'";
 
-	if(!$result = $db->query($sql)){
-	    die('There was an error running the query [' . $db->error . ']');
-	}
+// 	if(!$result = $db->query($sql)){
+// 	    die('There was an error running the query [' . $db->error . ']');
+// 	}
 
-	while($row = $result->fetch_assoc()){
-		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
-			$obj = new stdClass();
-			$obj->app_type = "Other";
-			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
-			$data[] = $obj;
-	}}	
+// 	while($row = $result->fetch_assoc()){
+// 		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
+// 			$obj = new stdClass();
+// 			$obj->app_type = "Other";
+// 			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
+// 			$data[] = $obj;
+// 	}}	
 
 // 18 'Consumer'
 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles

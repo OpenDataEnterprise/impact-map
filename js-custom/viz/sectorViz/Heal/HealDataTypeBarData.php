@@ -970,59 +970,59 @@
 	}
 			
 
-// 17 'Other'
-	// Healthcare
-	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
-		where org_data_use.profile_id = org_profiles.profile_id
-		and industry_id = 'Healthcare'
-		and data_type = 'Other'";
+// // 17 'Other'
+// 	// Healthcare
+// 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
+// 		where org_data_use.profile_id = org_profiles.profile_id
+// 		and industry_id = 'Healthcare'
+// 		and data_type = 'Other'";
 
-	if(!$result = $db->query($sql)){
-	    die('There was an error running the query [' . $db->error . ']');
-	}
+// 	if(!$result = $db->query($sql)){
+// 	    die('There was an error running the query [' . $db->error . ']');
+// 	}
 
-	while($row = $result->fetch_assoc()){
-		$string1 = $row["count(distinct(org_data_use.profile_id))"];
-	}
+// 	while($row = $result->fetch_assoc()){
+// 		$string1 = $row["count(distinct(org_data_use.profile_id))"];
+// 	}
 
-	// Water and sanitation
-	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
-		where org_data_use.profile_id = org_profiles.profile_id
-		and industry_id = 'Water and sanitation'
-		and data_type = 'Other'";
+// 	// Water and sanitation
+// 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
+// 		where org_data_use.profile_id = org_profiles.profile_id
+// 		and industry_id = 'Water and sanitation'
+// 		and data_type = 'Other'";
 
-	if(!$result = $db->query($sql)){
-	    die('There was an error running the query [' . $db->error . ']');
-	}
+// 	if(!$result = $db->query($sql)){
+// 	    die('There was an error running the query [' . $db->error . ']');
+// 	}
 
-	while($row = $result->fetch_assoc()){
-		$string2 = $row["count(distinct(org_data_use.profile_id))"];
-	}
+// 	while($row = $result->fetch_assoc()){
+// 		$string2 = $row["count(distinct(org_data_use.profile_id))"];
+// 	}
 
-	// Scientific research
-	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
-		where org_data_use.profile_id = org_profiles.profile_id
-		and industry_id = 'Scientific research'
-		and data_type = 'Other'";
+// 	// Scientific research
+// 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
+// 		where org_data_use.profile_id = org_profiles.profile_id
+// 		and industry_id = 'Scientific research'
+// 		and data_type = 'Other'";
 
-	if(!$result = $db->query($sql)){
-	    die('There was an error running the query [' . $db->error . ']');
-	}
+// 	if(!$result = $db->query($sql)){
+// 	    die('There was an error running the query [' . $db->error . ']');
+// 	}
 
-	while($row = $result->fetch_assoc()){
-		$string3 = $row["count(distinct(org_data_use.profile_id))"];
-	}
+// 	while($row = $result->fetch_assoc()){
+// 		$string3 = $row["count(distinct(org_data_use.profile_id))"];
+// 	}
 
 
-	// sum it up and check if zero
-	$num = $string1 + $string2 + $string3;
+// 	// sum it up and check if zero
+// 	$num = $string1 + $string2 + $string3;
 
-	if ($num != 0) {
-		$obj = new stdClass();
-		$obj->app_type = "Other";
-		$obj->number = $num;
-		$data[] = $obj;
-	}
+// 	if ($num != 0) {
+// 		$obj = new stdClass();
+// 		$obj->app_type = "Other";
+// 		$obj->number = $num;
+// 		$data[] = $obj;
+// 	}
 
 // 18 'Consumer'
 	// Healthcare

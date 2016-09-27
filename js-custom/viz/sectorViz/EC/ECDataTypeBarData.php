@@ -1203,72 +1203,72 @@
 	}
 			
 
-// 17 'Other'
-	// Energy
-	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
-		where org_data_use.profile_id = org_profiles.profile_id
-		and industry_id = 'Energy'
-		and data_type = 'Other'";
+// // 17 'Other'
+// 	// Energy
+// 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
+// 		where org_data_use.profile_id = org_profiles.profile_id
+// 		and industry_id = 'Energy'
+// 		and data_type = 'Other'";
 
-	if(!$result = $db->query($sql)){
-	    die('There was an error running the query [' . $db->error . ']');
-	}
+// 	if(!$result = $db->query($sql)){
+// 	    die('There was an error running the query [' . $db->error . ']');
+// 	}
 
-	while($row = $result->fetch_assoc()){
-		$string1 = $row["count(distinct(org_data_use.profile_id))"];
-	}
+// 	while($row = $result->fetch_assoc()){
+// 		$string1 = $row["count(distinct(org_data_use.profile_id))"];
+// 	}
 
-	// Environment
-	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
-		where org_data_use.profile_id = org_profiles.profile_id
-		and industry_id = 'Environment'
-		and data_type = 'Other'";
+	// // Environment
+	// $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
+	// 	where org_data_use.profile_id = org_profiles.profile_id
+	// 	and industry_id = 'Environment'
+	// 	and data_type = 'Other'";
 
-	if(!$result = $db->query($sql)){
-	    die('There was an error running the query [' . $db->error . ']');
-	}
+	// if(!$result = $db->query($sql)){
+	//     die('There was an error running the query [' . $db->error . ']');
+	// }
 
-	while($row = $result->fetch_assoc()){
-		$string2 = $row["count(distinct(org_data_use.profile_id))"];
-	}
+	// while($row = $result->fetch_assoc()){
+	// 	$string2 = $row["count(distinct(org_data_use.profile_id))"];
+	// }
 
-	// Mining/manufacturing	
-	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
-		where org_data_use.profile_id = org_profiles.profile_id
-		and industry_id = 'Mining/manufacturing'
-		and data_type = 'Other'";
+	// // Mining/manufacturing	
+	// $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
+	// 	where org_data_use.profile_id = org_profiles.profile_id
+	// 	and industry_id = 'Mining/manufacturing'
+	// 	and data_type = 'Other'";
 
-	if(!$result = $db->query($sql)){
-	    die('There was an error running the query [' . $db->error . ']');
-	}
+	// if(!$result = $db->query($sql)){
+	//     die('There was an error running the query [' . $db->error . ']');
+	// }
 
-	while($row = $result->fetch_assoc()){
-		$string3 = $row["count(distinct(org_data_use.profile_id))"];
-	}
+	// while($row = $result->fetch_assoc()){
+	// 	$string3 = $row["count(distinct(org_data_use.profile_id))"];
+	// }
 
-	// Weather
-	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
-		where org_data_use.profile_id = org_profiles.profile_id
-		and industry_id = 'Weather'
-		and data_type = 'Other'";
+	// // Weather
+	// $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
+	// 	where org_data_use.profile_id = org_profiles.profile_id
+	// 	and industry_id = 'Weather'
+	// 	and data_type = 'Other'";
 
-	if(!$result = $db->query($sql)){
-	    die('There was an error running the query [' . $db->error . ']');
-	}
+	// if(!$result = $db->query($sql)){
+	//     die('There was an error running the query [' . $db->error . ']');
+	// }
 
-	while($row = $result->fetch_assoc()){
-		$string4 = $row["count(distinct(org_data_use.profile_id))"];
-	}
+	// while($row = $result->fetch_assoc()){
+	// 	$string4 = $row["count(distinct(org_data_use.profile_id))"];
+	// }
 
-	// sum it up and check if zero
-	$num = $string1 + $string2 + $string3 + $string4;
+	// // sum it up and check if zero
+	// $num = $string1 + $string2 + $string3 + $string4;
 
-	if ($num != 0) {
-		$obj = new stdClass();
-		$obj->app_type = "Other";
-		$obj->number = $num;
-		$data[] = $obj;
-	}
+	// if ($num != 0) {
+	// 	$obj = new stdClass();
+	// 	$obj->app_type = "Other";
+	// 	$obj->number = $num;
+	// 	$data[] = $obj;
+	// }
 
 // 18 'Consumer'
 	// Energy

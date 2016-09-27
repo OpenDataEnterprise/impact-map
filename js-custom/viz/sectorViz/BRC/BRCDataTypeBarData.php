@@ -629,38 +629,38 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 			$data[] = $obj;}
 			
 
-// 17 'Other'
-	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
-		where org_data_use.profile_id = org_profiles.profile_id
-		and industry_id = 'Business and legal services'
-		and data_type = 'Other'";
+// // 17 'Other'
+// 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
+// 		where org_data_use.profile_id = org_profiles.profile_id
+// 		and industry_id = 'Business and legal services'
+// 		and data_type = 'Other'";
 
-	if(!$result = $db->query($sql)){
-	    die('There was an error running the query [' . $db->error . ']');
-	}
+// 	if(!$result = $db->query($sql)){
+// 	    die('There was an error running the query [' . $db->error . ']');
+// 	}
 
-	while($row = $result->fetch_assoc()){
-		$string1 = $row["count(distinct(org_data_use.profile_id))"];
-	}
+// 	while($row = $result->fetch_assoc()){
+// 		$string1 = $row["count(distinct(org_data_use.profile_id))"];
+// 	}
 
-	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
-		where org_data_use.profile_id = org_profiles.profile_id
-		and industry_id = 'Research and consulting'
-		and data_type = 'Other'";
+// 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
+// 		where org_data_use.profile_id = org_profiles.profile_id
+// 		and industry_id = 'Research and consulting'
+// 		and data_type = 'Other'";
 
-	if(!$result = $db->query($sql)){
-	    die('There was an error running the query [' . $db->error . ']');
-	}
+// 	if(!$result = $db->query($sql)){
+// 	    die('There was an error running the query [' . $db->error . ']');
+// 	}
 
-	while($row = $result->fetch_assoc()){
-		$string2 = $row["count(distinct(org_data_use.profile_id))"];
-	}
+// 	while($row = $result->fetch_assoc()){
+// 		$string2 = $row["count(distinct(org_data_use.profile_id))"];
+// 	}
 
-	$num = $string1 + $string2;
-	if ($num != 0) {$obj = new stdClass();
-			$obj->app_type = "Other";
-			$obj->number = $num;
-			$data[] = $obj;}
+// 	$num = $string1 + $string2;
+// 	if ($num != 0) {$obj = new stdClass();
+// 			$obj->app_type = "Other";
+// 			$obj->number = $num;
+// 			$data[] = $obj;}
 
 // 18 'Consumer'
 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
