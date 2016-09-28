@@ -9,9 +9,10 @@
     <br /><input type="radio" name="industry_id" class="industry_id" value="Finance and insurance">&nbsp; Finance and insurance
   </div>
   <div class="col-md-4" id="industry_id_col-2">
-    <br /><input type="radio" name="industry_id" class="industry_id" value="Governance">&nbsp; Governance
+    <input type="radio" name="industry_id" class="industry_id" value="Governance">&nbsp; Governance
     <br /><input type="radio" name="industry_id" class="industry_id" value="Health">&nbsp; Health
     <br /><input type="radio" name="industry_id" class="industry_id" value="Housing, construction and real estate">&nbsp; Housing, construction and real estate
+    <br /><input type="radio" name="industry_id" class="industry_id" value="IT and geospatial">&nbsp; IT and geospatial
     <br /><input type="radio" name="industry_id" class="industry_id" value="Media and communications">&nbsp; Media and communications
     <br /><input type="radio" name="industry_id" class="industry_id" value="Transportation and logistics">&nbsp; Transportation and logistics
     <br /><input type="radio" name="industry_id" class="industry_id" id="industr_id_other" value="Other">&nbsp; Other

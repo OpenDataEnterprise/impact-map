@@ -162,16 +162,16 @@ textdomain($domain);
         <div class="col-md-12">
           <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default <?php if ("1-10" == $org_profile[0]['org_size']) {echo "active";} ?>">
-                <input type="radio" name="org_size_id" value="1-10" <?php if ("1-10" == $org_profile[0]['org_size']) {echo "checked";} ?>> 1-10 employees
+                <input type="radio" name="org_size_id" value="1 to 10" <?php if ("1 to 10" == $org_profile[0]['org_size']) {echo "checked";} ?>> 1-10 employees
             </label>
             <label class="btn btn-default <?php if ("11-50" == $org_profile[0]['org_size']) {echo "active";} ?>">
-                <input type="radio" name="org_size_id" value="11-50" <?php if ("11-50" == $org_profile[0]['org_size']) {echo "checked";} ?>> 11-50 employees
+                <input type="radio" name="org_size_id" value="11 to 50" <?php if ("11 to 50" == $org_profile[0]['org_size']) {echo "checked";} ?>> 11-50 employees
             </label>
             <label class="btn btn-default  <?php if ("51-200" == $org_profile[0]['org_size']) {echo "active";} ?>">
-                <input type="radio" name="org_size_id" value="51-200" <?php if ("51-200" == $org_profile[0]['org_size']) {echo "checked";} ?>> 51-200 employees
+                <input type="radio" name="org_size_id" value="51 to 200" <?php if ("51 to 200" == $org_profile[0]['org_size']) {echo "checked";} ?>> 51-200 employees
             </label>
-            <label class="btn btn-default <?php if ("201-1000" == $org_profile[0]['org_size']) {echo "active";} ?>">
-                <input type="radio" name="org_size_id" value="201-1000" <?php if ("201-1000" == $org_profile[0]['org_size']) {echo "checked";} ?>> 201-1000 employees
+            <label class="btn btn-default <?php if ("201 to 1000" == $org_profile[0]['org_size']) {echo "active";} ?>">
+                <input type="radio" name="org_size_id" value="201-1000" <?php if ("201 to 1000" == $org_profile[0]['org_size']) {echo "checked";} ?>> 201-1000 employees
             </label>
             <label class="btn btn-default <?php if ("1000+" == $org_profile[0]['org_size']) {echo "active";} ?>">
                 <input type="radio" name="org_size_id" value="1000+"<?php if ("1000+" == $org_profile[0]['org_size']) {echo "checked";} ?>> 1000+ employees

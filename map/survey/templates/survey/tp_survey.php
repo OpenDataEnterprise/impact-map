@@ -165,23 +165,7 @@ textdomain($domain);
         <label for="org_size_id">Size<small class="required">*</small></label>
         <label id="org_size_id-error" class="error" for="org_size_id"></label>
         <div class="col-md-12">
-          <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-default">
-                <input type="radio" name="org_size_id" value="1-10"> 1-10 employees
-            </label>
-            <label class="btn btn-default">
-                <input type="radio" name="org_size_id" value="11-50"> 11-50 employees
-            </label>
-            <label class="btn btn-default">
-                <input type="radio" name="org_size_id" value="51-200"> 51-200 employees
-            </label>
-            <label class="btn btn-default">
-                <input type="radio" name="org_size_id" value="201-1000"> 201-1000 employees
-            </label>
-            <label class="btn btn-default">
-                <input type="radio" name="org_size_id" value="1000+"> 1000+ employees
-            </label>
-          </div>
+
         </div>
       </div>
 
@@ -190,23 +174,7 @@ textdomain($domain);
         <label for="org_greatest_impact">What is the greatest type of impact your organization has?<small class="required">*</small></label>
         <label id="org_greatest_impact-error" class="error" for="org_greatest_impact"></label>
         <div class="col-xs-9">
-          <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-default">
-                <input type="radio" name="org_greatest_impact" id="Economic" value="Economic" /> Economic
-            </label>
-            <label class="btn btn-default">
-                <input type="radio" name="org_greatest_impact" id="Environmental" value="Environmental" /> Environmental
-            </label>
-            <label class="btn btn-default">
-                <input type="radio" name="org_greatest_impact" id="Governance" value="Governance" /> Governance
-            </label>
-            <label class="btn btn-default">
-                <input type="radio" name="org_greatest_impact" id="Social" value="Social" /> Social
-            </label>
-            <label class="btn btn-default">
-                <input type="radio" name="org_greatest_impact" id="Other" value="Other" /> Other
-            </label>
-          </div>
+          <?php include __DIR__.'/'.'survey_size.php'; ?>
         </div>
         <div class="col-md-10" id="org_greatest_impact_detail_div"><input type="text" class="form-control" id="org_greatest_impact_detail" name="org_greatest_impact_detail" placeholder="<?php echo _("PROVIDE_DETAILS") ?>" required></div>
       </div>
@@ -221,38 +189,7 @@ textdomain($domain);
     <div class="col-md-12" role="dataUse" id="role-dataUse">
       
       <div class="row col-md-12 data-use-row" id="dataUseDataType">
-        <label for="data_use_type[]">What are the <u>most relevant</u> types of data your organization uses? <small class="required">(select all that apply)*</small></label>
-        <label id="data_use_type[]-error" class="error" for="data_use_type[]"></label>
-        <div class="col-md-4" id="data_type_col-1">
-            <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Agriculture" required>&nbsp; <span>Agriculture</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Arts and culture">&nbsp; <span>Arts and culture</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Business">&nbsp; <span>Business</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Consumer">&nbsp; <span>Consumer</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Demographics and social">&nbsp; <span>Demographics and social</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Economics ">&nbsp; <span>Economics</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Education">&nbsp; <span>Education</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Energy">&nbsp; <span>Energy</span>
-        </div>
-        <div class="col-md-4" id="data_type_col-2">
-            <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Environment">&nbsp; <span>Environment</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Finance">&nbsp; <span>Finance</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Geospatial/mapping">&nbsp; <span>Geospatial/mapping</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Government operations">&nbsp; <span>Government operations</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Health/healthcare">&nbsp; <span>Health/healthcare</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Housing">&nbsp; <span>Housing</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="International/global development">&nbsp; <span>International/global development</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Legal">&nbsp; <span>Legal</span>
-        </div>
-        <div class="col-md-4" id="data_type_col-3">
-            <!-- <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Manufacturing">&nbsp; <span>Manufacturing</span> -->
-            <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Science and research">&nbsp; <span>Science and research</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Public safety">&nbsp; <span>Public safety</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Tourism">&nbsp; <span>Tourism</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Transportation">&nbsp; <span>Transportation</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Weather">&nbsp; <span>Weather</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" id="data_use_type_checkbox_other" value="Other">&nbsp; <span>Other</span>
-                  <input type="text" class="form-control" style="display:none" id="data_use_type_other" name="data_use_type_other" placeholder="Provide details">
-        </div>
+        <?php include __DIR__.'/'.'survey_data_use.php'; ?>
       </div>
 <br />
       <!-- Sources of open data -->

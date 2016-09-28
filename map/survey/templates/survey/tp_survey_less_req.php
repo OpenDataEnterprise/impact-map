@@ -20,30 +20,26 @@ textdomain($domain);
  <form id="survey_form" class="form-horizontal" style="border:0px dotted black;" action="/map/survey/2du/<?php echo $content['surveyId'] ?>" method="post">
 
     <div class="col-md-12" role="Intro" id="role-intro">
-      <div style="text-align:center;font-size:1.1em;margin-top:20px;">
-        <div class="col-md-9 small">&nbsp;</div><div class="col-md-3 pull-right small" style="font-size:14px;">English | <a href="/map/survey/start/fr">Français</a> | <a href="/map/survey/start/es">Español</a></div>
-        Thank you for participating in the Open Data Impact Map, a searchable, centralized database of open data use cases from around the world. 
-        Your contribution makes it possible to better understand the value of open data and encourage its use globally.
-        Information collected will be displayed on the <a href="/map.html">Map</a> and will be made available as open data.
-        <br /><br /><div class="warning">FOR INTERNAL USE ONLY</div>
+      <div style="font-size:1.1em;margin-top:20px;">
+        <div class="col-md-6 small">&nbsp;</div>
+        <div class="warning">FOR INTERNAL USE ONLY</div>         
       </div>
       <br />
-
     </div>
      
-    <div class="col-md-12" role="eligibility" id="role-eligibility">Profile source
+    <div class="col-md-12" role="eligibility" id="role-eligibility">
       <div class="row col-md-12">
-        <h4>ELIGIBILITY</h4>
       </div>
       <div>
-        <b>The Open Data Impact Map includes organizations that:</b>
+          <h4>The Open Data Impact Map includes organizations that:</h4>
           <ul>
-              <li>are companies, non-profits, or developer groups; and</li>
-              <li>use open government data for advocacy, to develop products and services, improve operations, inform strategy and/or conduct research.</li>
-            </ul>
-        We define open government data as publicly available data that is produced or commissioned by governments 
-        and that can be accessed and reused by anyone, free of charge. 
+            <li>are companies, non-profits, or developer groups; and</li>
+            <li>use open government data for advocacy, to develop products and services, improve operations, inform strategy and/or conduct research.</li>
+            
+          </ul>
+          We define open government data as publicly available data that is produced or commissioned by governments and that can be accessed and reused by anyone, free of charge. 
       </div>
+      
     </div>
 
 <br />
@@ -85,6 +81,9 @@ textdomain($domain);
             </label>
             <label class="btn btn-default">
                 <input type="radio" name="org_type" id="Developer_group" value="Developer group"> Developer group
+            </label>
+            <label class="btn btn-default">
+                <input type="radio" name="org_type" id="Academic_institution" value="Academic institution"> Academic institution
             </label>
             <label class="btn btn-default">
                 <input type="radio" name="org_type" id="Other" value="Other"> Other
@@ -136,27 +135,7 @@ textdomain($domain);
       <div class="form-group col-md-12">
         <label for="industry_id">Industry/category of the organization <small class="required">(select 1)*</small></label>
         <label id="industry_id-error" class="error" for="industry_id"></label>
-        <fieldset>
-        <div class="col-md-4" id="industry_id_col-1">
-          <input type="radio" name="industry_id" class="industry_id" value="Agriculture" required>&nbsp; Agriculture
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Arts, culture and tourism">&nbsp; Arts, culture and tourism
-          <br /><input id="industry_id_cul" type="radio" name="industry_id" class="industry_id" value="Business, research and consulting" required>&nbsp; Business, research and consulting
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Consumer">&nbsp; Consumer
-          <br /><input type="radio" name="industry_id" class="industry_id" value="IT and geospatial">&nbsp; IT and geospatial
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Education">&nbsp; Education
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Energy and climate">&nbsp; Energy and climate
-        </div>
-        <div class="col-md-4" id="industry_id_col-2">
-        <input type="radio" name="industry_id" class="industry_id" value="Finance, investment and insurance">&nbsp; Finance, investment and insurance
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Governance">&nbsp; Governance
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Health">&nbsp; Health
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Housing, construction and real estate">&nbsp; Housing, construction and real estate
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Media and communications">&nbsp; Media and communications
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Transportation and logistics">&nbsp; Transportation and logistics
-          <br /><input type="radio" name="industry_id" class="industry_id" id="industr_id_other" value="Other">&nbsp; Other
-                <input type="text" class="form-control" style="display:none" id="industry_other" name="industry_other" placeholder="Describe other">
-        </div>
-        </fieldset>
+        <?php include __DIR__.'/'.'survey_sector.php'; ?>
       </div>
       
 
@@ -173,23 +152,7 @@ textdomain($domain);
         <label for="org_size_id">Size<small class="required">*</small></label>
         <label id="org_size_id-error" class="error" for="org_size_id"></label>
         <div class="col-md-12">
-          <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-default">
-                <input type="radio" name="org_size_id" value="1-10"> 1-10 employees
-            </label>
-            <label class="btn btn-default">
-                <input type="radio" name="org_size_id" value="11-50"> 11-50 employees
-            </label>
-            <label class="btn btn-default">
-                <input type="radio" name="org_size_id" value="51-200"> 51-200 employees
-            </label>
-            <label class="btn btn-default">
-                <input type="radio" name="org_size_id" value="201-1000"> 201-1000 employees
-            </label>
-            <label class="btn btn-default">
-                <input type="radio" name="org_size_id" value="1000+"> 1000+ employees
-            </label>
-          </div>
+          <?php include __DIR__.'/'.'survey_size.php'; ?>
         </div>
       </div>
 
@@ -229,38 +192,7 @@ textdomain($domain);
     <div class="col-md-12" role="dataUse" id="role-dataUse">
       
       <div class="row col-md-12 data-use-row" id="dataUseDataType">
-        <label for="data_use_type[]">What are the <u>most relevant</u> types of data your organization uses? <small class="required">(select all that apply)*</small></label>
-        <label id="data_use_type[]-error" class="error" for="data_use_type[]"></label>
-        <div class="col-md-4" id="data_type_col-1">
-            <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Agriculture">&nbsp; <span>Agriculture</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Arts and culture">&nbsp; <span>Arts and culture</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Business">&nbsp; <span>Business</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Consumer">&nbsp; <span>Consumer</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Demographics and social">&nbsp; <span>Demographics and social</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Economics ">&nbsp; <span>Economics</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Education">&nbsp; <span>Education</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Energy">&nbsp; <span>Energy</span>
-        </div>
-        <div class="col-md-4" id="data_type_col-2">
-            <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Environment">&nbsp; <span>Environment</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Finance">&nbsp; <span>Finance</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Geospatial/mapping">&nbsp; <span>Geospatial/mapping</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Government operations">&nbsp; <span>Government operations</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Health/healthcare">&nbsp; <span>Health/healthcare</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Housing">&nbsp; <span>Housing</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="International/global development">&nbsp; <span>International/global development</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Legal">&nbsp; <span>Legal</span>
-        </div>
-        <div class="col-md-4" id="data_type_col-3">
-            <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Manufacturing">&nbsp; <span>Manufacturing</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Science and research">&nbsp; <span>Science and research</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Public safety">&nbsp; <span>Public safety</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Tourism">&nbsp; <span>Tourism</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Transportation">&nbsp; <span>Transportation</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Weather">&nbsp; <span>Weather</span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" id="data_use_type_checkbox_other" value="Other">&nbsp; <span>Other</span>
-                  <input type="text" class="form-control" style="display:none" id="data_use_type_other" name="data_use_type_other" placeholder="Provide details">
-        </div>
+        <?php include __DIR__.'/'.'survey_data_use.php'; ?>
       </div>
 <br />
       <!-- Sources of open data -->
