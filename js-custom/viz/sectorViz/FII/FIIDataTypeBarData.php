@@ -79,11 +79,47 @@
 		$data[] = $obj;
 	}
 
-// 2 Environment
+// Environment
 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
 		where org_data_use.profile_id = org_profiles.profile_id
-		and industry_id = 'Insurance'
+		and industry_id = 'Finance and investment' 
+		and data_type = 'Environment'"; 
+
+	if(!$result = $db->query($sql)){
+	    die('There was an error running the query [' . $db->error . ']');
+	}
+
+	while($row = $result->fetch_assoc()){
+		$string1 = $row["count(distinct(org_data_use.profile_id))"];
+	}
+
+	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
+		where org_data_use.profile_id = org_profiles.profile_id
+		and industry_id = 'Insurance' 
 		and data_type = 'Environment'";
+
+	if(!$result = $db->query($sql)){
+	    die('There was an error running the query [' . $db->error . ']');
+	}
+
+	while($row = $result->fetch_assoc()){
+		$string2 = $row["count(distinct(org_data_use.profile_id))"];
+	}
+
+	$num = $string1 + $string2;
+
+	if ($num != 0) {
+		$obj = new stdClass();
+		$obj->app_type = "Environment";
+		$obj->number = $num;
+		$data[] = $obj;
+	}
+
+// Weather
+	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
+		where org_data_use.profile_id = org_profiles.profile_id
+		and industry_id = 'Finance and investment'
+		and data_type = 'Weather'";
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -106,41 +142,11 @@
 		$string2 = $row["count(distinct(org_data_use.profile_id))"];
 	}
 
-	
-	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
-		where org_data_use.profile_id = org_profiles.profile_id
-		and industry_id = 'Finance and investment'
-		and data_type = 'Environment'";
-
-	if(!$result = $db->query($sql)){
-	    die('There was an error running the query [' . $db->error . ']');
-	}
-
-	while($row = $result->fetch_assoc()){
-		$string3 = $row["count(distinct(org_data_use.profile_id))"];
-		// echo var_dump($row);
-	}
-
-	
-
-	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
-		where org_data_use.profile_id = org_profiles.profile_id
-		and industry_id = 'Finance and investment'
-		and data_type = 'Weather'";
-
-	if(!$result = $db->query($sql)){
-	    die('There was an error running the query [' . $db->error . ']');
-	}
-
-	while($row = $result->fetch_assoc()){
-		$string4 = $row["count(distinct(org_data_use.profile_id))"];
-	}
-
-	$num = $string1 + $string2 + $string3 + $string4;
+	$num = $string1 + $string2;
 
 	if ($num != 0) {
 		$obj = new stdClass();
-		$obj->app_type = "Environment";
+		$obj->app_type = "Weather";
 		$obj->number = $num;
 		$data[] = $obj;
 	}

@@ -102,7 +102,7 @@
 	}
 
 // 2 Environment
-	// Healthcare
+	// data type environment
 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
 		where org_data_use.profile_id = org_profiles.profile_id
 		and industry_id = 'Healthcare'
@@ -118,8 +118,8 @@
 
 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
 		where org_data_use.profile_id = org_profiles.profile_id
-		and industry_id = 'Healthcare'
-		and data_type = 'Weather'";
+		and industry_id = 'Water and sanitation'
+		and data_type = 'Environment'";
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -129,10 +129,9 @@
 		$string2 = $row["count(distinct(org_data_use.profile_id))"];
 	}
 
-	// Water and sanitation
 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
 		where org_data_use.profile_id = org_profiles.profile_id
-		and industry_id = 'Water and sanitation'
+		and industry_id = 'Scientific research'
 		and data_type = 'Environment'";
 
 	if(!$result = $db->query($sql)){
@@ -143,9 +142,20 @@
 		$string3 = $row["count(distinct(org_data_use.profile_id))"];
 	}
 
+	$num = $string1 + $string2 + $string3;
+
+	if ($num != 0) {
+		$obj = new stdClass();
+		$obj->app_type = "Environment";
+		$obj->number = $num;
+		$data[] = $obj;
+	}
+
+	///// data type weather
+
 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
 		where org_data_use.profile_id = org_profiles.profile_id
-		and industry_id = 'Water and sanitation'
+		and industry_id = 'Healthcare'
 		and data_type = 'Weather'";
 
 	if(!$result = $db->query($sql)){
@@ -159,8 +169,8 @@
 	// Scientific research
 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
 		where org_data_use.profile_id = org_profiles.profile_id
-		and industry_id = 'Scientific research'
-		and data_type = 'Environment'";
+		and industry_id = 'Water and sanitation'
+		and data_type = 'Weather'";
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -184,11 +194,11 @@
 	}
 
 
-	$num = $string1 + $string2 + $string3 + $string4 + $string5 + $string6;
+	$num = $string1 + $string2 + $string3;
 
 	if ($num != 0) {
 		$obj = new stdClass();
-		$obj->app_type = "Environment";
+		$obj->app_type = "Weather";
 		$obj->number = $num;
 		$data[] = $obj;
 	}

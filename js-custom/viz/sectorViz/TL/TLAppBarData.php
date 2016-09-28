@@ -43,7 +43,7 @@
 	while($row = $result->fetch_assoc()){
 		if ((int)$row["count(distinct(org_name))"] != 0) {
 		$obj = new stdClass();
-		$obj->app_type = "New Product/Service";
+		$obj->app_type = "Development of Products/Services";
 		$obj->number = (int)$row["count(distinct(org_name))"];
 		$data[] = $obj;
 	}}
@@ -92,24 +92,24 @@
 	
 
 // Other
-	$sql = 'SELECT count(distinct(org_name))
-		from org_profiles, data_applications
-		where org_profile_status = "publish"
-		and industry_id = "Transportation and logistics"
-		and org_profiles.profile_id = data_applications.profile_id
-		and data_applications.use_other = 1;';
+	// $sql = 'SELECT count(distinct(org_name))
+	// 	from org_profiles, data_applications
+	// 	where org_profile_status = "publish"
+	// 	and industry_id = "Transportation and logistics"
+	// 	and org_profiles.profile_id = data_applications.profile_id
+	// 	and data_applications.use_other = 1;';
 
-	if(!$result = $db->query($sql)){
-	    die('There was an error running the query [' . $db->error . ']');
-	}
+	// if(!$result = $db->query($sql)){
+	//     die('There was an error running the query [' . $db->error . ']');
+	// }
 
-	while($row = $result->fetch_assoc()){
-		if ((int)$row["count(distinct(org_name))"] != 0) {
-		$obj = new stdClass();
-		$obj->app_type = "Other";
-		$obj->number = (int)$row["count(distinct(org_name))"];
-		$data[] = $obj;
-	}}
+	// while($row = $result->fetch_assoc()){
+	// 	if ((int)$row["count(distinct(org_name))"] != 0) {
+	// 	$obj = new stdClass();
+	// 	$obj->app_type = "Other";
+	// 	$obj->number = (int)$row["count(distinct(org_name))"];
+	// 	$data[] = $obj;
+	// }}
 
 
 	echo json_encode($data);

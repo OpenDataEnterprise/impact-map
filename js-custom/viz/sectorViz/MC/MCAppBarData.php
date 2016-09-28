@@ -83,7 +83,7 @@
 
 	if ($num != 0) {
 		$obj = new stdClass();
-		$obj->app_type = "New Product/Service";
+		$obj->app_type = "Development of Products/Services";
 		$obj->number = $num;
 		$data[] = $obj;
 	}
@@ -172,44 +172,44 @@
 	
 
 // Other
-	$sql = 'SELECT count(distinct(org_name))
-		from org_profiles, data_applications
-		where org_profile_status = "publish"
-		and industry_id = "Telecommunications/internet service providers"
-		and org_profiles.profile_id = data_applications.profile_id
-		and data_applications.use_other = 1;';
+	// $sql = 'SELECT count(distinct(org_name))
+	// 	from org_profiles, data_applications
+	// 	where org_profile_status = "publish"
+	// 	and industry_id = "Telecommunications/internet service providers"
+	// 	and org_profiles.profile_id = data_applications.profile_id
+	// 	and data_applications.use_other = 1;';
 
-	if(!$result = $db->query($sql)){
-	    die('There was an error running the query [' . $db->error . ']');
-	}
+	// if(!$result = $db->query($sql)){
+	//     die('There was an error running the query [' . $db->error . ']');
+	// }
 
-	while($row = $result->fetch_assoc()){
-		$string1 = $row["count(distinct(org_name))"];
-	}
+	// while($row = $result->fetch_assoc()){
+	// 	$string1 = $row["count(distinct(org_name))"];
+	// }
 
-	$sql = 'SELECT count(distinct(org_name))
-		from org_profiles, data_applications
-		where org_profile_status = "publish"
-		and industry_id = "Media and communications"
-		and org_profiles.profile_id = data_applications.profile_id
-		and data_applications.use_other = 1;';
+	// $sql = 'SELECT count(distinct(org_name))
+	// 	from org_profiles, data_applications
+	// 	where org_profile_status = "publish"
+	// 	and industry_id = "Media and communications"
+	// 	and org_profiles.profile_id = data_applications.profile_id
+	// 	and data_applications.use_other = 1;';
 
-	if(!$result = $db->query($sql)){
-	    die('There was an error running the query [' . $db->error . ']');
-	}
+	// if(!$result = $db->query($sql)){
+	//     die('There was an error running the query [' . $db->error . ']');
+	// }
 
-	while($row = $result->fetch_assoc()){
-		$string2 = $row["count(distinct(org_name))"];
-	}
+	// while($row = $result->fetch_assoc()){
+	// 	$string2 = $row["count(distinct(org_name))"];
+	// }
 
-	$num = $string1 + $string2;
+	// $num = $string1 + $string2;
 
-	if ($num != 0) {
-		$obj = new stdClass();
-		$obj->app_type = "Other";
-		$obj->number = $num;
-		$data[] = $obj;
-	}
+	// if ($num != 0) {
+	// 	$obj = new stdClass();
+	// 	$obj->app_type = "Other";
+	// 	$obj->number = $num;
+	// 	$data[] = $obj;
+	// }
 
 
 	echo json_encode($data);

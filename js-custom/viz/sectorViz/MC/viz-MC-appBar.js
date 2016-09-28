@@ -1,7 +1,7 @@
 // global variabls for all three charts
 // Define svg canvas dimensions
 var marginAppBar = {top: 15, right: 0, bottom: 45, left: 40},
-    widthAppBar = 400 - marginAppBar.left - marginAppBar.right,
+    widthAppBar = 450 - marginAppBar.left - marginAppBar.right,
     heightAppBar = 300 - marginAppBar.top - marginAppBar.bottom;
 // Define scale for x axis
 var xAppBar = d3.scale.ordinal()
@@ -24,11 +24,11 @@ var yAxisAppBar = d3.svg.axis()
     // .tickFormat(d3.format("d"));
 // Explanation for data type tick labels 
 var appLabelExplainations = {
-    'Organizational Optimization':"I am an explanation for <br> Organizational Optimization",
-    'New Product/Service':"I am an explanation for <br> New Product and Service",
-    'Advocacy':"I am an explanation for <br> Advocacy",
-    'Research':"I am an explanation for <br> Research",
-    'Other':"I am an explanation for <br> Other"
+    'Organizational Optimization':"E.g. streamline operations,<br>inform strategy, provide<br>competitive information",
+    'Development of Products/Services':"E.g. web and mobile applications,<br>visualization and analytical tools,<br>advisory services",
+    'Advocacy':"E.g. public awareness campaigns,<br>lobbying, promotional, and<br>educational activities",
+    'Research':"E.g. academic, industry,<br>scientific research, and<br>investigative journalism",
+    // 'Other':"I am an explanation for <br> Other"
   }
 drawDataTypeBar();
 
@@ -145,7 +145,7 @@ function wrap(text, width) {
       while (word = words.pop()) {
         line.push(word);
         tspan.text(line.join(" "));
-        if (tspan.node().getComputedTextLength() > width) {
+        if (tspan.node().getComputedTextLength() > width+10) {
           line.pop();
           tspan.text(line.join(" "));
           line = [word];

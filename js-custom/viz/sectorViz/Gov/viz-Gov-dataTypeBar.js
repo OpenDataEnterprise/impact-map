@@ -1,7 +1,7 @@
 // global variabls for all three charts
 // Define svg canvas dimensions
 var marginBar = {top: 15, right: 0, bottom: 45, left: 40},
-    widthBar = 1150 - marginBar.left - marginBar.right,
+    widthBar = 1000 - marginBar.left - marginBar.right,
     heightBar = 350 - marginBar.top - marginBar.bottom;
 // Define scale for x axis
 var x = d3.scale.ordinal()
@@ -24,28 +24,29 @@ var yAxisBar = d3.svg.axis()
     // .tickFormat(d3.format("d"));
 // Explanation for data type tick labels 
 var typeLabelExplainations = {
-    'Geospatial & Mapping':"I am an explanation for <br> Geospatial & Mapping",
-    'Environment':"I am an explanation for <br> Environment",
-    'Transportation':"I am an explanation for <br> Transportation",
-    'Demographics & Social':"I am an explanation for <br> Government Operations",
-    'Housing':"I am an explanation for <br> Housing",
-    'Economics':"I am an explanation for <br> Economics",
-    'Education':"I am an explanation for <br> Education",
-    'Health':"I am an explanation for <br> Health",
-    'Finance':"I am an explanation for <br> Finance",
-    'Public Safety':"I am an explanation for <br> Public Safety",
-    'Energy':"I am an explanation for <br> Energy",
-    'Legal':"I am an explanation for <br> Legal",
-    'Tourism':"I am an explanation for <br> Tourism",
-    'Manufacturing':"I am an explanation for <br> Manufacturing",
-    'Science & Research':"I am an explanation for <br> Science & Research",
-    'Other':"I am an explanation for <br> Other",
-    'Consumer':"I am an explanation for <br> Consumer",
-    'Business':"I am an explanation for <br> Business",
-    'International Development':"I am an explanation for <br> International Development",
-    'Agriculture':"I am an explanation for <br> Agriculture",
-    'Arts & Culture':"I am an explanation for <br> Arts & Culture",
-    'Government Operations':"I am an explanation for <br> Government Operations"
+    'Geospatial & Mapping':"E.g. postal/zip codes, topographic maps,<br>administrative boundaries,<br>national and local maps,<br>land use maps",
+    'Environment':"E.g. climate data,<br>pollution emissions levels,<br>water quality, ecological<br>information, coastal flooding,<br>biodiversity data",
+    'Weather':"E.g. forecasts, temperature,<br>wind and precipitation data",
+    'Transportation':"E.g. public transport schedules<br>and routes, traffic patterns,<br>transport infrastructure,<br>road listings, vehicle<br>and vessel information",
+    'Demographics & Social':"E.g. census, population statistics,<br>household surveys",
+    'Housing':"E.g. land and building permits,<br>land ownership,<br>real estate prices",
+    'Economics':"E.g. unemployment statistics,<br>employment codes, export<br>and import data, foreign investment data,<br>labor statistics",
+    'Education':"E.g. school registries,<br>school performance,<br>student loan data,<br>number of teachers,<br>enrollment, completion,<br>and attendance rates",
+    'Health':"E.g. healthcare facilities,<br>health inspection,<br>healthcare spending,<br>prescription/drugs<br>information, performance,<br>health indicators,<br>drug use, restaurant<br>inspection, immunization rates",
+    'Finance':"E.g. credit records,<br>bankruptcies, tax records,<br>charity registry",
+    'Public Safety':"E.g. crime statistics,<br>workplace safety information",
+    'Energy':"E.g. consumption and production levels,<br>energy infrastructure locations,<br>extractives data",
+    'Legal':"E.g. patents and intellectual property,<br>laws and statutes,<br>public records",
+    'Tourism':"E.g. visitor statistics,<br>event listings,<br>tourist site locations<br>and descriptions",
+    'Manufacturing':"E.g. consumer electonics",
+    'Science & Research':"E.g. genome data,<br>research activity,<br>experiment results",
+    // 'Other':"I am an explanation for <br> Other",
+    'Consumer':"E.g. consumer price indices,<br>product recalls,<br>consumer protection data",
+    'Business':"E.g. company registries,<br>industry classifications",
+    'International Development':"E.g. Aid spending,<br>global development statistics,<br>immigration statistics",
+    'Agriculture':"E.g. commodity prices,<br>soil information,<br>nutritional facts",
+    'Arts & Culture':"E.g. museum information,<br>cultural inventories,<br>art archives",
+    'Government Operations':"E.g. budgets and spending,<br>electoral data,<br>city operations,<br>contracts, salaries,<br>political donations"
 };
 drawDataTypeBar();
 
@@ -162,7 +163,7 @@ function wrap(text, width) {
       while (word = words.pop()) {
         line.push(word);
         tspan.text(line.join(" "));
-        if (tspan.node().getComputedTextLength() > (width+30)) {
+        if (tspan.node().getComputedTextLength() > (width+40)) {
           line.pop();
           tspan.text(line.join(" "));
           line = [word];
