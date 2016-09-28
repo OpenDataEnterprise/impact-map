@@ -84,10 +84,6 @@ $app->notFound(function () use ($app) {
     $app->redirect('/404.html');
 });
 // ************
-$app->get('/', function () use ($app) {
-// echo "route '/'";exit;
-    $app->redirect("http://www.opendataenterprise.org/map.html");
-});
 //-----------------------------------------------------
 // display placeholder landing page
 $app->get('/info', function () use ($app) {
@@ -171,7 +167,7 @@ $app->get('/', function () use ($app) {
 	// Let's make sure we remove a trailing "/" on any not found paths
         $actual_link = rtrim($actual_link, '/');
 	// Any change to below array must also be made to identical array in route "/" around line 91
-	if (in_array($actual_link, array("/about", "/contact", "/convene", "/implement", "/map", "/open-data-roundtables" ))) {
+	if (in_array($actual_link, array("/map", "/regions", "/sectors", "/usecases", "/contact" ))) {
 		echo "in array";
 		$app->redirect($actual_link.".html");
 	}

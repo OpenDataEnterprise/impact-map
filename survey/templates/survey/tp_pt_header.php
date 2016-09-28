@@ -37,7 +37,7 @@
       <a class="navigation-link" href="/sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Sector</a>
       <a class="last-left navigation-link" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a>
       <a class="navigation-link secondary-navigation-link" href="/contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a>
-      <a class="navigation-link secondary-navigation-link" href="/survey.html"><span class="fontawesome-icon"></span>&nbsp;Submit Survey</a>
+      
     </div>
     <div class="mobile-navigation-container w-clearfix w-hidden-main"><a class="mobile-menu-button" data-ix="open-mobile-menu" href="#"><span class="fontawesome-icon"></span> Menu</a><a class="close-menu-button" data-ix="close-mobile-menu" href="#"><span class="fontawesome-icon"></span> Close</a>
       <div class="mobile-navigation-title">Open Data Impact Map Survey</div>
