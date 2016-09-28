@@ -1,0 +1,283 @@
+@media screen and (min-width: 480px){
+  
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+    padding-bottom: 20px;
+    font-family: Palanquin, sans-serif;
+    color: #333;
+ 	font-size: 14px;
+ 	line-height: 22px;
+}
+
+.lg-font p {
+  font-size: 1.2em;
+}
+
+p, p.muted {
+	text-align: left;
+	font-weight: normal;
+	line-height: 1em;
+	margin-bottom: 0px;
+	margin-top: 8px;
+	font-family: Palanquin, sans-serif;
+	font-size: 18px;
+	color: black;
+}
+
+p.muted {
+	color: #999999;
+}
+
+.dataUseData__clear {
+	font-weight: bold;
+	cursor: pointer; cursor: hand;
+}
+
+.data-src-row, .data-use-row {
+	margin-bottom: 2px;
+}
+
+.add_data_src_btn_row {
+	padding-bottom: 2px;
+	border-bottom: 1px solid #eee;
+}
+
+#industry_id_other {
+	margin-top: 2px;
+}
+
+small.required, small.optional {
+	color: red;
+	font-weight: normal;
+	font-style: italic;
+}
+
+div.od-purpose {
+	margin-left: 24px;
+}
+
+/* Theme section */
+
+#role-intro {
+	background-color: rgb(255, 255, 255);
+	font-size: 16px;
+	color: #333;
+	padding: 12px 64px 0 64px;
+	line-height: 1.8em;
+}
+
+#role-intro h2 {
+	color: rgb(62, 165, 221);
+	text-align: center;
+	font-size: 1.5em;
+}
+
+#role-intro .col-md-6{
+	padding-right: 5px;
+}
+
+#role-eligibility {
+	background-color: rgb(244, 245, 246);
+	color: rgb(120, 120, 120);
+	border: 1px solid rgb(217, 217, 218);
+	padding: 12px 32px 32px 40px;
+	margin-bottom: 2.0em;
+	margin-top: 20px;
+	font-size: 14px;
+}
+
+#role-eligibility h4 {
+	color: rgb(85, 85, 85);
+	font-size: 16px;
+}
+
+#role-eligibility b {
+	color: rgb(85, 85, 85);
+	font-size: 14px;
+}
+
+#role-eligibility li{
+	margin-bottom: 0;
+}
+
+
+#role-eligibility ul {
+	margin: .5em 0 .5em 0 !important;
+}
+
+#org_description, #org_additional {
+	height:70px; 
+	min-height:70px;
+	font-size: 14px;
+}
+
+#org_additional {
+	min-height: 124px;
+}
+
+#role-orgInfo-titlebar {
+	background-color: #34546D;
+	color: rgb(255, 255, 255);
+	padding: 1px 0.85em 0.70em 24px;
+	margin-bottom: 0px;
+	border-top-left-radius: 10px 10px;
+	border-top-right-radius: 10px 10px;
+}
+
+#role-orgInfo-titlebar .section-title h3 {
+	color: rgb(255, 255, 255);
+	font-size: 27px;
+	font-weight: 200;
+}
+
+#role-orgInfo .share-row{
+	display: inline-block;
+}
+
+
+#role-orgInfo {
+	/*background-color: rgb(253,228,156);*/
+	padding: 1.5em 0 8px 24px;
+	border: 1px solid rgb(217, 217, 218);
+	padding: 1.5em 0 8px 24px;
+	margin-bottom: 0px;
+	border-bottom-left-radius: 10px 10px;
+	border-bottom-right-radius: 10px 10px;
+}
+
+#role-dataUse-titlebar {
+	background-color: #D69F3E;
+	color: rgb(255, 255, 255);
+	padding: 1px 0.85em 0.70em 24px;
+	margin-bottom: 0px;
+	border-top-left-radius: 10px 10px;
+	border-top-right-radius: 10px 10px;
+}
+
+#role-dataUse-titlebar .section-title h3 {
+	color: rgb(255, 255, 255);
+	font-size: 27px;
+	font-weight: 200;
+}
+
+#role-dataUse {
+	padding: 1.5em 0 8px 24px;
+	border: 1px solid rgb(217, 217, 218);
+	padding: 1.5em 0 8px 24px;
+	margin-bottom: 0px;
+	border-bottom-left-radius: 10px 10px;
+	border-bottom-right-radius: 10px 10px;
+}
+
+#role-contact-titlebar {
+	background-color: #50B094;
+	color: rgb(255, 255, 255);
+	padding: 1px 0.85em 0.70em 24px;
+	margin-bottom: 0px;
+	border-top-left-radius: 10px 10px;
+	border-top-right-radius: 10px 10px;
+}
+
+#role-contact-titlebar .section-title h3 {
+	color: rgb(255, 255, 255);
+	font-size: 27px;
+	font-weight: 200;
+}
+
+#role-contact-titlebar small {
+	color: rgb(240, 240, 240);
+	font-size: 0.5em;
+}
+
+#role-contact {
+	padding: 1.5em 0 8px 24px;
+	border: 1px solid rgb(217, 217, 218);
+	padding: 1.5em 0 8px 24px;
+	margin-bottom: 0px;
+	border-bottom-left-radius: 10px 10px;
+	border-bottom-right-radius: 10px 10px;
+}
+
+.data_detail_row {
+	padding-bottom: 8px;
+}
+
+.data_detail_row:nth-of-type(even){
+  background-color:rgb(240,240,240);
+}
+
+.rm-type {
+	color: #333;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.error {
+    color: red;
+}
+
+h3 {
+    margin: 24px 0px 16px 0px;
+}
+
+.footer-section {
+	text-align:right;
+	padding: 8px 12px 8px 0px;
+	background-color: rgb(4, 15, 78);
+	margin-top:65px;
+}
+
+.footer-container {
+	text-align:right;
+	font-size: 8px;
+	color: rgb(255, 255, 255); 
+}
+
+/* Bootstrap overrides */
+/* darken selected buttons */
+
+label.btn.active {
+	background-color: #bfbfbf;
+}
+
+label {
+	display: block;
+	font-size: 16px;
+}
+
+.navigation a:hover{
+  text-decoration: none;
+}
+
+#survey_intro{
+	text-align: center;
+	font-weight: bold;
+}
+
+.survey-header-background {
+	background-image: url(../img/survey_head_image.png);
+	background-position: 0 0;
+	background-size: cover;
+	display: flex;
+	height: 225px;
+	-webkit-box-orient: vertical;
+	-webkit-box-directional: normal;
+	flex-direction: column;
+	justify-content: space-around;
+	background-repeat: no-repeat, no-repeat, repeat;
+}
+
+.footer {
+	margin-top: 10px;
+}
+
+#btnSubmit {
+	padding:1em 2em 1em 2em; 
+	width:200px; 
+	background-color: #376D86;
+}

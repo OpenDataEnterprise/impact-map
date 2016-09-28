@@ -1,0 +1,541 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TestProject\n"
+"POT-Creation-Date: 2015-06-09 11:30-0500\n"
+"PO-Revision-Date: 2015-06-09 11:48-0500\n"
+"Last-Translator: \n"
+"Language-Team: MyTeam <team@example.com>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#Test token 1
+msgid "HELLO_WORLD"
+msgstr "TOKEN 1"
+
+#Test token 2
+msgid "TEST_TRANSLATION"
+msgstr "TOKEN 2"
+
+#Thank you for participating in the Open Data Impact Map, the first centralized, searchable database of open data use cases from around the world.
+msgid "THANKS_PARTICIPATING"
+msgstr "Obrigado pela sua participação no Open Data Impact Map, o primeiro repositório centralizado e pesquisável de casos de utilzação de dados abertos em todo o mundo."
+
+#Your contribution makes it possible to better understand the value of open data and encourage its use globally.
+msgid "YOUR_CONTRIBUTION"
+msgstr "A sua contribuição torna possível um conhecimento mais aprofundado do valor dos dados abertos e também encoraja o seu uso a nível global."
+
+#Information collected will be displayed on the Map and will be made available as open data.
+msgid "INFO_COLLECTED"
+msgstr "A informação submetida será apresentada no Mapa e estará acessível em formato de dados abertos."
+
+#ELIGIBILITY
+msgid "ELIGIBILITY"
+msgstr "REQUISITOS PARA PARTICIPAÇÃO"
+
+#The Open Data Impact Map includes organizations that:
+msgid "MAP_INCLUDES_ORGS"
+msgstr "O Open Data Impact Map inclui organizações que:"
+
+#are companies, non-profits, or developer groups; and
+msgid "ARE_COMPANIES"
+msgstr "sejam empresas, organizações sem fins lucrativos, ou grupos / comunidades de prática de governo aberto, e"
+
+#use open government data for advocacy, to develop products and services, improve operations, inform strategy and/or conduct research.
+msgid "USE_OPEN_GOVERNMENT_DATA"
+msgstr "utilizem dados governamentais abertos para ativismo, desenvolvimento de produtos ou serviços, melhoria na gestão de operaçoes, ou em pesquisa e/ou estratégia."
+
+#We define open government data as publicly available data that is produced or commissioned by governments and that can be accessed and reused by anyone, free of charge.
+msgid "WE_DEFINE_OPEN"
+msgstr "Nós entendemos dados governamentais abertos como dados produzidos ou comissionados pelo Governo e Setor Público, e que estão disponíveis de forma livre tanto no acesso como na reutilização."
+
+#1. Organizational Information
+msgid "ORG_INFO"
+msgstr "Informação sobre a Organização"
+
+#Name of organization
+msgid "ORG_NAME"
+msgstr "Organização"
+
+#One sentence description of organization
+msgid "ORG_DESC"
+msgstr "Uma frase que descreva a organização"
+
+#400 characters or less
+msgid "400_CHAR"
+msgstr "máximo 400 carateres"
+
+#Type of organization
+msgid "ORG_TYPE"
+msgstr "Tipo de Organização"
+
+#For-profit
+msgid "FOR-PROFIT"
+msgstr "Privada"
+
+#Nonprofit
+msgid "NONPROFIT"
+msgstr "Sem fins lucrativos"
+
+#Developer group
+msgid "DEVELOPER_GROUP"
+msgstr "Grupo ou Comunidade de prática de governo aberto"
+
+#other
+msgid "OTHER"
+msgstr "Outro"
+
+#Website URL
+msgid "WEBSITE_URL"
+msgstr "URL do website"
+
+#No URL
+msgid "NO_URL"
+msgstr "Sem URL"
+
+#Location
+msgid "LOCATION"
+msgstr "Localização"
+
+#Please provide as specific as possible
+msgid "SPECIFIC_AS_POSSIBLE"
+msgstr "Por favor seja o mais específico possível"
+
+#Industry/category of the organization
+msgid "IND"
+msgstr "Setor/Área da organização"
+
+#select 1
+msgid "SELECT_1"
+msgstr "Selecione 1"
+
+#Agriculture 
+msgid "AGR"
+msgstr "Agricultura"
+
+#Arts and culture 
+msgid "ART"
+msgstr "Artes e cultura"
+
+#Business & legal services 
+msgid "BUS"
+msgstr "Serviços empresariais ou legais"
+
+#Consumer services 
+msgid "CSM"
+msgstr "Mercado do consumidor"
+
+#Data/information technology 
+msgid "DAT"
+msgstr "Dados/Tecnologias de Informação"
+
+#Education 
+msgid "EDU"
+msgstr "Ensino"
+
+#Energy 
+msgid "NGY"
+msgstr "Energia"
+
+#Environment 
+msgid "ENV"
+msgstr "Ambiente"
+
+#Finance and investment
+msgid "FIN"
+msgstr "Finanças e investimentos"
+
+#Geospatial/mapping 
+msgid "GEO"
+msgstr "Geo-espacial"
+
+#Governance 
+msgid "GOV"
+msgstr "Governância e democracia"
+
+#Healthcare 
+msgid "HLT"
+msgstr "Serviços de Saúde"
+
+#Housing and real estate 
+msgid "HOU"
+msgstr "Casas e Imobiliário"
+
+#Insurance 
+msgid "INS"
+msgstr "Seguros"
+
+#Media and communications 
+msgid "COM"
+msgstr "Comunicação e mídia"
+
+#Mining/Manufacturing 
+msgid "MAN"
+msgstr "Indústria e manufatura"
+
+#Research and consulting 
+msgid "RSH"
+msgstr "Pesquisa e consultoria"
+
+#Security and public safety
+msgid "SEC"
+msgstr "Segurança pública e privada"
+
+#Scientific research 
+msgid "SCI"
+msgstr "Pesquisa científica"
+
+#Telecommunications/internet service providers (ISPs) 
+msgid "TEL"
+msgstr "Telecomunicações/Internet"
+
+#Tourism 
+msgid "TOR"
+msgstr "Turismo"
+
+#Transportation and logistics 
+msgid "TRN"
+msgstr "Transportes e logística"
+
+#Water and sanitation 
+msgid "WAT"
+msgstr "Água e saneamento"
+
+#Weather 
+msgid "WEA"
+msgstr "Metereologia"
+
+#Founding year
+msgid "FOUNDING_YEAR"
+msgstr "Ano de fundação"
+
+#Size
+msgid "SIZE"
+msgstr "Tamanho"
+
+#1-10 employees
+msgid "1-10"
+msgstr "1-10 colaboradores"
+
+#11-50 employees
+msgid "11-50 colaboradores"
+msgstr ""
+
+#51-200 employees
+msgid "51-200"
+msgstr "51-200 colaboradores"
+
+#201-1000 employees
+msgid "201-1000"
+msgstr "102-1000 colaboradores"
+
+#1000+ employees
+msgid "1000+"
+msgstr "1000+ colaboradores"
+
+#What is the greatest type of impact your organization has?
+msgid "GREATEST_IMPACT"
+msgstr "Qual é o maior impacto da sua organização?"
+
+#Economic
+msgid "ECONOMIC"
+msgstr "ECONOMICO"
+
+#Environmental
+msgid "ENVIRONMENTAL"
+msgstr "AMBIENTAL"
+
+#Governance
+msgid "GOVERNANCE"
+msgstr "GOVERNANCIA E DEMOCRACIA"
+
+#Social
+msgid "SOCIAL"
+msgstr "SOCIAL"
+
+#Provide details
+msgid "PROVIDE_DETAILS"
+msgstr "Por favor explique"
+
+#2. Use of Open Data
+msgid "USE_OF_OPEN_DATA"
+msgstr "Utilização de dados abertos"
+
+#What are the most relevant types of open data your organization uses?
+msgid "MOST_RELEVANT_OPEN_DATA"
+msgstr "Quais são os dados abertos mais importantes para a sua organização"
+
+#most relevant
+msgid "MOST_RELEVANT"
+msgstr "Os mais importantes"
+
+#types of data your organization uses?
+msgid "TYPES_OF_DATA"
+msgstr "dados abertos que a sua organização utiliza"
+
+#select all that apply
+msgid "SELECT_ALL"
+msgstr "Selecione todos os campos aplicáveis"
+
+#Agriculture 
+msgid "AGRICULTURE"
+msgstr "Agricultura"
+
+#Arts and culture 
+msgid "ARTS_AND_CULTURE"
+msgstr "Artes e cultura"
+
+#Business 
+msgid "BUSINESS"
+msgstr "Negócios e empresas"
+
+#Consumer 
+msgid "CONSUMER"
+msgstr "Consumo"
+
+#Demographics and social 
+msgid "DEMOGRAPHICS"
+msgstr "Dados demográficos"
+
+#Economics 
+msgid "ECONOMICS"
+msgstr "Economia"
+
+#Education 
+msgid "EDUCATION"
+msgstr "Ensino"
+
+#Energy
+msgid "ENERGY"
+msgstr "Energia"
+
+#Environment 
+msgid "ENVIRONMENT"
+msgstr "Ambiente"
+
+#Finance 
+msgid "FINANCE"
+msgstr "Mercado e finanças"
+
+#Geospatial/mapping 
+msgid "GEOSPATIAL"
+msgstr "Dados geográficos/geo-espaciais"
+
+#Government operations 
+msgid "GOVERNMENT_OPS"
+msgstr "Serviços do Governo"
+
+#Health/healthcare 
+msgid "HEALTH"
+msgstr "Serviços de saúde"
+
+#Housing 
+msgid "HOUSING_CAT"
+msgstr "Casas e imobiliário"
+
+#International/global development 
+msgid "INTERNATIONAL"
+msgstr "Desenvolvimento internacional"
+
+#Legal
+msgid "LEGAL"
+msgstr "Dados jurídico-legais"
+
+#Manufacturing 
+msgid "MANUFACTURING"
+msgstr "Indústria e manufatura"
+
+#Science and research 
+msgid "SCIENCE_AND_RESEARCH"
+msgstr "Ciências e pesquisa"
+
+#Public safety 
+msgid "PUBLIC_SAFETY"
+msgstr "Segurança Pública"
+
+#Tourism 
+msgid "TOURISM"
+msgstr "Turismo"
+
+#Transportation 
+msgid "TRANSPORTATION"
+msgstr "Transportes"
+
+#Weather 
+msgid "WEATHER"
+msgstr "Meteorologia"
+
+#Number of countries from which open data is provided
+msgid "NUM_OF_COUNTRIES"
+msgstr "Número de países de onde são originários os dados"
+
+#Indicate the country that provide the data, and whether the data is National or State / Local (state/province/city).
+msgid "INDICATE_COUNTRY_THAT"
+msgstr "Indique o país origem dos dados, e qual o nível da administração (Nacional ou Estatal/Local)"
+
+#Data source - Country
+msgid "DATA_SOURCE_COUNTRY"
+msgstr "Origem - País"
+
+#Select
+msgid "SELECT"
+msgstr "Selecione"
+
+#1 country 
+msgid "1_COUNTRY"
+msgstr "País"
+
+#2-5 countries 
+msgid "2-5_COUNTRIES"
+msgstr "2-5 países"
+
+#6-10 countries 
+msgid "6-10_COUNTRIES"
+msgstr "6-10 países"
+
+#11-20 countries 
+msgid "11-20_COUNTRIES"
+msgstr "11-20 países"
+
+#21-50 countries 
+msgid "21-50_COUNTRIES"
+msgstr "21-50 países"
+
+#50+ countries
+msgid "50+_COUNTRIES"
+msgstr "50+ países"
+
+#How does your organization use open data?
+msgid "HOW_USE_OPEN_DATA"
+msgstr "De que forma a sua organização utiliza dados aberto"
+
+#advocacy
+msgid "ADVOCACY"
+msgstr "Ativismo"
+
+#new products, services, or applications
+msgid "PRODUCTS_SERVICES"
+msgstr "novos produtos, serviços, ou aplicações"
+
+#organizational optimization 
+msgid "ORG_OPTIMIZATION"
+msgstr "otimização organizacional"
+
+#(e.g. benchmarking, market analysis, improving efficiency, enhancing existing products and services)
+msgid "EG_BENCHMARKING"
+msgstr "(e.g. benchmarking, análise de mercado, aumento de eficiência, melhoria de produtos e serviços já existentes)"
+
+#research
+msgid "RESEARCH"
+msgstr "Pesquisa"
+
+#Which datasets are most valuable to your organization? 
+msgid "WHICH_DATASETS_MOST_VALUABLE"
+msgstr "Quais os datasets que têm mais valor para a sua organização?"
+
+#What other types of data does your organization use in addition to open government data?
+msgid "WHAT_OTHER_TYPES_OF_DATA"
+msgstr "Para além de dados aberto, que outro tipo de dados a sua organização utiliza?"
+
+#Additional information
+msgid "ADDITIONAL_INFORMATION"
+msgstr "Informação adicional"
+
+#E.g. How could the open data your organization uses be improved? 
+msgid "EG_HOW_COULD"
+msgstr "De que forma se poderá melhorar os dados abertos que a sua organização utiliza?"
+
+#3. Contact Information
+msgid "CONTACT_INFORMATION"
+msgstr "Contato"
+
+#optional
+msgid "OPTIONAL"
+msgstr "Opcional"
+
+#This information will not be made public
+msgid "NOT_BE_MADE_PUBLIC"
+msgstr "Esta informação não será tornada pública"
+
+#First name
+msgid "FIRST_NAME"
+msgstr "Primeiro nome"
+
+#Last name
+msgid "LAST_NAME"
+msgstr "Nome de família"
+
+#Title
+msgid "TITLE"
+msgstr "Prefixo"
+
+#Email
+msgid "EMAIL"
+msgstr "Email"
+
+#Phone
+msgid "PHONE"
+msgstr "Telefone"
+
+#All submissions will be reviewed before public display on the Open Data Impact Map.
+msgid "SUBMISSIONS_REVIEWED"
+msgstr "Todos os dados enviados serão revistos antes de serem apresentados no Open Data Impact Map"
+
+#SUBMIT
+msgid "SUBMIT"
+msgstr "ENVIAR"
+
+#"provide as much information as possible" 
+msgid "PROVIDE_AS_MUCH_INFO"
+msgstr "Por favor seja o mais detalhado possível"
+
+#"provide examples" 
+msgid "PROVIDE_EXAMPLES"
+msgstr "Exemplos"
+
+#"enter a location" 
+msgid "ENTER_LOCATION"
+msgstr "Insira a localização"
+
+#"Select countries providing data used by your organization"  
+msgid "SELECT_COUNTRIES_PROVIDING_DATA"
+msgstr "Escolha os países de onde são originários os dados"
+
+#"national/local" 
+msgid "NATIONAL_LOCAL"
+msgstr "National/Local"
+
+#"data source - country" 
+msgid "DATA_SOURCE"
+msgstr "Origem - País"
+
+#"Click national and/or local to show government level of data used" 
+msgid "SHOW_GOVERNMENT_LEVEL"
+msgstr "Escolha Nacional e/ou Local referente ao nível da administração"
+
+#"required" 
+msgid "REQUIRED"
+msgstr "campo obrigatório"
+
+#"This field is required" 
+msgid "FIELD_REQUIRED"
+msgstr "campo obrigatório"
+
+#"Please enter a valid URL."
+msgid "ENTER_VALID_URL"
+msgstr "Insira um URL válido"
+
+#The Open Data Impact Map, a project of the Center for Open Data Enterprise as part of the OD4D network, is licensed under
+msgid "OD4D_ATTRIBUTION"
+msgstr "O Open Data Impact Map é um pojeto do Center for Open Data Enterprise comom parte da OD4D network, e está licenciado como"
+
+#Creative Commons Attribution-Share Alike 4.0 International License
+msgid "CREATIVE_COMMONS_LICENSE"
+msgstr "#Creative Commons Attribution-Share Alike 4.0 International License"        
+
+
