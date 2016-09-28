@@ -1421,7 +1421,7 @@ li {
 }
 
 .case-study-title {
-  display: inline-block;
+  display: inline;
   margin-top: -10px;
   margin-bottom: 0px;
   padding-top: 0px;
@@ -2582,7 +2582,7 @@ li {
 }
 
 .modal-wrapper.yeleman-modal {
-  display: block;
+  display: none;
 }
 
 .modal-wrapper.yeleman1-modal {
@@ -2622,6 +2622,266 @@ li {
 }
 
 .modal-wrapper.test_modal_5 {
+  display: none;
+}
+
+.modal-wrapper.younginnovation-modal {
+  display: none;
+}
+
+.modal-wrapper.tuvalabs-modal {
+  display: none;
+}
+
+.modal-wrapper.bre_modal {
+  display: none;
+}
+
+.modal-wrapper.aidin_modal {
+  display: none;
+}
+
+.modal-wrapper.budgetstories_modal {
+  display: none;
+}
+
+.modal-wrapper.bres_modal {
+  display: none;
+}
+
+.modal-wrapper.calcbench_modal {
+  display: none;
+}
+
+.modal-wrapper.cgpa_modal {
+  display: none;
+}
+
+.modal-wrapper.chequeado_modal {
+  display: none;
+}
+
+.modal-wrapper.deolho_modal {
+  display: none;
+}
+
+.modal-wrapper.eaz_modal {
+  display: none;
+}
+
+.modal-wrapper.eduweb_modal {
+  display: none;
+}
+
+.modal-wrapper.younginnovations1-modal {
+  display: none;
+}
+
+.modal-wrapper.younginnovations0-modal {
+  display: none;
+}
+
+.modal-wrapper.yeleman0-modal {
+  display: none;
+}
+
+.modal-wrapper.twaweza0-modal {
+  display: none;
+}
+
+.modal-wrapper.tuvalabs0-modal {
+  display: none;
+}
+
+.modal-wrapper.thinknum0-modal {
+  display: none;
+}
+
+.modal-wrapper.teri0-modal {
+  display: none;
+}
+
+.modal-wrapper.telefonica0-modal {
+  display: none;
+}
+
+.modal-wrapper.sumobrain0-modal {
+  display: none;
+}
+
+.modal-wrapper.sagaciresearch0-modal {
+  display: none;
+}
+
+.modal-wrapper.rightship0-modal {
+  display: none;
+}
+
+.modal-wrapper.rainbowagri0-modal {
+  display: none;
+}
+
+.modal-wrapper.railyatri0-modal {
+  display: none;
+}
+
+.modal-wrapper.quandl0-modal {
+  display: none;
+}
+
+.modal-wrapper.qedu0-modal {
+  display: none;
+}
+
+.modal-wrapper.prosperdaily0-modal {
+  display: none;
+}
+
+.modal-wrapper.paastot0-modal {
+  display: none;
+}
+
+.modal-wrapper.otthonterkep0-modal {
+  display: none;
+}
+
+.modal-wrapper.openoil0-modal {
+  display: none;
+}
+
+.modal-wrapper.openbudget0-modal {
+  display: none;
+}
+
+.modal-wrapper.ojoconmipisto0-modal {
+  display: none;
+}
+
+.modal-wrapper.odekro0-modal {
+  display: none;
+}
+
+.modal-wrapper.nzier0-modal {
+  display: none;
+}
+
+.modal-wrapper.navut0-modal {
+  display: none;
+}
+
+.modal-wrapper.mobilecontent0-modal {
+  display: none;
+}
+
+.modal-wrapper.michaelculture0-modal {
+  display: none;
+}
+
+.modal-wrapper.medicat0-modal {
+  display: none;
+}
+
+.modal-wrapper.mapyourproperty0-modal {
+  display: none;
+}
+
+.modal-wrapper.manditrades0-modal {
+  display: none;
+}
+
+.modal-wrapper.lade0-modal {
+  display: none;
+}
+
+.modal-wrapper.lanacion0-modal {
+  display: none;
+}
+
+.modal-wrapper.katadata0-modal {
+  display: none;
+}
+
+.modal-wrapper.instavin0-modal {
+  display: none;
+}
+
+.modal-wrapper.iadltd0-modal {
+  display: none;
+}
+
+.modal-wrapper.haezoom0-modal {
+  display: none;
+}
+
+.modal-wrapper.greenpatrol0-modal {
+  display: none;
+}
+
+.modal-wrapper.goodguide0-modal {
+  display: none;
+}
+
+.modal-wrapper.geopostcodes0-momdal {
+  display: none;
+}
+
+.modal-wrapper.farmlogs0-modal {
+  display: none;
+}
+
+.modal-wrapper.farmerline0-modal {
+  display: none;
+}
+
+.modal-wrapper.factly0-modal {
+  display: none;
+}
+
+.modal-wrapper.excelgeomatics0-modal {
+  display: none;
+}
+
+.modal-wrapper.enova0-modal {
+  display: none;
+}
+
+.modal-wrapper.eduweb0-modal {
+  display: none;
+}
+
+.modal-wrapper.eaz0-modal {
+  display: none;
+}
+
+.modal-wrapper.deolhonasmetas0-modal {
+  display: none;
+}
+
+.modal-wrapper.culturalroutes0-modal {
+  display: none;
+}
+
+.modal-wrapper.chequeado0-modal {
+  display: none;
+}
+
+.modal-wrapper.cgpa0-modal {
+  display: none;
+}
+
+.modal-wrapper.calcbench0-modal {
+  display: none;
+}
+
+.modal-wrapper.budgetstories0-modal {
+  display: none;
+}
+
+.modal-wrapper.bre0-modal {
+  display: none;
+}
+
+.modal-wrapper.aidin0-modal {
   display: none;
 }
 
@@ -2903,6 +3163,10 @@ li {
   display: block;
 }
 
+.test_modal.modal-wrapper {
+  display: none;
+}
+
 .test_container_1 {
   display: inline-block;
 }
@@ -2920,6 +3184,38 @@ li {
 }
 
 .test_container_5 {
+  display: inline-block;
+}
+
+.younginnovations-con {
+  display: inline-block;
+}
+
+.yeleman-con {
+  display: block;
+}
+
+.twaweza-con {
+  display: inline-block;
+}
+
+.tuvalabs-con {
+  display: inline-block;
+}
+
+.aidin_container {
+  display: inline-block;
+}
+
+.bre_container {
+  display: inline-block;
+}
+
+.test_containerone {
+  display: inline-block;
+}
+
+.yeleman1 {
   display: inline-block;
 }
 
