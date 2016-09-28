@@ -5,7 +5,7 @@
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Arts and culture">&nbsp; <span>Arts and culture</span>
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Business">&nbsp; <span>Business</span>
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Consumer">&nbsp; <span>Consumer</span>
-    <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Demographics and social">&nbsp; <span>Demographics and social</span>
+    <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Demographic and social">&nbsp; <span>Demographic and social</span>
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Economics ">&nbsp; <span>Economics</span>
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Education">&nbsp; <span>Education</span>
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Energy">&nbsp; <span>Energy</span>
@@ -13,11 +13,11 @@
 <div class="col-md-4" id="data_type_col-2">
     <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Environment">&nbsp; <span>Environment</span>
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Finance">&nbsp; <span>Finance</span>
-    <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Geospatial/mapping">&nbsp; <span>Geospatial/mapping</span>
+    <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Geospatial">&nbsp; <span>Geospatial</span>
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Government operations">&nbsp; <span>Government operations</span>
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Health/healthcare">&nbsp; <span>Health/healthcare</span>
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Housing">&nbsp; <span>Housing</span>
-    <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="International/global development">&nbsp; <span>International/global development</span>
+    <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="International development">&nbsp; <span>International development</span>
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Legal">&nbsp; <span>Legal</span>
 </div>
 <div class="col-md-4" id="data_type_col-3">
