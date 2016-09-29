@@ -20,8 +20,7 @@ textdomain($domain);
  <form id="survey_form" class="form-horizontal" style="border:0px dotted black;" action="/survey/2du/<?php echo $content['surveyId'] ?>" method="post">
 
     <div class="col-md-12" role="Intro" id="role-intro">
-      <div style="font-size:1.1em;margin-top:20px;">
-        <div class="col-md-6 small">&nbsp;</div>
+      <div style="font-size:1.1em;margin-top:20px;">        
         <div class="warning">FOR INTERNAL USE ONLY</div>         
       </div>
       <br />
@@ -321,7 +320,7 @@ textdomain($domain);
           <div for="survey_contact_email">Phone <i>(optional)</i></div>
           <input type="text" class="form-control" id="survey_contact_phone" name="survey_contact_phone">
 
-          <input type="hidden" class="form-control" id="org_profile_year" name="org_profile_year" value="2015">
+          <input type="hidden" class="form-control" id="org_profile_year" name="org_profile_year" value="2016">
           <div for="org_profile_status">Profile status</div>
           <input type="input" class="form-control" id="org_profile_status" name="org_profile_status" value="Hold">
           <div for="org_profile_src">Profile source</div>
@@ -335,7 +334,7 @@ textdomain($domain);
 
     <div class="col-md-12" role="submit-note" id="role-submit-note">
       <div style="text-align:center;font-size:16px;margin-top:20px;">
-        <b><i>All submissions will be reviewed before public display on the Open Data Impact Map.</i></b>
+        <b>Information collected will be reviewed before it is displayed on the Map and made available as open data.</b>
       </div>
       <br />
     </div>
@@ -344,23 +343,7 @@ textdomain($domain);
       <button class="btn btn-primary" style="padding:1em 2em 1em 2em; width:200px; background-color: rgb(53, 162, 227);" id="btnSubmit" type="submit" name="submit" value="submit">SUBMIT</button>
     </div>
 
-    <div class="w-section attribution" style="margin-top:12px;">
-      <div class="w-container">
-        <div class="">
-          <hr>
-          <div class="w-row row-attribution" >
-            <div class="w-col w-col-3"><a href="http://od4d.net"><img class="logo-od4" src="/survey/img/od4-logo-black.png" width="200"></a>
-            </div>
-            <div class="w-col w-col-3" style="text-align:center;"><a class="link-attribution" href="http://creativecommons.org/licenses/by-sa/4.0/"><img class="logo-cc" src="/survey/img/creative_commons_logo.png" width="150"></a>
-            </div>
-            <div class="w-col w-col-6">
-              <div class="text-attribution">The Open Data Impact Map, a project of the Center for Open Data Enterprise as part of the OD4D network, is licensed under&nbsp;<a class="link-attribution" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-Share Alike 4.0 International License</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
 
   </div>
 
@@ -370,5 +353,5 @@ textdomain($domain);
 <!-- I think I am missing a closing </div> gut things are working. -->
 <!-- end container - where is the tag? -->
 
-<?php include __DIR__.'/'.'tp_pt_footer_less_req.php'; ?>
+<?php include __DIR__.'/'.'tp_pt_footer.php'; ?>
 
