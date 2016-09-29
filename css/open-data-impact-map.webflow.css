@@ -3219,6 +3219,12 @@ li {
   display: inline-block;
 }
 
+.inpage_anchor {
+  display: inline;
+  width: 0px;
+  height: 0px;
+}
+
 @media (max-width: 991px) {
   .navigation {
     display: block;
