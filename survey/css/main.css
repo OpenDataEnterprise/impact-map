@@ -281,3 +281,11 @@ label {
 	width:200px; 
 	background-color: #376D86;
 }
+
+/* Internal Survey */
+
+#role-intro .warning{
+	text-align: center;
+}
+
+
