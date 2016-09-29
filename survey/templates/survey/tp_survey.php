@@ -163,7 +163,7 @@ textdomain($domain);
         <label for="org_size_id">Size<small class="required">*</small></label>
         <label id="org_size_id-error" class="error" for="org_size_id"></label>
         <div class="col-md-12">
-
+          <?php include __DIR__.'/'.'survey_size.php'; ?>
         </div>
       </div>
 
@@ -172,7 +172,23 @@ textdomain($domain);
         <label for="org_greatest_impact">What is the greatest type of impact your organization has?<small class="required">*</small></label>
         <label id="org_greatest_impact-error" class="error" for="org_greatest_impact"></label>
         <div class="col-xs-9">
-          <?php include __DIR__.'/'.'survey_size.php'; ?>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="radio" name="org_greatest_impact" id="Economic" value="Economic" /> Economic
+            </label>
+            <label class="btn btn-default">
+                <input type="radio" name="org_greatest_impact" id="Environmental" value="Environmental" /> Environmental
+            </label>
+            <label class="btn btn-default">
+                <input type="radio" name="org_greatest_impact" id="Governance" value="Governance" /> Governance
+            </label>
+            <label class="btn btn-default">
+                <input type="radio" name="org_greatest_impact" id="Social" value="Social" /> Social
+            </label>
+            <label class="btn btn-default">
+                <input type="radio" name="org_greatest_impact" id="Other" value="Other" /> Other
+            </label>
+          </div>
         </div>
         <div class="col-md-10" id="org_greatest_impact_detail_div"><input type="text" class="form-control" id="org_greatest_impact_detail" name="org_greatest_impact_detail" placeholder="<?php echo _("Provide details") ?>" required></div>
       </div>
