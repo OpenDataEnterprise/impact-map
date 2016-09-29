@@ -1,0 +1,544 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TestProject\n"
+"POT-Creation-Date: 2015-06-09 11:30-0500\n"
+"PO-Revision-Date: 2015-06-09 11:48-0500\n"
+"Last-Translator: \n"
+"Language-Team: MyTeam <team@example.com>\n"
+"Language: ko_KR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#Test token 1
+msgid "HELLO_WORLD"
+msgstr ""
+
+#Test token 2
+msgid "TEST_TRANSLATION"
+msgstr ""
+
+
+#Thank you for participating in the Open Data Impact Map, the first centralized, searchable database of open data use cases from around the world.
+msgid "THANKS_PARTICIPATING"
+msgstr "공개 데이터 임팩트 맵에 참여하여주셔서 감사합니다, 첫번째 이슈는, 세계 각국의 공개 데이터 사용 사례의 검색 가능한 데이터베이스입니다."
+ 
+#Your contribution makes it possible to better understand the value of open data and encourage its use globally.
+msgid "YOUR_CONTRIBUTION"
+msgstr "당신의 참여로 인하여 오픈 데이터의 가치에 대해 더욱 깊게 이해할 수 있고 또한 전세계적으로 사용할 수 있게 도움을 줄 것입니다."
+ 
+#Information collected will be displayed on the Map and will be made available as open data.
+msgid "INFO_COLLECTED"
+msgstr "수집 된 정보는 지도에 표시될 것이고 오픈 데이터로서 이용할 수 있게 될 것입니다."
+ 
+#ELIGIBILITY
+msgid "ELIGIBILITY"
+msgstr "적격성"
+ 
+#The Open Data Impact Map includes organizations that:
+msgid "MAP_INCLUDES_ORGS"
+msgstr "공개 데이터 임팩트 맵은 그 조직을 포함합니다."
+ 
+#are companies, non-profits, or developer groups; and
+msgid "ARE_COMPANIES"
+msgstr "회사들, 비영리 단체, 또는 개발자 그룹들;"
+ 
+#use open government data for advocacy, to develop products and services, improve operations, inform strategy and/or conduct research.
+msgid "USE_OPEN_GOVERNMENT_DATA"
+msgstr "제품과 서비스의 개발, 작업개선, 전략 또는 리서치를 수행하기 위해 정부공개 데이터를 사용합니다."
+ 
+#We define open government data as publicly available data that is produced or commissioned by governments and that can be accessed and reused by anyone, free of charge.
+msgid "WE_DEFINE_OPEN"
+msgstr "공개 정부데이터는 공개적으로 사용이 가능한 데이터, 즉 정부로부터 생산되거나 공인되고 누구에게나 무료로 열려있으며 또한 재사용 할 수 있는 데이터를 의미합니다."
+ 
+#1. Organizational Information
+msgid "ORG_INFO"
+msgstr "조직 정보"
+ 
+#Name of organization
+msgid "ORG_NAME"
+msgstr "조직명"
+ 
+#One sentence description of organization
+msgid "ORG_DESC"
+msgstr "한 문장으로 조직을 설명"
+ 
+#400 characters or less
+msgid "400_CHAR"
+msgstr "400자 이하"
+ 
+#Type of organization
+msgid "ORG_TYPE"
+msgstr "조직의 종류"
+ 
+#For-profit
+msgid "FOR-PROFIT"
+msgstr "영리"
+ 
+#Nonprofit
+msgid "NONPROFIT"
+msgstr "비영리"
+ 
+#Developer group
+msgid "DEVELOPER_GROUP"
+msgstr "개발자 그룹"
+ 
+#other
+msgid "OTHER"
+msgstr "기타"
+ 
+#Website URL
+msgid "WEBSITE_URL"
+msgstr"웹사이트 URL"
+ 
+#No URL          
+msgid "NO_URL"
+msgstr "URL없음"
+ 
+#Location
+msgid "LOCATION"
+msgstr "위치"
+ 
+#Please provide as specific as possible
+msgid "SPECIFIC_AS_POSSIBLE"
+msgstr "가능하면 구체적으로 제공 해 주세요."
+ 
+#Industry/category of the organization
+msgid "IND"
+msgstr "조직의 산업/카테고리"
+ 
+#select 1
+msgid "SELECT_1"
+msgstr "선택 1"
+ 
+#Agriculture 
+msgid "AGR"
+msgstr "농업"
+ 
+#Arts and culture 
+msgid "ART"
+msgstr "예술 및 문화"
+ 
+#Business & legal services
+msgid "BUS" 
+msgstr "사업 & 합법 서비스"
+ 
+#Consumer services 
+msgid "CSM"
+msgstr "소비자 서비스"
+ 
+#Data/information technology 
+msgid "DAT"
+msgstr "데이터/정보 기술"
+ 
+#Education 
+msgid "EDU"
+msgstr "교육"
+ 
+#Energy 
+msgid "NGY"
+msgstr "에너지"
+ 
+#Environment 
+msgid "ENV"
+msgstr "환경"
+ 
+#Finance and investment
+msgid "FIN"
+msgstr "금융 및 투자"
+ 
+#Geospatial/mapping 
+msgid "GEO"
+msgstr "지리/지도"
+ 
+#Governance
+msgid "GOV" 
+msgstr "관리"
+ 
+#Healthcare 
+msgid "HLT"
+msgstr "의료"
+ 
+#Housing and real estate 
+msgid "HOU"
+msgstr "주택 및 부동산"
+ 
+#Insurance 
+msgid "INS"
+msgstr "보험"
+ 
+#Media and communications 
+msgid "COM"
+msgstr "미디어 및 정보통신"
+ 
+#Mining/Manufacturing 
+msgid "MAN"
+msgstr "광업/제조업"
+ 
+#Research and consulting
+msgid "RSH"
+msgstr "조사 및 컨설팅"
+ 
+#Security and public safety
+msgid "SEC"
+msgstr "보안 및 치안"
+ 
+#Scientific research 
+msgid "SCI"
+msgstr "체계적 조사"
+ 
+#Telecommunications/internet service providers (ISPs) 
+msgid "TEL"
+msgstr "통신/인터넷 서비스 공급자"
+ 
+#Tourism 
+msgid "TOR"
+msgstr "관광"
+ 
+#Transportation and logistics
+msgid "TRN" 
+msgstr "운송 및 물류"
+ 
+#Water and sanitation 
+msgid "WAT"
+msgstr "물과 위생"
+ 
+#Weather
+msgid "WEA" 
+msgstr "날씨"
+ 
+#Founding year
+msgid "FOUNDING_YEAR"
+msgstr "설립년도"
+ 
+#Size
+msgid "SIZE"
+msgstr "크기"
+ 
+#1-10 employees
+msgid "1-10"
+msgstr "1-10 명의 종업원"
+ 
+#11-50 employees
+msgid "11-50"
+msgstr "11-50 명의 종업원"
+ 
+#51-200 employees
+msgid "51-200"
+msgstr "51-200 명의 종업원"
+ 
+#201-1000 employees
+msgid "201-1000"
+msgstr "201-1000명의 종업원"
+ 
+#1000+ employees
+msgid "1000+"
+msgstr "1000명이상의 종업원"
+ 
+#What is the greatest type of impact your organization has?
+msgid "GREATEST_IMPACT"
+msgstr "조직에 영향을 끼치는 가장 큰 유형이 무엇입니까?"
+ 
+#Economic
+msgid "ECONOMIC"
+msgstr "경제"
+ 
+#Environmental
+msgid "ENVIRONMENTAL"
+msgstr "환경"
+ 
+#Governance
+msgid "GOVERNANCE"
+msgstr "통치방식"
+ 
+#Social
+msgid "SOCIAL"
+msgstr "사회"
+ 
+#Provide details
+msgid "PROVIDE_DETAILS"
+msgstr "세부사항을 제공"
+ 
+#2. Use of Open Data
+msgid "USE_OF_OPEN_DATA"
+msgstr "공개 데이터의 사용"
+ 
+#What are the most relevant types of open data your organization uses?
+msgid "MOST_RELEVANT_OPEN_DATA"
+msgstr "조직에서 사용하는 공개 데이터의 가장 적절한 유형이 무엇입니까?"
+ 
+#most relevant
+msgid "MOST_RELEVANT"
+msgstr "가장 적절한"
+ 
+#types of data your organization uses?
+msgid "TYPES_OF_DATA"
+msgstr "조직에서 사용하는 데이터의 유형?"
+ 
+ 
+#select all that apply
+msgid "SELECT_ALL"
+msgstr "해당사항 모두 선택"
+ 
+#Agriculture 
+msgid "AGRICULTURE"
+msgstr "농업"
+ 
+#Arts and culture 
+msgid "ARTS_AND_CULTURE"
+msgstr "예술 및 문화"
+ 
+#Business 
+msgid "BUSINESS"
+msgstr "사업"
+ 
+#Consumer 
+msgid "CONSUMER"
+msgstr "소비자"
+ 
+#Demographics and social 
+msgid "DEMOGRAPHICS"
+msgstr "인구통계 및 사회"
+ 
+#Economics 
+msgid "ECONOMICS"
+msgstr "경제"
+ 
+#Education 
+msgid "EDUCATION"
+msgstr "교육"
+ 
+#Energy
+msgid "ENERGY"
+msgstr "에너지"
+ 
+#Environment
+msgid "ENVIRONMENT" 
+msgstr "환경"
+ 
+#Finance 
+msgid "FINANCE"
+msgstr "금융"
+ 
+ 
+#Geospatial/mapping 
+msgid "GEOSPATIAL"
+msgstr "지리/지도"
+ 
+#Government operations 
+msgid "GOVERNMENT_OPS"
+msgstr "국정 운영"
+ 
+#Health/healthcare 
+msgid "HEALTH"
+msgstr "건강/의료"
+ 
+#Housing 
+msgid "HOUSING_CAT"
+msgstr "주택"
+ 
+#International/global development 
+msgid "INTERNATIONAL"
+msgstr "국제/세계 성장"
+ 
+#Legal
+msgid "LEGAL"
+msgstr "합법"
+ 
+#Manufacturing 
+msgid "MANUFACTURING"
+msgstr "제조업"
+ 
+#Science and research 
+msgid "SCIENCE_AND_RESEARCH"
+msgstr "과학 및 연구"
+ 
+#Public safety 
+msgid "PUBLIC_SAFETY"
+msgstr "치안"
+ 
+#Tourism 
+msgid "TOURISM"
+msgstr "관광"
+ 
+#Transportation 
+msgid "TRANSPORTATION"
+msgstr "교통"
+ 
+ 
+#Weather 
+msgid "WEATHER"
+msgstr "날씨"
+ 
+#Number of countries from which open data is provided
+msgid "NUM_OF_COUNTRIES"
+msgstr "공개 데이터가 제공되는 국가의 수"
+ 
+#Indicate the country that provide the data, and whether the data is National or State / Local (state/province/city).
+msgid "INDICATE_COUNTRY_THAT"
+msgstr "데이터를 제공하는 국가 및 데이터가 국가인지 주/지방이지(주/도/시)를 표시 해 주세요."
+ 
+#Data source – Country
+msgid "DATA_SOURCE_COUNTRY"
+msgstr "데이터 소스-국가"
+ 
+#Select
+msgid "SELECT"
+msgstr "선택"
+ 
+#1 country 
+msgid "1_COUNTRY"
+msgstr "1개의 국가"
+ 
+#2-5 countries 
+msgid "2-5_COUNTRIES"
+msgstr "2-5개의 국가"
+ 
+#6-10 countries 
+msgid "6-10_COUNTRIES"
+msgstr "6-10개의 국가"
+ 
+#11-20 countries 
+msgid "11-20_COUNTRIES"
+msgstr "11-20개의 국가"
+ 
+#21-50 countries 
+msgid "21-50_COUNTRIES"
+msgstr "21-50개의 국가"
+ 
+#50+ countries
+msgid "50+_COUNTRIES"
+msgstr "50개이상의 국가"
+ 
+#How does your organization use open data?
+msgid "HOW_USE_OPEN_DATA"
+msgstr "조직에서는 공개 데이터를 어떻게 사용합니까?"
+ 
+#advocacy
+msgid "ADVOCACY"
+msgstr "지지"
+ 
+#new products, services, or applications
+msgid "PRODUCTS_SERVICES"
+msgstr "새로운 제품, 서비스, 또는 어플리케이션(응용프로그램)"
+ 
+#organizational optimization 
+msgid "ORG_OPTIMIZATION"
+msgstr "조직의 최적화"
+ 
+#(e.g. benchmarking, market analysis, improving efficiency, enhancing existing products and services)
+msgid "EG_BENCHMARKING"
+msgstr "(예를 들면 벤치마킹, 시장분석, 효율성 향상, 기존의 제품과 서비스의 향상)"
+ 
+#research
+msgid "RESEARCH"
+msgstr "조사"
+ 
+#Which datasets are most valuable to your organization? 
+msgid "WHICH_DATASETS_MOST_VALUABLE"
+msgstr "조직에서 어떤 데이터 세트가 가장 가치가 있습니까?"
+ 
+#What other types of data does your organization use in addition to open government data?
+msgid "WHAT_OTHER_TYPES_OF_DATA"
+msgstr "조직에서 사용하는 공개 정부 데이터 이 외에 데이터의 다른 유형은 무엇입니까?"
+ 
+#Additional information
+msgid "ADDITIONAL_INFORMATION"
+msgstr "추가정보"
+ 
+#E.g. How could the open data your organization uses be improved? 
+msgid "EG_HOW_COULD"
+msgstr "예를 들면 조직에서 사용하는 공개 데이터는 어떻게 개선 할 수 있습니까?"
+ 
+#3. Contact Information
+msgid "CONTACT_INFORMATION"
+msgstr "연락처"
+ 
+ 
+#optional
+msgid "OPTIONAL"
+msgstr "옵션"
+ 
+#This information will not be made public
+msgid "NOT_BE_MADE_PUBLIC"
+msgstr "이 정보는 공개되지 않습니다."
+ 
+#First name
+msgid "FIRST_NAME"
+msgstr "이름"
+ 
+#Last name
+msgid "LAST_NAME"
+msgstr "성"
+ 
+#Title
+msgid "TITLE"
+msgstr "제목"
+ 
+#Email
+msgid "EMAIL"
+msgstr "메일"
+ 
+#Phone
+msgid "PHONE"
+msgstr "전화"
+ 
+#All submissions will be reviewed before public display on the Open Data Impact Map.
+msgid "SUBMISSIONS_REVIEWED"
+msgstr "모든 제출 서류들은 오픈 데이터 임팩트 맵에 전시되기 전에 검토 될 것 입니다."
+ 
+#SUBMIT
+msgid "SUBMIT"
+msgstr "제출"
+ 
+#"provide as much information as possible" 
+msgid "PROVIDE_AS_MUCH_INFO"
+msgstr "가능한 한 많은 정보를 제공 해 주세요."
+ 
+#"provide examples" 
+msgid "PROVIDE_EXAMPLES"
+msgstr "예시 제공"
+ 
+#"enter a location" 
+msgid "ENTER_LOCATION"
+msgstr "위치 입력"
+ 
+#"Select countries providing data used by your organization" 
+msgid "SELECT_COUNTRIES_PROVIDING_DATA"
+msgstr "선택 국가의 제공 데이터는 조직에 의해 사용됩니다."
+ 
+#"national/local" 
+msgid "NATIONAL_LO"
+msgstr "국가/지역"
+ 
+#"data source - country" 
+msgid "DATA_SOURCE"
+msgstr "데이터 소스-국가"
+ 
+#"Click national and/or local to show government level of data used" 
+msgid "SHOW_GOVERNMENT_LEVEL"
+msgstr "정부의 데이터 사용 수준을 보기 위하여 국가 및 지역을 클릭하세요."
+ 
+#"required" 
+msgid "REQUIRED"
+msgstr "필수"
+ 
+#"This field is required"
+msgid "FIELD_REQUIRED" 
+msgstr "이필드는 필수사항입니다"
+ 
+#"Please enter a valid URL."
+msgid "ENTER_VALID_URL"
+msgstr "유효한 URL주소를 입력 해 주세요."
+ 
+#The Open Data Impact Map, a project of the Center for Open Data Enterprise as part of the OD4D network, is licensed under
+msgid "OD4D_ATTRIBUTION"
+msgstr "OD4D네트워크의 일환으로써의 오픈 데이터 사업을 위한 센터 프로젝트의 오픈 데이터 임팩트 맵은 허가되었습니다."
+ 
+#Creative Commons Attribution-Share Alike 4.0 International License
+msgid "CREATIVE_COMMONS_LICENSE"
+msgstr "Creative Commons Attribution-ShareAlike 4.0 국제 자격증"
