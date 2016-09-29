@@ -179,7 +179,7 @@ textdomain($domain);
             </label>
           </div>
         </div>
-        <div class="col-md-10" id="org_greatest_impact_detail_div"><input type="text" class="form-control" id="org_greatest_impact_detail" name="org_greatest_impact_detail" placeholder="<?php echo _("PROVIDE_DETAILS") ?>"></div>
+        <div class="col-md-10" id="org_greatest_impact_detail_div"><input type="text" class="form-control" id="org_greatest_impact_detail" name="org_greatest_impact_detail" placeholder="<?php echo _("Provide details") ?>"></div>
       </div>
     </div><!--/OrgInfo-->
 
