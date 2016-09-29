@@ -3225,6 +3225,12 @@ li {
   height: 0px;
 }
 
+.methodology-ilst {
+  margin-right: 20px;
+  margin-left: 60px;
+  list-style-type: disc;
+}
+
 @media (max-width: 991px) {
   .navigation {
     display: block;
