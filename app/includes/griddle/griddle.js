@@ -1709,7 +1709,7 @@ return /******/ (function(modules) { // webpackBootstrap
 						),
 						React.createElement("div", {className: 'take-survey-text'},
 							React.createElement("span", null, "Do you represent an organization that uses open data? Take our survey to be displayed on the map: "),
-							React.createElement("a", {href: 'http://54.210.82.88/survey', target: '_black'}, "Take our survey.")
+							React.createElement("a", {href: 'http://www.opendataimpactmap.org/survey', target: '_black'}, "Take our survey.")
 						),
 						React.createElement("div", {className: 'suggest-survey-text'},
 							React.createElement("span", null, "To suggest an organization using open data or contribute examples: "),

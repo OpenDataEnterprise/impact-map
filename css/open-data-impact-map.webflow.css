@@ -189,8 +189,8 @@ li {
   margin-right: auto;
   margin-left: auto;
   background-color: #235347;
-  background-image: -webkit-linear-gradient(90deg, #1e2c3b, rgba(30, 44, 59, 0) 50%), url('../images/sector-landing-background-dots@2x.png'), url('../images/sector-landing-background-gradient.png');
-  background-image: linear-gradient(0deg, #1e2c3b, rgba(30, 44, 59, 0) 50%), url('../images/sector-landing-background-dots@2x.png'), url('../images/sector-landing-background-gradient.png');
+  background-image: -webkit-linear-gradient(90deg, #1e2c3b, rgba(30, 44, 59, 0) 50%), url('../images/sector-landing-background-dots2x.png'), url('../images/sector-landing-background-gradient.png');
+  background-image: linear-gradient(0deg, #1e2c3b, rgba(30, 44, 59, 0) 50%), url('../images/sector-landing-background-dots2x.png'), url('../images/sector-landing-background-gradient.png');
   background-position: 0px 0px, 50% 0px, 50% 0px;
   background-size: auto, 100%, 100%;
   background-repeat: repeat, no-repeat, no-repeat;
@@ -584,7 +584,7 @@ li {
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  background-image: url('../images/agriculture-icon-detail@2x.png'), url('../images/sector-detail-dots@2x.png'), url('../images/sector-detail-gradient.jpg');
+  background-image: url('../images/agriculture-icon-detail2x.png'), url('../images/sector-detail-dots2x.png'), url('../images/sector-detail-gradient.jpg');
   background-position: 50% 50%, 50% 0px, 50% 0px;
   background-size: 188px, 100%, 100% 225px;
   background-repeat: no-repeat, no-repeat, repeat;
@@ -604,57 +604,57 @@ li {
 }
 
 .sector-detail-header-background.business-header {
-  background-image: url('../images/business-icon-detail@2x.png'), url('../images/sector-detail-dots@2x.png'), url('../images/sector-detail-gradient.jpg');
+  background-image: url('../images/business-icon-detail2x.png'), url('../images/sector-detail-dots2x.png'), url('../images/sector-detail-gradient.jpg');
   background-size: 140px, 100%, 100% 225px;
 }
 
 .sector-detail-header-background.geospatial-header {
-  background-image: url('../images/geospacial-icon-detail@2x.png'), url('../images/sector-detail-dots@2x.png'), url('../images/sector-detail-gradient.jpg');
+  background-image: url('../images/geospacial-icon-detail2x.png'), url('../images/sector-detail-dots2x.png'), url('../images/sector-detail-gradient.jpg');
   background-size: 120px, 100%, 100% 225px;
 }
 
 .sector-detail-header-background.energy-header {
-  background-image: url('../images/energy-icon-detail@2x.png'), url('../images/sector-detail-dots@2x.png'), url('../images/sector-detail-gradient.jpg');
+  background-image: url('../images/energy-icon-detail2x.png'), url('../images/sector-detail-dots2x.png'), url('../images/sector-detail-gradient.jpg');
   background-size: 180px, 100%, 100% 225px;
 }
 
 .sector-detail-header-background.finance-header {
-  background-image: url('../images/finance-icon-detail@2x.png'), url('../images/sector-detail-dots@2x.png'), url('../images/sector-detail-gradient.jpg');
+  background-image: url('../images/finance-icon-detail2x.png'), url('../images/sector-detail-dots2x.png'), url('../images/sector-detail-gradient.jpg');
   background-size: 145px, 100%, 100% 225px;
 }
 
 .sector-detail-header-background.governance-header {
-  background-image: url('../images/governance-icon-detail@2x.png'), url('../images/sector-detail-dots@2x.png'), url('../images/sector-detail-gradient.jpg');
+  background-image: url('../images/governance-icon-detail2x.png'), url('../images/sector-detail-dots2x.png'), url('../images/sector-detail-gradient.jpg');
   background-size: 145px, 100%, 100% 225px;
 }
 
 .sector-detail-header-background.housing-header {
-  background-image: url('../images/housing-icon-detail@2x.png'), url('../images/sector-detail-dots@2x.png'), url('../images/sector-detail-gradient.jpg');
+  background-image: url('../images/housing-icon-detail2x.png'), url('../images/sector-detail-dots2x.png'), url('../images/sector-detail-gradient.jpg');
   background-size: 165px, 100%, 100% 225px;
 }
 
 .sector-detail-header-background.media-header {
-  background-image: url('../images/media-icon-detail@2x.png'), url('../images/sector-detail-dots@2x.png'), url('../images/sector-detail-gradient.jpg');
+  background-image: url('../images/media-icon-detail2x.png'), url('../images/sector-detail-dots2x.png'), url('../images/sector-detail-gradient.jpg');
   background-size: 160px, 100%, 100% 225px;
 }
 
 .sector-detail-header-background.transportation-header {
-  background-image: url('../images/transportation-icon-detail@2x.png'), url('../images/sector-detail-dots@2x.png'), url('../images/sector-detail-gradient.jpg');
+  background-image: url('../images/transportation-icon-detail2x.png'), url('../images/sector-detail-dots2x.png'), url('../images/sector-detail-gradient.jpg');
   background-size: 180px, 100%, 100% 225px;
 }
 
 .sector-detail-header-background.art-culture--tourism-header {
-  background-image: url('../images/art-culture-tourism-title.png'), url('../images/sector-detail-dots@2x.png'), url('../images/sector-detail-gradient.jpg');
+  background-image: url('../images/art-culture-tourism-title.png'), url('../images/sector-detail-dots2x.png'), url('../images/sector-detail-gradient.jpg');
   background-size: 188px, 100%, 100% 225px;
 }
 
 .sector-detail-header-background.consumer-header {
-  background-image: url('../images/consumer-title.png'), url('../images/sector-detail-dots@2x.png'), url('../images/sector-detail-gradient.jpg');
+  background-image: url('../images/consumer-title.png'), url('../images/sector-detail-dots2x.png'), url('../images/sector-detail-gradient.jpg');
   background-size: 188px, 100%, 100% 225px;
 }
 
 .sector-detail-header-background.education-header {
-  background-image: url('../images/education-title.png'), url('../images/sector-detail-dots@2x.png'), url('../images/sector-detail-gradient.jpg');
+  background-image: url('../images/education-title.png'), url('../images/sector-detail-dots2x.png'), url('../images/sector-detail-gradient.jpg');
   background-size: 188px, 100%, 100% 225px;
 }
 
@@ -1019,8 +1019,8 @@ li {
 
 .homepage-hero {
   background-color: #2b3d51;
-  background-image: -webkit-linear-gradient(90deg, #1e2c3b 10%, rgba(30, 44, 59, 0) 45%), url('../images/57a0b5abf100384b354b217b_homepage-dots@2x-compressed-170kb.png');
-  background-image: linear-gradient(0deg, #1e2c3b 10%, rgba(30, 44, 59, 0) 45%), url('../images/57a0b5abf100384b354b217b_homepage-dots@2x-compressed-170kb.png');
+  background-image: -webkit-linear-gradient(90deg, #1e2c3b 10%, rgba(30, 44, 59, 0) 45%), url('../images/57a0b5abf100384b354b217b_homepage-dots2x-compressed-170kb.png');
+  background-image: linear-gradient(0deg, #1e2c3b 10%, rgba(30, 44, 59, 0) 45%), url('../images/57a0b5abf100384b354b217b_homepage-dots2x-compressed-170kb.png');
   background-position: 0px 0px, 50% 0px;
   background-size: auto, 100%;
   background-repeat: repeat, no-repeat;
@@ -1371,8 +1371,8 @@ li {
 
 .region-landing-header-background {
   background-color: #2b3d51;
-  background-image: -webkit-linear-gradient(90deg, #1e2c3b, rgba(30, 44, 59, 0) 50%), url('../images/region-landing-background@2x.jpg');
-  background-image: linear-gradient(0deg, #1e2c3b, rgba(30, 44, 59, 0) 50%), url('../images/region-landing-background@2x.jpg');
+  background-image: -webkit-linear-gradient(90deg, #1e2c3b, rgba(30, 44, 59, 0) 50%), url('../images/region-landing-background2x.jpg');
+  background-image: linear-gradient(0deg, #1e2c3b, rgba(30, 44, 59, 0) 50%), url('../images/region-landing-background2x.jpg');
   background-position: 0px 0px, 50% 0px;
   background-size: auto, 100%;
   background-repeat: repeat, no-repeat;
@@ -1489,46 +1489,46 @@ li {
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  background-image: url('../images/latin-america-icon-dark@2x.png'), url('../images/region-detail-dots@2x-min.png'), url('../images/region-detail-gradient.jpg');
+  background-image: url('../images/latin-america-icon-dark2x.png'), url('../images/region-detail-dots2x-min.png'), url('../images/region-detail-gradient.jpg');
   background-position: 50% 50%, 50% 0px, 50% 0px;
   background-size: 126px, 100%, cover;
   background-repeat: no-repeat, no-repeat, no-repeat;
 }
 
 .region-detail-header-background.europe-header {
-  background-image: url('../images/europe-detail@2x.png'), url('../images/region-detail-dots@2x-min.png'), url('../images/region-detail-gradient.jpg');
+  background-image: url('../images/europe-detail2x.png'), url('../images/region-detail-dots2x-min.png'), url('../images/region-detail-gradient.jpg');
   background-size: 349px, 100%, 100% 225px;
 }
 
 .region-detail-header-background.middle-east-header {
-  background-image: url('../images/middle-east-detail@2x.png'), url('../images/region-detail-dots@2x-min.png'), url('../images/region-detail-gradient.jpg');
+  background-image: url('../images/middle-east-detail2x.png'), url('../images/region-detail-dots2x-min.png'), url('../images/region-detail-gradient.jpg');
   background-size: 340px, 100%, 100% 225px;
 }
 
 .region-detail-header-background.north-america-header {
-  background-image: url('../images/north-america-detail@2x.png'), url('../images/region-detail-dots@2x-min.png'), url('../images/region-detail-gradient.jpg');
+  background-image: url('../images/north-america-detail2x.png'), url('../images/region-detail-dots2x-min.png'), url('../images/region-detail-gradient.jpg');
   background-size: 234px, 100%, 100% 225px;
 }
 
 .region-detail-header-background.east-asia-header {
-  background-image: url('../images/east-asia-detail@2x.png'), url('../images/region-detail-dots@2x-min.png'), url('../images/region-detail-gradient.jpg');
+  background-image: url('../images/east-asia-detail2x.png'), url('../images/region-detail-dots2x-min.png'), url('../images/region-detail-gradient.jpg');
   background-size: 143px, 100%, 100% 225px;
 }
 
 .region-detail-header-background.africa-header {
-  background-image: url('../images/africa-detail@2x.png'), url('../images/region-detail-dots@2x-min.png'), url('../images/region-detail-gradient.jpg');
+  background-image: url('../images/africa-detail2x.png'), url('../images/region-detail-dots2x-min.png'), url('../images/region-detail-gradient.jpg');
   background-size: 160px, 100%, 100% 225px;
 }
 
 .region-detail-header-background.south-asia-header {
-  background-image: url('../images/south-asia-detail@2x.png'), url('../images/region-detail-dots@2x-min.png'), url('../images/region-detail-gradient.jpg');
+  background-image: url('../images/south-asia-detail2x.png'), url('../images/region-detail-dots2x-min.png'), url('../images/region-detail-gradient.jpg');
   background-size: 168px, 100%, 100% 225px;
 }
 
 .data-container {
   border-bottom: 1px solid #eaeaea;
   background-color: #28394b;
-  background-image: url('../images/german-style-map@2x.png');
+  background-image: url('../images/german-style-map2x.png');
   background-position: 100% 0px;
   background-size: 90%;
   background-repeat: no-repeat;
@@ -1556,7 +1556,7 @@ li {
   padding-left: 300px;
   float: right;
   background-color: #28394b;
-  background-image: url('../images/sample-map@2x.png');
+  background-image: url('../images/sample-map2x.png');
   background-position: 100% 0px;
   background-size: cover;
   background-repeat: no-repeat;
