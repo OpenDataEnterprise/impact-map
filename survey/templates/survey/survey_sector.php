@@ -1,4 +1,6 @@
- <fieldset>
+<label for="industry_id">Sector <small class="required">(select 1)*</small></label>
+<label id="industry_id-error" class="error" for="industry_id"></label>
+<fieldset>
   <div class="col-md-4" id="industry_id_col-1">
     <input type="radio" name="industry_id" class="industry_id" value="Agriculture" required>&nbsp; Agriculture
     <br /><input type="radio" name="industry_id" class="industry_id" value="Arts, culture and tourism">&nbsp; Arts, culture and tourism
