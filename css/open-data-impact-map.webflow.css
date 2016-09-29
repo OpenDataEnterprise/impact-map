@@ -790,6 +790,7 @@ li {
 }
 
 .button.download.data-format-button.left_data {
+  display: block;
   width: 108px;
   margin-right: auto;
   margin-left: auto;

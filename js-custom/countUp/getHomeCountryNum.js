@@ -22,6 +22,7 @@ $.when( $.ajax( "js-custom/countUp/home_country_ticker.php" ) ).done(function() 
         var current1 = parseInt($this.html(), 10);
 
     $this.html(current1 = current1 + 10); // set the interval for country - bigger the quicker
+
       if(current1 > $this.data('count1')){
           $this.html($this.data('count1'));
       } else {    
@@ -36,4 +37,3 @@ $("#country-stat").each(function() {
  });
 
 });
-
