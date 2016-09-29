@@ -28,7 +28,7 @@ define([
 			var profileId = this.props.keys.profileID.value
 			console.log("profileId", profileId); //Vinayak
 			
-			var url = 'http://' + location.host + '/map/survey/edit/' + profileId;
+			var url = 'http://' + location.host + '/survey/edit/' + profileId;
 			console.log(url);
 			window.open(url, '_blank');
 		},
