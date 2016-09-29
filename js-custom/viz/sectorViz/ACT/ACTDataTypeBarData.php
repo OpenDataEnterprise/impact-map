@@ -830,7 +830,7 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 
 	$num = $string1 + $string2;
 	if ($num != 0) {$obj = new stdClass();
-			$obj->app_type = "Arts and culture";
+			$obj->app_type = "Arts & Culture";
 			$obj->number = $num;
 			$data[] = $obj;}
 
