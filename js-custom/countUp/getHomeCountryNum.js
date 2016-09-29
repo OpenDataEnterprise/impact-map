@@ -17,7 +17,8 @@
         xmlhttp.open("GET", "js-custom/countUp/home_country_ticker.php", true);
         xmlhttp.send();
 
-$.when( $.ajax( "js-custom/countUp/home_country_ticker.php" ) ).done(function() {
+setTimeout( function() {
+// $.when( $.ajax( "js-custom/countUp/home_country_ticker.php" ) ).done(function() {
     function count1($this){
         var current1 = parseInt($this.html(), 10);
 
@@ -36,4 +37,5 @@ $("#country-stat").each(function() {
   count1($(this));
  });
 
-});
+// });
+}, 400);

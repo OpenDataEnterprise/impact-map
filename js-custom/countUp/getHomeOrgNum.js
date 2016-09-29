@@ -1,5 +1,5 @@
-
-        if (window.XMLHttpRequest) {
+var url = "js-custom/countUp/home_case_ticker.php";
+  if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp1 = new XMLHttpRequest();
         } else {
@@ -14,11 +14,12 @@
             }
         };
 
-        xmlhttp1.open("GET", "js-custom/countUp/home_case_ticker.php", true);
+        xmlhttp1.open("GET", url, true);
         xmlhttp1.send();
 
 
-        $.when( $.ajax( "js-custom/countUp/home_case_ticker.php" ) ).done(function() {
+
+setTimeout( function() {// $.when( $.ajax( "js-custom/countUp/home_case_ticker.php" ) ).done(function() {
 
      function count2($this){
         var current2 = parseInt($this.html(), 20);
@@ -38,4 +39,15 @@ $("#case-stat").each(function() {
   count2($(this));
  });
 
-});
+// });
+}, 400);
+
+
+
+
+   
+
+
+
+
+       
