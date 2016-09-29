@@ -147,8 +147,6 @@ textdomain($domain);
   
       <!-- Industry/category of organization -->
       <div class="form-group col-md-12">
-        <label for="industry_id">Sector of the organization <small class="required">(select 1)*</small></label>
-        <label id="industry_id-error" class="error" for="industry_id"></label>
         <?php include __DIR__.'/'.'survey_sector.php'; ?>
       </div>
 

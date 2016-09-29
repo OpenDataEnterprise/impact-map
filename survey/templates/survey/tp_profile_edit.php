@@ -121,7 +121,7 @@ textdomain($domain);
   
       <!-- Industry/category of organization -->
       <div class="form-group col-md-12">
-        <label for="industry_id">Sector of the organization <small class="required">(select 1)*</small></label>
+        <label for="industry_id">Sector <small class="required">(select 1)*</small></label>
         <fieldset>
         <div class="col-md-4" id="industry_id_col-1">
           <input type="radio" name="industry_id" class="industry_id" value="Agriculture" <?php if ("Agriculture" == $org_profile[0]['industry_id']) {echo "checked";} ?>>&nbsp; Agriculture
