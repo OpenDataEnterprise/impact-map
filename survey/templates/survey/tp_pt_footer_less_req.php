@@ -1,18 +1,18 @@
-</footer>
-<footer class="w-section section footer">
-<!--   <div class="w-container footer-container">
-    <div class="circle-logo"><img class="logo footer" src="/images/Logo-Mark.png" width="60">
-    </div>
-    <div class="brand-container footer"><img class="logo" src="/images/Logo-Text.png" width="320">
+ <div class="footer">
+    <p class="footer-text">The Open Data Impact Map, a project of the <a class="footer-link" href="http://www.opendataenterprise.org/">Center for Open Data Enterprise</a>, is supported by the <a class="footer-link" href="http://od4d.net/">Open Data for Development (OD4D)</a> program, a partnership funded by Canada’s <a class="footer-link" href="http://www.idrc.ca/EN/AboutUs/Pages/default.aspx">International Development Research Centre (IDRC)</a>, the <a class="footer-link" href="http://www.worldbank.org/">World Bank</a>, United Kingdom’s <a class="footer-link" href="https://www.gov.uk/government/organisations/department-for-international-development">Department for International Development (DFID)</a>, and <a class="footer-link" href="http://www.international.gc.ca/department-ministere/index.aspx?lang=eng">Global Affairs Canada (GAC)</a>. The Open Data Impact Map is licensed under <a class="footer-link" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-Share Alike 4.0 International License.</a>
+    </p>
+    <div class="footer-logos-container w-clearfix">
+      <img class="footer-logo" src="/images/footer-open-data-enterprise-logo2x.png" width="94">
+      <img class="footer-logo idrc" src="/images/idrc-footer-logo2x.jpg" width="78">
+      <img class="footer-logo" src="/images/footer-open-data-logo2x.png" width="101">
+      <img class="cc footer-logo" src="/images/footer-creative-commons-logo2x.png" width="78">
     </div>
   </div>
- -->  
-  <div class="legal-wrapper">
-    <div>© 2015 The Center for Open Data Enterprise&nbsp;1110 Vermont Avenue NW, Suite 500, Washington, DC 20005</div>
-  </div>
-</footer>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/webflow.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>  
+  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>  
 
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -43,7 +43,7 @@
 <?php } ?>
 
   <!-- geocomplete -->
-  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places&language=<?php echo $content['language']; ?>"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD36Jq79omYvK4q160enCpKcdzeuhlCu7U&amp;sensor=false&amp;libraries=places&amp;language=<?php echo $content['language']; ?>"></script>
   <script src="/survey/js/vendor/ubilabs-geocomplete-eb38f45/jquery.geocomplete.js"></script>
   
   <!-- onscreen guidance chardin.js -->

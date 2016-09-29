@@ -826,10 +826,11 @@ $app->post('/2du/:surveyId/', function ($lastsurvey_id) use ($app) {
     /* Data USE */
     $idSuffixNum = 1;
 
+    $type_to_input = array();
+
     while (array_key_exists('dataUseData-'.$idSuffixNum, $allPostVars)) {
 		
 		$data_use_type = isset($allPostVars['data_use_type']) ? $allPostVars['data_use_type'] : null;
-		$type_to_input = array();
 		
 		if(isset($allPostVars['dataUseData-'.$idSuffixNum])) {
 
@@ -891,7 +892,6 @@ $app->post('/2du/:surveyId/', function ($lastsurvey_id) use ($app) {
     }
 
     $other = isset($allPostVars['data_use_type_other']) ? htmlspecialchars($allPostVars['data_use_type_other']) : null;
-
 
 	foreach ($type_to_input[0] as $cid => $ty){
 		foreach ($ty as $t => $l){
