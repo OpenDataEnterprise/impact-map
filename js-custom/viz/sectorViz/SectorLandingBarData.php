@@ -206,7 +206,7 @@
 	$num = $string1 + $string2;
 
 	$obj = new stdClass();
-		$obj->sector = "Finance, Investment & Insurane";
+		$obj->sector = "Finance & Insurance";
 		$obj->orgs = $num;
 		$data[] = $obj;
 

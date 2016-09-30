@@ -122,7 +122,7 @@
 
 	if ($num != 0) {
 		$obj = new stdClass();
-		$obj->app_type = "Geospatial & Mapping";
+		$obj->app_type = "Geospatial";
 		$obj->number = $num;
 		$data[] = $obj;
 	}
@@ -449,7 +449,7 @@
 
 	if ($num != 0) {
 		$obj = new stdClass();
-		$obj->app_type = "Demographics & Social";
+		$obj->app_type = "Demographic & Social";
 		$obj->number = $num;
 		$data[] = $obj;
 	}
@@ -587,7 +587,7 @@
 
 	if ($num != 0) {
 		$obj = new stdClass();
-		$obj->app_type = "Economics";
+		$obj->app_type = "Economic";
 		$obj->number = $num;
 		$data[] = $obj;
 	}

@@ -39,7 +39,7 @@
 	$num = $string1 + $string2;
 
 	$obj = new stdClass();
-		$obj->org_size = "1-10";
+		$obj->org_size = "1 to 10";
 		$obj->number = $num;
 		$data[] = $obj;
 
@@ -76,7 +76,7 @@
 	$num = $string1 + $string2;
 
 	$obj = new stdClass();
-		$obj->org_size = "11-50";
+		$obj->org_size = "11 to 50";
 		$obj->number = $num;
 		$data[] = $obj;
 
@@ -112,7 +112,7 @@
 	$num = $string1 + $string2;
 
 	$obj = new stdClass();
-		$obj->org_size = "51-200";
+		$obj->org_size = "51 to 200";
 		$obj->number = $num;
 		$data[] = $obj;
 
@@ -176,7 +176,7 @@
 	$num = $string1 + $string2 + $string3 + $string4;
 
 	$obj = new stdClass();
-		$obj->org_size = "201-1000";
+		$obj->org_size = "201 to 1000";
 		$obj->number = $num;
 		$data[] = $obj;
 

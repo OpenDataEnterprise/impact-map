@@ -25,13 +25,13 @@ var yAxisBar = d3.svg.axis()
 
 // Explanation for data type tick labels 
 var typeLabelExplainations = {
-    'Geospatial & Mapping':"E.g. postal/zip codes, topographic maps,<br>administrative boundaries,<br>national and local maps,<br>land use maps",
+    'Geospatial':"E.g. postal/zip codes, topographic maps,<br>administrative boundaries,<br>national and local maps,<br>land use maps",
     'Environment':"E.g. climate data,<br>pollution emissions levels,<br>water quality, ecological<br>information, coastal flooding,<br>biodiversity data",
     'Weather':"E.g. forecasts, temperature,<br>wind and precipitation data",
     'Transportation':"E.g. public transport schedules<br>and routes, traffic patterns,<br>transport infrastructure,<br>road listings, vehicle<br>and vessel information",
-    'Demographics & Social':"E.g. census, population statistics,<br>household surveys",
+    'Demographic & Social':"E.g. census, population statistics,<br>household surveys",
     'Housing':"E.g. land and building permits,<br>land ownership,<br>real estate prices",
-    'Economics':"E.g. unemployment statistics,<br>employment codes, export<br>and import data, foreign investment data,<br>labor statistics",
+    'Economic':"E.g. unemployment statistics,<br>employment codes, export<br>and import data, foreign investment data,<br>labor statistics",
     'Education':"E.g. school registries,<br>school performance,<br>student loan data,<br>number of teachers,<br>enrollment, completion,<br>and attendance rates",
     'Health':"E.g. healthcare facilities,<br>health inspection,<br>healthcare spending,<br>prescription/drugs<br>information, performance,<br>health indicators,<br>drug use, restaurant<br>inspection, immunization rates",
     'Finance':"E.g. credit records,<br>bankruptcies, tax records,<br>charity registry",

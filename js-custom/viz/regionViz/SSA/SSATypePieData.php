@@ -7,6 +7,32 @@
     	die('Unable to connect to database [' . $db->connect_error . ']');
 	}
 
+// Academic institution query
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
+			and org_hq_country_region = "Sub-Saharan Africa"
+			and org_type = "Academic institution"
+			and org_profile_status = "publish";';
+
+	if(!$result = $db->query($sql)){
+	    die('There was an error running the query [' . $db->error . ']');
+	}
+
+	while($row = $result->fetch_assoc()){
+		// $string = $row["count(distinct(org_name))"];
+		$obj = new stdClass();
+		$obj->org_type = "Academic Institution";
+		$obj->number = (int)$row["count(distinct(org_name))"];
+		$data[] = $obj;
+		// var_dump($row);
+		// $row->{'count(distinct(org_name))'} = $row->{'East Asia & Pacific'};
+		// unset($row->{'count(distinct(org_name))'});
+		// var_dump($row);
+	}
+
+	// echo $string;
+	
 // for profit query
 	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
 			where org_profiles.location_id = org_locations.location_id

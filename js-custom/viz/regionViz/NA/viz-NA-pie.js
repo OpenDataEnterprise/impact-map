@@ -20,7 +20,7 @@ var pie = d3.layout.pie()
 var color = d3.scale.ordinal()
     // old sad rainbow
     // .range(["#98abc5", "#7b6888", "#a05d56", "#ff8c00"]);
-    .range(["#50b094", "#7bc3ae", "#a7d7c9", "#d3ebe4"]);
+    .range(["#50b094", "#73bfa9", "#96cfbe", "#b9dfd4", "#dcefe9"]);
 
 var svg = d3.select("#threePie").append("svg")
     .attr("id", "byType")
@@ -85,14 +85,14 @@ var svg = d3.select("#threePie").append("svg")
       .text(title);
 
    legend.append("rect")
-      .attr("x", width - 40)
+      .attr("x", width - 25)
       .attr("y", -5)
       .attr("width", 18)
       .attr("height", 18)
       .style("fill", color);
       // offset between rect and text is 6
   legend.append("text")
-      .attr("x", width - 45)
+      .attr("x", width - 30)
       .attr("y", 8)
       .style("text-anchor", "end")
       .style("font-size", "12px")

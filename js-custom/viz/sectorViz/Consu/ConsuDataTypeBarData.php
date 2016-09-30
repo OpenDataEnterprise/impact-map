@@ -43,7 +43,7 @@
 
 	if ($num != 0) {
 		$obj = new stdClass();
-		$obj->app_type = "Geospatial & Mapping";
+		$obj->app_type = "Geospatial";
 		$obj->number = $num;
 		$data[] = $obj;
 	}
@@ -133,7 +133,7 @@
 	while($row = $result->fetch_assoc()){
 		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
-			$obj->app_type = "Demographics & Social";
+			$obj->app_type = "Demographic & Social";
 			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
@@ -169,7 +169,7 @@
 	while($row = $result->fetch_assoc()){
 		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
-			$obj->app_type = "Economics";
+			$obj->app_type = "Economic";
 			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}

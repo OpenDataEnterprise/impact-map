@@ -12,7 +12,7 @@
 			where org_profiles.location_id = org_locations.location_id
 			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "South Asia"
-			and org_size = "1-10"
+			and org_size = "1 to 10"
 			and org_profile_status = "publish";';
 
 	if(!$result = $db->query($sql)){
@@ -22,7 +22,7 @@
 	while($row = $result->fetch_assoc()){
 		// $string = $row["count(distinct(org_name))"];
 		$obj = new stdClass();
-		$obj->org_size = "1-10";
+		$obj->org_size = "1 to 10";
 		$obj->number = (int)$row["count(distinct(org_name))"];
 		$data[] = $obj;
 		// var_dump($row);
@@ -38,7 +38,7 @@
 			where org_profiles.location_id = org_locations.location_id
 			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "South Asia"
-			and org_size = "11-50"
+			and org_size = "11 to 50"
 			and org_profile_status = "publish";';
 
 	if(!$result = $db->query($sql)){
@@ -48,7 +48,7 @@
 	while($row = $result->fetch_assoc()){
 		// $string = $row["count(distinct(org_name))"];
 		$obj = new stdClass();
-		$obj->org_size = "11-50";
+		$obj->org_size = "11 to 50";
 		$obj->number = (int)$row["count(distinct(org_name))"];
 		$data[] = $obj;
 	}
@@ -60,7 +60,7 @@
 			where org_profiles.location_id = org_locations.location_id
 			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "South Asia"
-			and org_size = "51-200"
+			and org_size = "51 to 200"
 			and org_profile_status = "publish";';
 
 	if(!$result = $db->query($sql)){
@@ -70,7 +70,7 @@
 	while($row = $result->fetch_assoc()){
 		// $string = $row["count(distinct(org_name))"];
 		$obj = new stdClass();
-		$obj->org_size = "51-200";
+		$obj->org_size = "51 to 200";
 		$obj->number = (int)$row["count(distinct(org_name))"];
 		$data[] = $obj;
 	}
@@ -82,7 +82,7 @@
 			where org_profiles.location_id = org_locations.location_id
 			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "South Asia"
-			and org_size = "201-1000"
+			and org_size = "201 to 1000"
 			and org_profile_status = "publish";';
 
 	if(!$result = $db->query($sql)){
@@ -92,7 +92,7 @@
 	while($row = $result->fetch_assoc()){
 		// $string = $row["count(distinct(org_name))"];
 		$obj = new stdClass();
-		$obj->org_size = "201-1000";
+		$obj->org_size = "201 to 1000";
 		$obj->number = (int)$row["count(distinct(org_name))"];
 		$data[] = $obj;
 	}
