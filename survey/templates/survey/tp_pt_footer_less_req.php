@@ -35,7 +35,7 @@
   <!-- select2 library -->
   <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css" rel="stylesheet" />
   <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
-  <script src="/survey/dist/jquery.validate.min.js"></script>
+  <!-- // <script src="/survey/dist/jquery.validate.min.js"></script> -->
 <?php if ($language == "fr_FR") { ?>
   <script src="/survey/js/vendor/jquery-validation/src/localization/messages_fr.js"></script>
 <?php } elseif ($language == "es_MX") { ?>
@@ -72,49 +72,48 @@
         allowClear: true }
       );
 
-      // override jquery validate plugin defaults
-      $.validator.setDefaults({
-        ignore: [],
-          highlight: function(element) {
-            $(element).closest('.form-group').addClass('has-error');
-          },
-          unhighlight: function(element) {
-            $(element).closest('.form-group').removeClass('has-error');
-          },
-          errorElement: 'label',
-          // errorClass: 'help-block',
-          errorPlacement: function(error, element) {
-            if(element.parent('.btn-group').length) {
-                error.insertAfter(element.parent());
-            } else {
-                error.insertAfter(element);
-            }
-          }
-      });
+      // override jquery validate plugin defaults -- disabled for internal surveys
+      // $.validator.setDefaults({
+      //   ignore: [],
+      //     highlight: function(element) {
+      //       $(element).closest('.form-group').addClass('has-error');
+      //     },
+      //     unhighlight: function(element) {
+      //       $(element).closest('.form-group').removeClass('has-error');
+      //     },
+      //     errorElement: 'label',
+      //     // errorClass: 'help-block',
+      //     errorPlacement: function(error, element) {
+      //       if(element.parent('.btn-group').length) {
+      //           error.insertAfter(element.parent());
+      //       } else {
+      //           error.insertAfter(element);
+      //       }
+      //     }
+      // });
 
-      // // Form Data validation
-      // $("#survey_form").validate();
-      $("#survey_form").validate({
-        rules: {
-          // txtTextOnly: {
-          //   required: true,
-          //   textOnly: true
-          // },
-          industry_other: {
-            required: "#industr_id_other:checked",
-            minlength: 2
-          },
-          data_use_type_other: {
-            required: "#data_use_type_checkbox_other:checked",
-            minlength: 2
-          }
-        },
-        messages: {
-          org_year_founded: "Enter a year using four digits, example: 1980",
-          industry_other: "Describe other is required",
-          data_use_type_other: "Describe other is required"
-        }
-      });
+      // // Form Data validation -- disabled all the restrictions for internal survey.
+      // $("#survey_form").validate({
+      //   rules: {
+      //     // txtTextOnly: {
+      //     //   required: true,
+      //     //   textOnly: true
+      //     // },
+      //     industry_other: {
+      //       required: "#industr_id_other:checked",
+      //       minlength: 2
+      //     },
+      //     data_use_type_other: {
+      //       required: "#data_use_type_checkbox_other:checked",
+      //       minlength: 2
+      //     }
+      //   },
+      //   messages: {
+      //     org_year_founded: "Enter a year using four digits, example: 1980",
+      //     industry_other: "Describe other is required",
+      //     data_use_type_other: "Describe other is required"
+      //   }
+      // });
 
       // Geocomplete
       $('#org_hq_city_all').geocomplete({ 

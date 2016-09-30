@@ -1,7 +1,17 @@
-<label for="data_use_type[]">What are the <u>most relevant</u> types of data your organization uses? <small class="required">(select all that apply)*</small></label>
+<label for="data_use_type[]">What are the <u>most relevant</u> types of data your organization uses? 
+    <small class="required">(select all that apply)*</small>
+</label>
 <label id="data_use_type[]-error" class="error" for="data_use_type[]"></label>
+<?php 
+// only validation checking when it's not internal.
+$suburl = $_SERVER['REQUEST_URI'];
+$internal = false;
+if (strpos($suburl, "form/internal/add")) {
+  $internal = true;
+}
+?>
 <div class="col-md-4" id="data_type_col-1">
-    <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Agriculture" required>&nbsp; <span>Agriculture</span>
+    <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Agriculture" <?php if (!$internal){ echo "required";} ?>>&nbsp; <span>Agriculture</span>
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Arts and culture">&nbsp; <span>Arts and culture</span>
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Business">&nbsp; <span>Business</span>
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Consumer">&nbsp; <span>Consumer</span>
