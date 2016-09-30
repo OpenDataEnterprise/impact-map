@@ -11,8 +11,8 @@
 	$sql = 'SELECT count(distinct(org_name))
 			from org_profiles
 			where org_profile_status = "publish"
-			and industry_id = "Finance and investment"
-			and org_size ="1-10";';
+			and industry_id = "Finance and insurance"
+			and org_size = "1 to 10";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -26,7 +26,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Insurance"
-			and org_size ="1-10";';
+			and org_size = "1 to 10";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -48,8 +48,8 @@
 	$sql = 'SELECT count(distinct(org_name))
 			from org_profiles
 			where org_profile_status = "publish"
-			and industry_id = "Finance and investment"
-			and org_size ="11-50";';
+			and industry_id = "Finance and insurance"
+			and org_size = "11 to 50";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -63,7 +63,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Insurance"
-			and org_size ="11-50";';
+			and org_size = "11 to 50";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -84,8 +84,8 @@
 	$sql = 'SELECT count(distinct(org_name))
 			from org_profiles
 			where org_profile_status = "publish"
-			and industry_id = "Finance and investment"
-			and org_size ="51-200";';
+			and industry_id = "Finance and insurance"
+			and org_size = "51 to 200";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -99,7 +99,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Insurance"
-			and org_size ="51-200";';
+			and org_size = "51 to 200";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -120,7 +120,7 @@
 	$sql = 'SELECT count(distinct(org_name))
 			from org_profiles
 			where org_profile_status = "publish"
-			and industry_id = "Finance and investment"
+			and industry_id = "Finance and insurance"
 			and org_size ="201-1000";';
 
 	if(!$result = $db->query($sql)){
@@ -148,7 +148,7 @@
 	$sql = 'SELECT count(distinct(org_name))
 			from org_profiles
 			where org_profile_status = "publish"
-			and industry_id = "Finance and investment"
+			and industry_id = "Finance and insurance"
 			and org_size ="1000";';
 
 	if(!$result = $db->query($sql)){
@@ -186,7 +186,7 @@
 	$sql = 'SELECT count(distinct(org_name))
 			from org_profiles
 			where org_profile_status = "publish"
-			and industry_id = "Finance and investment"
+			and industry_id = "Finance and insurance"
 			and org_size ="1000+";';
 
 	if(!$result = $db->query($sql)){

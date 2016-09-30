@@ -38,4 +38,4 @@ $("#country-stat").each(function() {
  });
 
 // });
-}, 1000);
+}, 1200);

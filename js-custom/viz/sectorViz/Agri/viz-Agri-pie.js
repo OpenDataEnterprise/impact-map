@@ -20,7 +20,7 @@ var pie = d3.layout.pie()
 var color = d3.scale.ordinal()
     // old sad rainbow
     // .range(["#98abc5", "#7b6888", "#a05d56", "#ff8c00"]);
-    .range(["#d69f3e", "#e0b76e", "#eacf9e", "#f4e7ce"]);
+    .range(["#b88832", "#deb264", "#e6c58b", "#eed8b1", "f6ebd8"]);
 
 var svg = d3.select("#threePie").append("svg")
     .attr("id", "byType")
@@ -80,14 +80,14 @@ d3.json("js-custom/viz/sectorViz/Agri/AgriTypePieData.php", function(error, data
       .text(title);
 
    legend.append("rect")
-      .attr("x", width - 40)
+      .attr("x", width - 25)
       .attr("y", -5)
       .attr("width", 18)
       .attr("height", 18)
       .style("fill", color);
       // offset between rect and text is 6
   legend.append("text")
-      .attr("x", width - 45)
+      .attr("x", width - 30)
       .attr("y", 8)
       .style("text-anchor", "end")
       .style("font-size", "12px")
@@ -187,7 +187,7 @@ function type(d) {
 // pie three --- breakdown by org age
 var color3 = d3.scale.ordinal()
     // sad rainbow color
-    // .range(["#0055A4", "#d69f3e", "#c55542"]); 
+    // .range(["#0055A4", "#b88832", "#c55542"]); 
     .range(["#e0c7de", "#c28fbe", "#a4579e"]);
 
 var svg3 = d3.select("#threePie").append("svg")

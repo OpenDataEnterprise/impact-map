@@ -10,7 +10,7 @@
 	$sql = 'SELECT count(distinct(org_name))
 			from org_profiles
 			where org_profile_status = "publish"
-			and industry_id ="Housing/real estate";';
+			and industry_id ="Housing, construction & real estate";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');

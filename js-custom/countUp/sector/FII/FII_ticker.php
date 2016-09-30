@@ -6,11 +6,11 @@
 	if($db->connect_errno > 0){
     	die('Unable to connect to database [' . $db->connect_error . ']');
 	}
-// query one
+
 	$sql = 'SELECT count(distinct(org_name))
 			from org_profiles
 			where org_profile_status = "publish"
-			and industry_id ="Finance and investment";';
+			and industry_id ="Finance and insurance";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -18,27 +18,13 @@
 
 	while($row = $result->fetch_assoc()){
 		// var_dump($row);
-		$string1 = $row["count(distinct(org_name))"];
+		$string = $row["count(distinct(org_name))"];
 	}
 
-// query two
-	$sql = 'SELECT count(distinct(org_name))
-			from org_profiles
-			where org_profile_status = "publish"
-			and industry_id ="Insurance";';
-
-	if(!$result = $db->query($sql)){
-	    die('There was an error running the query [' . $db->error . ']');
-	}
-
-	while($row = $result->fetch_assoc()){
-		// var_dump($row);
-		$string2 = $row["count(distinct(org_name))"];
-	}
 	// $num = $stirng + 5;
 	// echo $row;
-	$string = $string1 + $string2;
 	echo $string;
+	// echo "777";
 	// echo $num?;
 	// $eval = is_string($isString);
 

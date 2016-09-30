@@ -7,6 +7,56 @@
     	die('Unable to connect to database [' . $db->connect_error . ']');
 	}
 
+// Academic institution query
+	$sql = 'SELECT count(distinct(org_name))
+			from org_profiles
+			where org_profile_status = "publish"
+			and industry_id = "Healthcare"
+			and org_type = "Academic institution";';
+
+	if(!$result = $db->query($sql)){
+	    die('There was an error running the query [' . $db->error . ']');
+	}
+
+	while($row = $result->fetch_assoc()){
+		$string1 = $row["count(distinct(org_name))"];
+	}
+
+	$sql = 'SELECT count(distinct(org_name))
+			from org_profiles
+			where org_profile_status = "publish"
+			and industry_id = "Water and sanitation"
+			and org_type = "Academic institution";';
+
+	if(!$result = $db->query($sql)){
+	    die('There was an error running the query [' . $db->error . ']');
+	}
+
+	while($row = $result->fetch_assoc()){
+		$string2 = $row["count(distinct(org_name))"];
+	}
+
+	$sql = 'SELECT count(distinct(org_name))
+			from org_profiles
+			where org_profile_status = "publish"
+			and industry_id = "Scientific research"
+			and org_type = "Academic institution";';
+
+	if(!$result = $db->query($sql)){
+	    die('There was an error running the query [' . $db->error . ']');
+	}
+
+	while($row = $result->fetch_assoc()){
+		$string3 = $row["count(distinct(org_name))"];
+	}
+
+	$num = $string1 + $string2 +$string3;
+
+	$obj = new stdClass();
+		$obj->org_type = "Academic Institution";
+		$obj->number = $num;
+		$data[] = $obj;
+
 // for profit query
 	$sql = 'SELECT count(distinct(org_name))
 			from org_profiles

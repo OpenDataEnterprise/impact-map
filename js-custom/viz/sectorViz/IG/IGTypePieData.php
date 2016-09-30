@@ -7,11 +7,47 @@
     	die('Unable to connect to database [' . $db->connect_error . ']');
 	}
 
+// Academic institution query
+	$sql = 'SELECT count(distinct(org_name))
+			from org_profiles
+			where org_profile_status = "publish"
+			and industry_id = "IT and geospatial"
+			and org_type = "Academic institution";';
+
+	if(!$result = $db->query($sql)){
+	    die('There was an error running the query [' . $db->error . ']');
+	}
+
+	while($row = $result->fetch_assoc()){
+		$string1 = $row["count(distinct(org_name))"];
+	}
+
+	$sql = 'SELECT count(distinct(org_name))
+			from org_profiles
+			where org_profile_status = "publish"
+			and industry_id = "Geospatial/mapping"
+			and org_type = "Academic institution";';
+
+	if(!$result = $db->query($sql)){
+	    die('There was an error running the query [' . $db->error . ']');
+	}
+
+	while($row = $result->fetch_assoc()){
+		$string2 = $row["count(distinct(org_name))"];
+	}
+
+	$num = $string1 + $string2;
+
+	$obj = new stdClass();
+		$obj->org_type = "Academic Institution";
+		$obj->number = $num;
+		$data[] = $obj;
+
 // for profit query
 	$sql = 'SELECT count(distinct(org_name))
 			from org_profiles
 			where org_profile_status = "publish"
-			and industry_id = "Data/information technology"
+			and industry_id = "IT and geospatial"
 			and org_type = "For-profit";';
 
 	if(!$result = $db->query($sql)){
@@ -48,7 +84,7 @@
 	$sql = 'SELECT count(distinct(org_name))
 			from org_profiles
 			where org_profile_status = "publish"
-			and industry_id = "Data/information technology"
+			and industry_id = "IT and geospatial"
 			and org_type = "Developer group";';
 
 	if(!$result = $db->query($sql)){
@@ -84,7 +120,7 @@
 	$sql = 'SELECT count(distinct(org_name))
 			from org_profiles
 			where org_profile_status = "publish"
-			and industry_id = "Data/information technology"
+			and industry_id = "IT and geospatial"
 			and org_type = "Nonprofit";';
 
 	if(!$result = $db->query($sql)){
@@ -120,7 +156,7 @@
 	$sql = 'SELECT count(distinct(org_name))
 			from org_profiles
 			where org_profile_status = "publish"
-			and industry_id = "Data/information technology"
+			and industry_id = "IT and geospatial"
 			and org_type = "Other";';
 
 	if(!$result = $db->query($sql)){

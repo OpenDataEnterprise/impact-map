@@ -48,19 +48,7 @@
 		where org_profiles.profile_id = data_applications.profile_id 
 		and org_profiles.country_id = org_country_info.country_id 
 		and org_profiles.location_id = org_locations.location_id 
-		and industry_id = 'Education';
-  --       or org_profiles.profile_id = data_applications.profile_id 
-		-- and org_profiles.country_id = org_country_info.country_id 
-		-- and org_profiles.location_id = org_locations.location_id 
-  --       and industry_id = 'Environment'
-  --       or org_profiles.profile_id = data_applications.profile_id 
-		-- and org_profiles.country_id = org_country_info.country_id 
-		-- and org_profiles.location_id = org_locations.location_id 
-  --       and industry_id = 'Mining/manufacturing'
-  --       or org_profiles.profile_id = data_applications.profile_id 
-		-- and org_profiles.country_id = org_country_info.country_id 
-		-- and org_profiles.location_id = org_locations.location_id 
-  --       and industry_id = 'Weather';";
+		and industry_id = 'Education';";
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');

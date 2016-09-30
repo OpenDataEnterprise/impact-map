@@ -29,7 +29,7 @@
 	$sql = 'SELECT count(distinct(org_name))
 			from org_profiles
 			where org_profile_status = "publish"
-			and industry_id = "Research and consulting"
+			and industry_id = "Business, research and consulting"
 			and org_year_founded > 2012
 			-- and org_year_founded > 2005
 			-- and org_year_founded < 2013
@@ -75,7 +75,7 @@
 	$sql = 'SELECT count(distinct(org_name))
 			from org_profiles
 			where org_profile_status = "publish"
-			and industry_id = "Research and consulting"
+			and industry_id = "Business, research and consulting"
 			-- and org_year_founded > 2012
 			and org_year_founded > 2005
 			and org_year_founded < 2013
@@ -119,7 +119,7 @@
 	$sql = 'SELECT count(distinct(org_name))
 			from org_profiles
 			where org_profile_status = "publish"
-			and industry_id = "Research and consulting"
+			and industry_id = "Business, research and consulting"
 			-- and org_year_founded > 2012
 			-- and org_year_founded > 2005
 			-- and org_year_founded < 2013

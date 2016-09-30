@@ -12,7 +12,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Healthcare"
-			and org_size ="1-10";';
+			and org_size = "1 to 10";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -26,7 +26,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Water and sanitation"
-			and org_size ="1-10";';
+			and org_size = "1 to 10";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -40,7 +40,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Scientific research"
-			and org_size ="1-10";';
+			and org_size = "1 to 10";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -63,7 +63,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Healthcare"
-			and org_size ="11-50";';
+			and org_size = "11 to 50";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -77,7 +77,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Water and sanitation"
-			and org_size ="11-50";';
+			and org_size = "11 to 50";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -91,7 +91,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Scientific research"
-			and org_size ="11-50";';
+			and org_size = "11 to 50";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -113,7 +113,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Healthcare"
-			and org_size ="51-200";';
+			and org_size = "51 to 200";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -127,7 +127,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Water and sanitation"
-			and org_size ="51-200";';
+			and org_size = "51 to 200";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -141,7 +141,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Scientific research"
-			and org_size ="51-200";';
+			and org_size = "51 to 200";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');

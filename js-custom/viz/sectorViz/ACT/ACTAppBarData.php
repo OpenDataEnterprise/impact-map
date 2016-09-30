@@ -11,7 +11,7 @@
 	$sql = 'SELECT count(distinct(org_name))
 		from org_profiles, data_applications
 		where org_profile_status = "publish"
-		and industry_id = "Arts and culture"
+		and industry_id = "Arts, culture and tourism"
 		and org_profiles.profile_id = data_applications.profile_id
 		and data_applications.research = 1;';
 
@@ -52,7 +52,7 @@
 	$sql = 'SELECT count(distinct(org_name))
 		from org_profiles, data_applications
 		where org_profile_status = "publish"
-		and industry_id = "Arts and culture"
+		and industry_id = "Arts, culture and tourism"
 		and org_profiles.profile_id = data_applications.profile_id
 		and data_applications.prod_srvc = 1;';
 
@@ -93,7 +93,7 @@
 	$sql = 'SELECT count(distinct(org_name))
 		from org_profiles, data_applications
 		where org_profile_status = "publish"
-		and industry_id = "Arts and culture"
+		and industry_id = "Arts, culture and tourism"
 		and org_profiles.profile_id = data_applications.profile_id
 		and data_applications.org_opt = 1;';
 
@@ -134,7 +134,7 @@
 	$sql = 'SELECT count(distinct(org_name))
 		from org_profiles, data_applications
 		where org_profile_status = "publish"
-		and industry_id = "Arts and culture"
+		and industry_id = "Arts, culture and tourism"
 		and org_profiles.profile_id = data_applications.profile_id
 		and data_applications.advocacy = 1;';
 
@@ -175,7 +175,7 @@
 	// $sql = 'SELECT count(distinct(org_name))
 	// 	from org_profiles, data_applications
 	// 	where org_profile_status = "publish"
-	// 	and industry_id = "Arts and culture"
+	// 	and industry_id = "Arts, culture and tourism"
 	// 	and org_profiles.profile_id = data_applications.profile_id
 	// 	and data_applications.use_other = 1;';
 

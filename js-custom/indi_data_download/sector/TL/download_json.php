@@ -48,19 +48,7 @@
 		where org_profiles.profile_id = data_applications.profile_id 
 		and org_profiles.country_id = org_country_info.country_id 
 		and org_profiles.location_id = org_locations.location_id 
-		and industry_id = 'Transportation and logistics';
-  --       or org_profiles.profile_id = data_applications.profile_id 
-		-- and org_profiles.country_id = org_country_info.country_id 
-		-- and org_profiles.location_id = org_locations.location_id 
-  --       and industry_id = 'Telecommunications/internet service providers';
-  --       or org_profiles.profile_id = data_applications.profile_id 
-		-- and org_profiles.country_id = org_country_info.country_id 
-		-- and org_profiles.location_id = org_locations.location_id 
-  --       and industry_id = 'Scientific research';
-  --       or org_profiles.profile_id = data_applications.profile_id 
-		-- and org_profiles.country_id = org_country_info.country_id 
-		-- and org_profiles.location_id = org_locations.location_id 
-  --       and industry_id = 'Weather';";
+		and industry_id = 'Transportation and logistics';";
 
 
 	if(!$result = $db->query($sql)){
