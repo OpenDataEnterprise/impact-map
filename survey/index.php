@@ -893,69 +893,47 @@ $app->post('/2du/:surveyId/', function ($lastsurvey_id) use ($app) {
 
     $other = isset($allPostVars['data_use_type_other']) ? htmlspecialchars($allPostVars['data_use_type_other']) : null;
 
-	foreach ($type_to_input[0] as $cid => $ty){
-		foreach ($ty as $t => $l){
-			
-	    	$data_use_query ="INSERT INTO org_data_use
-			    (
-			    	data_type, 
-			    	data_use_type_other, 
-			    	data_src_gov_level, 
-			    	profile_id, 
-			    	src_country_id, 
-			    	machine_read
-		    	)
-		    	VALUES (
-			    	:data_type, 
-			    	:data_use_type_other, 
-			    	:data_src_gov_level, 
-			    	:profile_id, 
-			    	:src_country_id, 
-			    	:machine_read
-		    	)";
+    if (isset($type_to_input[0])) {
+		foreach ($type_to_input[0] as $cid => $ty){
+			foreach ($ty as $t => $l){
+				
+		    	$data_use_query ="INSERT INTO org_data_use
+				    (
+				    	data_type, 
+				    	data_use_type_other, 
+				    	data_src_gov_level, 
+				    	profile_id, 
+				    	src_country_id, 
+				    	machine_read
+			    	)
+			    	VALUES (
+				    	:data_type, 
+				    	:data_use_type_other, 
+				    	:data_src_gov_level, 
+				    	:profile_id, 
+				    	:src_country_id, 
+				    	:machine_read
+			    	)";
 
-	    	try {
-		    	$stmt = $conn->prepare($data_use_query);
-		    	$stmt->bindParam("data_type", $t);
-
-		    	if ($t == "Other"){	
-		    		$stmt->bindParam("data_use_type_other", $other);
-		    	} else {
-		    		$null = null;
-		    		$stmt->bindParam("data_use_type_other", $null);
-		    	}
-		    	
-		    	if (isset($l[0])){
-		    		$stmt->bindParam("data_src_gov_level", $l[0]);
-		    	} else{
-		    		$null = null;
-		    		$stmt->bindParam("data_src_gov_level", $null);
-		    	}
-		    	
-		    	$stmt->bindParam("profile_id", $lastsurvey_id);
-		    	$stmt->bindParam("src_country_id", $cid);
-		    	$stmt->bindParam("machine_read", $machine_read);
-		    	$stmt->execute();
-		    	
-		    } catch(PDOException $e) {
-		        echo '{"error":{"text":'. $e->getMessage() .'}}'; 
-		    }
-
-		    if (isset($l[1])) {
-		    	$null = null;
-
-				try {
+		    	try {
 			    	$stmt = $conn->prepare($data_use_query);
 			    	$stmt->bindParam("data_type", $t);
 
 			    	if ($t == "Other"){	
 			    		$stmt->bindParam("data_use_type_other", $other);
 			    	} else {
+			    		$null = null;
 			    		$stmt->bindParam("data_use_type_other", $null);
 			    	}
 			    	
-			    	$stmt->bindParam("data_src_gov_level", $l[1]);
-			      	$stmt->bindParam("profile_id", $lastsurvey_id);
+			    	if (isset($l[0])){
+			    		$stmt->bindParam("data_src_gov_level", $l[0]);
+			    	} else{
+			    		$null = null;
+			    		$stmt->bindParam("data_src_gov_level", $null);
+			    	}
+			    	
+			    	$stmt->bindParam("profile_id", $lastsurvey_id);
 			    	$stmt->bindParam("src_country_id", $cid);
 			    	$stmt->bindParam("machine_read", $machine_read);
 			    	$stmt->execute();
@@ -963,9 +941,33 @@ $app->post('/2du/:surveyId/', function ($lastsurvey_id) use ($app) {
 			    } catch(PDOException $e) {
 			        echo '{"error":{"text":'. $e->getMessage() .'}}'; 
 			    }
-		    }
 
-			
+			    if (isset($l[1])) {
+			    	$null = null;
+
+					try {
+				    	$stmt = $conn->prepare($data_use_query);
+				    	$stmt->bindParam("data_type", $t);
+
+				    	if ($t == "Other"){	
+				    		$stmt->bindParam("data_use_type_other", $other);
+				    	} else {
+				    		$stmt->bindParam("data_use_type_other", $null);
+				    	}
+				    	
+				    	$stmt->bindParam("data_src_gov_level", $l[1]);
+				      	$stmt->bindParam("profile_id", $lastsurvey_id);
+				    	$stmt->bindParam("src_country_id", $cid);
+				    	$stmt->bindParam("machine_read", $machine_read);
+				    	$stmt->execute();
+				    	
+				    } catch(PDOException $e) {
+				        echo '{"error":{"text":'. $e->getMessage() .'}}'; 
+				    }
+			    }
+
+				
+			}
 		}
 	}
 

@@ -1,10 +1,18 @@
 <label for="industry_id">Sector <small class="required">(select 1)*</small></label>
 <label id="industry_id-error" class="error" for="industry_id"></label>
+<?php 
+// only validation checking when it's not internal.
+$suburl = $_SERVER['REQUEST_URI'];
+$internal = false;
+if (strpos($suburl, "form/internal/add")) {
+  $internal = true;
+}
+?>
 <fieldset>
   <div class="col-md-4" id="industry_id_col-1">
-    <input type="radio" name="industry_id" class="industry_id" value="Agriculture" required>&nbsp; Agriculture
+    <input type="radio" name="industry_id" class="industry_id" value="Agriculture" <?php if (!$internal){ echo "required";} ?>>&nbsp; Agriculture
     <br /><input type="radio" name="industry_id" class="industry_id" value="Arts, culture and tourism">&nbsp; Arts, culture and tourism
-    <br /><input id="industry_id_cul" type="radio" name="industry_id" class="industry_id" value="Business, research and consulting" required>&nbsp; Business, research and consulting
+    <br /><input id="industry_id_cul" type="radio" name="industry_id" class="industry_id" value="Business, research and consulting">&nbsp; Business, research and consulting
     <br /><input type="radio" name="industry_id" class="industry_id" value="Consumer">&nbsp; Consumer
     <br /><input type="radio" name="industry_id" class="industry_id" value="Education">&nbsp; Education
     <br /><input type="radio" name="industry_id" class="industry_id" value="Energy and climate">&nbsp; Energy and climate
