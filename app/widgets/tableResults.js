@@ -183,7 +183,7 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 					company['Research Description'],
 					company['Other'],
 					company['Use - Other Description'],
-					company['Entry Based On']
+					// company['Entry Based On']
 				]);
 
 				_.forEach(data2, function(row, outerIndex){
@@ -346,7 +346,7 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 					"Research Description": attr.use_research_desc,
 					"Other": (attr.use_other==1 ? "TRUE" : "FALSE"),
 					"Use - Other Description": attr.use_other_desc,
-					'Entry Based On': attr.org_profile_category
+					// 'Entry Based On': attr.org_profile_category
 
 				};
 
@@ -414,7 +414,7 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 					"Research Description": attr2.use_research_desc,
 					"Other": (attr2.use_other==1 ? "TRUE" : "FALSE"),
 					"Use - Other Description": attr2.use_other_desc,
-					'Entry Based On': attr2.org_profile_category
+					// 'Entry Based On': attr2.org_profile_category
 
 				};
 
