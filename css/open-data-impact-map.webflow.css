@@ -553,8 +553,8 @@ li {
 }
 
 .footer-logo {
-  margin-right: 30px;
-  margin-left: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
   float: left;
 }
 
@@ -566,8 +566,15 @@ li {
   margin-top: 8px;
 }
 
+.footer-logo.world-bank-logo {
+  margin-top: 5px;
+}
+
 .footer-logos-container {
-  display: inline-block;
+  display: block;
+  width: 700px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .sector-detail-header-background {
@@ -1019,6 +1026,7 @@ li {
 }
 
 .homepage-hero {
+  height: auto;
   background-color: #2b3d51;
   background-image: -webkit-linear-gradient(90deg, #1e2c3b 10%, rgba(30, 44, 59, 0) 45%), url('../images/57a0b5abf100384b354b217b_homepage-dots2x-compressed-170kb.png');
   background-image: linear-gradient(0deg, #1e2c3b 10%, rgba(30, 44, 59, 0) 45%), url('../images/57a0b5abf100384b354b217b_homepage-dots2x-compressed-170kb.png');
@@ -1194,6 +1202,10 @@ li {
   flex: 0 0 auto;
 }
 
+.regional-supporter-logo.ctg {
+  margin-left: 10px;
+}
+
 .regional-supporter-column {
   display: block;
   -webkit-box-orient: vertical;
@@ -1233,9 +1245,9 @@ li {
   display: block;
   max-height: 250px;
   max-width: 1200px;
-  margin-right: 35px;
+  margin-right: auto;
   margin-bottom: 30px;
-  margin-left: 35px;
+  margin-left: auto;
   color: #fff;
   text-align: center;
 }
@@ -2385,10 +2397,9 @@ li {
 
 .region-case-container-title {
   display: block;
-  margin-right: auto;
-  margin-bottom: 10px;
-  margin-left: auto;
+  margin: 30px auto 20px;
   padding-top: 5px;
+  padding-bottom: 5px;
   color: #000;
   font-size: 26px;
   font-weight: 400;
@@ -2411,7 +2422,9 @@ li {
 
 .sector-case-container-title {
   display: block;
-  margin: 30px auto 10px;
+  margin: 40px auto 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 5px;
   color: #000;
   font-size: 26px;
