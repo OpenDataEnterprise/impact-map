@@ -31,10 +31,124 @@ require 'credentials.inc.php';
 
 require 'functions.inc.php';
 
-org_profile_update();
-data_use_upate();
-org_name_update();
-size_update();
+// org_profile_update();
+data_use_update();
+// org_name_update();
+// size_update();
+sector_update();
+
+
+function sector_update() {
+  $vquery = "SELECT profile_id, industry_id FROM org_profiles";
+
+  try {
+    $conn = connect_db();
+    $stmt = $conn->query($vquery);
+    $rows = $stmt->fetchAll();        
+  } 
+  catch(PDOException $e) {
+    echo '{"error":{"text":'. $e->getMessage() .'}}'; 
+  }    
+
+  foreach ($rows as $row){
+    echo $row["profile_id"] . " ";
+    echo $row["industry_id"];
+    echo "<br>";
+
+    $sector = $row["industry_id"];
+    $pid = $row["profile_id"];
+
+    if ($row["industry_id"] == "Business and legal services" || $row["industry_id"] == "Mining/manufacturing" 
+      || $row["industry_id"] == "Research and consulting" || $row["industry_id"] == "Scientific research") {
+      $sector = "Business, research and consulting";    
+      $update_query = "UPDATE org_profiles SET industry_id = :sector WHERE profile_id=:profile_id";
+
+      try{
+        $stmt2 = $conn->prepare($update_query);
+        $stmt2->bindParam("profile_id", $pid);
+        $stmt2->bindParam("sector", $sector);
+        $stmt2->execute();
+      } catch(PDOException $e) {
+          echo '{"error":{"text":'. $e->getMessage() .'}}<br>'; 
+          print_r($update_query);
+      }     
+    } 
+    else if ($row["industry_id"] == "Consumer services") {
+      $sector = "Consumer";      
+      $update_query = "UPDATE org_profiles SET industry_id = :sector WHERE profile_id=:profile_id";
+
+      try{
+        $stmt2 = $conn->prepare($update_query);
+        $stmt2->bindParam("profile_id", $pid);
+        $stmt2->bindParam("sector", $sector);
+        $stmt2->execute();
+      } catch(PDOException $e) {
+          echo '{"error":{"text":'. $e->getMessage() .'}}<br>'; 
+          print_r($update_query);
+      }     
+    }
+    else if ($row["industry_id"] == "Data/information technology" || $row["industry_id"] == "Geospatial/mapping" 
+      || $row["industry_id"] == "Telecommunications/internet service providers") {
+      $sector = "IT and geospatial";      
+      $update_query = "UPDATE org_profiles SET industry_id = :sector WHERE profile_id=:profile_id";
+
+      try{
+        $stmt2 = $conn->prepare($update_query);
+        $stmt2->bindParam("profile_id", $pid);
+        $stmt2->bindParam("sector", $sector);
+        $stmt2->execute();
+      } catch(PDOException $e) {
+          echo '{"error":{"text":'. $e->getMessage() .'}}<br>'; 
+          print_r($update_query);
+      }     
+    }
+    else if ($row["industry_id"] == "Energy" || $row["industry_id"] == "Environment" 
+      || $row["industry_id"] == "Water and sanitation" || $row["industry_id"] == "Weather") {
+      $sector = "Energy and climate";      
+      $update_query = "UPDATE org_profiles SET industry_id = :sector WHERE profile_id=:profile_id";
+
+      try{
+        $stmt2 = $conn->prepare($update_query);
+        $stmt2->bindParam("profile_id", $pid);
+        $stmt2->bindParam("sector", $sector);
+        $stmt2->execute();
+      } catch(PDOException $e) {
+          echo '{"error":{"text":'. $e->getMessage() .'}}<br>'; 
+          print_r($update_query);
+      }     
+    }
+    else if ($row["industry_id"] == "Security and public safety") {
+      $sector = "Governance";      
+      $update_query = "UPDATE org_profiles SET industry_id = :sector WHERE profile_id=:profile_id";
+
+      try{
+        $stmt2 = $conn->prepare($update_query);
+        $stmt2->bindParam("profile_id", $pid);
+        $stmt2->bindParam("sector", $sector);
+        $stmt2->execute();
+      } catch(PDOException $e) {
+          echo '{"error":{"text":'. $e->getMessage() .'}}<br>'; 
+          print_r($update_query);
+      }     
+    }
+    else if ($row["industry_id"] == "Tourism" || $row["industry_id"] == "Arts and culture") {
+      $sector = "Arts, culture and tourism";      
+      $update_query = "UPDATE org_profiles SET industry_id = :sector WHERE profile_id=:profile_id";
+
+      try{
+        $stmt2 = $conn->prepare($update_query);
+        $stmt2->bindParam("profile_id", $pid);
+        $stmt2->bindParam("sector", $sector);
+        $stmt2->execute();
+      } catch(PDOException $e) {
+          echo '{"error":{"text":'. $e->getMessage() .'}}<br>'; 
+          print_r($update_query);
+      }     
+    }
+  }
+
+  return "<br>....Success.<br>";
+}
 
 function size_update(){
   $vquery = "SELECT profile_id, org_size FROM org_profiles";
@@ -124,7 +238,7 @@ function org_name_update(){
 }
 
 
-function data_use_upate(){
+function data_use_update(){
   $vquery = "SELECT object_id, profile_id, data_type FROM org_data_use";
 
   try {
@@ -197,7 +311,7 @@ function data_use_upate(){
           echo '{"error":{"text":'. $e->getMessage() .'}}<br>'; 
           print_r($update_query);
       }     
-    } else if ($row["data_type"] == "Manufacturing" || $row["data_type"] == "Economics " ) {
+    } else if ($row["data_type"] == "Manufacturing" || $row["data_type"] == "Economics" ) {
       $data_type = "Economic";      
       $update_query = "UPDATE org_data_use SET data_type = :data_type WHERE object_id=:object_id";
 
