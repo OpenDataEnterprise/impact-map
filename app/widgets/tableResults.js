@@ -146,185 +146,8 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 
 		exportTableData: function(){
 
-			//var wb = {}
-			//wb.Sheets = {};
-			//wb.Props = {};
-			//wb.SSF = {};
-			//wb.SheetNames = ['Company Data'];
-			//
-			//
-			//var ws = {}
-			//var data = [];
-			//var wscols = [];
-			//data.push(Object.keys(Data[0]))
-			//
-			//
-			//_.forEach(Data, function(company){
-			//	var tempData = [];
-			//	_.forEach(data[0], function(key){
-			//		tempData.push(company[key]);
-			//	})
-			//	data.push(tempData);
-			//})
-			//
-			//
-			///* the range object is used to keep track of the range of the sheet */
-			//var range = {s: {c:0, r:0}, e: {c:0, r:0 }};
-			//
-			///* Iterate through each element in the structure */
-			//for(var R = 0; R != data.length; ++R) {
-			//	if(range.e.r < R) range.e.r = R;
-			//	for(var C = 0; C != data[R].length; ++C) {
-			//		if(range.e.c < C) range.e.c = C;
-			//
-			//		/* create cell object: .v is the actual data */
-			//		var cell = { v: data[R][C] };
-			//		if(cell.v == null) continue;
-			//
-			//		/* create the correct cell reference */
-			//		var cell_ref = XLSX.utils.encode_cell({c:C,r:R});
-			//
-			//		/* determine the cell type */
-			//		if(typeof cell.v === 'number') cell.t = 'n';
-			//		else if(typeof cell.v === 'boolean') cell.t = 'b';
-			//		else cell.t = 's';
-			//
-			//		/* add to structure */
-			//		ws[cell_ref] = cell;
-			//	}
-			//}
-			//ws['!ref'] = XLSX.utils.encode_range(range);
-			//
-			//for(var i=0; i<data[0].length; i++){
-			//	wscols.push({wch:30})
-			//}
-			//
-			//ws['!cols'] = wscols;
-			//
-			///* add worksheet to workbook */
-			//wb.Sheets["Company Data"] = ws;
-			//
-			//var wopts = { bookType:'xlsx', bookSST:false, type:'binary' };
-			//
-			//var wbout = XLSX.write(wb,wopts);
-			//
-			//function s2ab(s) {
-			//	var buf = new ArrayBuffer(s.length);
-			//	var view = new Uint8Array(buf);
-			//	for (var i=0; i!=s.length; ++i) view[i] = s.charCodeAt(i) & 0xFF;
-			//	return buf;
-			//}
-
-/*			console.log('Data', Data);
-			console.log('Data2', Data2);*/
-
-
-		//Start of Comment and change download data without filter Vinayak 08.10.16
-/*			var exportData = _.map(Data, _.clone);
-			delete exportData[0]['profileID'];
-			//these fields included in the download fields as of 11/6/2015
-			// delete exportData[0]['use_advocacy'];
-			// delete exportData[0]['use_org_opt'];
-			// delete exportData[0]['use_other'];
-			// delete exportData[0]['use_prod_srvc'];
-			// delete exportData[0]['use_research'];
-			
-			var data = [];
-			data.push(Object.keys(exportData[0]));
-
-			_.forEach(exportData, function(company){
-
-				_.forEach(company, function(value, index){
-					company[index] = String(company[index]).replace(/,/g , " - ");
-					company[index] = String(company[index]).replace(/(\r\n|\n|\r)/gm," ");
-				})
-
-				data.push([
-					company['Region'],
-					company['Country'],
-					company['Company Name'],
-					company['Organization Type'],					
-					company['Industry Category'],
-					company['Description'],
-					company['URL'],
-					company['City'],
-					company['State/Region'],
-					company['Founding Year'],
-					company['Size'],
-					company['Data Use'],					
-					company['Advocacy'],
-					company['Advocacy Description'],
-					company['Product/Service'],
-					company['Product/Service Description'],
-					company['Organizational Optimization'],
-					company['Organizational Optimization Description'],
-					company['Research'],
-					company['Research Description'],
-					company['Other'],
-					company['Use - Other Description'],
-					company['Entry Based On']
-				]);
-
-				_.forEach(data, function(row, outerIndex){
-					_.forEach(row, function(item, innerIndex){
-						if(item == 'null'){
-							data[outerIndex][innerIndex] = ' ';
-						}
-					})
-				});
-
-
-				//"use_advocacy": attr.use_advocacy,
-				//	"Advocacy": attr.use_advocacy_desc,
-				//	"use_prod_srvc": attr.use_prod_srvc,
-				//	"New Products and Services": attr.use_prod_srvc_desc,
-				//	"use_org_opt": attr.use_org_opt,
-				//	"Organizational Optimization": attr.use_org_opt_desc,
-				//	"use_research": attr.use_research,
-				//	"Research": attr.use_research_desc,
-				//	"use_other": attr.use_other,
-				//	"Other": attr.use_other_desc
-				//var tempData = [];
-				//_.forEach(data[0], function(key){
-				//	tempData.push(company[key]);
-				//	debugger;
-				//})
-				//data.push(tempData);
-			});
-
-			var csvContent = "";
-			data.forEach(function(infoArray, index){
-
-				var dataString = infoArray.join(",");
-				csvContent += index < data.length ? dataString+ "\n" : dataString;
-
-			});
-
-
-			var today = new Date();
-			var dd = today.getDate();
-			var mm = today.getMonth()+1; //January is 0!
-
-			var yyyy = today.getFullYear();
-			if(dd<10){
-				dd='0'+dd
-			}
-			if(mm<10){
-				mm='0'+mm
-			}
-			var today = dd+'_'+mm+'_'+yyyy;
-
-			//the saveAs call downloads a file on the local machine
-			fileSaveAs(new Blob([csvContent],{type:"text/csv;charset=UTF-8"}), "Open Data Impact Map _ Data Export _ "+today+".csv");*/
-
 			var exportData = _.map(Data2, _.clone);
 			delete exportData[0]['profileID'];
-			//these fields included in the download fields as of 11/6/2015
-			// delete exportData[0]['use_advocacy'];
-			// delete exportData[0]['use_org_opt'];
-			// delete exportData[0]['use_other'];
-			// delete exportData[0]['use_prod_srvc'];
-			// delete exportData[0]['use_research'];
 			
 			var data2 = [];
 			data2.push(Object.keys(exportData[0]));
@@ -342,14 +165,14 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 					company['Country Income Level'],
 					company['Organization Name'],
 					company['Organization Type'],					
-					company['Industry Category'],
+					company['Sectors'],
 					company['Description'],
 					company['URL'],
 					company['City'],
 					company['State/Region'],
 					company['Founding Year'],
 					company['Size'],
-					company['Data Use'],					
+					company['Type of Data Used'],					
 					company['Advocacy'],
 					company['Advocacy Description'],
 					company['Product/Service'],
