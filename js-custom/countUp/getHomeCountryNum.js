@@ -1,41 +1,101 @@
+(function($) {
+    $.fn.countTo = function(options) {
+        // merge the default plugin settings with the custom options
+        options = $.extend({}, $.fn.countTo.defaults, options || {});
 
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
+        // how many times to update the value, and how much to increment the value on each update
+        var loops = Math.ceil(options.speed / options.refreshInterval),
+            increment = (options.to - options.from) / loops;
 
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById('country-stat').innerHTML = xmlhttp.responseText;
-                // console.log(xmlhttp.responseText);
+        return $(this).each(function() {
+            var _this = this,
+                loopCount = 0,
+                value = options.from,
+                interval = setInterval(updateTimer, options.refreshInterval);
+
+            function updateTimer() {
+                value += increment;
+                loopCount++;
+                $(_this).html(value.toFixed(options.decimals));
+
+                if (typeof(options.onUpdate) == 'function') {
+                    options.onUpdate.call(_this, value);
+                }
+
+                if (loopCount >= loops) {
+                    clearInterval(interval);
+                    value = options.to;
+
+                    if (typeof(options.onComplete) == 'function') {
+                        options.onComplete.call(_this, value);
+                    }
+                }
             }
-        };
+        });
+    };
 
-        xmlhttp.open("GET", "js-custom/countUp/home_country_ticker.php", true);
-        xmlhttp.send();
+    $.fn.countTo.defaults = {
+        from: 0,  // the number the element should start at
+        to: 100,  // the number the element should end at
+        speed: 1000,  // how long it should take to count between the target numbers
+        refreshInterval: 100,  // how often the element should be updated
+        decimals: 0,  // the number of decimal places to show
+        onUpdate: null,  // callback method for every time the element is updated,
+        onComplete: null,  // callback method for when the element finishes updating
+    };
+})(jQuery);
 
-setTimeout( function() {
-// $.when( $.ajax( "js-custom/countUp/home_country_ticker.php" ) ).done(function() {
-    function count1($this){
-        var current1 = parseInt($this.html(), 10);
 
-    $this.html(current1 = current1 + 10); // set the interval for country - bigger the quicker
+$.ajax({
+  url: "js-custom/countUp/home_country_ticker.php",
+  type: 'POST',
+  success: function(result) {
+     
+  },
+  error: function(xhr,status,error) {
+     // error code here
+  },
+  complete: function(xhr,status) {
+    if(status == 'success' || status =='notmodified'){
+      count = 0;
+      var count = $.parseJSON(xhr.responseText);
 
-      if(current1 > $this.data('count1')){
-          $this.html($this.data('count1'));
-      } else {    
-          setTimeout(function(){count1($this)}, 50); //set the timeout for country
-      }
-    } 
-          
-$("#country-stat").each(function() {
-  $(this).data('count1', parseInt($(this).html(), 10));
-  $(this).html('0');
-  count1($(this));
+      $('#country-stat').countTo({
+          from: 0,
+          to: count,
+          speed: 1000,
+          refreshInterval: 50,
+          onComplete: function(value) {
+             console.debug(this);
+          }
+      });
+    }    
+  }
  });
 
-// });
-}, 1200);
+$.ajax({
+  url: "js-custom/countUp/home_case_ticker.php",
+  type: 'POST',
+  success: function(result) {
+     
+  },
+  error: function(xhr,status,error) {
+     console.log("error in counting then cases...");
+  },
+  complete: function(xhr,status) {
+    if(status == 'success' || status =='notmodified'){
+      count = 0;
+      var count = $.parseJSON(xhr.responseText);
+
+      $('#case-stat').countTo({
+          from: 0,
+          to: count,
+          speed: 1000,
+          refreshInterval: 50,
+          onComplete: function(value) {
+             console.debug(this);
+          }
+      });
+    }    
+  }
+ });
