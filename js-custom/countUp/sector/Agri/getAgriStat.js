@@ -1,60 +1,74 @@
-function insertCaseStat() {
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp1 = new XMLHttpRequest();
-        } else {
-            // code for IE6, IE5
-            xmlhttp1 = new ActiveXObject("Microsoft.XMLHTTP");
-        }
+(function($) {
+    $.fn.countTo = function(options) {
+        // merge the default plugin settings with the custom options
+        options = $.extend({}, $.fn.countTo.defaults, options || {});
 
-        xmlhttp1.onreadystatechange = function() {
-            if (xmlhttp1.readyState == 4 && xmlhttp1.status == 200) {
-                var hello = "hello";
-                document.getElementById('stattss').innerHTML = xmlhttp1.responseText;
-                // console.log(xmlhttp.responseText);
+        // how many times to update the value, and how much to increment the value on each update
+        var loops = Math.ceil(options.speed / options.refreshInterval),
+            increment = (options.to - options.from) / loops;
+
+        return $(this).each(function() {
+            var _this = this,
+                loopCount = 0,
+                value = options.from,
+                interval = setInterval(updateTimer, options.refreshInterval);
+
+            function updateTimer() {
+                value += increment;
+                loopCount++;
+                $(_this).html(value.toFixed(options.decimals));
+
+                if (typeof(options.onUpdate) == 'function') {
+                    options.onUpdate.call(_this, value);
+                }
+
+                if (loopCount >= loops) {
+                    clearInterval(interval);
+                    value = options.to;
+
+                    if (typeof(options.onComplete) == 'function') {
+                        options.onComplete.call(_this, value);
+                    }
+                }
             }
-        };
+        });
+    };
 
-        xmlhttp1.open("GET", "js-custom/countUp/sector/Agri/Agri_ticker.php", true);
-        xmlhttp1.send();
-    }
+    $.fn.countTo.defaults = {
+        from: 0,  // the number the element should start at
+        to: 100,  // the number the element should end at
+        speed: 1000,  // how long it should take to count between the target numbers
+        refreshInterval: 100,  // how often the element should be updated
+        decimals: 0,  // the number of decimal places to show
+        onUpdate: null,  // callback method for every time the element is updated,
+        onComplete: null,  // callback method for when the element finishes updating
+    };
+})(jQuery);
 
- insertCaseStat();
 
+$.ajax({
+  url: "js-custom/countUp/sector/Agri/Agri_ticker.php",
+  type: 'POST',
+  success: function(result) {
+     
+  },
+  error: function(xhr,status,error) {
+     console.log("error in counting then cases...");
+  },
+  complete: function(xhr,status) {
+    if(status == 'success' || status =='notmodified'){
+      count = 0;
+      var count = $.parseJSON(xhr.responseText);
 
-// setTimeout(function () {
-//         //get the current stat number on the page - supposed to be done after PHP grabbed and inserted the value
-//         var countryStat = parseInt(document.getElementById('country-stat').innerHTML); 
-//         var caseStat = parseInt(document.getElementById('case-stat').innerHTML); 
-
-//         // console.log(countryStat);
-
-//         // count from 1
-//         var a = 1;
-//         var b = 1;
-//         // function for counting up one by one
-//         function call1() {
-//             // set the stat to current counter value "b"
-//             document.getElementById('country-stat').innerHTML = a.toString();
-//             a++; // add one to the counter
-//             setTimeout(function() {
-//                 // if smaller, continue counting
-//                 if (a <= countryStat) call1();
-//             },9);
-//         };
-//         function call2() {
-//             // set the stat to current counter value "b"
-//             document.getElementById('case-stat').innerHTML = b.toString();
-//             b=b+10; // add one to the counter
-//             setTimeout(function() {
-//                 // if smaller, continue counting
-//                 if (b <= caseStat) call2();
-//             },1);
-//         };
-
-//         // call function to count
-//         call1();
-//         call2();
-//     }, 50);
- 
-
+      $('#stattss').countTo({
+          from: 0,
+          to: count,
+          speed: 1400,
+          refreshInterval: 10,
+          onComplete: function(value) {
+             console.debug(this);
+          }
+      });
+    }    
+  }
+ });

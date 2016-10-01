@@ -63,7 +63,7 @@ $.ajax({
       $('#country-stat').countTo({
           from: 0,
           to: count,
-          speed: 1000,
+          speed: 1400,
           refreshInterval: 10,
           onComplete: function(value) {
              console.debug(this);
