@@ -54,6 +54,7 @@ $tokens = explode('/', $url);
 $lang = $tokens[sizeof($tokens)-1];
 
 if (in_array($lang, array('es_MX','fr_FR', 'de_DE', 'ko_KR', 'ru_RU', 'pt_BR'))){
+  if ($lang== 'ko_KR') $lang = 'ko_KR.utf8';
   putenv("LANG=" . $lang); 
   setlocale(LC_ALL, $lang);
   $domain = "messages";
