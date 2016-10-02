@@ -30,7 +30,7 @@ textdomain($domain);
               if ($language == $key) {
                 echo "$value &nbsp;&nbsp;";
               } else {
-                echo "<a href=\"/survey/start/$key\">$value</a> &nbsp;&nbsp; ";
+                echo "<a href=\"/survey/" . strval($content['surveyId']) . "/form/$key\">$value</a> &nbsp;&nbsp; ";
               }
             }
           ?>         
@@ -312,7 +312,7 @@ textdomain($domain);
           <div for="survey_contact_email">Phone <i>(optional)</i></div>
           <input type="text" class="form-control" id="survey_contact_phone" name="survey_contact_phone">
 
-          <input type="hidden" class="form-control" id="org_profile_year" name="org_profile_year" value="2016">
+          <input type="hidden" class="form-control" id="org_profile_year" name="org_profile_year" value="<?php echo date("Y"); ?>">
           <input type="hidden" class="form-control" id="org_profile_status" name="org_profile_status" value="submitted">
           <input type="hidden" class="form-control" id="org_profile_src" name="org_profile_src" value="survey">
           <input type="hidden" class="form-control" id="org_profile_src" name="org_profile_category" value="submitted survey">

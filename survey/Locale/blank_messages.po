@@ -22,6 +22,10 @@ msgstr ""
 msgid "TEST_TRANSLATION"
 msgstr ""
 
+#HEADER
+msgid "HEADER"
+msgstr ""
+
 #Thank you for participating in the Open Data Impact Map, the first centralized, searchable database of open data use cases from around the world.
 msgid "THANKS_PARTICIPATING"
 msgstr ""

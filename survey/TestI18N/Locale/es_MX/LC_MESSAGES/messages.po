@@ -22,6 +22,10 @@ msgstr "Bonjour tout le monde!"
 msgid "TEST_TRANSLATION"
 msgstr "Test de traduction..."
 
+#The Open Data Impact Map is a public database of organizations using open government data from around the world. 
+msgid "HEADER_1"
+msgstr "El Open Data Impact Map es una base de datos pública de organizaciones que utilizan datos públicos gubernamentales de todo el mundo."
+
 #Thank you for participating in the Open Data Impact Map, the first centralized, searchable database of open data use cases from around the world.
 msgid "THANKS_PARTICIPATING"
 msgstr "Gracias por participar en el mapa de impacto de los datos abiertos, una base de datos centralizada, con búsqueda de casos de uso de datos abiertos de todo el mundo."

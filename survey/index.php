@@ -394,7 +394,6 @@ $app->get('/:surveyId/form', function ($lastsurvey_id) use ($app) {
 	$app->log->debug(date_format(date_create(), 'Y-m-d H:i:s')."; DEBUG; "."new survey created, ...");
 	
 	// bring up new blank survey
-	
 	$content['surveyId'] = $lastsurvey_id;
 	$content['surveyName'] = "opendata";
 	$content['title'] = "Open Data Enterprise Survey";
@@ -404,21 +403,14 @@ $app->get('/:surveyId/form', function ($lastsurvey_id) use ($app) {
 });
 // ************
 $app->get('/:surveyId/form/:lang/', function ($lastsurvey_id, $lang) use ($app) {
-	$app->log->debug(date_format(date_create(), 'Y-m-d H:i:s')."; DEBUG; "."new survey created, ...");
+	// $app->log->debug(date_format(date_create(), 'Y-m-d H:i:s')."; DEBUG; "."new survey created, ...");
 	
 	// bring up new blank survey
 	$content['surveyId'] = $lastsurvey_id;
 	$content['surveyName'] = "opendata";
 	$content['title'] = "Open Data Enterprise Survey";
-	$content['language'] = "$lang";
-	print "db connection working successfully.";
-    
-    $sql="select * from org_surveys";
-    $db = connect_db();
-	$stmt = $db->query($sql); 
-	$users = $stmt->fetchAll(PDO::FETCH_OBJ);
-	$db = null;
-	echo json_encode($users);
+	$content['language'] = $lang;
+
 	$app->view()->setData(array('content' => $content ));
 	// $app->render('survey/tp_survey_es.php');
 	$app->render('survey/tp_survey_gettext.php');
@@ -469,11 +461,11 @@ $app->post('/2du/:surveyId/', function ($lastsurvey_id) use ($app) {
 	// $wb_region = addWbRegions($org_country_info['org_hq_country_locode']);
 
 	// Country Info
-    $country_name = isset($allPostVars['org_hq_country']) ? $allPostVars['org_hq_country'] : null;
-    $check_country_query = "SELECT * FROM org_country_info where org_hq_country=:country_name";
+    $country_code = isset($allPostVars['org_hq_country_locode']) ? $allPostVars['org_hq_country_locode'] : null;
+    $check_country_query = "SELECT * FROM org_country_info where ISO2=:country_code";
     try {
     	$stmt = $conn->prepare($check_country_query);
-    	$stmt->bindParam("country_name", $country_name);
+    	$stmt->bindParam("country_code", $country_code);
     	$stmt->execute();
     	$row = $stmt->fetch(PDO::FETCH_ASSOC);
     	if(isset($row['country_id'])) {

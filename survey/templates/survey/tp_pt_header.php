@@ -48,6 +48,24 @@
   </div>
   <div class="survey-header-background usecaseheader" id="findings">
     <h1 class="sector-landing usecaselanding">Open Data Impact Map Survey</h1>
-    <p class="landing-page-overview">The Open Data Impact Map is a public database of organizations using open government data from around the world.</p>
+<?php
+$url = $_SERVER['REQUEST_URI'];
+$tokens = explode('/', $url);
+$lang = $tokens[sizeof($tokens)-1];
+
+if (in_array($lang, array('es_MX','fr_FR', 'de_DE', 'ko_KR', 'ru_RU', 'pt_BR'))){
+  putenv("LANG=" . $lang); 
+  setlocale(LC_ALL, $lang);
+  $domain = "messages";
+  bindtextdomain($domain, "Locale"); 
+  bind_textdomain_codeset($domain, 'UTF-8');
+  textdomain($domain);
+  echo "<p class=\"landing-page-overview\">" . _("HEADER_1") . "</p>";
+} else {
+  echo "<p class=\"landing-page-overview\">The Open Data Impact Map is a public database of organizations using open government data from around the world.</p>";
+}
+
+?>
+    
   </div>
 

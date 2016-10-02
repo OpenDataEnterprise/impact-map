@@ -32,11 +32,51 @@ require 'credentials.inc.php';
 require 'functions.inc.php';
 
 // org_profile_update();
-data_use_update();
+// data_use_update();
 // org_name_update();
 // size_update();
-sector_update();
+// sector_update();
+country_code_update();
 
+
+function country_code_update(){
+  $vquery = "SELECT country_id, ISO2 FROM org_country_info";
+
+  try {
+    $conn = connect_db();
+    $stmt = $conn->query($vquery);
+    $rows = $stmt->fetchAll();        
+  } 
+  catch(PDOException $e) {
+    echo '{"error":{"text":'. $e->getMessage() .'}}'; 
+  }    
+
+  foreach ($rows as $row){
+    echo $row["country_id"] . " ";
+    echo $row["ISO2"];
+    echo "<br>";
+
+    $ISO2 = $row["ISO2"];    
+    $pid = $row["country_id"];
+
+    $ISO2 = trim($ISO2);   
+
+    $update_query = "UPDATE org_country_info SET ISO2 = :ISO2 WHERE country_id=:country_id";
+
+    try{
+      $stmt2 = $conn->prepare($update_query);
+      $stmt2->bindParam("country_id", $pid);
+      $stmt2->bindParam("ISO2", $ISO2);
+      $stmt2->execute();
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}<br>'; 
+        print_r($update_query);
+    }   
+
+  }
+
+  return "<br>....Success.<br>";
+}
 
 function sector_update() {
   $vquery = "SELECT profile_id, industry_id FROM org_profiles";

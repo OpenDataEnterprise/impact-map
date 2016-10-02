@@ -16,7 +16,7 @@ if (strpos($suburl, "form/internal/add")) {
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Business">&nbsp; <span>Business</span>
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Consumer">&nbsp; <span>Consumer</span>
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Demographic and social">&nbsp; <span>Demographic and social</span>
-    <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Economics ">&nbsp; <span>Economics</span>
+    <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Economics">&nbsp; <span>Economics</span>
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Education">&nbsp; <span>Education</span>
     <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Energy">&nbsp; <span>Energy</span>
 </div>

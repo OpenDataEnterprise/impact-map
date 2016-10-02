@@ -18,11 +18,12 @@ textdomain($domain);
 <!-- Main Content Section -->
 <div class="container lg-font col-md-12" style="border:0px solid black;">
 
- <form id="survey_form" class="form-horizontal" style="border:0px dotted black;" action="/survey/2du/<?php echo $content['object_id']; ?>" method="post">
+ <form id="survey_form" class="form-horizontal" style="border:0px dotted black;" action="/survey/2du/<?php echo $content['surveyId']; ?>" method="post">
 
     <div class="col-md-12" role="Intro" id="role-intro">
       <div style="text-align:center;font-size:1.1em;margin-top:20px;">
-        <div class="col-md-6 small">&nbsp;</div><div class="col-md-6 pull-right small" style="font-size:14px;">
+        <div class="col-md-6 small">&nbsp;</div>
+        <div class="col-md-6 pull-right small" style="font-size:14px;">
         <a href="/survey/start">English</a>&nbsp;&nbsp;
           <?php
             $langs = array('es_MX' => 'Español', 'fr_FR' => 'Français', 'de_DE' => 'Deutsch', 'ko_KR' => '한국어 조선말', 'ru_RU' => 'русский', 'pt_BR' => 'Português');
@@ -30,23 +31,23 @@ textdomain($domain);
               if ($language == $key) {
                 echo "$value &nbsp;&nbsp;";
               } else {
-                echo "<a href=\"/survey/start/$key\">$value</a> &nbsp;&nbsp; ";
+                echo "<a href=\"/survey/" . strval($content['surveyId']) . "/form/$key\">$value</a> &nbsp;&nbsp; ";
               }
             }
-          ?>         
+          ?>        
         </div>
-        
-        <?php echo gettext("THANKS_PARTICIPATING") ?>
-        <?php echo _("YOUR_CONTRIBUTION") ?>
-        <?php echo _("INFO_COLLECTED") ?>
+        <!--         
+        <?php 
+        //echo _("YOUR_CONTRIBUTION"); 
+        ?>
+        <?php 
+        //echo _("INFO_COLLECTED"); 
+        ?> -->
       </div>
       <br />
     </div>
      
     <div class="col-md-12" role="eligibility" id="role-eligibility">
-      <div class="row col-md-12">
-        <h4><?php echo _("ELIGIBILITY") ?></h4>
-      </div>
       <div>
         <b><?php echo _("MAP_INCLUDES_ORGS") ?></b>
           <ul>
@@ -96,6 +97,9 @@ textdomain($domain);
             </label>
             <label class="btn btn-default">
                 <input type="radio" name="org_type" id="Developer group" value="Developer group">  <?php echo _("DEVELOPER_GROUP") ?>
+            </label>
+            <label class="btn btn-default">
+                <input type="radio" name="org_type" id="Academic_institution" value="Academic institution"> <?php echo _("ACADEMIC_INSTITUTION") ?>
             </label>
             <label class="btn btn-default">
                 <input type="radio" name="org_type" id="Other" value="Other">  <?php echo _("OTHER") ?>
@@ -150,33 +154,20 @@ textdomain($domain);
         <fieldset>
         <div class="col-md-4" id="industry_id_col-1">
           <input type="radio" name="industry_id" class="industry_id" value="Agriculture">&nbsp; <?php echo _("AGR") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Arts and culture">&nbsp; <?php echo _("ART") ?>
-          <br /><input id="industry_id_cul" type="radio" name="industry_id" class="industry_id" value="Business and legal services" required>&nbsp; <?php echo _("BUS") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Consumer services">&nbsp; <?php echo _("CSM") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Data/information technology">&nbsp; <?php echo _("DAT") ?>
+          <br /><input type="radio" name="industry_id" class="industry_id" value="Arts, culture and tourism">&nbsp; <?php echo _("ART") ?>
+          <br /><input id="industry_id_cul" type="radio" name="industry_id" class="industry_id" value="Business, research and consulting" required>&nbsp; <?php echo _("BUS") ?>
+          <br /><input type="radio" name="industry_id" class="industry_id" value="Consumer">&nbsp; <?php echo _("CSM") ?>
           <br /><input type="radio" name="industry_id" class="industry_id" value="Education">&nbsp; <?php echo _("EDU") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Energy">&nbsp; <?php echo _("NGY") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Environment">&nbsp; <?php echo _("ENV") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Finance and investment">&nbsp; <?php echo _("FIN") ?>
+          <br /><input type="radio" name="industry_id" class="industry_id" value="Energy and climate">&nbsp; <?php echo _("NGY") ?>
+          <br /><input type="radio" name="industry_id" class="industry_id" value="Finance and insurance">&nbsp; <?php echo _("FIN") ?>
         </div>
         <div class="col-md-4" id="industry_id_col-2">
-          <input type="radio" name="industry_id" class="industry_id" value="Geospatial/mapping">&nbsp; <?php echo _("GEO") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Governance">&nbsp; <?php echo _("GOV") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Healthcare">&nbsp; <?php echo _("HLT") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Housing and real estate">&nbsp; <?php echo _("HOU") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Insurance">&nbsp; <?php echo _("INS") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Media and communications">&nbsp; <?php echo _("COM") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Mining/manufacturing">&nbsp; <?php echo _("MAN") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Research and consulting">&nbsp; <?php echo _("RSH") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Security and public safety">&nbsp; <?php echo _("SEC") ?>
-        </div>
-        <div class="col-md-4" id="industry_id_col-3">
-          <input type="radio" name="industry_id" class="industry_id" value="Scientific research">&nbsp; <?php echo _("SCI") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Telecommunications/internet service providers (ISPs)">&nbsp; <?php echo _("TEL") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Tourism">&nbsp; <?php echo _("TOR") ?>
+          <input type="radio" name="industry_id" class="industry_id" value="Governance">&nbsp; <?php echo _("GOV") ?>
+          <br /><input type="radio" name="industry_id" class="industry_id" value="Health">&nbsp; <?php echo _("HLT") ?>
+          <br /><input type="radio" name="industry_id" class="industry_id" value="Housing, construction &amp; real estate">&nbsp; <?php echo _("HOU") ?>          
+          <br /><input type="radio" name="industry_id" class="industry_id" value="IT and geospatial">&nbsp; <?php echo _("TEL") ?>
+          <br /><input type="radio" name="industry_id" class="industry_id" value="Media and communications">&nbsp; <?php echo _("COM") ?>     
           <br /><input type="radio" name="industry_id" class="industry_id" value="Transportation and logistics">&nbsp; <?php echo _("TRN") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Water and sanitation">&nbsp; <?php echo _("WAT") ?>
-          <br /><input type="radio" name="industry_id" class="industry_id" value="Weather">&nbsp; <?php echo _("WEA") ?>
           <br /><input type="radio" name="industry_id" class="industry_id" value="Other">&nbsp; <?php echo _("OTHER") ?>
                 <input type="text" class="form-control" style="display:none" name="industry_other" placeholder="<?php echo _("PROVIDE_DETAILS") ?>">
         </div>
@@ -198,16 +189,16 @@ textdomain($domain);
         <div class="col-md-12">
           <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
-                <input type="radio" name="org_size_id" value="1-10"> <?php echo _("1-10") ?>
+                <input type="radio" name="org_size_id" value="1 to 10"> <?php echo _("1-10") ?>
             </label>
             <label class="btn btn-default">
-                <input type="radio" name="org_size_id" value="11-50"> <?php echo _("11-50") ?>
+                <input type="radio" name="org_size_id" value="11 to 50"> <?php echo _("11-50") ?>
             </label>
             <label class="btn btn-default">
-                <input type="radio" name="org_size_id" value="51-200"> <?php echo _("51-200") ?>
+                <input type="radio" name="org_size_id" value="51 to 200"> <?php echo _("51-200") ?>
             </label>
             <label class="btn btn-default">
-                <input type="radio" name="org_size_id" value="201-1000"> <?php echo _("201-1000") ?>
+                <input type="radio" name="org_size_id" value="201 to 1000"> <?php echo _("201-1000") ?>
             </label>
             <label class="btn btn-default">
                 <input type="radio" name="org_size_id" value="1000+"> <?php echo _("1000+") ?>
@@ -260,23 +251,22 @@ textdomain($domain);
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Business">&nbsp; <span><?php echo _("BUSINESS") ?></span></span>
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Consumer">&nbsp; <span><?php echo _("CONSUMER") ?></span>
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Demographics and social">&nbsp; <span><?php echo _("DEMOGRAPHICS") ?></span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Economics ">&nbsp; <span><?php echo _("ECONOMICS") ?></span>
+            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Economics">&nbsp; <span><?php echo _("ECONOMICS") ?></span>
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Education">&nbsp; <span><?php echo _("EDUCATION") ?></span>
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Energy">&nbsp; <span><?php echo _("ENERGY") ?></span>
         </div>
         <div class="col-md-4" id="data_type_col-2">
             <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Environment">&nbsp; <span><?php echo _("ENVIRONMENT") ?></span>
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Finance">&nbsp; <span><?php echo _("FINANCE") ?></span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Geospatial/mapping">&nbsp; <span><?php echo _("GEOSPATIAL") ?></span>
+            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Geospatial">&nbsp; <span><?php echo _("GEOSPATIAL") ?></span>
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Government operations">&nbsp; <span><?php echo _("GOVERNMENT_OPS") ?></span>
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Health/healthcare">&nbsp; <span><?php echo _("HEALTH") ?></span>
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Housing">&nbsp; <span><?php echo _("HOUSING_CAT") ?></span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="International/global development">&nbsp; <span><?php echo _("INTERNATIONAL") ?></span>
+            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="International development">&nbsp; <span><?php echo _("INTERNATIONAL") ?></span>
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Legal">&nbsp; <span><?php echo _("LEGAL") ?></span>
         </div>
         <div class="col-md-4" id="data_type_col-3">
-            <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Manufacturing">&nbsp; <span><?php echo _("MANUFACTURING") ?></span>
-            <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Science and research">&nbsp; <span><?php echo _("SCIENCE_AND_RESEARCH") ?></span>
+            <input type="checkbox" name="data_use_type[]" class="data_use_type" value="Science and research">&nbsp; <span><?php echo _("SCIENCE_AND_RESEARCH") ?></span>
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Public safety">&nbsp; <span><?php echo _("PUBLIC_SAFETY") ?></span>
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Tourism">&nbsp; <span><?php echo _("TOURISM") ?></span>
             <br /><input type="checkbox" name="data_use_type[]" class="data_use_type" value="Transportation">&nbsp; <span><?php echo _("TRANSPORTATION") ?></span>
@@ -392,7 +382,7 @@ textdomain($domain);
           <div for="survey_contact_email"><?php echo _("PHONE") ?> <i>(<?php echo _("OPTIONAL") ?>)</i></div>
           <input type="text" class="form-control" id="survey_contact_phone" name="survey_contact_phone">
 
-          <input type="hidden" class="form-control" id="org_profile_year" name="org_profile_year" value="2015">
+          <input type="hidden" class="form-control" id="org_profile_year" name="org_profile_year" value="<?php echo date("Y"); ?>">
           <input type="hidden" class="form-control" id="org_profile_status" name="org_profile_status" value="submitted">
           <input type="hidden" class="form-control" id="org_profile_src" name="org_profile_src" value="survey">
           <input type="hidden" class="form-control" id="org_profile_src" name="org_profile_category" value="submitted survey">
@@ -411,24 +401,6 @@ textdomain($domain);
 
     <div class="col-md-12" style="text-align:center;">    
       <button class="btn btn-primary" style="padding:1em 2em 1em 2em; width:200px; background-color: rgb(53, 162, 227);" id="btnSubmit" type="submit" name="submit" value="submit"><?php echo _("SUBMIT") ?></button>
-    </div>
-
-    <div class="w-section attribution" style="margin-top:12px;">
-      <div class="w-container">
-        <div class="">
-          <hr>
-          <div class="w-row row-attribution" >
-            <div class="w-col w-col-3"><a href="http://od4d.net"><img class="logo-od4" src="/survey/img/od4-logo-black.png" width="200"></a>
-            </div>
-            <div class="w-col w-col-3" style="text-align:center;"><a class="link-attribution" href="http://creativecommons.org/licenses/by-sa/4.0/"><img class="logo-cc" src="/survey/img/creative_commons_logo.png" width="150"></a>
-            </div>
-            <div class="w-col w-col-6">
-              <div class="text-attribution"><?php echo _("OD4D_ATTRIBUTION") ?>&nbsp;<a class="link-attribution" href="http://creativecommons.org/licenses/by-sa/4.0/"><?php echo _("CREATIVE_COMMONS_LICENSE") ?></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
       
     </div>
