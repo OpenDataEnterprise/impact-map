@@ -1723,9 +1723,9 @@ $app->get('/data/flatfile.json', function () use ($app) {
 	$org_profile_query="SELECT * FROM org_profiles as p LEFT JOIN org_locations as l ON p.location_id = l.location_id
 														LEFT JOIN org_country_info as c ON p.country_id = c.country_id
 														LEFT JOIN data_applications as a ON p.profile_id = a.profile_id
-														RIGHT JOIN org_data_use as o ON p.profile_id = o.profile_id
-														JOIN org_country_info as src ON o.src_country_id= src.country_id
-														where p.profile_id = 1745";
+														-- RIGHT JOIN org_data_use as o ON p.profile_id = o.profile_id
+														-- JOIN org_country_info as src ON o.src_country_id= src.country_id
+														where p.profile_id = 1";
 	$stmt = $db->prepare($org_profile_query); 
 	$stmt->bindParam("pid", $profile_id);
 	$stmt->execute();

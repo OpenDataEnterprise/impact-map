@@ -28,7 +28,8 @@ textdomain($domain);
         <div class="col-md-6 pull-right small" style="font-size:14px;">
         <a href="/survey/start">English</a>&nbsp;&nbsp;
           <?php
-            $langs = array('es_MX' => 'Español', 'fr_FR' => 'Français', 'de_DE' => 'Deutsch', 'ko_KR' => '한국어 조선말', 'ru_RU' => 'русский', 'pt_BR' => 'Português');
+            // 'fr_FR' => 'Français','ko_KR' => '한국어 조선말', 'ru_RU' => 'русский', 
+            $langs = array('es_MX' => 'Español',  'de_DE' => 'Deutsch', 'pt_BR' => 'Português');
             foreach ($langs as $key => $value) {
               if ($language == $key) {
                 echo "$value &nbsp;&nbsp;";
