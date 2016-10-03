@@ -1758,7 +1758,7 @@ $app->get('/data/flatfile.json', function () use ($app) {
 		$temp["org_hq_country"] = $item["org_hq_country"];
 		$temp["org_hq_country_income"] = $item["org_hq_country_income"];
 		$temp["org_hq_country_income_code"] = $item["org_hq_country_income_code"];
-		$temp["org_hq_country_locode"] = $item["org_hq_country_locode"];
+		$temp["org_hq_country_locode"] = $item["ISO2"];
 		$temp["org_hq_country_region"] = $item["org_hq_country_region"];
 		$temp["org_hq_country_region_code"] = $item["org_hq_country_region_code"];
 		$temp["org_hq_st_prov"] = $item["org_hq_st_prov"];
@@ -1850,7 +1850,7 @@ $app->get('/data/flatfile.json', function () use ($app) {
 			$temp["org_confidence"] = intval($item["org_confidence"]);
 			$temp["data_country_count"] = intval($item["data_country_count"]);
 			$temp["machine_read"] = $item["machine_read"];
-			$temp["data_src_country_locode"] = "FI";
+			$temp["data_src_country_locode"] = $item["ISO2"];
 	      	$temp["data_src_country_name"] = "Finland";
 	      	$temp["data_src_gov_level"]= "Local";
 	      	$temp["data_type"]= "Transportation";

@@ -4,7 +4,7 @@
 define([],function(){
   var agsserver = "http://services.arcgis.com/Fsk4zuQe2Ol9olZc/ArcGIS/rest/services";
   var runAs = 'develop';
-  if (location.host == "opendataenterprise.org" || location.host == "www.opendataenterprise.org"){
+  if (location.host == "opendataimpactmap.org" || location.host == "www.opendataimpactmap.org"){
     runAs = 'production';
   } 
   

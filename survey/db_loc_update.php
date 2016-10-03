@@ -33,10 +33,10 @@ require 'functions.inc.php';
 
 // org_profile_update();
 // data_use_update();
-// org_name_update();
+org_name_update();
 // size_update();
 // sector_update();
-country_code_update();
+// country_code_update();
 
 
 function country_code_update(){
