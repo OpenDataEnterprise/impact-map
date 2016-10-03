@@ -18,16 +18,12 @@ path.domain {
   stroke: none;
 }
 
-svg {
+.regionvizlanding .tick text {
   fill: white;
 }
 
-.pieSvg {
-	fill: black;
-}
-
-.barSvg {
-  fill: black;
+.sectorvizlanding .tick text {
+  fill: white;
 }
 
 #regionLandingBar:hover {
