@@ -22,7 +22,7 @@ textdomain($domain);
     <div class="col-md-12" role="Intro" id="role-intro">
       <div style="font-size:1.1em;margin-top:20px;">
         <div class="col-md-6 small">&nbsp;</div>
-        <div class="col-md-6 small" style="font-size:14px;">
+        <div class="col-md-6 pull-right small" style="font-size:14px;">
         English&nbsp;&nbsp;
           <?php
           // 'fr_FR' => 'Français','ko_KR' => '한국어 조선말', 'ru_RU' => 'русский', 
