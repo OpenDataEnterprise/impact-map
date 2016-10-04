@@ -570,17 +570,6 @@ li {
 }
 
 .sector-detail-header {
-  display: block;
-  margin: -63px auto -185px;
-  padding: 0px 30px;
-  -webkit-box-ordinal-group: 1;
-  -webkit-order: 0;
-  -ms-flex-order: 0;
-  order: 0;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
   font-family: Palanquin, sans-serif;
   color: #1e2c3b;
   font-size: 54px;
@@ -1830,28 +1819,6 @@ li {
   padding-top: 21px;
 }
 
-.explore-sector-row {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-right: auto;
-  margin-bottom: 30px;
-  margin-left: auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-  text-align: center;
-}
-
 .data_buttons {
   display: none;
   width: 221px;
@@ -2434,6 +2401,10 @@ li {
   list-style-type: disc;
 }
 
+.sector-spacer {
+  width: 10%;
+}
+
 @media (max-width: 991px) {
   .navigation {
     display: block;
@@ -2488,9 +2459,6 @@ li {
   }
   .sector-detail-header-background {
     background-size: 84px, contain, 100% 225px;
-  }
-  .sector-detail-header {
-    margin-top: -160px;
   }
   .text-container {
     margin-right: 8%;
@@ -2721,14 +2689,8 @@ li {
     height: 12px;
     margin-bottom: 20px;
   }
-  .sector-link-block {
-    width: 33%;
-  }
   .sector-link-block.spacer {
     display: none;
-  }
-  .sector-link-block.last {
-    width: 100%;
   }
   .sector-link-outer-circle {
     width: 130px;
@@ -2800,8 +2762,6 @@ li {
     background-size: 140px, 100%, 100% 225px;
   }
   .sector-detail-header {
-    margin-top: -170px;
-    padding-top: 0px;
     font-size: 42px;
     line-height: 48px;
   }
@@ -3254,7 +3214,6 @@ li {
     background-repeat: repeat;
   }
   .sector-detail-header {
-    margin-top: -170px;
     font-size: 36px;
     line-height: 42px;
   }
