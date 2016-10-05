@@ -1679,23 +1679,24 @@ $app->get('/opendata/submitted/csv', function () use ($app) {
 	$app->render('survey/tp_csv.php');
 });
 // **************
-$app->get('/survey/opendata/data/org/:profile_id', function ($profile_id) use ($app) {
-	$parse = new parseRestClient(array(
-		'appid' => PARSE_APPLICATION_ID,
-		'restkey' => PARSE_API_KEY
-	));
-	// Retrieve org_data_use
-	$params = array(
-		'className' => 'org_profile',
-		'query' => array(
-	        'profile_id' => $profile_id
-			)
-	);
-	$request = $parse->query($params);
-	// Return results via json
-	header('Content-Type: application/json');
-	echo $request;
-	exit;
+$app->get('/showduplicates', function () use ($app) {
+	$db = connect_db(); 
+	$org_profile_query="SELECT profile_id, org_name, createdAt FROM org_profiles where org_profile_status='publish' ORDER BY profile_id DESC";
+	$stmt = $db->prepare($org_profile_query); 	
+	$stmt->execute();
+	$org_profile = $stmt->fetchAll();
+
+	$names = array();
+
+	foreach ($org_profile as $item){
+		if (in_array($item["org_name"], $names)) {
+			echo strval($item["profile_id"]) . ": " . $item["org_name"] . ", inserted on " . strval($item["createdAt"]);
+			echo "<br>";
+		}
+		else {
+			array_push($names, $item["org_name"]);
+		}		
+	}
 });
 
 $app->get('/showdata', function() use($app) {
