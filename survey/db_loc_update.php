@@ -32,8 +32,8 @@ require 'credentials.inc.php';
 require 'functions.inc.php';
 
 // org_profile_update();
-// data_use_update();
-org_name_update();
+data_use_update();
+// org_name_update();
 // size_update();
 // sector_update();
 // country_code_update();
@@ -351,7 +351,7 @@ function data_use_update(){
           echo '{"error":{"text":'. $e->getMessage() .'}}<br>'; 
           print_r($update_query);
       }     
-    } else if ($row["data_type"] == "Manufacturing" || $row["data_type"] == "Economics" ) {
+    } else if ($row["data_type"] == "Manufacturing" || $row["data_type"] == "Economics" || $row["data_type"] == "Economics "  ) {
       $data_type = "Economic";      
       $update_query = "UPDATE org_data_use SET data_type = :data_type WHERE object_id=:object_id";
 
