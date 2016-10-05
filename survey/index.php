@@ -1720,21 +1720,15 @@ $app->get('/showdata', function() use($app) {
 $app->get('/data/flatfile.json', function () use ($app) {
 
 	$db = connect_db(); 
+	$db -> exec("set names utf8");
 	$org_profile_query="SELECT * FROM org_profiles as p LEFT JOIN org_locations as l ON p.location_id = l.location_id
 														LEFT JOIN org_country_info as c ON p.country_id = c.country_id
-														LEFT JOIN data_applications as a ON p.profile_id = a.profile_id
-														-- RIGHT JOIN org_data_use as o ON p.profile_id = o.profile_id
-														-- JOIN org_country_info as src ON o.src_country_id= src.country_id
-														where p.profile_id = 1";
-	$stmt = $db->prepare($org_profile_query); 
-	$stmt->bindParam("pid", $profile_id);
+														LEFT JOIN data_applications as a ON p.profile_id = a.profile_id														
+														where p.org_profile_status='publish'";
+	$stmt = $db->prepare($org_profile_query); 	
 	$stmt->execute();
 	$org_profile = $stmt->fetchAll();
-	
-	echo "<pre>";
-	print_r($org_profile);
-	echo "</pre>";
-	exit;
+
 	$final_array = array();
 	
 	// Data Use
@@ -1743,8 +1737,7 @@ $app->get('/data/flatfile.json', function () use ($app) {
 
 		$createdAt = explode(" ",  $item["createdAt"]);
 		$updatedAt = explode(" ",  $item["updatedAt"]);
-		$temp["createdAt"]  =  $createdAt[0];
-		$temp["data_use_type_other"] = $item["data_use_type_other"];
+		$temp["createdAt"]  =  $createdAt[0];		
 		$temp["industry_id"] = $item["industry_id"];
 		$temp["industry_other"] = $item["industry_other"];
 		$temp["latitude"] = floatval($item["latitude"]);
@@ -1754,13 +1747,13 @@ $app->get('/data/flatfile.json', function () use ($app) {
 		$temp["org_greatest_impact"] = $item["org_greatest_impact"];
 		$temp["org_greatest_impact_detail"] = $item["org_greatest_impact_detail"];
 		$temp["org_hq_city"] = $item["org_hq_city"];
-		$temp["org_hq_city_locode"] = null;
+		// $temp["org_hq_city_locode"] = null;
 		$temp["org_hq_country"] = $item["org_hq_country"];
 		$temp["org_hq_country_income"] = $item["org_hq_country_income"];
 		$temp["org_hq_country_income_code"] = $item["org_hq_country_income_code"];
 		$temp["org_hq_country_locode"] = $item["ISO2"];
 		$temp["org_hq_country_region"] = $item["org_hq_country_region"];
-		$temp["org_hq_country_region_code"] = $item["org_hq_country_region_code"];
+		// $temp["org_hq_country_region_code"] = $item["org_hq_country_region_code"];
 		$temp["org_hq_st_prov"] = $item["org_hq_st_prov"];
 		$temp["org_name"] = $item["org_name"];
 		$temp["org_open_corporates_id"] = null;
@@ -1773,7 +1766,7 @@ $app->get('/data/flatfile.json', function () use ($app) {
 		$temp["org_type_other"] = $item["org_type_other"];
 		$temp["org_url"] = $item["org_url"];
 		$temp["org_year_founded"] = intval($item["org_year_founded"]);
-		$temp["profile_id"] = $item["profile_id"];
+		$temp["profile_id"] = intval($item["profile_id"]);
 		$temp["row_type"] = "org_profile";
 		$temp["updatedAt"] = $updatedAt[0];
 		$temp["use_advocacy"] = intval($item["advocacy"]);
@@ -1791,73 +1784,81 @@ $app->get('/data/flatfile.json', function () use ($app) {
 		$temp["eligibility"] = "YY";
 		$temp["org_additional"] = $item["org_additional"];
 		$temp["org_confidence"] = intval($item["org_confidence"]);
-		$temp["data_country_count"] = intval($item["data_country_count"]);
+		// $temp["data_country_count"] = intval($item["data_country_count"]);
 		$temp["machine_read"] = $item["machine_read"];
 		array_push($final_array, $temp);
 
-		for ($i=0; $i<3; $i++){
-			$temp = array();
+		$data_use_query="SELECT * FROM org_data_use as u LEFT JOIN org_country_info as c ON u.src_country_id = c.country_id
+						where profile_id = :pid";
+		$stmt2 = $db->prepare($data_use_query); 	
+		$stmt2->bindParam("pid", $item["profile_id"]);
+		$stmt2->execute();
+		$data_use = $stmt2->fetchAll();
+
+		foreach ($data_use as $use){
+
+			$use_temp = array();
 			$createdAt = explode(" ",  $item["createdAt"]);
 			$updatedAt = explode(" ",  $item["updatedAt"]);
 
-			$temp["createdAt"]  =  $createdAt[0];
-			$temp["data_use_type_other"] = $item["data_use_type_other"];
-			$temp["industry_id"] = $item["industry_id"];
-			$temp["industry_other"] = $item["industry_other"];
-			$temp["latitude"] = floatval($item["latitude"]);
-			$temp["longitude"] = floatval($item["longitude"]);
-			$temp["no_org_url"] = intval($item["no_org_url"]);
-			$temp["org_description"] = $item["org_description"];
-			$temp["org_greatest_impact"] = $item["org_greatest_impact"];
-			$temp["org_greatest_impact_detail"] = $item["org_greatest_impact_detail"];
-			$temp["org_hq_city"] = $item["org_hq_city"];
-			$temp["org_hq_city_locode"] = null;
-			$temp["org_hq_country"] = $item["org_hq_country"];
-			$temp["org_hq_country_income"] = $item["org_hq_country_income"];
-			$temp["org_hq_country_income_code"] = $item["org_hq_country_income_code"];
-			$temp["org_hq_country_locode"] = $item["org_hq_country_locode"];
-			$temp["org_hq_country_region"] = $item["org_hq_country_region"];
-			$temp["org_hq_country_region_code"] = $item["org_hq_country_region_code"];
-			$temp["org_hq_st_prov"] = $item["org_hq_st_prov"];
-			$temp["org_name"] = $item["org_name"];
-			$temp["org_open_corporates_id"] = null;
-			$temp["org_profile_category"] = $item["org_profile_category"];
-			$temp["org_profile_src"] = $item["org_profile_src"];
-			$temp["org_profile_status"] = $item["org_profile_status"];
-			$temp["org_profile_year"] = intval($item["org_profile_year"]);
-			$temp["org_size_id"] = $item["org_size"];
-			$temp["org_type"] = $item["org_type"];
-			$temp["org_type_other"] = $item["org_type_other"];
-			$temp["org_url"] = $item["org_url"];
-			$temp["org_year_founded"] = intval($item["org_year_founded"]);
-			$temp["profile_id"] = $item["profile_id"];
-			$temp["row_type"] = "data_use";
-			$temp["updatedAt"] = $updatedAt[0];
-			$temp["use_advocacy"] = intval($item["advocacy"]);
-			$temp["use_advocacy_desc"] = $item["advocacy_desc"];
-			$temp["use_org_opt"] = intval($item["org_opt"]);
-			$temp["use_org_opt_desc"] = $item["org_opt_desc"];
-			$temp["use_other"] = intval($item["use_other"]);
-			$temp["use_other_desc"] = $item["use_other_desc"];
-			$temp["use_prod_srvc"] = intval($item["prod_srvc"]);
-			$temp["use_prod_srvc_desc"] = $item["prod_srvc_desc"];
-			$temp["use_research"] = intval($item["research"]);
-			$temp["use_research_desc"] = $item["research_desc"];
-			$temp["date_created"] = $createdAt[0];
-			$temp["date_modified"] = $updatedAt[0];
-			$temp["eligibility"] = "YY";
-			$temp["org_additional"] = $item["org_additional"];
-			$temp["org_confidence"] = intval($item["org_confidence"]);
-			$temp["data_country_count"] = intval($item["data_country_count"]);
-			$temp["machine_read"] = $item["machine_read"];
-			$temp["data_src_country_locode"] = $item["ISO2"];
-	      	$temp["data_src_country_name"] = "Finland";
-	      	$temp["data_src_gov_level"]= "Local";
-	      	$temp["data_type"]= "Transportation";
-	      	array_push($final_array, $temp);
+			$use_temp["createdAt"]  =  $createdAt[0];			
+			$use_temp["industry_id"] = $item["industry_id"];
+			$use_temp["industry_other"] = $item["industry_other"];
+			$use_temp["latitude"] = floatval($item["latitude"]);
+			$use_temp["longitude"] = floatval($item["longitude"]);
+			$use_temp["no_org_url"] = intval($item["no_org_url"]);
+			$use_temp["org_description"] = $item["org_description"];
+			$use_temp["org_greatest_impact"] = $item["org_greatest_impact"];
+			$use_temp["org_greatest_impact_detail"] = $item["org_greatest_impact_detail"];
+			$use_temp["org_hq_city"] = $item["org_hq_city"];
+			// $use_temp["org_hq_city_locode"] = null;
+			$use_temp["org_hq_country"] = $item["org_hq_country"];
+			$use_temp["org_hq_country_income"] = $item["org_hq_country_income"];
+			$use_temp["org_hq_country_income_code"] = $item["org_hq_country_income_code"];
+			$use_temp["org_hq_country_locode"] = $item["ISO2"];
+			$use_temp["org_hq_country_region"] = $item["org_hq_country_region"];
+			// $use_temp["org_hq_country_region_code"] = $item["org_hq_country_region_code"];
+			$use_temp["org_hq_st_prov"] = $item["org_hq_st_prov"];
+			$use_temp["org_name"] = $item["org_name"];
+			$use_temp["org_open_corporates_id"] = null;
+			$use_temp["org_profile_category"] = $item["org_profile_category"];
+			$use_temp["org_profile_src"] = $item["org_profile_src"];
+			$use_temp["org_profile_status"] = $item["org_profile_status"];
+			$use_temp["org_profile_year"] = intval($item["org_profile_year"]);
+			$use_temp["org_size_id"] = $item["org_size"];
+			$use_temp["org_type"] = $item["org_type"];
+			$use_temp["org_type_other"] = $item["org_type_other"];
+			$use_temp["org_url"] = $item["org_url"];
+			$use_temp["org_year_founded"] = intval($item["org_year_founded"]);
+			$use_temp["profile_id"] = intval($item["profile_id"]);
+			$use_temp["row_type"] = "data_use";
+			$use_temp["updatedAt"] = $updatedAt[0];
+			$use_temp["use_advocacy"] = intval($item["advocacy"]);
+			$use_temp["use_advocacy_desc"] = $item["advocacy_desc"];
+			$use_temp["use_org_opt"] = intval($item["org_opt"]);
+			$use_temp["use_org_opt_desc"] = $item["org_opt_desc"];
+			$use_temp["use_other"] = intval($item["use_other"]);
+			$use_temp["use_other_desc"] = $item["use_other_desc"];
+			$use_temp["use_prod_srvc"] = intval($item["prod_srvc"]);
+			$use_temp["use_prod_srvc_desc"] = $item["prod_srvc_desc"];
+			$use_temp["use_research"] = intval($item["research"]);
+			$use_temp["use_research_desc"] = $item["research_desc"];
+			$use_temp["date_created"] = $createdAt[0];
+			$use_temp["date_modified"] = $updatedAt[0];
+			$use_temp["eligibility"] = "YY";
+			$use_temp["org_additional"] = $item["org_additional"];
+			$use_temp["org_confidence"] = intval($item["org_confidence"]);
+			// $use_temp["data_country_count"] = intval($item["data_country_count"]);
+			$use_temp["machine_read"] = $item["machine_read"];
+			$use_temp["data_src_country_locode"] = $use["ISO2"];
+	      	$use_temp["data_src_country_name"] = $use["org_hq_country"];
+	      	$use_temp["data_src_gov_level"]= $use["data_src_gov_level"];
+	      	$use_temp["data_type"]= $use["data_type"];
+	      	$use_temp["data_use_type_other"] = $use["data_use_type_other"];
+	      	array_push($final_array, $use_temp);
 	      }
-	}
 
+	}
 
 	$jsonArray = array("results" => $final_array);
 	echo json_encode($jsonArray);
