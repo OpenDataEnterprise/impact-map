@@ -106,7 +106,7 @@ a {
 /* line 90 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 /*Vinayak Styling*/
 /*.br #mapDiv{top:49px;bottom:0;position:absolute;right:0;left:250px}*/
-.br #mapDiv{top:0px;bottom:0;position:absolute;right:0;left:250px}
+.br #mapDiv{top:0px;bottom:0;position:absolute;right:0;left:250px; min-width: 250px;}
 /* line 97 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .br #tableDiv{position:absolute;left:250px;right:0;bottom:0;top:49px;overflow:auto;}
 /* line 105 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
@@ -116,9 +116,9 @@ a {
 /* line 111 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .columns{padding-left:0;padding-right:0}
 /* line 115 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
-@media screen and (max-width:500px){
+@media screen {
 /* line 117 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
-.br #leftPanel{background:#fff;z-index:99999;float:left;width:350px;height:100%}}
+/*.br #leftPanel{background:#fff;z-index:99999;float:left;width:350px;height:100%}}*/
 /* line 125 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .br #PanelToggle{background:#fff;width:40px;height:200px;top:0;bottom:0;left:350px;background:#808080;cursor:pointer;position:absolute;z-index:9;margin:auto;opacity:.1;border-top-right-radius:15px;border-bottom-right-radius:15px}
 /* line 141 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
@@ -198,7 +198,6 @@ a {
 /* line 279 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 /*Vinayak Styling*/
 /*.tab-items{border-bottom:5px #fcc72d solid}*/
-.tab-items{}
 /* line 281 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .tabItem{border:1px #eaeaea solid;display:none;}
 /* line 284 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
@@ -380,7 +379,7 @@ font-family: Palanquin, sans-serif; font-size: 13px; font-weight: 600;
 /* line 466 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 /*Vinayak Styling*/
 /*#mapArea .tab-items{text-align:right;padding-right:20px;}*/
-#mapArea .tab-items{text-align:left;padding-right:20px;}
+#mapArea .tab-items{text-align:left;padding-right:20px; min-width: 470px;}
 /* line 470 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 /*Vinayak Styling*/
 /*#mapArea .tab-items .tabItem-label{margin-right:10px}*/
