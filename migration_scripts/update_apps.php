@@ -85,6 +85,7 @@ function org_location_update($conn, $record){
       echo "<br>  No Object ID for this...";
   }  
 
+  echo $element['profile_id'];
   
   $query = "UPDATE data_applications SET    
     advocacy = " . $element["advocacy"] . ", 
