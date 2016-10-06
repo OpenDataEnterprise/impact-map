@@ -1805,8 +1805,8 @@ $app->get('/data/flatfile.json', function () use ($app) {
 			$use_temp["createdAt"]  =  $createdAt[0];			
 			$use_temp["industry_id"] = $item["industry_id"];
 			$use_temp["industry_other"] = $item["industry_other"];
-			$use_temp["latitude"] = floatval($item["latitude"]);
-			$use_temp["longitude"] = floatval($item["longitude"]);
+			$use_temp["latitude"] = (floatval($item["latitude"]) == 0) ? floatval($item['c_lat']) : floatval($item["latitude"]);
+			$use_temp["longitude"] = (floatval($item["longitude"]) == 0) ? floatval($item['c_lon']) : floatval($item["longitude"]);
 			$use_temp["no_org_url"] = intval($item["no_org_url"]);
 			$use_temp["org_description"] = $item["org_description"];
 			$use_temp["org_greatest_impact"] = $item["org_greatest_impact"];
