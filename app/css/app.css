@@ -276,7 +276,7 @@ a {
 /* line 407 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .close-popup{float:right;margin-right:5px}
 /* line 411 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
-.table{max-height:80%}
+.table{max-height:80%; min-width: 450px;}
 /* line 414 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .description-column{
 	width:23%;
