@@ -109,7 +109,7 @@ a {
 /*.br #mapDiv{top:49px;bottom:0;position:absolute;right:0;left:250px}*/
 .br #mapDiv{top:0px;bottom:0;position:absolute;right:0;left:250px; min-width: 250px;}
 /* line 97 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
-.br #tableDiv{position:absolute;left:250px;right:0;bottom:0;top:49px;overflow:auto;}
+.br #tableDiv{position:absolute;left:250px;right:0;bottom:0;top:49px;overflow:auto; min-width: 250px;}
 /* line 105 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .br #tableDiv table{margin-bottom:0}
 /* line 108 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
