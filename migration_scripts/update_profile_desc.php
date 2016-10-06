@@ -62,12 +62,16 @@ function org_desc_update($conn, $record){
   }  
   
   $element["org_description"] = isset($record["org_description"])? htmlspecialchars($record["org_description"]) : null;
+  $element["org_additional"] = isset($record["org_additional"])? htmlspecialchars($record["org_additional"]) : null;
+  $element["org_greatest_impact"] = isset($record["org_greatest_impact"])? htmlspecialchars($record["org_greatest_impact"]) : null;
 
   echo $element['profile_id'];
   echo "<br>";
   
   $query = "UPDATE org_profiles SET    
-    org_description = \"" .$element["org_description"] . "\" 
+    org_description = \"" .$element["org_description"] . "\",
+    org_additional = \"" .$element["org_additional"] . "\", 
+    org_greatest_impact = \"" .$element["org_greatest_impact"] . "\" 
     WHERE profile_id=" . $element['profile_id'] . ";";
 
   $result = mysqli_query($conn, $query);
