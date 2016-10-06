@@ -40,7 +40,6 @@ $profile_json = json_decode($string, true);
 foreach ($profile_json['results'] as $record){
   echo org_desc_update($conn, $record);
 }
-echo "<br>...succeed";
 
 
 function org_desc_update($conn, $record){
@@ -65,14 +64,16 @@ function org_desc_update($conn, $record){
   $element["org_description"] = isset($record["org_description"])? htmlspecialchars($record["org_description"]) : null;
 
   echo $element['profile_id'];
+  echo "<br>";
   
   $query = "UPDATE org_profiles SET    
-    org_description = '" .$element["org_description"] . "' 
-    WHERE profile_id=" . $element['profile_id'];
+    org_description = \"" .$element["org_description"] . "\" 
+    WHERE profile_id=" . $element['profile_id'] . ";";
 
   $result = mysqli_query($conn, $query);
 
   if($result){
+      echo "<br>...succeed";
       return;
   } else{
       echo "<br>";
