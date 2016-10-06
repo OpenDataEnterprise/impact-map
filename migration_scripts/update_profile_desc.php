@@ -63,7 +63,7 @@ function org_desc_update($conn, $record){
   
   $element["org_description"] = isset($record["org_description"])? htmlspecialchars($record["org_description"]) : null;
   $element["org_additional"] = isset($record["org_additional"])? htmlspecialchars($record["org_additional"]) : null;
-  $element["org_greatest_impact"] = isset($record["org_greatest_impact"])? htmlspecialchars($record["org_greatest_impact"]) : null;
+  $element["org_greatest_impact_detail"] = isset($record["org_greatest_impact_detail"])? htmlspecialchars($record["org_greatest_impact_detail"]) : null;
 
   echo $element['profile_id'];
   echo "<br>";
