@@ -294,7 +294,6 @@ function(
 
 			if(searchFilter){
 				filteredMarkers = _.filter(filteredMarkers, function(marker){
-					console.log(marker);
 					if((marker.attributes.org_name.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_description.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.industry_id.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1){
 						return true;
 					} else {
