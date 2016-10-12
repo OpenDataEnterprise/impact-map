@@ -98,7 +98,6 @@ define([/*"esri/map",*/
     }
 
     exports.setSearchFilter = function(filter){
-        console.log("In events setSearchFilter"); //Vinayak
         MapController.getMap().layerControl.setSearchFilter(filter);
     }
 

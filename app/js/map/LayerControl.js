@@ -114,33 +114,33 @@ function(
 			
 			//Start of Addition Vinayak 07.13.16
 			// To get only data tyoe in data use
-			if(marker.attributes.dataCell)
-			{
-			//console.log('before marker.attributes', marker.attributes);
+			// if(marker.attributes.dataCell)
+			// {
+			// //console.log('before marker.attributes', marker.attributes);
 
-			var datause = marker.attributes.dataCell;
-			var uniqueList=datause.split(', ').filter(function(item,i,allItems){
-    		return i==allItems.indexOf(item);
-			}).join(', ');
+			// var datause = marker.attributes.dataCell;
+			// var uniqueList=datause.split(', ').filter(function(item,i,allItems){
+   //  		return i==allItems.indexOf(item);
+			// }).join(', ');
 
-			//console.log('uniqueList before if', uniqueList);
-			//if(uniqueList.substring(uniqueList.length - 1) != '.')
-			if(uniqueList.endsWith(", "))
-			{
-				uniqueList = uniqueList.slice(0, -2);
-			}
-			//console.log('uniqueList after if', uniqueList);
+			// //console.log('uniqueList before if', uniqueList);
+			// //if(uniqueList.substring(uniqueList.length - 1) != '.')
+			// if(uniqueList.endsWith(", "))
+			// {
+			// 	uniqueList = uniqueList.slice(0, -2);
+			// }
+			// //console.log('uniqueList after if', uniqueList);
 
-			marker.attributes.dataCell = uniqueList;
+			// marker.attributes.dataCell = uniqueList;
 
-			//console.log('uniqueList: ',uniqueList);
-			//console.log('marker.attributes.dataCell', marker.attributes.dataCell);
-			items.push({
-				label: "Type of Data Used",
-				value: "" + marker.attributes.dataCell
-			})
+			// // console.log('uniqueList: ',uniqueList);
+			// // console.log('marker.attributes.dataCell', marker.attributes.dataCell);
+			// items.push({
+			// 	label: "Type of Data Used",
+			// 	value: "" + marker.attributes.dataCell
+			// })
 
-			}
+			// }
 
 			//console.log(marker.attributes.machine_read);
 			// Controls whether to show machine readability info or not
@@ -253,11 +253,8 @@ function(
 		};
 
 		control.setSearchFilter = function(filter){
-
-			 console.log("In layercontrol setSearchFilter"); //Vinayak
 			searchFilter = filter;
 			//this.filterFeatures(this.getFilters());
-			console.log('inside LayerControl control.setSearchFilter');
 			map.filterFeatures();
 		};
 
@@ -297,7 +294,8 @@ function(
 
 			if(searchFilter){
 				filteredMarkers = _.filter(filteredMarkers, function(marker){
-					if((marker.attributes.org_name.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_description.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1){
+					console.log(marker);
+					if((marker.attributes.org_name.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_description.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.industry_id.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1){
 						return true;
 					} else {
 						return false;
@@ -305,7 +303,7 @@ function(
 				})
 
 				control.markers = _.filter(control.markers, function(marker){
-					if((marker.attributes.org_name.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_description.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1){
+					if((marker.attributes.org_name.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_description.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.industry_id.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1){
 						return true;
 					} else {
 						return false;
