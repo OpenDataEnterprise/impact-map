@@ -768,7 +768,7 @@
 	        paddingBottom: '3px'
 	      });
 
-	      $branding.text('Built with');
+	      $branding.text('Made in');
 	      $branding.append($webflowLogo);
 	      $link.append($branding);
 

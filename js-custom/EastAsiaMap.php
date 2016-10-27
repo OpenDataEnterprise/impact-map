@@ -212,7 +212,7 @@
 
 			//console.log('num', num);
 
-			var d = <?php echo json_encode($data);?>
+			var d = <?php echo json_encode($data);?>;
 
 			//console.log(d);
 

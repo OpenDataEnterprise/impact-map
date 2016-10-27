@@ -1,7 +1,7 @@
 <?php
-$host = 'localhost';
+$host = 'localhost:8889';
 $username = 'root';
-$password = 'Sep@2016';
+$password = '19880518';
 $database = 'opendata_db';
 
    $db = new mysqli($host, $username, $password, $database);
