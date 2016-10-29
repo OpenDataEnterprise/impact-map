@@ -213,7 +213,7 @@ function(
 
 			//console.log('marker',marker);
 
-			console.log('marker.getLatLng()',marker.getLatLng());
+			// console.log('marker.getLatLng()',marker.getLatLng());
 			
 			openPopup(popupObj,marker.getLatLng(),{constructor:WidgetFactory.CompanyPopup,props:props});
 		}
@@ -292,23 +292,55 @@ function(
 				}
 			})
 
+
+
 			if(searchFilter){
+				// search filter for map view
 				filteredMarkers = _.filter(filteredMarkers, function(marker){
-					if((marker.attributes.org_name.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_description.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.industry_id.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1){
-						return true;
+					console.log(marker.attributes);
+					if (marker.attributes.org_hq_country_region == null && marker.attributes.dataCell == null) {
+						if((marker.attributes.org_name.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_description.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.industry_id.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1){
+							return true;
+						} else {
+							return false;
+						}
+					} else if (marker.attributes.org_hq_country_region && marker.attributes.dataCell == null) {
+						if((marker.attributes.org_hq_country_region.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_name.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_description.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.industry_id.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1){
+							return true;
+						} else {
+							return false;
+						}	
 					} else {
-						return false;
+						if((marker.attributes.dataCell.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_hq_country_region.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_name.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_description.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.industry_id.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1){
+							return true;
+						} else {
+							return false;
+						}	
 					}
 				})
 
+				// search filter for table view
 				control.markers = _.filter(control.markers, function(marker){
-					if((marker.attributes.org_name.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_description.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.industry_id.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1){
-						return true;
+					if (marker.attributes.org_hq_country_region == null && marker.attributes.dataCell == null) {
+						if((marker.attributes.org_name.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_description.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.industry_id.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1){
+							return true;
+						} else {
+							return false;
+						}
+					} else if (marker.attributes.org_hq_country_region && marker.attributes.dataCell == null) {
+						if((marker.attributes.org_hq_country_region.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_name.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_description.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.industry_id.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1){
+							return true;
+						} else {
+							return false;
+						}	
 					} else {
-						return false;
+						if((marker.attributes.dataCell.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_hq_country_region.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_name.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.org_description.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1 || (marker.attributes.industry_id.toLowerCase().indexOf(searchFilter.toLowerCase()))>-1){
+							return true;
+						} else {
+							return false;
+						}	
 					}
 				})
-
 			}
 				//console.log("filteredMarkers", filteredMarkers); //Vinayak
 			control.statistics = getStatistics(filteredMarkers);

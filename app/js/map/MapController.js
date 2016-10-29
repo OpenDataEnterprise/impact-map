@@ -54,7 +54,7 @@ define([/*"esri/map",*/
             control.filterFeatures(control.getFilters());
         }
         brmap.filterFeatures = function(){
-            console.log('filter clusters')
+            // console.log('filter clusters')
             control.filterFeatures(control.getFilters());
         }
         brmap.on('zoomend', filterFeatures);
