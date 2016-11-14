@@ -1,0 +1,65 @@
+@import "variable.styl"
+
+header 
+	background-color white
+.banner
+	width 325px
+	margin-left auto
+	margin-right auto
+	background white
+	padding 10px
+	
+.contain-to-grid
+	background-color $ode-light-blue
+nav.top-bar 
+	text-align center
+	background-color $ode-light-blue
+	
+	.title-area
+		display none
+
+section.top-bar-section 
+	display inline-block
+
+
+// .br .right_bars
+// 	// width 300px
+	
+.br .item
+	display inline-block
+	margin-right 16px
+	margin-bottom 0px
+	margin-left 16px
+	// padding 18px 25px
+	padding 13px 17px
+		
+	float none
+	background-position 52% 0%
+	background-size 25px
+	background-attachment scroll
+	-webkit-transition-property color, background-color
+	transition-property color, background-color
+	-webkit-transition-duration 300ms, 300ms
+	transition-duration 300ms, 300ms
+	font-family 'Lato', sans-serif
+	color white
+	font-size 18px
+	line-height 18px
+	font-weight 300
+	letter-spacing 2px
+	text-decoration none
+	text-transform uppercase
+	
+	&.current
+		background-color #4caeea
+		color white
+	&:hover
+		background-color #1a90d8
+		color white
+		text-decoration none
+	
+.br #rightNavContent
+	overflow hidden
+// .br #right_bars_box
+// 	// height 45px
+// 	// width 360px

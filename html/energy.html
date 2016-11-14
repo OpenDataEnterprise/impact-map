@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--  This site was created in Webflow. http://www.webflow.com -->
+<!--  Last Published: Wed Nov 09 2016 18:15:02 GMT+0000 (UTC)  -->
+<html data-wf-page="57b5d8351f986d4879b25304" data-wf-site="577440f9dee5efd30ed38e59">
+<head>
+  <meta charset="utf-8">
+  <title>Energy and Climate</title>
+  <meta content="Energy and Climate" property="og:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/open-data-impact-map.webflow.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script type="text/javascript">
+    WebFont.load({
+      google: {
+        families: ["Palanquin:100,200,300,regular,500,600,700"]
+      }
+    });
+  </script>
+  <script src="js/modernizr.js" type="text/javascript"></script>
+  <link href="images/impactfaviconsmall.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/impactfaviconlarge.png" rel="apple-touch-icon">
+  <style>
+    li { display: list-item; }
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-85257177-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!--  added by Noah - stylesheet for viz  -->
+  <link href="css-custom/viz-style.css" rel="stylesheet" type="text/css">
+  <!--  added by Noah - load D3  -->
+  <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+</head>
+<body>
+  <div class="navigation">
+    <div class="mobile-navigation-container w-clearfix"><a class="mobile-menu-button" data-ix="open-mobile-menu" href="#"><span class="fontawesome-icon"></span> Menu</a><a class="close-menu-button" data-ix="close-mobile-menu" href="#"><span class="fontawesome-icon"></span> Close</a>
+      <div class="mobile-navigation-title">Open Data Impact Map</div>
+    </div>
+    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="current-navigation navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a>
+    </div>
+  </div>
+  <ol class="leftnav w-hidden-medium w-hidden-small w-hidden-tiny">
+    <li class="leftnavlistitem">
+      <a class="lefnavlink w-inline-block" href="#findings">
+        <div class="leftnavlinktext">TOP</div>
+      </a>
+    </li>
+    <li class="leftnavlistitem">
+      <a class="lefnavlink w-inline-block" href="#visualizations">
+        <div class="leftnavlinktext">VISUALIZATIONS</div>
+      </a>
+    </li>
+    <li class="leftnavlistitem">
+      <a class="lefnavlink w-inline-block" href="#caseStudies">
+        <div class="leftnavlinktext">USE CASES</div>
+      </a>
+    </li>
+  </ol>
+  <div class="navigation-space-fix" id="findings"></div>
+  <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
+  </div>
+  <div class="energy-header sector-detail-header-background">
+    <h1 class="sector-detail-header">Energy &amp; Climate</h1>
+  </div>
+  <div class="text-container w-clearfix">
+    <div class="sidebar-container">
+      <div class="stat-circle">
+        <div class="stat-inner-circle">
+          <div class="stat" id="stattss"></div>
+          <div class="stat-description">Organizations in this Sector</div>
+        </div>
+      </div><a class="button download w-button" href="/Ener_Factsheet.pdf" target="_blank">Download fact sheet &nbsp;<span class="fontawesome-icon"></span></a><a class="button download w-button" data-ix="showhide-json-csv-button" href="#">Download DATA &nbsp;<span class="fontawesome-icon"></span></a>
+      <div class="data_buttons w-clearfix"><a class="button data-format-button download left_data w-button" href="/js-custom/indi_data_download/sector/EC/download_json.php" target="_blank">&nbsp;JSON &nbsp;<span class="fontawesome-icon"></span></a><a class="button data-format-button download right_data w-button" data-ix="showhide-json-csv-button" href="/js-custom/indi_data_download/sector/EC/download_csv.php" target="_blank">CSV &nbsp;<span class="fontawesome-icon"></span></a>
+      </div>
+    </div>
+    <p class="callout-text">Open data is being used in this sector for environmental and energy use monitoring, to guide decisions on where and how to invest in energy infrastructure, and to assess the impact of climate change. Environment, energy, and geospatial data are most used in this sector.</p>
+    <p class="body-copy">From the U.S. Climate Data Initiative to the UN’s Data for Climate Action program, international experts are turning to open data as part of solutions and approaches to mitigate climate change and provide energy solutions. For instance, environmental data is being used to predict how weather will impact wind, solar, and hydro power projects in order to inform their planning and locations. This data is also being used for wind and solar power forecasting and scheduling. By predicting power output for each source of energy, organizations can anticipate changes to power generation, balance energy supply with demand, and reduce the overall costs of integrating renewable energy sources onto the grid.</p>
+    <p class="body-copy">While renewable energy resources are being developed, open data is helping utilities providers and consumers manage existing power sources more efficiently. Consumption data is being used to estimate energy use patterns and increase efficiency in the industrial and buildings sector.</p>
+    <p class="body-copy" id="visualizations">Nonprofits are also using open data for environmental monitoring and impact assessment. They use local environmental and ecological information, as well as demographic and social data, to measure air and water pollution and energy usage, and predict the impact of shifts in climatic conditions. They incorporate open data in their research and advocacy work to publish data, analysis, and recommendations.</p>
+    <div class="large-chart w-hidden-medium w-hidden-small w-hidden-tiny" id="dataTypeBar">
+      <h1 class="viztitle">Types of Data Most Used</h1>
+      <div class="sectorbarexplains">Hover over the bars and labels to show more information</div>
+    </div>
+    <div class="large-chart w-hidden-medium w-hidden-small w-hidden-tiny" id="threePie">
+      <h1 class="viztitle">Size, Type &amp; Founding Year</h1>
+    </div>
+    <div class="large-chart w-hidden-medium w-hidden-small w-hidden-tiny" id="appBar">
+      <h1 class="viztitle">How Organizations Use Open Data</h1>
+      <div class="sectorbarexplains">Hover over the bars and labels to show more information</div>
+    </div>
+    <div class="inpage_anchor" id="caseStudies"></div><img class="section-heading-topper" src="images/section-header-topper-22x.png">
+    <h2 class="section-header">Use Cases</h2><img class="section-heading-bottom" src="images/section-header-bottom-22x.png">
+    <div class="case-study-1">
+      <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" sizes="(max-width: 479px) 75vw, 200px" src="images/GreenPatrol_ene_eca.png" srcset="images/GreenPatrol_ene_eca-p-500x403.png 500w, images/GreenPatrol_ene_eca.png 720w">
+        <h3 class="case-study-title">Green Patrol</h3>
+        <div class="case-study-subtitle">Advocates for environmental protection through regional investigations and civil society accountability measures.</div>
+        <div class="case-study-url"><span class="fontawesome-icon"></span> &nbsp;<a href="http://greenpatrol.ru/ru" target="_blank">http://greenpatrol.ru/ru</a>
+        </div>
+        <p><strong>Country:&nbsp;</strong>Russia</p>
+        <p><strong>Impact:</strong>&nbsp;Hold environmental violators accountable through an open platform</p>
+        <p><strong>Data Used:</strong>&nbsp;Environmental data from regional data portals and the Ministry of Natural Resources and Environment, including main air polluters and surface water bodies, environmental protection expenditures; mortality and population data from the Federal State Statistics Service</p>
+      </div><a class="read-more-button-1 w-button" data-ix="show-case-study-1" href="#">Read More &nbsp;<span class="fontawesome-icon"></span></a>
+      <div class="case-study-body-1">
+        <p>Established in 2007, Green Patrol, an environmental protection advocacy group seeks to create a more ecologically-oriented civil society. Green Patrol leads investigations using citizen-based self-reporting systems, regional data from the Ministry of Natural Resources and Environment, regional open data portals, and Green Patrol investigations. Through a <a href="http://greenpatrol.ru/sites/default/files/broshyura_english_prezent.pdf" target="_blank">network of 53 branches throughout Russia</a>, they collect data and integrate findings on environmental governance issues onto the online database. Green Patrol has investigations completed on 85 regions in Russia.</p><img class="case-study-image" sizes="100vw" src="images/GreenPatrol_ene_eca.png" srcset="images/GreenPatrol_ene_eca-p-500x403.png 500w, images/GreenPatrol_ene_eca.png 720w">
+        <p>To support these investigations, Green Patrol uses geographic information system (GIS) to create accurate environmental rankings of the entities within Russia. These rankings rely on indicators such as water, land resources, bioresources and more, along with environmental indexes. In order to use this data, Green Patrol seeks information from regional data portals and Russian Ministries; they include mortality data, environmental protection expenditures, and air polluters and surface water bodies. Through these mediums, Green Patrol created for the Sakha Republic, for example, a <a target="_blank" href="http://greenpatrol.ru/sites/default/files/doklad_o_sostoyanii_i_ohrane_okruzhayushchey_sredy_respubliki_saha_2014_god.pdf">2014 regional report</a> and <a href="http://greenpatrol.ru/ru/regiony/respublika-saha-yakutiya" target="_blank">up-to-date assessments</a> to evaluate environmental policy violations. Subsequently, the Sakha Republic was marked in 73rd place of 85.</p>
+      </div><a class="show-less-button-1 w-button" data-ix="hide-case-study-1" href="#">Show Less &nbsp;<span class="fontawesome-icon"></span></a>
+    </div>
+    <div class="case-study-2">
+      <div class="case-study-intro-2 w-clearfix"><img class="case-study-thumbnail-image-2" sizes="(max-width: 479px) 60vw, 200px" src="images/OpenOil_ene_eca.png" srcset="images/OpenOil_ene_eca-p-500x187.png 500w, images/OpenOil_ene_eca-p-800x300.png 800w, images/OpenOil_ene_eca.png 1075w">
+        <h3 class="case-study-title">Open Oil</h3>
+        <div class="case-study-subtitle">Publishes on the extractive industries and provides multiple platforms to browse oil contracts &nbsp;and oil companies’ corporate filings globally.</div>
+        <div class="case-study-url"><span class="fontawesome-icon"></span> &nbsp;<a target="_blank" href="http://openoil.net">openoil.net</a>
+        </div>
+        <p><strong>Country:&nbsp;</strong>Germany</p>
+        <p><strong>Impact:</strong> Decreases opaque-nature of the oil industry and by doing so, increases oil companies’ accountability</p>
+        <p><strong>Data Used:</strong> Monthly energy reviews from U.S. Energy Information Administration</p>
+      </div><a class="read-more-button-2 w-button" data-ix="show-case-study-2" href="#">READ MORE &nbsp;<span class="fontawesome-icon"></span></a>
+      <div class="case-study-body-2">
+        <p>While transparency has been positively affected by the movement towards opening private and government data, oil contracts have remained largely unreachable. OpenOil seeks to change this, by compiling oil contracts and information on oil companies &nbsp;from around the world and making this information easily accessible on its platform.</p><img class="case-study-image" sizes="100vw" src="images/OpenOil_ene_eca.png" srcset="images/OpenOil_ene_eca-p-500x187.png 500w, images/OpenOil_ene_eca-p-800x300.png 800w, images/OpenOil_ene_eca.png 1075w">
+        <p>OpenOil draws its information from a large number of sources, ranging from government sources such as the U.S. Energy Information Administration, from non-governmental organizations such as the BP Statistical Review of World Energy or World Bank Extractive Industries Handbook, or from a plethora of filings all part of the public domain and voluntarily shared information from oil companies themselves. After ensuring these datasets are in a machine-readable format (many of them are originally in PDF format, OpenOil includes them in their Aleph search engine, one of the nonprofit’s several services. OpenOil also applies this publically available data and visualizes corporate oil company networks as well as creates financial models of upstream oil, gas, and mining projects.
+          <br>
+          <br>By creating the Aleph search engine for public domain corporate filings, network visualizations, and financial models, OpenOil is bringing transparency, through previously unread, unsorted publically available data on oil contracts, to the forefront of the global conversation on oi and energy.</p>
+      </div><a class="show-less-button-2 w-button" data-ix="hide-case-study-2" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
+    </div>
+    <div class="case-study-3">
+      <div class="case-study-body-3">
+        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
+        <ul>
+          <li>Mauris egestas, nisi vitae cursus tincidunt</li>
+          <li>Nulla egestas adipiscing fermentum</li>
+          <li>Vivamus laoreet nulla diam</li>
+        </ul>
+        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
+        <div class="ordered-list-item w-clearfix">
+          <div class="ordered-list-number">1.</div>
+          <div class="ordered-list-text">Mauris egestas, nisi vitae cursus tincidunt</div>
+        </div>
+        <div class="ordered-list-item w-clearfix">
+          <div class="ordered-list-number">2.</div>
+          <div class="ordered-list-text">Nulla egestas adipiscing fermentum</div>
+        </div>
+        <div class="ordered-list-item w-clearfix">
+          <div class="ordered-list-number">3.</div>
+          <div class="ordered-list-text">Vivamus laoreet nulla diam</div>
+        </div>
+        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
+      </div><a class="show-less-button-3 w-button" data-ix="hide-case-study-3" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
+    </div>
+  </div>
+  <div class="footer">
+    <p class="footer-text">The Open Data Impact Map, a project of the <a class="footer-link" href="http://www.opendataenterprise.org/">Center for Open Data Enterprise</a>, is supported by the <a class="footer-link" href="http://od4d.net/">Open Data for Development (OD4D)</a> program, a partnership funded by Canada’s <a class="footer-link" href="http://www.idrc.ca/EN/AboutUs/Pages/default.aspx">International Development Research Centre (IDRC)</a>, the <a class="footer-link" href="http://www.worldbank.org/">World Bank</a>, United Kingdom’s <a class="footer-link" href="https://www.gov.uk/government/organisations/department-for-international-development">Department for International Development (DFID)</a>, and <a class="footer-link" href="http://www.international.gc.ca/department-ministere/index.aspx?lang=eng">Global Affairs Canada (GAC)</a>. The Open Data Impact Map is licensed under <a class="footer-link" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-Share Alike 4.0 International License.</a>
+    </p>
+    <div class="footer-logos-container w-clearfix"><img class="footer-logo" src="images/footer-open-data-enterprise-logo2x.png" width="94"><img class="footer-logo idrc" src="images/idrc-footer-logo2x.jpg" width="78"><img class="footer-logo" src="images/footer-open-data-logo2x.png" width="101"><img class="footer-logo world-bank-logo" sizes="(max-width: 479px) 20vw, (max-width: 767px) 60px, 149px" src="images/WB-Group-Logo.png" srcset="images/WB-Group-Logo-p-500x98.png 500w, images/WB-Group-Logo-p-800x157.png 800w, images/WB-Group-Logo.png 1006w" width="149"><img class="cc footer-logo" src="images/footer-creative-commons-logo2x.png" width="78">
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <!--  Noah - code for two charts  -->
+  <script type="text/javascript" src="js-custom/viz/sectorViz/EC/viz-EC-appBar.js"></script>
+  <script type="text/javascript" src="js-custom/viz/sectorViz/EC/viz-EC-pie.js"></script>
+  <script type="text/javascript" src="js-custom/viz/sectorViz/EC/viz-EC-dataTypeBar.js"></script>
+  <!--  Noah - code for getting stat number  -->
+  <script type="text/javascript" src="js-custom/countUp/sector/EC/getECStat.js"></script>
+</body>
+</html>

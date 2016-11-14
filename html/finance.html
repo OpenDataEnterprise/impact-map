@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--  This site was created in Webflow. http://www.webflow.com -->
+<!--  Last Published: Wed Nov 09 2016 18:15:02 GMT+0000 (UTC)  -->
+<html data-wf-page="57b5d8a30250d32d79c26472" data-wf-site="577440f9dee5efd30ed38e59">
+<head>
+  <meta charset="utf-8">
+  <title>Finance and Insurance</title>
+  <meta content="Finance and Insurance" property="og:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/open-data-impact-map.webflow.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script type="text/javascript">
+    WebFont.load({
+      google: {
+        families: ["Palanquin:100,200,300,regular,500,600,700"]
+      }
+    });
+  </script>
+  <script src="js/modernizr.js" type="text/javascript"></script>
+  <link href="images/impactfaviconsmall.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/impactfaviconlarge.png" rel="apple-touch-icon">
+  <style>
+    li { display: list-item; }
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-85257177-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!--  added by Noah - stylesheet for viz  -->
+  <link href="css-custom/viz-style.css" rel="stylesheet" type="text/css">
+  <!--  added by Noah - load D3  -->
+  <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+</head>
+<body>
+  <div class="navigation">
+    <div class="mobile-navigation-container w-clearfix"><a class="mobile-menu-button" data-ix="open-mobile-menu" href="#"><span class="fontawesome-icon"></span> Menu</a><a class="close-menu-button" data-ix="close-mobile-menu" href="#"><span class="fontawesome-icon"></span> Close</a>
+      <div class="mobile-navigation-title">Open Data Impact Map</div>
+    </div>
+    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="current-navigation navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a>
+    </div>
+  </div>
+  <ol class="leftnav w-hidden-medium w-hidden-small w-hidden-tiny">
+    <li class="leftnavlistitem">
+      <a class="lefnavlink w-inline-block" href="#findings">
+        <div class="leftnavlinktext">TOP</div>
+      </a>
+    </li>
+    <li class="leftnavlistitem">
+      <a class="lefnavlink w-inline-block" href="#visualizations">
+        <div class="leftnavlinktext">VISUALIZATIONS</div>
+      </a>
+    </li>
+    <li class="leftnavlistitem">
+      <a class="lefnavlink w-inline-block" href="#caseStudies">
+        <div class="leftnavlinktext">USE CASES</div>
+      </a>
+    </li>
+  </ol>
+  <div class="navigation-space-fix" id="findings"></div>
+  <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
+  </div>
+  <div class="finance-header sector-detail-header-background">
+    <h1 class="sector-detail-header">Finance &amp; Insurance</h1>
+  </div>
+  <div class="text-container w-clearfix">
+    <div class="sidebar-container">
+      <div class="stat-circle">
+        <div class="stat-inner-circle">
+          <div class="stat" id="stattss"></div>
+          <div class="stat-description">Organizations in this Sector</div>
+        </div>
+      </div><a class="button download w-button" href="/Fin_Factsheet.pdf" target="_blank">Download fact sheet &nbsp;<span class="fontawesome-icon"></span></a><a class="button download w-button" data-ix="showhide-json-csv-button" href="#">Download DATA &nbsp;<span class="fontawesome-icon"></span></a>
+      <div class="data_buttons w-clearfix"><a class="button data-format-button download left_data w-button" href="/js-custom/indi_data_download/sector/FII/download_json.php" target="_blank">&nbsp;JSON &nbsp;<span class="fontawesome-icon"></span></a><a class="button data-format-button download right_data w-button" data-ix="showhide-json-csv-button" href="/js-custom/indi_data_download/sector/FII/download_csv.php" target="_blank">CSV &nbsp;<span class="fontawesome-icon"></span></a>
+      </div>
+    </div>
+    <p class="callout-text">Open data is being used in this sector to guide investments and trading, increase access to capital and insurance, and evaluate risk. The most used data includes financial, business, and economic information, as well as demographic and social data.</p>
+    <p class="body-copy">Open data is being used as a resource to increase access to banking and finance around the globe. In a number of countries, organizations are using open data to increase financial access and inclusion for “high-risk” customers who otherwise might have no access to capital. They use demographic and social, economic, labor and other data sources to evaluate loans for citizens and organizations with no or limited credit history. Similarly, others use business registries in combination with other kinds of data to evaluate new, small businesses seeking financing. Since lenders often can’t afford to do the due diligence needed to lend to these businesses, open data is being used to help evaluate the credit risks they may pose.</p>
+    <p class="body-copy">The insurance industry has long been reliant on public data. For instance, the probabilities and frequencies of traffic accidents or diseases need to be predicted for reasonable valuation, and open government data is critical in this regard.</p>
+    <p class="body-copy" id="visualizations">Open data also helps guide investments for economic as well as social benefit. Economic statistics are a bedrock of financial analysis, and many organizations also rely on company registers, consumer price indices, satellite imagery, and sector-specific government data to inform their investments in companies, real estate, currencies, commodities, and other assets.</p>
+    <div class="large-chart w-hidden-medium w-hidden-small w-hidden-tiny" id="dataTypeBar">
+      <h1 class="viztitle">Types of Data Most Used</h1>
+      <div class="sectorbarexplains">Hover over the bars and labels to show more information</div>
+    </div>
+    <div class="large-chart w-hidden-medium w-hidden-small w-hidden-tiny" id="threePie">
+      <h1 class="viztitle">Size, Type &amp; Founding Year</h1>
+    </div>
+    <div class="large-chart w-hidden-medium w-hidden-small" id="appBar">
+      <h1 class="viztitle">How Organizations Use Open Data</h1>
+      <div class="sectorbarexplains">Hover over the bars and labels to show more information</div>
+    </div>
+    <div class="inpage_anchor" id="caseStudies"></div><img class="section-heading-topper" src="images/section-header-topper-22x.png">
+    <h2 class="section-header">Use Cases</h2><img class="section-heading-bottom" src="images/section-header-bottom-22x.png">
+    <div class="case-study-1">
+      <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" src="images/Thinknum_fin_na.jpeg">
+        <h3 class="case-study-title">Thinknum</h3>
+        <div class="case-study-subtitle">Web platform for financial analysis.</div>
+        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a href="https://www.thinknum.com" target="_blank">https://www.thinknum.com</a>
+        </div>
+        <p><strong>Country:&nbsp;</strong>United States</p>
+        <p><strong>Impact:</strong> Provides data and insights to investors and businesses to better understand the factors that drive valuation.</p>
+        <p><strong>Data Used:</strong> U.S. Zipcode data, demographic data from the U.S. Census, unemployment data from the U.S. Bureau of Labor Statistics, weather data from the U.S. National Oceanic and Atmospheric Administration</p>
+      </div><a class="read-more-button-1 w-button" data-ix="show-case-study-1" href="#">Read More &nbsp;<span class="fontawesome-icon"></span></a>
+      <div class="case-study-body-1">
+        <p>Despite the increasing amount of data available online, it can be difficult for investors to access relevant information. Founded in 2013, Thinknum’s provides data access and insights to its users through its web platform. The organization aggregates and indexes data from government sources, companies’ websites and social media activity.</p><img class="case-study-image" src="images/Thinknum_fin_na.jpeg">
+        <p>For example, Thinknum allows users to view the store locations of a given brand, overlay it with locations of a competitor, and then connect this information to demographic data such as median household income by county. This information can then be used to inform an organization’s strategy of where household income is increasing, and thereby identify the most profitable store locations. Other examples include the analysis of unemployment rates to discover outperforming businesses in the restaurant industry, and taking advantage of historical weather data to find market patterns. By creating connections between different data sources, Thinknum allows investors and companies to better understand the various factors that drive valuation.</p>
+      </div><a class="show-less-button-1 w-button" data-ix="hide-case-study-1" href="#">Show Less &nbsp;<span class="fontawesome-icon"></span></a>
+    </div>
+    <div class="case-study-2">
+      <div class="case-study-intro-2 w-clearfix"><img class="case-study-thumbnail-image-2" src="images/IAG_fin_eap.png">
+        <h3 class="case-study-title">IAG Ltd</h3>
+        <div class="case-study-subtitle">Insurance company that protects users by investigating open data avenues for disaster mitigation</div>
+        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a target="_blank" href="http://www.iag.com.au/">http://www.iag.com.au/</a>
+        </div>
+        <p><strong>Country:&nbsp;</strong>Australia</p>
+        <p><strong>Impact:</strong> Identifies areas of greatest vulnerability to natural disasters through data mapping applications</p>
+        <p><strong>Data Used:</strong> Census data from Australian Bureau of Statistics, Cyclone Track Maps from the Bureau of Meteorology and New South Wales Rural Fire Service</p>
+      </div><a class="read-more-button-2 w-button" data-ix="show-case-study-2" href="#">READ MORE &nbsp;<span class="fontawesome-icon"></span></a>
+      <div class="case-study-body-2">
+        <p>IAG is an insurance company that provides customer protection plans from environmental disasters and advocates for the expansion of government data. As a founding member of the Australian Business Roundtable for Disaster Resilience &amp; Safer Communities, IAG works to create a national approach toward investing in disaster mitigation efforts through big data applications. IAG relies on government statistics to price and issue policies, process claims, create predictive modeling, and pursue risk management. These data sources include the Geoscience Australia, the Australian Bureau of Statistics, the Bureau of Meteorology for Cyclone Track Maps, and the New South Wales Rural Fire Service RSS Feed.</p><img class="case-study-image" sizes="100vw" src="images/IAG2_fin_eap.png" srcset="images/IAG2_fin_eap-p-500x407.png 500w, images/IAG2_fin_eap.png 693w">
+        <p>Subsequently, IAG was tasked by the United Nations Environment Program (UNEP) to lead the second phase, <a href="http://globalriskmap.nicta.com.au/About.html" target="_blank">Global Risk Map</a>, of the Principles of Sustainable Insurance (PSI) Global Resilient Project, looking at risk reduction in natural disasters. This project’s virtual tools track national-level vulnerability to natural hazards, national-level resilience, the economic and social impacts, exposure to natural hazards, and country-level natural hazard events. Under the approval of the UNEP, data sources are EM-DAT database, INFORM, World Bank Database, PreventionWeb. Along the data catalogue, users may narrow down disaster types and download feature information in CSV formatting.</p>
+      </div><a class="show-less-button-2 w-button" data-ix="hide-case-study-2" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
+    </div>
+    <div class="case-study-3">
+      <div class="case-study-body-3">
+        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
+        <ul>
+          <li>Mauris egestas, nisi vitae cursus tincidunt</li>
+          <li>Nulla egestas adipiscing fermentum</li>
+          <li>Vivamus laoreet nulla diam</li>
+        </ul>
+        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
+        <div class="ordered-list-item w-clearfix">
+          <div class="ordered-list-number">1.</div>
+          <div class="ordered-list-text">Mauris egestas, nisi vitae cursus tincidunt</div>
+        </div>
+        <div class="ordered-list-item w-clearfix">
+          <div class="ordered-list-number">2.</div>
+          <div class="ordered-list-text">Nulla egestas adipiscing fermentum</div>
+        </div>
+        <div class="ordered-list-item w-clearfix">
+          <div class="ordered-list-number">3.</div>
+          <div class="ordered-list-text">Vivamus laoreet nulla diam</div>
+        </div>
+        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
+      </div><a class="show-less-button-3 w-button" data-ix="hide-case-study-3" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
+    </div>
+  </div>
+  <div class="footer">
+    <p class="footer-text">The Open Data Impact Map, a project of the <a class="footer-link" href="http://www.opendataenterprise.org/">Center for Open Data Enterprise</a>, is supported by the <a class="footer-link" href="http://od4d.net/">Open Data for Development (OD4D)</a> program, a partnership funded by Canada’s <a class="footer-link" href="http://www.idrc.ca/EN/AboutUs/Pages/default.aspx">International Development Research Centre (IDRC)</a>, the <a class="footer-link" href="http://www.worldbank.org/">World Bank</a>, United Kingdom’s <a class="footer-link" href="https://www.gov.uk/government/organisations/department-for-international-development">Department for International Development (DFID)</a>, and <a class="footer-link" href="http://www.international.gc.ca/department-ministere/index.aspx?lang=eng">Global Affairs Canada (GAC)</a>. The Open Data Impact Map is licensed under <a class="footer-link" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-Share Alike 4.0 International License.</a>
+    </p>
+    <div class="footer-logos-container w-clearfix"><img class="footer-logo" src="images/footer-open-data-enterprise-logo2x.png" width="94"><img class="footer-logo idrc" src="images/idrc-footer-logo2x.jpg" width="78"><img class="footer-logo" src="images/footer-open-data-logo2x.png" width="101"><img class="footer-logo world-bank-logo" sizes="(max-width: 479px) 20vw, (max-width: 767px) 60px, 149px" src="images/WB-Group-Logo.png" srcset="images/WB-Group-Logo-p-500x98.png 500w, images/WB-Group-Logo-p-800x157.png 800w, images/WB-Group-Logo.png 1006w" width="149"><img class="cc footer-logo" src="images/footer-creative-commons-logo2x.png" width="78">
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <!--  Noah - code for two charts  -->
+  <script type="text/javascript" src="js-custom/viz/sectorViz/FII/viz-FII-appBar.js"></script>
+  <script type="text/javascript" src="js-custom/viz/sectorViz/FII/viz-FII-pie.js"></script>
+  <script type="text/javascript" src="js-custom/viz/sectorViz/FII/viz-FII-dataTypeBar.js"></script>
+  <!--  Noah - code for getting stat number  -->
+  <script type="text/javascript" src="js-custom/countUp/sector/FII/getFIIStat.js"></script>
+</body>
+</html>

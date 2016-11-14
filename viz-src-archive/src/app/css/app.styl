@@ -1,0 +1,595 @@
+
+@import "variable.styl"
+@import "header.styl"
+
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  -ms-{prop} args
+  -o-{prop} args
+  {prop} args
+  
+vender-val(prop)
+  -webkit-{prop} 
+  -moz-{prop} 
+  -ms-{prop} 
+  -o-{prop} 
+  {prop} 
+
+  replace(expr, str, val)
+    expr = clone(expr)
+    for e, i in expr
+      if str == e
+        expr[i] = val
+    expr
+    
+transform()
+  vendor('transform', arguments)
+  
+border-rad()
+  vendor('border-radius', arguments)
+
+box-shadow()
+  vendor('box-shadow', arguments)
+  
+max-content()
+  vender-val('max-content')
+
+html 
+  -webkit-tap-highlight-color transparent
+body
+    background $ode-dark-blue
+    font-family Lato !important
+    overflow hidden
+
+.br #outerbox
+  position absolute 
+  top 115px
+  bottom 0
+  left 0
+  right 0
+.br #leftPanel
+    //position  absolute
+    //top  45px
+    //bottom  0px
+    //left 0px
+    float left
+    width 250px
+    height 100%
+    position: relative;
+  
+  .input-container
+    background $ode-panel-gray
+    
+  
+  ::-webkit-input-placeholder 
+    color white
+
+  :-moz-placeholder  /* Firefox 18- */
+    color white  
+
+  ::-moz-placeholder   /* Firefox 19+ */
+    color white  
+
+  :-ms-input-placeholder   
+    color white  
+  
+  input
+    background url("../images/icon_magnifying_glass.png") no-repeat 10px $ode-light-blue
+    border 0px
+    padding 8px
+    margin 10px
+    width 80%
+    color white
+    padding-left 35px
+    border-rad(2px)
+
+.br #mapArea
+  //float left
+  // background  #FFFFFF
+.br #mapDiv
+    top: 49px;
+    bottom: 0px;
+    position: absolute;
+    right: 0px;
+    left: 250px;
+
+.br #tableDiv
+    position absolute
+    left 250px
+    right 0px
+    bottom: 0;
+    top: 49px;
+    overflow: auto;
+
+    table
+        margin-bottom 0px
+
+.br .top-bar
+  z-index  99999999
+
+.columns
+  padding-left 0px
+  padding-right 0px
+
+@media screen and (max-width: 500px)
+
+  .br #leftPanel
+    background #FFFFFF
+    z-index 99999
+    float left
+    width 350px
+    height 100%
+  
+  
+.br #PanelToggle
+  background #FFFFFF 
+  width 40px
+  height 200px
+  top 0
+  bottom 0
+  left 350px
+  background gray
+  cursor pointer
+  position absolute
+  z-index 9
+  margin auto
+  opacity .1
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  
+.br #PanelToggle:hover
+  background #333333
+  opacity .2
+
+.br #toggleIcon
+  background red
+  width 20px
+  height 20px
+
+.icon-bar.five-up .item
+  height 45px
+  width 70px
+
+  
+.br #fillPannel
+  width 100%
+  display none
+  min-height 150px
+  background #008CBA
+  padding 10px
+.br .pageIcon svg
+  fill blue
+.br .baseMapItem
+  display inline-block
+  float none
+  padding 10px
+  background none
+.br .baseMapThumbnail
+  width 130px
+  height 80px
+  box-shadow 0px 0px 15px #fff
+  cursor pointer
+.br #baseMapGallery
+  white-space nowrap
+  background none
+.br #gallery_pan_left
+  display none
+  position absolute
+  height 80px
+  top 64px
+  width 35px
+  background #4D4A4A
+  opacity 0.4
+  cursor pointer
+  box-shadow: 0px 0px 20px 0px #fff
+.br #gallery_pan_left:hover
+  opacity .5
+.br #gallery_pan_right
+  position absolute
+  right 10px
+  width 35px
+  height 80px
+  top 64px
+  background #4D4A4A
+  opacity 0.4
+  box-shadow: 6px 0px 11px 0px #fff
+  cursor pointer
+.br #gallery_pan_right:hover
+  opacity .5
+.br #gallery 
+  height 100px
+  
+.layer-radios
+            padding-left 10px
+  .br-radio
+         
+          background url("../images/checkboxUnchecked.svg") no-repeat left
+          padding-left 25px
+          padding-top 5px
+          padding-bottom 5px
+          border-bottom 1px solid rgb(225, 225, 225)
+          cursor pointer
+          &.selected
+              background url("../images/checkboxChecked.svg") no-repeat left
+              
+.br-accordian
+    .filter-label
+        cursor pointer
+        padding 5px
+        margin 2px
+        background url("../images/icon_collapsed.png") no-repeat calc(100% - 10px) white
+        &.selected
+          background url("../images/icon_expanded.png") no-repeat calc(100% - 10px) white
+        &:hover
+          background url("../images/icon_collapsed.png") no-repeat calc(100% - 10px) lighten($ode-orangello,65%)
+          
+        
+    .accordian-content
+      max-height 500px
+      overflow-y auto
+      padding-left 10px
+      padding-right 10px
+      
+      background $ode-accordian-gray
+      &.selected
+        display block
+        
+    // &.selected
+    //   .innerContent
+    //     display block
+      
+.br
+    .leaflet-popup-content
+        width auto !important
+    .leaflet-popup-content-wrapper
+        border-radius 0px
+        
+    .markerPopup
+        width 300px
+        
+    .company-popup
+        .company-popup-title
+            font-size 16px
+            font-weight bold
+            margin-bottom 5px
+            border-bottom solid 1px lightgray
+            cursor pointer
+        .company-popup-content
+          list-style-type: none;
+          
+            
+    #clusterPopup
+      width 300px
+      max-height 380px
+      overflow-y auto
+      
+      .company-popup-title
+            font-size 12px
+            font-weight bold
+            margin-bottom 5px
+            border-bottom 0px
+      .company-popup-content
+          padding-left 10px
+          padding-bottom 15px
+          
+.br-tab-items
+    display inline-block
+    
+   .tab-items
+     border-bottom: 5px $ode-orangello solid;
+   .tabItem
+        border 1px #eaeaea solid
+        display none
+        &.outerselected
+          display block
+  
+    .tabItem-label
+      cursor pointer
+      background white
+      margin 1px
+      margin-bottom 0px
+      margin-top 10px
+      padding 5px
+      color white
+      background $ode-light-blue
+      padding-left 25px
+      
+      &.filter 
+          background url("../images/icon_filter_white.png") no-repeat 5px $ode-light-blue
+            
+          
+      &.statistics 
+          background url("../images/icon_statistics.png") no-repeat 5px $ode-light-blue
+          
+      &.Table 
+          background url("../images/icon_tabular_results.png") no-repeat 5px $ode-light-blue
+          
+      &.map
+          background url("../images/icon_map_results_white.png") no-repeat 5px $ode-light-blue
+        
+        
+
+      border-rad(2px 2px 0px 0px)
+      
+      .selected
+        background #eaeaea
+      
+    .innerContent
+      display none
+    &.selected
+      .innerContent
+        display block
+      .tabItem-label
+        background $ode-orangello
+        color $ode-dark-gray
+        
+        &.filter
+          background url("../images/icon_filter.png") no-repeat 5px $ode-orangello
+          
+        &.statistics 
+          background url("../images/icon_statistics_gray.png") no-repeat 5px $ode-orangello
+          
+        &.Table 
+            background url("../images/icon_tabular_results_gray.png") no-repeat 5px $ode-orangello
+            
+        &.map
+            background url("../images/icon_map_results.png") no-repeat 5px $ode-orangello
+
+.br-button
+  padding 10px
+  cursor pointer
+  &.clear-filters
+    background $ode-orangello
+    color $ode-dark-gray
+    width auto
+    padding-left 1rem
+    
+    
+    &:hover
+      background $ode-light-blue
+      color white
+        
+.br
+  .accordian-container
+    padding 10px
+    background $ode-panel-gray
+      
+#filterStats
+  background $ode-panel-gray
+  padding 10px
+  
+  li 
+    list-style-type none
+
+.fake-link
+    color blue
+    text-decoration underline
+    cursor pointer
+
+
+.table-company-popup
+    position absolute
+    width 300px
+    display none
+    background-color #FFFFFF
+    border solid 1px black
+    z-index 50
+    font-size 12px
+
+    .company-popup-title
+        font-size 16px
+        font-weight bold
+        border-bottom solid 1px lightgray
+        cursor pointer
+        padding 10px
+        font-size 13px
+
+    .company-popup-content
+        list-style-type: none;
+        padding 10px
+        overflow auto
+        max-height: 250px;
+        box-sizing: border-box;
+        margin-bottom: 10px
+
+    .close-popup
+        float: right;
+        font-size: 14px;
+        margin-right: 10px;
+        margin-top: 6px;
+        cursor pointer
+
+    .edit-button
+        margin 0px
+
+
+.close-popup
+    float right
+    margin-right 5px
+
+.table
+    max-height 80%
+
+.description-column
+    width 30%
+
+.export-button
+    margin-top 0px
+    margin-bottom 0px
+    background-color #2ea0e6
+    width 100%
+    padding-left 1rem
+    text-align left
+    padding-right: 0px;
+
+    &:hover
+        background $ode-orangello
+
+.edit-button-holder
+    width 100%
+    margin-top 10px
+    position relative
+    /*text-align center*/
+
+    .edit-button
+        background-color #2ea0e6
+        width 40%
+        height: 34px;
+        line-height: 5px;
+
+          
+.gin-control-zoom-home
+    background url("../images/home.svg") no-repeat !important
+    background-position: center !important
+    background-color #fff !important
+
+.survey-button
+    position absolute
+    right 10px
+    top 100px
+    height 26px
+    width 26px
+    background-color blue
+    z-index 1000
+    border-radius: 4px;
+    background url("../images/clipboard.svg") no-repeat !important
+    background-position: center !important
+    background-color #fff !important
+    border solid 1px lightgrey
+    box-shadow: 0px 2px 2px #888888;
+    cursor pointer
+
+#PanelToggle
+    display none
+
+#mapArea .tab-items
+    text-align: right
+    padding-right: 20px
+
+    .tabItem-label
+        margin-right: 10px
+
+#leftPanel .tab-items
+    padding-left 20px
+
+    .tabItem-label
+        margin-left: 10px
+
+.leaflet-bar a,
+.leaflet-bar a:hover
+    height 35px !important
+    width 35px  !important
+
+.gin-control-zoom-in,
+.gin-control-zoom-out
+    font-size 22px
+    line-height 30px !important
+/*.marker-cluster-small .marker-cluster div*/
+    /*width: 23px !important*/
+    /*height: 23px !important*/
+    /*margin-left: 4px !important*/
+    /*margin-top: 4px !important*/
+
+    /*span*/
+        /*line-height: 22px !important*/
+
+#header-container
+    border-bottom solid 1px #000000
+    margin-bottom 5px
+
+.cluster-popup-header
+    font-weight bold
+    font-size 13px
+
+.license-holder
+    font-size 11px
+    color: white
+    padding: 15px
+
+.tab-content
+    overflow auto
+    bottom 0px
+    top 49px
+    position absolute
+
+.leftPanelComponent
+    height 100%
+
+.absolute
+    position absolute
+
+.no-right
+    right 0
+
+.no-left
+    left 0
+
+.no-top
+    top 0
+
+.no-bottom
+    bottom 0
+
+#filterStats
+
+    ul
+        margin-left 0 !important
+
+.creative-commons-logo
+    height 25px
+    width 75px
+    background url("../images/creative_commons_logo.png") no-repeat
+    background-size 100% 100%
+    margin-left: 15px;
+
+.display-inline-block
+    display inline-block
+
+#clusterPopup .selected .company-title-label:before
+    content url("../images/minus.svg")
+    margin-right 5px
+
+#clusterPopup .company-title-label:before
+    margin-right 5px
+    content url("../images/plus.svg")
+
+.table tbody tr:nth-child(even) td
+    background-color #EDECEC !important
+
+.table tbody tr td:nth-child(1)
+    cursor pointer
+    color blue !important
+
+.table tbody tr td:nth-child(n+2)
+    pointer-events: none
+
+.table
+    border-spacing 0px
+
+.table tbody td
+    border-top 1px solid lightgrey
+    border-bottom 1px solid lightgrey
+
+.griddle-page select
+    width 60px !important
+
+.no-data-display-container
+    height: 200px;
+    background: rgb(236, 236, 236);
+    padding: 20px;
+
+    > div
+        padding-top 20px
+        
+.no-results-text-container
+    font-weight bold;
+
+.marker-cluster-small
+    background-color transparent
+
+.marker-cluster-medium
+    background-color transparent
+
+.marker-cluster-large
+    background-color transparent

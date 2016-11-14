@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--  This site was created in Webflow. http://www.webflow.com -->
+<!--  Last Published: Wed Nov 09 2016 18:15:02 GMT+0000 (UTC)  -->
+<html data-wf-page="5797789be89ddd21692b1faf" data-wf-site="577440f9dee5efd30ed38e59">
+<head>
+  <meta charset="utf-8">
+  <title>Sub-Saharan Africa</title>
+  <meta content="Sub-Saharan Africa" property="og:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/open-data-impact-map.webflow.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script type="text/javascript">
+    WebFont.load({
+      google: {
+        families: ["Palanquin:100,200,300,regular,500,600,700"]
+      }
+    });
+  </script>
+  <script src="js/modernizr.js" type="text/javascript"></script>
+  <link href="images/impactfaviconsmall.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/impactfaviconlarge.png" rel="apple-touch-icon">
+  <style>
+    li { display: list-item; }
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-85257177-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!--  Added for map  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css">
+  <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+  <link rel="stylesheet" href="css-custom/mapstyle.css">
+  <style>
+    * {z-index: 1;}
+  </style>
+  <!--  added by Noah - stylesheet for viz and pageNav -->
+  <link href="css-custom/viz-style.css" rel="stylesheet" type="text/css">
+  <!--  added by Noah - load D3  -->
+  <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+  <div class="navigation">
+    <div class="mobile-navigation-container w-clearfix"><a class="mobile-menu-button" data-ix="open-mobile-menu" href="#"><span class="fontawesome-icon"></span> Menu</a><a class="close-menu-button" data-ix="close-mobile-menu" href="#"><span class="fontawesome-icon"></span> Close</a>
+      <div class="mobile-navigation-title">Open Data Impact Map</div>
+    </div>
+    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="current-navigation navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a>
+    </div>
+  </div>
+  <ol class="leftnav w-hidden-medium w-hidden-small w-hidden-tiny">
+    <li class="leftnavlistitem">
+      <a class="lefnavlink w-inline-block" href="#findings">
+        <div class="leftnavlinktext">TOP</div>
+      </a>
+    </li>
+    <li class="leftnavlistitem">
+      <a class="lefnavlink w-inline-block" href="#visualizations">
+        <div class="leftnavlinktext">VISUALIZATIONS</div>
+      </a>
+    </li>
+    <li class="leftnavlistitem">
+      <a class="lefnavlink w-inline-block" href="#caseStudies">
+        <div class="leftnavlinktext">USE CASES</div>
+      </a>
+    </li>
+  </ol>
+  <div class="navigation-space-fix" id="findings"></div>
+  <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
+  </div>
+  <div class="africa-header region-detail-header-background">
+    <h1 class="region-detail-header">Sub-Saharan Africa</h1>
+  </div>
+  <div class="text-container w-clearfix">
+    <div class="sidebar-container">
+      <div class="stat-circle">
+        <div class="stat-inner-circle">
+          <div class="stat" id="stattss"></div>
+          <div class="stat-description">Organizations in this Region</div>
+        </div>
+      </div><a class="button download w-button" href="/AFR_Factsheet.pdf" target="_blank">Download fact sheet &nbsp;<span class="fontawesome-icon"></span></a><a class="button download w-button" data-ix="showhide-json-csv-button" href="#">Download DATA &nbsp;<span class="fontawesome-icon"></span></a>
+      <div class="data_buttons w-clearfix"><a class="button data-format-button download left_data w-button" href="/js-custom/indi_data_download/region/SSA/download_json.php" target="_blank">&nbsp;JSON &nbsp;<span class="fontawesome-icon"></span></a><a class="button data-format-button download right_data w-button" data-ix="showhide-json-csv-button" href="/js-custom/indi_data_download/region/SSA/download_csv.php" target="_blank">CSV &nbsp;<span class="fontawesome-icon"></span></a>
+      </div>
+    </div>
+    <p class="callout-text">Over half of the organizations that use open data in this region are nonprofits and developer groups. A third are in the governance sector. The majority are SMEs.</p>
+    <p class="body-copy">Open data is supporting good-government initiatives across <a target="_blank" href="http://www.worldbank.org/en/region/afr">Sub-Saharan Africa</a>. It’s being used to improve budget transparency in Nigeria, for electoral monitoring in Malawi and Ghana, to improve urban planning in South Africa, and to provide information about schools and water resources in Kenya. Other sectors with high use of open data also include agriculture, education, IT and geospatial. Many are using open data to provide information on public services and empower local communities. The majority of the organizations, both nonprofit and for-profit are in low to lower-middle income countries.</p>
+    <p class="body-copy" id="visualizations">The most used types of data in this region include demographic and social, agriculture, health and health data, as well as data on government operations such as budgets, contracts and spending. Organizations use this data to develop mobile and web applications that enhance access to information on social and government services, and to provide businesses with market and environmental information.</p>
+    <div class="large-chart w-hidden-medium w-hidden-small w-hidden-tiny">
+      <div class="subsahara" id="map"></div>
+    </div>
+    <div class="large-chart w-hidden-medium w-hidden-small w-hidden-tiny" id="threePie">
+      <h1 class="viztitle">Size, Type &amp; Founding Year</h1>
+    </div>
+    <div class="large-chart last-large-chart w-hidden-medium w-hidden-small w-hidden-tiny" id="bar">
+      <h3 class="viztitle">Sectors Using Open Data</h3>
+    </div>
+    <div class="inpage_anchor" id="caseStudies"></div><img class="section-heading-topper" src="images/section-header-topper-22x.png">
+    <h2 class="section-header">Use Cases</h2><img class="section-heading-bottom" src="images/section-header-bottom-22x.png">
+    <div class="case-study-1">
+      <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" sizes="(max-width: 479px) 75vw, 200px" src="images/EconomicsAssociationZambia_bus_ssa.png" srcset="images/EconomicsAssociationZambia_bus_ssa-p-500x252.png 500w, images/EconomicsAssociationZambia_bus_ssa-p-800x403.png 800w, images/EconomicsAssociationZambia_bus_ssa.png 1070w">
+        <h3 class="case-study-title">Economics Association of Zambia</h3>
+        <div class="case-study-subtitle">Research, training, education, publication and consultancy in the field of economics and related disciplines</div>
+        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a target="_blank" href="http://eaz.org.zm">http://eaz.org.zm</a>
+        </div>
+        <p><strong>Country:</strong> Zambia</p>
+        <p><strong>Impact:</strong>&nbsp;Evidence-based economic policy recommendations and advocacy to reduce poverty in Zambia</p>
+        <p><strong>Data Used:</strong> Economic and health indicators, household surveys, living conditions survey, demographic survey, economic census, population census, agriculture census from Zambia’s Central statistical office (CSO) and the Central Bank of Zambia</p>
+      </div><a class="read-more-button-1 w-button" data-ix="show-case-study-1" href="#">Read More &nbsp;<span class="fontawesome-icon"></span></a>
+      <div class="case-study-body-1">
+        <p>While Zambia’s economy has continued to grow at an average annual rate in recent years, global headwinds and domestic pressures have strained the Zambian economy. Since the 1960s, the Economics Association of Zambia (EAZ), a non-partisan body established in the 1960s, has promoted the socio-economic development of Zambia by undertaking research, training, education, publication and consultancy in the field of economics and related disciplines.</p><img class="case-study-image" sizes="100vw" src="images/EconomicsAssociationZambia_bus_ssa.png" srcset="images/EconomicsAssociationZambia_bus_ssa-p-500x252.png 500w, images/EconomicsAssociationZambia_bus_ssa-p-800x403.png 800w, images/EconomicsAssociationZambia_bus_ssa.png 1070w">
+        <p>In its role of political advisor, the EAZ takes advantage of public economic data to conduct policy research. Complementary to its own primary data collection, EAZ sources open data mainly from the Zambian Central statistical office and the Central Bank of Zambia. The type of data being used covers a wide range - economic and health indicators, population and economic census, health demographic surveys, and others. For example, in its website, which also serves as an advocacy platform, the EAZ has contributed to the dissemination of the results of 2015 Living Conditions Monitoring Survey, a poverty assessment <a href="http://eaz.org.zm/2015-living-conditions-monitoring-survey-results/" target="_blank">study </a>conducted by the Central statistical office to monitor and highlight the living conditions of the population of Zambia. In this way, the EAZ seeks to help the Government of Zambia achieve its objectives towards poverty reduction and strengthening the linkages between budgeting and planning.</p>
+      </div><a class="show-less-button-1 w-button" data-ix="hide-case-study-1" href="#">Show Less &nbsp;<span class="fontawesome-icon"></span></a>
+    </div>
+    <div class="case-study-2">
+      <div class="case-study-intro-2 w-clearfix"><img class="case-study-thumbnail-image-2" sizes="(max-width: 479px) 60vw, 200px" src="images/Farmerline_agr_ssa.png" srcset="images/Farmerline_agr_ssa-p-500x339.png 500w, images/Farmerline_agr_ssa.png 770w">
+        <h3 class="case-study-title">Farmerline</h3>
+        <div class="case-study-subtitle">An SMS-based service that provides small-scale farmers with up-to-date agricultural information and advisement</div>
+        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a target="_blank" href="http://farmerline.co/">http://farmerline.co/</a>
+        </div>
+        <p><strong>Country: </strong>Ghana</p>
+        <p><strong>Impact:</strong> Helps farmers increase crop yield and encourages new farming practices.</p>
+        <p><strong>Data Used:</strong> Agricultural data from the Ghanaian Ministry of Food and Agriculture (MOFA), weather data from a number of sources</p>
+      </div><a class="read-more-button-2 w-button" data-ix="show-case-study-2" href="#">READ MORE &nbsp;<span class="fontawesome-icon"></span></a>
+      <div class="case-study-body-2">
+        <p>Farmerline, an SMS-based service, provides small-scale farmers with up-to-date agricultural information and advisement based in Ghana. Farming accounts for over a <a target="_blank" href="http://data.worldbank.org/indicator/NV.AGR.TOTL.ZS?locations=GH">fifth of the country’s GDP</a>, and <a target="_blank" href="http://data.worldbank.org/indicator/SL.AGR.EMPL.ZS">42% of the workforce</a>. However, many farmers in Ghana operate small-scale farms and face an uphill battle for agriculture information due to a lack of internet access and the diversity of local languages.</p><img class="case-study-image" sizes="100vw" src="images/Farmerline-AGR-AFR.jpg" srcset="images/Farmerline-AGR-AFR-p-500x400.jpeg 500w, images/Farmerline-AGR-AFR.jpg 640w">
+        <p>Farmerline addresses both these issues, providing local farmers access to accurate, up-to-date weather forecasts and market prices. In turn, the farmers gain immediate knowledge of competitive pricing and if not larger, steadier yields due to the agronomic tips and support.
+          <br>
+          <br>Open government data is at the heart of this effort. Launched in 2013, Farmerline gathers open data on weather and market prices, and then repackages the information into outbound text and voice SMS messages, servicing over <a target="_blank" href="http://Open government data is at the heart of this effort. Launched in 2013, Farmerline gathers open data on weather and market prices, and then repackages the information into outbound text and voice SMS messages, servicing over 5000 farmers in Ghana and available in nine different local languages. Fully incorporating voice messages in its service, Farmerline has expanded to farmers in rural areas, where literacy rates remain under 50%.">5000 farmers in Ghana</a> and available in nine different local languages. Fully incorporating voice messages in its service, Farmerline has expanded to farmers in rural areas, where <a target="_blank" href="http://www.statsghana.gov.gh/docfiles/glss5_report.pdf">literacy rates remain under 50%.</a>
+        </p>
+      </div><a class="show-less-button-2 w-button" data-ix="hide-case-study-2" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
+    </div>
+    <div class="case-study-3">
+      <div class="case-study-body-3">
+        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
+        <ul>
+          <li>Mauris egestas, nisi vitae cursus tincidunt</li>
+          <li>Nulla egestas adipiscing fermentum</li>
+          <li>Vivamus laoreet nulla diam</li>
+        </ul>
+        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
+        <div class="ordered-list-item w-clearfix">
+          <div class="ordered-list-number">1.</div>
+          <div class="ordered-list-text">Mauris egestas, nisi vitae cursus tincidunt</div>
+        </div>
+        <div class="ordered-list-item w-clearfix">
+          <div class="ordered-list-number">2.</div>
+          <div class="ordered-list-text">Nulla egestas adipiscing fermentum</div>
+        </div>
+        <div class="ordered-list-item w-clearfix">
+          <div class="ordered-list-number">3.</div>
+          <div class="ordered-list-text">Vivamus laoreet nulla diam</div>
+        </div>
+        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
+      </div><a class="show-less-button-3 w-button" data-ix="hide-case-study-3" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
+    </div>
+  </div>
+  <div class="footer">
+    <p class="footer-text">The Open Data Impact Map, a project of the <a class="footer-link" href="http://www.opendataenterprise.org/">Center for Open Data Enterprise</a>, is supported by the <a class="footer-link" href="http://od4d.net/">Open Data for Development (OD4D)</a> program, a partnership funded by Canada’s <a class="footer-link" href="http://www.idrc.ca/EN/AboutUs/Pages/default.aspx">International Development Research Centre (IDRC)</a>, the <a class="footer-link" href="http://www.worldbank.org/">World Bank</a>, United Kingdom’s <a class="footer-link" href="https://www.gov.uk/government/organisations/department-for-international-development">Department for International Development (DFID)</a>, and <a class="footer-link" href="http://www.international.gc.ca/department-ministere/index.aspx?lang=eng">Global Affairs Canada (GAC)</a>. The Open Data Impact Map is licensed under <a class="footer-link" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-Share Alike 4.0 International License.</a>
+    </p>
+    <div class="footer-logos-container w-clearfix"><img class="footer-logo" src="images/footer-open-data-enterprise-logo2x.png" width="94"><img class="footer-logo idrc" src="images/idrc-footer-logo2x.jpg" width="78"><img class="footer-logo" src="images/footer-open-data-logo2x.png" width="101"><img class="footer-logo world-bank-logo" sizes="(max-width: 479px) 20vw, (max-width: 767px) 60px, 149px" src="images/WB-Group-Logo.png" srcset="images/WB-Group-Logo-p-500x98.png 500w, images/WB-Group-Logo-p-800x157.png 800w, images/WB-Group-Logo.png 1006w" width="149"><img class="cc footer-logo" src="images/footer-creative-commons-logo2x.png" width="78">
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <script type="text/javascript" src="js-custom/SubSaharanAfrica.js"></script>
+  <script type="text/javascript" src="js-custom/SubSaharanMap.php"></script>
+  <!--  Noah - two pieces of code for two charts -->
+  <script type="text/javascript" src="js-custom/viz/regionViz/SSA/viz-SSA-pie.js"></script>
+  <script type="text/javascript" src="js-custom/viz/regionViz/SSA/viz-SSA-bar.js"></script>
+  <!--  Noah - code for getting stat number  -->
+  <script type="text/javascript" src="js-custom/countUp/region/SSA/getSSAStat.js"></script>
+</body>
+</html>
