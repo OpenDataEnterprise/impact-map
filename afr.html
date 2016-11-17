@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--  This site was created in Webflow. http://www.webflow.com -->
-<!--  Last Published: Wed Nov 09 2016 18:15:02 GMT+0000 (UTC)  -->
+<!--  Last Published: Tue Nov 15 2016 02:07:51 GMT+0000 (UTC)  -->
 <html data-wf-page="5797789be89ddd21692b1faf" data-wf-site="577440f9dee5efd30ed38e59">
 <head>
   <meta charset="utf-8">
@@ -41,6 +41,7 @@
   <link rel="stylesheet" href="css-custom/mapstyle.css">
   <style>
     * {z-index: 1;}
+    .show-less-button-1 {margin-left: 45%;}
   </style>
   <!--  added by Noah - stylesheet for viz and pageNav -->
   <link href="css-custom/viz-style.css" rel="stylesheet" type="text/css">
@@ -52,7 +53,7 @@
     <div class="mobile-navigation-container w-clearfix"><a class="mobile-menu-button" data-ix="open-mobile-menu" href="#"><span class="fontawesome-icon"></span> Menu</a><a class="close-menu-button" data-ix="close-mobile-menu" href="#"><span class="fontawesome-icon"></span> Close</a>
       <div class="mobile-navigation-title">Open Data Impact Map</div>
     </div>
-    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="current-navigation navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a>
+    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="current-navigation navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a>
     </div>
   </div>
   <ol class="leftnav w-hidden-medium w-hidden-small w-hidden-tiny">
@@ -73,7 +74,7 @@
     </li>
   </ol>
   <div class="navigation-space-fix" id="findings"></div>
-  <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
+  <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
   </div>
   <div class="africa-header region-detail-header-background">
     <h1 class="region-detail-header">Sub-Saharan Africa</h1>
@@ -103,62 +104,19 @@
     </div>
     <div class="inpage_anchor" id="caseStudies"></div><img class="section-heading-topper" src="images/section-header-topper-22x.png">
     <h2 class="section-header">Use Cases</h2><img class="section-heading-bottom" src="images/section-header-bottom-22x.png">
-    <div class="case-study-1">
-      <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" sizes="(max-width: 479px) 75vw, 200px" src="images/EconomicsAssociationZambia_bus_ssa.png" srcset="images/EconomicsAssociationZambia_bus_ssa-p-500x252.png 500w, images/EconomicsAssociationZambia_bus_ssa-p-800x403.png 800w, images/EconomicsAssociationZambia_bus_ssa.png 1070w">
-        <h3 class="case-study-title">Economics Association of Zambia</h3>
-        <div class="case-study-subtitle">Research, training, education, publication and consultancy in the field of economics and related disciplines</div>
-        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a target="_blank" href="http://eaz.org.zm">http://eaz.org.zm</a>
+    <div class="case-study-1" id="template">
+      <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" src="images/Farmlogs_agr_na.png">
+        <h3 class="case-study-title">Template</h3>
+        <div class="case-study-subtitle">template templatetemplate templatetemplate templatetemplate templatetemplate templatetemplate template</div>
+        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a href="https://farmlogs.com/" target="_blank" id="useCaseURL">https://farmlogs.com/</a>
         </div>
-        <p><strong>Country:</strong> Zambia</p>
-        <p><strong>Impact:</strong>&nbsp;Evidence-based economic policy recommendations and advocacy to reduce poverty in Zambia</p>
-        <p><strong>Data Used:</strong> Economic and health indicators, household surveys, living conditions survey, demographic survey, economic census, population census, agriculture census from Zambia’s Central statistical office (CSO) and the Central Bank of Zambia</p>
+        <p id="countryPara"><strong>Country:&nbsp;</strong>United States</p>
+        <p id="impactPara"><strong>Impact:</strong> Farmers benefit from tools for better crop management and to measure environmental factors</p>
+        <p id="dataUsePara"><strong>Data Used:</strong>&nbsp;Rainfall data from US National Oceanic and Atmospheric Administration’s (NOAA) National Climatic Data Center, soil data from US Department of Agriculture</p>
       </div><a class="read-more-button-1 w-button" data-ix="show-case-study-1" href="#">Read More &nbsp;<span class="fontawesome-icon"></span></a>
       <div class="case-study-body-1">
-        <p>While Zambia’s economy has continued to grow at an average annual rate in recent years, global headwinds and domestic pressures have strained the Zambian economy. Since the 1960s, the Economics Association of Zambia (EAZ), a non-partisan body established in the 1960s, has promoted the socio-economic development of Zambia by undertaking research, training, education, publication and consultancy in the field of economics and related disciplines.</p><img class="case-study-image" sizes="100vw" src="images/EconomicsAssociationZambia_bus_ssa.png" srcset="images/EconomicsAssociationZambia_bus_ssa-p-500x252.png 500w, images/EconomicsAssociationZambia_bus_ssa-p-800x403.png 800w, images/EconomicsAssociationZambia_bus_ssa.png 1070w">
-        <p>In its role of political advisor, the EAZ takes advantage of public economic data to conduct policy research. Complementary to its own primary data collection, EAZ sources open data mainly from the Zambian Central statistical office and the Central Bank of Zambia. The type of data being used covers a wide range - economic and health indicators, population and economic census, health demographic surveys, and others. For example, in its website, which also serves as an advocacy platform, the EAZ has contributed to the dissemination of the results of 2015 Living Conditions Monitoring Survey, a poverty assessment <a href="http://eaz.org.zm/2015-living-conditions-monitoring-survey-results/" target="_blank">study </a>conducted by the Central statistical office to monitor and highlight the living conditions of the population of Zambia. In this way, the EAZ seeks to help the Government of Zambia achieve its objectives towards poverty reduction and strengthening the linkages between budgeting and planning.</p>
+        <p id="mainPara">FarmLogs provides farmers with a free software and mobile application to map and analyze crop yields and environmental conditions for crop growth through government data. Their Farmlogs free Standard includes several features: Field Mapping, Scouting and Notes, Activity Tracking, Rainfall Tracking, GDD Accumulation, Soil Composition Maps, Growth Stage Analysis, Yield Maps, Input Planning. They also empower farmers to coordinate with the government to request data for their lands. On their website, FarmLogs details instructions on how to contact the US Department of Agriculture's Farm Service Agency for field boundary data. Upon receipt, FarmLogs interprets the data and creates field boundaries on mapping systems for farmers to demarcate their lands.</p><img class="case-study-image" src="images/Farmlogs_agr_na.png">
       </div><a class="show-less-button-1 w-button" data-ix="hide-case-study-1" href="#">Show Less &nbsp;<span class="fontawesome-icon"></span></a>
-    </div>
-    <div class="case-study-2">
-      <div class="case-study-intro-2 w-clearfix"><img class="case-study-thumbnail-image-2" sizes="(max-width: 479px) 60vw, 200px" src="images/Farmerline_agr_ssa.png" srcset="images/Farmerline_agr_ssa-p-500x339.png 500w, images/Farmerline_agr_ssa.png 770w">
-        <h3 class="case-study-title">Farmerline</h3>
-        <div class="case-study-subtitle">An SMS-based service that provides small-scale farmers with up-to-date agricultural information and advisement</div>
-        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a target="_blank" href="http://farmerline.co/">http://farmerline.co/</a>
-        </div>
-        <p><strong>Country: </strong>Ghana</p>
-        <p><strong>Impact:</strong> Helps farmers increase crop yield and encourages new farming practices.</p>
-        <p><strong>Data Used:</strong> Agricultural data from the Ghanaian Ministry of Food and Agriculture (MOFA), weather data from a number of sources</p>
-      </div><a class="read-more-button-2 w-button" data-ix="show-case-study-2" href="#">READ MORE &nbsp;<span class="fontawesome-icon"></span></a>
-      <div class="case-study-body-2">
-        <p>Farmerline, an SMS-based service, provides small-scale farmers with up-to-date agricultural information and advisement based in Ghana. Farming accounts for over a <a target="_blank" href="http://data.worldbank.org/indicator/NV.AGR.TOTL.ZS?locations=GH">fifth of the country’s GDP</a>, and <a target="_blank" href="http://data.worldbank.org/indicator/SL.AGR.EMPL.ZS">42% of the workforce</a>. However, many farmers in Ghana operate small-scale farms and face an uphill battle for agriculture information due to a lack of internet access and the diversity of local languages.</p><img class="case-study-image" sizes="100vw" src="images/Farmerline-AGR-AFR.jpg" srcset="images/Farmerline-AGR-AFR-p-500x400.jpeg 500w, images/Farmerline-AGR-AFR.jpg 640w">
-        <p>Farmerline addresses both these issues, providing local farmers access to accurate, up-to-date weather forecasts and market prices. In turn, the farmers gain immediate knowledge of competitive pricing and if not larger, steadier yields due to the agronomic tips and support.
-          <br>
-          <br>Open government data is at the heart of this effort. Launched in 2013, Farmerline gathers open data on weather and market prices, and then repackages the information into outbound text and voice SMS messages, servicing over <a target="_blank" href="http://Open government data is at the heart of this effort. Launched in 2013, Farmerline gathers open data on weather and market prices, and then repackages the information into outbound text and voice SMS messages, servicing over 5000 farmers in Ghana and available in nine different local languages. Fully incorporating voice messages in its service, Farmerline has expanded to farmers in rural areas, where literacy rates remain under 50%.">5000 farmers in Ghana</a> and available in nine different local languages. Fully incorporating voice messages in its service, Farmerline has expanded to farmers in rural areas, where <a target="_blank" href="http://www.statsghana.gov.gh/docfiles/glss5_report.pdf">literacy rates remain under 50%.</a>
-        </p>
-      </div><a class="show-less-button-2 w-button" data-ix="hide-case-study-2" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
-    </div>
-    <div class="case-study-3">
-      <div class="case-study-body-3">
-        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
-        <ul>
-          <li>Mauris egestas, nisi vitae cursus tincidunt</li>
-          <li>Nulla egestas adipiscing fermentum</li>
-          <li>Vivamus laoreet nulla diam</li>
-        </ul>
-        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
-        <div class="ordered-list-item w-clearfix">
-          <div class="ordered-list-number">1.</div>
-          <div class="ordered-list-text">Mauris egestas, nisi vitae cursus tincidunt</div>
-        </div>
-        <div class="ordered-list-item w-clearfix">
-          <div class="ordered-list-number">2.</div>
-          <div class="ordered-list-text">Nulla egestas adipiscing fermentum</div>
-        </div>
-        <div class="ordered-list-item w-clearfix">
-          <div class="ordered-list-number">3.</div>
-          <div class="ordered-list-text">Vivamus laoreet nulla diam</div>
-        </div>
-        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
-      </div><a class="show-less-button-3 w-button" data-ix="hide-case-study-3" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
     </div>
   </div>
   <div class="footer">
@@ -177,5 +135,7 @@
   <script type="text/javascript" src="js-custom/viz/regionViz/SSA/viz-SSA-bar.js"></script>
   <!--  Noah - code for getting stat number  -->
   <script type="text/javascript" src="js-custom/countUp/region/SSA/getSSAStat.js"></script>
+  <script type="text/javascript" src="js-custom/usecase/jquery.csv.min.js"></script>
+  <script type="text/javascript" src="js-custom/usecase/region/usecaseSSA.js"></script>
 </body>
 </html>

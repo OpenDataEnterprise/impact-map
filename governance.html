@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--  This site was created in Webflow. http://www.webflow.com -->
-<!--  Last Published: Wed Nov 09 2016 18:15:02 GMT+0000 (UTC)  -->
+<!--  Last Published: Tue Nov 15 2016 02:07:51 GMT+0000 (UTC)  -->
 <html data-wf-page="57b5d8dd1f986d4879b25400" data-wf-site="577440f9dee5efd30ed38e59">
 <head>
   <meta charset="utf-8">
@@ -39,13 +39,16 @@
   <!--  added by Noah - load D3  -->
   <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
   <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+  <style>
+    .show-less-button-1 {margin-left: 45%;}
+  </style>
 </head>
 <body>
   <div class="navigation">
     <div class="mobile-navigation-container w-clearfix"><a class="mobile-menu-button" data-ix="open-mobile-menu" href="#"><span class="fontawesome-icon"></span> Menu</a><a class="close-menu-button" data-ix="close-mobile-menu" href="#"><span class="fontawesome-icon"></span> Close</a>
       <div class="mobile-navigation-title">Open Data Impact Map</div>
     </div>
-    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="current-navigation navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a>
+    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="current-navigation navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a>
     </div>
   </div>
   <ol class="leftnav w-hidden-medium w-hidden-small w-hidden-tiny">
@@ -66,7 +69,7 @@
     </li>
   </ol>
   <div class="navigation-space-fix" id="findings"></div>
-  <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
+  <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
   </div>
   <div class="governance-header sector-detail-header-background">
     <h1 class="sector-detail-header">Governance</h1>
@@ -98,60 +101,19 @@
     </div>
     <div class="inpage_anchor" id="caseStudies"></div><img class="section-heading-topper" src="images/section-header-topper-22x.png">
     <h2 class="section-header">Use Cases</h2><img class="section-heading-bottom" src="images/section-header-bottom-22x.png">
-    <div class="case-study-1">
-      <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" sizes="(max-width: 479px) 75vw, 200px" src="images/DeOlhoNasMetas_gov_lac.png" srcset="images/DeOlhoNasMetas_gov_lac-p-500x328.png 500w, images/DeOlhoNasMetas_gov_lac-p-800x525.png 800w, images/DeOlhoNasMetas_gov_lac.png 1030w">
-        <h3 class="case-study-title">De Olho nas Metas</h3>
-        <div class="case-study-subtitle">Platform for monitoring the progress of municipal projects in São Paulo, Brazil</div>
-        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a target="_blank" href="http://deolhonasmetas.org.br">http://deolhonasmetas.org.br</a>
+    <div class="case-study-1" id="template">
+      <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" src="images/Farmlogs_agr_na.png">
+        <h3 class="case-study-title">Template</h3>
+        <div class="case-study-subtitle">template templatetemplate templatetemplate templatetemplate templatetemplate templatetemplate template</div>
+        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a href="https://farmlogs.com/" target="_blank" id="useCaseURL">https://farmlogs.com/</a>
         </div>
-        <p><strong>Country:&nbsp;</strong>Brazil</p>
-        <p><strong>Impact:</strong> Helps civil society monitor municipal projects in their community</p>
-        <p><strong>Data Used:</strong> Education data from the Brazilian Ministry of Education and Instituto Brasileiro de Geografia e Estatística, government operations data from the municipality of São Paulo</p>
+        <p id="countryPara"><strong>Country:&nbsp;</strong>United States</p>
+        <p id="impactPara"><strong>Impact:</strong> Farmers benefit from tools for better crop management and to measure environmental factors</p>
+        <p id="dataUsePara"><strong>Data Used:</strong>&nbsp;Rainfall data from US National Oceanic and Atmospheric Administration’s (NOAA) National Climatic Data Center, soil data from US Department of Agriculture</p>
       </div><a class="read-more-button-1 w-button" data-ix="show-case-study-1" href="#">Read More &nbsp;<span class="fontawesome-icon"></span></a>
       <div class="case-study-body-1">
-        <p>According to Brazilian law, in every mandate the mayor of a municipality is obliged to submit a plan describing the goals that will be implemented during his administration. These goals cover various topics ranging from environment to education, or any other areas of intervention in the city. In 2013, a new legislation enabled the creation of Participatory Councils, civil society groups that , among other things, monitor the execution of the municipal budget, public services performance indicators, and the implementation of the proposed plan within their geographical area.</p><img class="case-study-image" sizes="100vw" src="images/DeOlhoNasMetas_gov_lac.png" srcset="images/DeOlhoNasMetas_gov_lac-p-500x328.png 500w, images/DeOlhoNasMetas_gov_lac-p-800x525.png 800w, images/DeOlhoNasMetas_gov_lac.png 1030w">
-        <p>Relying on data pulled from the municipality of São Paulo <a target="_blank" href="http://planejasampa.prefeitura.sp.gov.br/">website, </a>the platform “De Olho nas Metas” was created to facilitate monitoring of the progress of municipal projects. The tool also aims to &nbsp;improve communication between citizens, Participatory Councils, and public officials. For a more complete and transparent view of projects, the platform also incorporates data from the Treasury Court of São Paulo and displays information on the companies that were contracted for the execution of each project.</p>
-        <p>“De olho nas metas” has also produced <a href="http://www.todospelaeducacao.org.br//arquivos/biblioteca/de_olho_nas_metas_2013_141.pdf" target="_blank">reports </a>providing recommendations for the improvement of the Brazilian education system supported by the analysis of open education data (e.g. literacy rates, education budgeting) from the Ministry of Education, and the Brazilian Institute of Geography and Statistics (IBGE).</p>
+        <p id="mainPara">FarmLogs provides farmers with a free software and mobile application to map and analyze crop yields and environmental conditions for crop growth through government data. Their Farmlogs free Standard includes several features: Field Mapping, Scouting and Notes, Activity Tracking, Rainfall Tracking, GDD Accumulation, Soil Composition Maps, Growth Stage Analysis, Yield Maps, Input Planning. They also empower farmers to coordinate with the government to request data for their lands. On their website, FarmLogs details instructions on how to contact the US Department of Agriculture's Farm Service Agency for field boundary data. Upon receipt, FarmLogs interprets the data and creates field boundaries on mapping systems for farmers to demarcate their lands.</p><img class="case-study-image" src="images/Farmlogs_agr_na.png">
       </div><a class="show-less-button-1 w-button" data-ix="hide-case-study-1" href="#">Show Less &nbsp;<span class="fontawesome-icon"></span></a>
-    </div>
-    <div class="case-study-2">
-      <div class="case-study-intro-2 w-clearfix"><img class="case-study-thumbnail-image-2" sizes="(max-width: 479px) 60vw, 200px" src="images/CGPA_gov_sar.jpeg" srcset="images/CGPA_gov_sar-p-500x409.jpeg 500w, images/CGPA_gov_sar-p-800x655.jpeg 800w, images/CGPA_gov_sar.jpeg 960w">
-        <h3 class="case-study-title small-case-study-title">Centre for Governance &amp; Public Accountability</h3>
-        <div class="case-study-subtitle">Civil society organization working for promotion of public accountability and good governance in Pakistan</div>
-        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a target="_blank" href="http://www.c-gpa.org/">http://www.c-gpa.org/</a>
-        </div>
-        <p><strong>Country: </strong>Pakistan</p>
-        <p><strong>Impact:</strong> Promotion of citizens’ voices on key governance issues and strengthening state response to citizens’ grievances</p>
-        <p><strong>Data Used:</strong> District level education budget of various districts in Pakistan; Municipal budget data of Peshawar District; Education, health, police, legal data from Khyber Pakhtunkhwa District</p>
-      </div><a class="read-more-button-2 w-button" data-ix="show-case-study-2" href="#">READ MORE &nbsp;<span class="fontawesome-icon"></span></a>
-      <div class="case-study-body-2">
-        <p>The Centre for Governance and Public Accountability (CGPA) was established in 2011 to improve the levels of trust between state and society in Pakistan. CGPA’s work can be grouped into 6 main areas: open governance, rule of law, democratic governance, decentralization and devolution, promotion of pluralism, and social accountability. Since the enactment of the Freedom of Information (FOI) legislation in 2013, the CGPA has focused on the implementation of this law and published extensive research on the response by government agencies in different districts in Pakistan to information requests.</p><img class="case-study-image" sizes="100vw" src="images/CGPA_gov_sar.jpeg" srcset="images/CGPA_gov_sar-p-500x409.jpeg 500w, images/CGPA_gov_sar-p-800x655.jpeg 800w, images/CGPA_gov_sar.jpeg 960w">
-        <p>As a promoter of open governance and open data, the CGPA has produced several studies on <a target="_blank" href="http://www.c-gpa.org/images/publications/FATA_BA_Report.pdf">education budgeting</a>, <a target="_blank" href="http://www.c-gpa.org/images/publications/budget_analysis_town_iii_peshawar_district.pdf">municipal budgeting</a>, and <a target="_blank" href="http://www.c-gpa.org/images/publications/social_audit_water_senitation.pdf">others </a>which have contributed with analyses on areas such as public education <a target="_blank" href="http://www.c-gpa.org/index.php?option=com_content&amp;view=article&amp;id=129:improving-primary-education-governance-in-khyber-pukhtunkhwa&amp;catid=27&amp;Itemid=221">governance </a>and <a target="_blank" href="http://www.c-gpa.org/index.php?option=com_content&amp;view=article&amp;id=127:improving-public-education-service-delivery-in-kp-and-fata&amp;catid=27&amp;Itemid=221">service delivery</a>, the <a target="_blank" href="http://www.c-gpa.org/index.php?option=com_content&amp;view=article&amp;id=126:social-audit-of-water-and-sanitation-schemes-in-mardan-district-of-khyber-pakhtunkhwa-province-pakistan&amp;catid=27&amp;Itemid=221">right to drinking safe &nbsp;water and sanitation, and public accountability</a> at the local level. The CGPA is also dedicated to making public data, such as data from the School Census, available in machine-readable format for everyone to access and use. To do so, it has plans to build its own data portal to make more data available to the citizens of Pakistan.</p>
-      </div><a class="show-less-button-2 w-button" data-ix="hide-case-study-2" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
-    </div>
-    <div class="case-study-3">
-      <div class="case-study-body-3">
-        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
-        <ul>
-          <li>Mauris egestas, nisi vitae cursus tincidunt</li>
-          <li>Nulla egestas adipiscing fermentum</li>
-          <li>Vivamus laoreet nulla diam</li>
-        </ul>
-        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
-        <div class="ordered-list-item w-clearfix">
-          <div class="ordered-list-number">1.</div>
-          <div class="ordered-list-text">Mauris egestas, nisi vitae cursus tincidunt</div>
-        </div>
-        <div class="ordered-list-item w-clearfix">
-          <div class="ordered-list-number">2.</div>
-          <div class="ordered-list-text">Nulla egestas adipiscing fermentum</div>
-        </div>
-        <div class="ordered-list-item w-clearfix">
-          <div class="ordered-list-number">3.</div>
-          <div class="ordered-list-text">Vivamus laoreet nulla diam</div>
-        </div>
-        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
-      </div><a class="show-less-button-3 w-button" data-ix="hide-case-study-3" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
     </div>
   </div>
   <div class="footer">
@@ -169,5 +131,7 @@
   <script type="text/javascript" src="js-custom/viz/sectorViz/Gov/viz-Gov-dataTypeBar.js"></script>
   <!--  Noah - code for getting stat number  -->
   <script type="text/javascript" src="js-custom/countUp/sector/Gov/getGovStat.js"></script>
+  <script type="text/javascript" src="js-custom/usecase/jquery.csv.min.js"></script>
+  <script type="text/javascript" src="js-custom/usecase/sector/usecaseGov.js"></script>
 </body>
 </html>

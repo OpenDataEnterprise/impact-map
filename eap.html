@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--  This site was created in Webflow. http://www.webflow.com -->
-<!--  Last Published: Wed Nov 09 2016 18:15:02 GMT+0000 (UTC)  -->
+<!--  Last Published: Tue Nov 15 2016 02:07:51 GMT+0000 (UTC)  -->
 <html data-wf-page="5797784d61f4a60269ac6a8c" data-wf-site="577440f9dee5efd30ed38e59">
 <head>
   <meta charset="utf-8">
@@ -41,6 +41,7 @@
   <link rel="stylesheet" href="css-custom/mapstyle.css">
   <style>
     * {z-index: 1;}
+    .show-less-button-1 {margin-left: 45%;}
   </style>
   <!--  added by Noah - stylesheet for viz and pageNav -->
   <link href="css-custom/viz-style.css" rel="stylesheet" type="text/css">
@@ -52,7 +53,7 @@
     <div class="mobile-navigation-container w-clearfix"><a class="mobile-menu-button" data-ix="open-mobile-menu" href="#"><span class="fontawesome-icon"></span> Menu</a><a class="close-menu-button" data-ix="close-mobile-menu" href="#"><span class="fontawesome-icon"></span> Close</a>
       <div class="mobile-navigation-title">Open Data Impact Map</div>
     </div>
-    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="current-navigation navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a>
+    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="current-navigation navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a>
     </div>
   </div>
   <ol class="leftnav w-hidden-medium w-hidden-small w-hidden-tiny">
@@ -73,7 +74,7 @@
     </li>
   </ol>
   <div class="navigation-space-fix" id="findings"></div>
-  <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
+  <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
   </div>
   <div class="east-asia-header region-detail-header-background">
     <h1 class="region-detail-header">East Asia &amp; Pacific</h1>
@@ -103,60 +104,19 @@
     </div>
     <div class="inpage_anchor" id="caseStudies"></div><img class="section-heading-topper" src="images/section-header-topper-22x.png">
     <h2 class="section-header">Use Cases</h2><img class="section-heading-bottom" src="images/section-header-bottom-22x.png">
-    <div class="case-study-1">
-      <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" sizes="(max-width: 479px) 75vw, 200px" src="images/Haezoom-Ener-EAP.png" srcset="images/Haezoom-Ener-EAP-p-500x265.png 500w, images/Haezoom-Ener-EAP.png 620w">
-        <h3 class="case-study-title">Haezoom</h3>
-        <div class="case-study-subtitle">An online platform that calculates potential energy savings from installing solar panels on a user’s residence</div>
-        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a target="_blank" href="http://www.haezoom.com/">http://www.haezoom.com/</a>
+    <div class="case-study-1" id="template">
+      <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" src="images/Farmlogs_agr_na.png">
+        <h3 class="case-study-title">Template</h3>
+        <div class="case-study-subtitle">template templatetemplate templatetemplate templatetemplate templatetemplate templatetemplate template</div>
+        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a href="https://farmlogs.com/" target="_blank" id="useCaseURL">https://farmlogs.com/</a>
         </div>
-        <p><strong>Country:</strong> South Korea</p>
-        <p><strong>Impact:</strong>&nbsp;A common standard for the solar panel industry and reduced asymmetric information between small solar panel brokers and consumers</p>
-        <p><strong>Data Used:</strong> Building, solar radiation, air temperature data from South Korea’s Ministry of Land, Infrastructure, and Transportation, Ministry of Environment, the National Academy of Sciences, and Korea Meteorological Administration</p>
+        <p id="countryPara"><strong>Country:&nbsp;</strong>United States</p>
+        <p id="impactPara"><strong>Impact:</strong> Farmers benefit from tools for better crop management and to measure environmental factors</p>
+        <p id="dataUsePara"><strong>Data Used:</strong>&nbsp;Rainfall data from US National Oceanic and Atmospheric Administration’s (NOAA) National Climatic Data Center, soil data from US Department of Agriculture</p>
       </div><a class="read-more-button-1 w-button" data-ix="show-case-study-1" href="#">Read More &nbsp;<span class="fontawesome-icon"></span></a>
       <div class="case-study-body-1">
-        <p>Solar is a burgeoning industry in South Korea. Yet, as solar panel sales continue to rise yearly, they continue to be driven by small brokers, the majority of whom claim their product is the best on the market. Haezoom attempts to equalize the market playing field, by providing consumers with accurate estimates of savings from installing solar panels in their homes.</p><img class="case-study-image" sizes="100vw" src="images/Haezoom-Ener-EAP.png" srcset="images/Haezoom-Ener-EAP-p-500x265.png 500w, images/Haezoom-Ener-EAP.png 620w">
-        <p>Haezoom is one of many companies that have sprung up from the South Korean government’s 2013 <a href="http://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=142444#0000" target="_blank">public data act</a>, and Haezoom itself relies on building, geographical, solar radiation, air temperature, as well as a number of other datasets provided by several Ministries in the government, the National Academy of Sciences, and the Korea Meteorological Administration. It analyzes these datasets alongside the user’s monthly electrical bill to predict expected energy savings, installation costs, and CO2 emission reductions. The service then suggests which solar energy installation best suits the user’s needs.</p>
-        <p>Haezoom fills two essential, yet previously vacant, roles within the South Korean solar industry. First, it provides an impartial cost-benefit analysis of solar panel installation to clients. Second, it suggests credible manufacturers to purchase solar panels from based on its user’s needs. In doing so, Haezoom promotes the adoption of solar energy by increasing the amount of information available to customers.</p>
+        <p id="mainPara">FarmLogs provides farmers with a free software and mobile application to map and analyze crop yields and environmental conditions for crop growth through government data. Their Farmlogs free Standard includes several features: Field Mapping, Scouting and Notes, Activity Tracking, Rainfall Tracking, GDD Accumulation, Soil Composition Maps, Growth Stage Analysis, Yield Maps, Input Planning. They also empower farmers to coordinate with the government to request data for their lands. On their website, FarmLogs details instructions on how to contact the US Department of Agriculture's Farm Service Agency for field boundary data. Upon receipt, FarmLogs interprets the data and creates field boundaries on mapping systems for farmers to demarcate their lands.</p><img class="case-study-image" src="images/Farmlogs_agr_na.png">
       </div><a class="show-less-button-1 w-button" data-ix="hide-case-study-1" href="#">Show Less &nbsp;<span class="fontawesome-icon"></span></a>
-    </div>
-    <div class="case-study-2">
-      <div class="case-study-intro-2 w-clearfix"><img class="case-study-thumbnail-image-2" src="images/NewZealandInst_bus_eap.jpeg">
-        <h3 class="case-study-title">New Zealand Institute of Economic Research</h3>
-        <div class="case-study-subtitle">Consultancy advancing independent economic analyses</div>
-        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a target="_blank" href="http://nzier.org.nz/">http://nzier.org.nz/</a>
-        </div>
-        <p><strong>Country:</strong>&nbsp;New Zealand</p>
-        <p><strong>Impact:</strong> Supports a database that breaks down national economic analysis into user-friendly datasets</p>
-        <p><strong>Data Used:</strong> Statistics New Zealand Official Yearbooks (1893-2012), Budget data and economic statistics from the Treasury and Reserve Bank of New Zealand</p>
-      </div><a class="read-more-button-2 w-button" data-ix="show-case-study-2" href="#">READ MORE &nbsp;<span class="fontawesome-icon"></span></a>
-      <div class="case-study-body-2">
-        <p>The New Zealand Institute of Research (NZIER) is a consultancy that encourages independent analyses on economic issues within the country. Their Public Good program endeavors to empower individuals in making data-driven decision-making in business and policy-making. NZIER focuses on data management and provides the tools for different data interpretation. To strengthen existing government data, NZIER incorporates information from The Treasury, New Zealand’s <a target="_blank" href="http://www.stats.govt.nz/browse_for_stats/snapshots-of-nz/digital-yearbook-collection.aspx">Official Yearbooks (1893-2012)</a> from Statistics New Zealand, <a target="_blank" href="http://www.oecd.org/gov/government-at-a-glance-2015-database.htm">Government at a Glance database</a> from the Organisation for Economic Co-operation and Development (OECD), and the Reserve Bank of New Zealand.</p><img class="case-study-image" sizes="100vw" src="images/NZIER_bus_eap.png" srcset="images/NZIER_bus_eap-p-500x302.png 500w, images/NZIER_bus_eap-p-800x483.png 800w, images/NZIER_bus_eap-p-1080x651.png 1080w, images/NZIER_bus_eap.png 1112w">
-        <p>These sources then develop their database called <a target="_blank" href="https://data1850.nz/">Data1850</a>, which bridges data from five sectors: government, economic activity, prices, international linkages, and people. With the lack of statistics data available prior to 1850, the platform was coined Data1850. Their services include datasets or other information on economic or statistics based history, spanning from 1850 to present day. Easily operable and downloadable, the data is available for free on the website. Users choose among economic activity, people, and prices to begin, and then narrow down data options. For example, employment may be first narrowed down by industry or by occupation, then the types of services or professions.</p>
-      </div><a class="show-less-button-2 w-button" data-ix="hide-case-study-2" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
-    </div>
-    <div class="case-study-3">
-      <div class="case-study-body-3">
-        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
-        <ul>
-          <li>Mauris egestas, nisi vitae cursus tincidunt</li>
-          <li>Nulla egestas adipiscing fermentum</li>
-          <li>Vivamus laoreet nulla diam</li>
-        </ul>
-        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
-        <div class="ordered-list-item w-clearfix">
-          <div class="ordered-list-number">1.</div>
-          <div class="ordered-list-text">Mauris egestas, nisi vitae cursus tincidunt</div>
-        </div>
-        <div class="ordered-list-item w-clearfix">
-          <div class="ordered-list-number">2.</div>
-          <div class="ordered-list-text">Nulla egestas adipiscing fermentum</div>
-        </div>
-        <div class="ordered-list-item w-clearfix">
-          <div class="ordered-list-number">3.</div>
-          <div class="ordered-list-text">Vivamus laoreet nulla diam</div>
-        </div>
-        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
-      </div><a class="show-less-button-3 w-button" data-ix="hide-case-study-3" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
     </div>
   </div>
   <div class="footer">
@@ -175,5 +135,7 @@
   <script type="text/javascript" src="js-custom/viz/regionViz/EAP/viz-EAP-bar.js"></script>
   <!--  Noah - code for getting stat number  -->
   <script type="text/javascript" src="js-custom/countUp/region/EAP/getEAPStat.js"></script>
+  <script type="text/javascript" src="js-custom/usecase/jquery.csv.min.js"></script>
+  <script type="text/javascript" src="js-custom/usecase/region/usecaseEAP.js"></script>
 </body>
 </html>

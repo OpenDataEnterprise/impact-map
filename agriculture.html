@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--  This site was created in Webflow. http://www.webflow.com -->
-<!--  Last Published: Wed Nov 09 2016 18:15:02 GMT+0000 (UTC)  -->
+<!--  Last Published: Tue Nov 15 2016 02:07:51 GMT+0000 (UTC)  -->
 <html data-wf-page="57b5da52078103fe49d9f6e0" data-wf-site="577440f9dee5efd30ed38e59">
 <head>
   <meta charset="utf-8">
@@ -39,13 +39,16 @@
   <!--  added by Noah - load D3 and tooltip lib -->
   <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
   <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+  <style>
+    .show-less-button-1 {margin-left: 45%;}
+  </style>
 </head>
 <body>
   <div class="navigation">
     <div class="mobile-navigation-container w-clearfix"><a class="mobile-menu-button" data-ix="open-mobile-menu" href="#"><span class="fontawesome-icon"></span> Menu</a><a class="close-menu-button" data-ix="close-mobile-menu" href="#"><span class="fontawesome-icon"></span> Close</a>
       <div class="mobile-navigation-title">Open Data Impact Map</div>
     </div>
-    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="current-navigation navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a>
+    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="current-navigation navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a>
     </div>
   </div>
   <ol class="leftnav w-hidden-medium w-hidden-small w-hidden-tiny">
@@ -66,7 +69,7 @@
     </li>
   </ol>
   <div class="navigation-space-fix" id="findings"></div>
-  <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
+  <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
   </div>
   <div class="sector-detail-header-background">
     <h1 class="sector-detail-header">Agriculture</h1>
@@ -98,35 +101,19 @@
     </div>
     <div class="inpage_anchor" id="caseStudies"></div><img class="section-heading-topper" src="images/section-header-topper-22x.png">
     <h2 class="section-header">Use Cases</h2><img class="section-heading-bottom" src="images/section-header-bottom-22x.png">
-    <div class="case-study-1">
+    <div class="case-study-1" id="template">
       <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" src="images/Farmlogs_agr_na.png">
-        <h3 class="case-study-title">Farmlogs</h3>
-        <div class="case-study-subtitle">Supporting farmers through technology to enhance crop production and reduce waste</div>
-        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a href="https://farmlogs.com/" target="_blank">https://farmlogs.com/</a>
+        <h3 class="case-study-title">Template</h3>
+        <div class="case-study-subtitle">template templatetemplate templatetemplate templatetemplate templatetemplate templatetemplate template</div>
+        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a href="https://farmlogs.com/" target="_blank" id="useCaseURL">https://farmlogs.com/</a>
         </div>
-        <p><strong>Country:&nbsp;</strong>United States</p>
-        <p><strong>Impact:</strong> Farmers benefit from tools for better crop management and to measure environmental factors</p>
-        <p><strong>Data Used:</strong>&nbsp;Rainfall data from US National Oceanic and Atmospheric Administration’s (NOAA) National Climatic Data Center, soil data from US Department of Agriculture</p>
+        <p id="countryPara"><strong>Country:&nbsp;</strong>United States</p>
+        <p id="impactPara"><strong>Impact:</strong> Farmers benefit from tools for better crop management and to measure environmental factors</p>
+        <p id="dataUsePara"><strong>Data Used:</strong>&nbsp;Rainfall data from US National Oceanic and Atmospheric Administration’s (NOAA) National Climatic Data Center, soil data from US Department of Agriculture</p>
       </div><a class="read-more-button-1 w-button" data-ix="show-case-study-1" href="#">Read More &nbsp;<span class="fontawesome-icon"></span></a>
       <div class="case-study-body-1">
-        <p>FarmLogs provides farmers with a free software and mobile application to map and analyze crop yields and environmental conditions for crop growth through government data. Their Farmlogs free Standard includes several features: Field Mapping, Scouting and Notes, Activity Tracking, Rainfall Tracking, GDD Accumulation, Soil Composition Maps, Growth Stage Analysis, Yield Maps, Input Planning. They also empower farmers to coordinate with the government to request data for their lands. On their website, FarmLogs details instructions on how to contact the US Department of Agriculture's Farm Service Agency for field boundary data. Upon receipt, FarmLogs interprets the data and creates field boundaries on mapping systems for farmers to demarcate their lands.</p><img class="case-study-image" src="images/Farmlogs_agr_na.png">
-        <p>Utilizing publicly accessible data remains essential to building its database of information. FarmLogs also tracks <a target="_blank" href="https://farmlogs.zendesk.com/hc/en-us/articles/203243309-How-the-rainfall-feature-works">rainfall </a>activity with data from the National Oceanic and Atmospheric Administration (NOAA) and the Department of Agriculture datasets to analyze <a href="http://www.nytimes.com/2015/06/25/business/smallbusiness/farmlogs-app-helps-farmers-collect-and-retrieve-data.html?_r=1" target="_blank">soil health</a>. Incorporating real-time data from the government easily connect farmers to focus on crop production and avoid unnecessary waste. This free feature also monitors GDD accumulation, or heat accumulation, over a plot of land as well as color coded yield maps.</p>
+        <p id="mainPara">FarmLogs provides farmers with a free software and mobile application to map and analyze crop yields and environmental conditions for crop growth through government data. Their Farmlogs free Standard includes several features: Field Mapping, Scouting and Notes, Activity Tracking, Rainfall Tracking, GDD Accumulation, Soil Composition Maps, Growth Stage Analysis, Yield Maps, Input Planning. They also empower farmers to coordinate with the government to request data for their lands. On their website, FarmLogs details instructions on how to contact the US Department of Agriculture's Farm Service Agency for field boundary data. Upon receipt, FarmLogs interprets the data and creates field boundaries on mapping systems for farmers to demarcate their lands.</p><img class="case-study-image" src="images/Farmlogs_agr_na.png">
       </div><a class="show-less-button-1 w-button" data-ix="hide-case-study-1" href="#">Show Less &nbsp;<span class="fontawesome-icon"></span></a>
-    </div>
-    <div class="case-study-2">
-      <div class="case-study-intro-2 w-clearfix"><img class="case-study-thumbnail-image-2" src="images/RainbowAgri-Agri-SAR.png">
-        <h3 class="case-study-title">RainbowAgri</h3>
-        <div class="case-study-subtitle">A mobile internet solution that connects farmers and help them communicate, collaborate and commerce</div>
-        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a target="_blank" href="http://www.rainbowagri.com/">http://www.rainbowagri.com/</a>
-        </div>
-        <p><strong>Country:&nbsp;</strong>India</p>
-        <p><strong>Impact:</strong> Helps&nbsp;farmers make better price their crops</p>
-        <p><strong>Data Used:</strong> Market prices, Environmental data (e.g. dam water levels), and weather data from Indian data portal</p>
-      </div><a class="read-more-button-2 w-button" data-ix="show-case-study-2" href="#">READ MORE &nbsp;<span class="fontawesome-icon"></span></a>
-      <div class="case-study-body-2">
-        <p>India has <a target="_blank" href="http://economictimes.indiatimes.com/tech/internet/mobile-internet-user-base-in-india-to-reach-371-million-by-june-iamai/articleshow/50836449.cms">87 million rural mobile Internet users</a>, making it the world’s second largest smartphone market, and a prediction of <a href="http://economictimes.indiatimes.com/news/economy/agriculture/indias-agriculture-sector-can-grow-6-in-case-of-normal-monsoon-this-year-niti-aayog/articleshow/51630123.cms" target="_blank">6% growth</a> for the agricultural sector. Still, manifold challenges lie ahead for the continuous growth of this sector. The current availability of data, in particular of open data, has an important role to play in overcoming some of these challenges. RainbowAgri is a dashboard for farmers to gather news related to agriculture, prices of commodities, authorized pesticide and seed vendors in the locality, and dam water levels.</p><img class="case-study-image" src="images/RainbowAgri-Agri-SAR.png">
-        <p>RainbowAgri is a mobile internet solution that aims to broadly contribute to digitize agriculture, and in this way, empower farmers to increase their productivity and income. Many of the features, such as live market prices from various markets in India, the daily dam water level, and location based weather updates, rely on the use of open data. RainbowAgri fetches most of the data from India’s national open data portal, as well as from other government of India websites as means to enrich the agriculture ecosystem with more information, and help farmers making informed decisions throughout the life cycle of the crop.</p>
-      </div><a class="show-less-button-2 w-button" data-ix="hide-case-study-2" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
     </div>
   </div>
   <div class="footer">
@@ -144,5 +131,7 @@
   <script type="text/javascript" src="js-custom/viz/sectorViz/Agri/viz-Agri-dataTypeBar.js"></script>
   <!--  Noah - code for getting stat number  -->
   <script type="text/javascript" src="js-custom/countUp/sector/Agri/getAgriStat.js"></script>
+  <script type="text/javascript" src="js-custom/usecase/jquery.csv.min.js"></script>
+  <script type="text/javascript" src="js-custom/usecase/sector/usecaseAgri.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--  This site was created in Webflow. http://www.webflow.com -->
-<!--  Last Published: Wed Nov 09 2016 18:15:02 GMT+0000 (UTC)  -->
+<!--  Last Published: Tue Nov 15 2016 02:07:51 GMT+0000 (UTC)  -->
 <html data-wf-page="579776df1a49879c11430ae6" data-wf-site="577440f9dee5efd30ed38e59">
 <head>
   <meta charset="utf-8">
@@ -41,6 +41,7 @@
   <link rel="stylesheet" href="css-custom/mapstyle.css">
   <style>
     * {z-index: 1;}
+    .show-less-button-1 {margin-left: 45%;}
   </style>
   <!--  added by Noah - stylesheet for viz and pageNav -->
   <link href="css-custom/viz-style.css" rel="stylesheet" type="text/css">
@@ -52,7 +53,7 @@
     <div class="mobile-navigation-container w-clearfix"><a class="mobile-menu-button" data-ix="open-mobile-menu" href="#"><span class="fontawesome-icon"></span> Menu</a><a class="close-menu-button" data-ix="close-mobile-menu" href="#"><span class="fontawesome-icon"></span> Close</a>
       <div class="mobile-navigation-title">Open Data Impact Map</div>
     </div>
-    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="current-navigation navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a>
+    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="current-navigation navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a>
     </div>
   </div>
   <ol class="leftnav w-hidden-medium w-hidden-small w-hidden-tiny">
@@ -73,7 +74,7 @@
     </li>
   </ol>
   <div class="navigation-space-fix" id="findings"></div>
-  <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
+  <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
   </div>
   <div class="europe-header region-detail-header-background">
     <h1 class="region-detail-header">Europe &amp; Central Asia</h1>
@@ -103,61 +104,19 @@
     </div>
     <div class="inpage_anchor" id="caseStudies"></div><img class="section-heading-topper" src="images/section-header-topper-22x.png">
     <h2 class="section-header">Use Cases</h2><img class="section-heading-bottom" src="images/section-header-bottom-22x.png">
-    <div class="case-study-1">
-      <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" sizes="(max-width: 479px) 75vw, 200px" src="images/Otthoterkep_hou_eca.png" srcset="images/Otthoterkep_hou_eca-p-500x261.png 500w, images/Otthoterkep_hou_eca.png 640w">
-        <h3 class="case-study-title">Otthonterkep</h3>
-        <div class="case-study-subtitle">An online portal that provides real estate property search</div>
-        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a target="_blank" href="http://otthonterkep.hu/">http://otthonterkep.hu/</a>
+    <div class="case-study-1" id="template">
+      <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" src="images/Farmlogs_agr_na.png">
+        <h3 class="case-study-title">Template</h3>
+        <div class="case-study-subtitle">template templatetemplate templatetemplate templatetemplate templatetemplate templatetemplate template</div>
+        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a href="https://farmlogs.com/" target="_blank" id="useCaseURL">https://farmlogs.com/</a>
         </div>
-        <p><strong>Country: </strong>Hungary</p>
-        <p><strong>Impact:</strong>&nbsp;Empowers home buyers with information to more efficiently search for properties</p>
-        <p><strong>Data Used:</strong> Housing market transactions from the Hungarian National Tax and Customs Office; National Crime Map from http://police.hu; Census data from Hungary’s Central Statistical Office</p>
+        <p id="countryPara"><strong>Country:&nbsp;</strong>United States</p>
+        <p id="impactPara"><strong>Impact:</strong> Farmers benefit from tools for better crop management and to measure environmental factors</p>
+        <p id="dataUsePara"><strong>Data Used:</strong>&nbsp;Rainfall data from US National Oceanic and Atmospheric Administration’s (NOAA) National Climatic Data Center, soil data from US Department of Agriculture</p>
       </div><a class="read-more-button-1 w-button" data-ix="show-case-study-1" href="#">Read More &nbsp;<span class="fontawesome-icon"></span></a>
       <div class="case-study-body-1">
-        <p>In light of the thriving real estate market in Hungary, the company Mapsolutions Zrt. developed the website Otthonterkep in 2013 with the goal of providing home buyers an interactive home search interface. Via its real estate property search portal, Otthonterkep provides users with information on Hungarian real estate, including average house prices, parking prices , green spaces or even a criminal and demographic information. The website also includes a map that gives an overview of the housing market in Hungary. Otthonterkep constructed this map using data provided by public sources, including housing market transactions, census data, and national crime statistics.</p><img class="case-study-image" sizes="100vw" src="images/Otthoterkep_hou_eca.png" srcset="images/Otthoterkep_hou_eca-p-500x261.png 500w, images/Otthoterkep_hou_eca.png 640w">
-        <p>Since 1990, Budapest underwent a construction boom, which was fuelled not only by local demand but also by the rising interest of international investors in the real estate. Additional <a target="_blank" href="http://dailynewshungary.com/map-shows-the-age-of-the-hungarian-real-estates/">analysis </a>of Otthonterkep‘s &nbsp;map conducted by index.hu offers valuable insights into the Hungarian housing stock, such as the aging of the buildings, the decline in new building permits issued in recent years, and the variation in price per square meter. The analysis also concludes that, in Hungary, there is a strong correlation of price per square meter and the age of the building, in particular for those that were built after 1990.</p>
+        <p id="mainPara">FarmLogs provides farmers with a free software and mobile application to map and analyze crop yields and environmental conditions for crop growth through government data. Their Farmlogs free Standard includes several features: Field Mapping, Scouting and Notes, Activity Tracking, Rainfall Tracking, GDD Accumulation, Soil Composition Maps, Growth Stage Analysis, Yield Maps, Input Planning. They also empower farmers to coordinate with the government to request data for their lands. On their website, FarmLogs details instructions on how to contact the US Department of Agriculture's Farm Service Agency for field boundary data. Upon receipt, FarmLogs interprets the data and creates field boundaries on mapping systems for farmers to demarcate their lands.</p><img class="case-study-image" src="images/Farmlogs_agr_na.png">
       </div><a class="show-less-button-1 w-button" data-ix="hide-case-study-1" href="#">Show Less &nbsp;<span class="fontawesome-icon"></span></a>
-    </div>
-    <div class="case-study-2">
-      <div class="case-study-intro-2 w-clearfix"><img class="case-study-thumbnail-image-2" sizes="(max-width: 479px) 60vw, 200px" src="images/paastot-Ener-ECA.png" srcset="images/paastot-Ener-ECA-p-500x341.png 500w, images/paastot-Ener-ECA-p-800x545.png 800w, images/paastot-Ener-ECA-p-1080x736.png 1080w, images/paastot-Ener-ECA.png 1207w">
-        <h3 class="case-study-title">Päästöt.fi</h3>
-        <div class="case-study-subtitle">A website that allows a user to examine and compare pollution emissions throughout Europe</div>
-        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a target="_blank" href="http://Paastot.fi">http://Paastot.fi</a>
-        </div>
-        <p><strong>Country:</strong> Finland</p>
-        <p><strong>Impact:</strong> Provides citizens with the information to lobby for change</p>
-        <p><strong>Data Used:</strong>&nbsp;Environmental data from European Pollutant Release and Transfer Register (E-PRTR)</p>
-      </div><a class="read-more-button-2 w-button" data-ix="show-case-study-2" href="#">READ MORE &nbsp;<span class="fontawesome-icon"></span></a>
-      <div class="case-study-body-2">
-        <p>The idea for Päästöt.fi came about when its creator ran into a roadblock while looking into greenhouse gas emissions statistics of a local energy company. In order to circumvent this issue, he came across the European Pollutant Release and Transfer Register (E-PRTR) database, which was established in July 2000 to collect the annual emissions numbers from industrial facilities across Europe. Päästöt.fi emerged was created in 2010 to allow users to compare emission levels from industrial facilities across Europe.</p><img class="case-study-image" sizes="100vw" src="images/paastot-Ener-ECA.png" srcset="images/paastot-Ener-ECA-p-500x341.png 500w, images/paastot-Ener-ECA-p-800x545.png 800w, images/paastot-Ener-ECA-p-1080x736.png 1080w, images/paastot-Ener-ECA.png 1207w">
-        <p>Päästöt.fi visualizes some 30,000 industrial facilities, from mining sites to coal-fired plants. These facilities are all mapped on the platform, and information such as CO2, heavy metal, or another 89 other kinds of industrial emissions are overlaid on this map; the magnitude of each site’s emissions is shown through circles of varying sizes, and a box to the right relates the numerical figures associated with the selected site.
-          <br>
-          <br>Päästöt.fi manages to effectively communicate important information that was previously stored within a huge dataset that a layperson would otherwise not engage with. Through its visualization, citizens are now able to gain the necessary information to lobby and create change.</p>
-      </div><a class="show-less-button-2 w-button" data-ix="hide-case-study-2" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
-    </div>
-    <div class="case-study-3">
-      <div class="case-study-body-3">
-        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
-        <ul>
-          <li>Mauris egestas, nisi vitae cursus tincidunt</li>
-          <li>Nulla egestas adipiscing fermentum</li>
-          <li>Vivamus laoreet nulla diam</li>
-        </ul>
-        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
-        <div class="ordered-list-item w-clearfix">
-          <div class="ordered-list-number">1.</div>
-          <div class="ordered-list-text">Mauris egestas, nisi vitae cursus tincidunt</div>
-        </div>
-        <div class="ordered-list-item w-clearfix">
-          <div class="ordered-list-number">2.</div>
-          <div class="ordered-list-text">Nulla egestas adipiscing fermentum</div>
-        </div>
-        <div class="ordered-list-item w-clearfix">
-          <div class="ordered-list-number">3.</div>
-          <div class="ordered-list-text">Vivamus laoreet nulla diam</div>
-        </div>
-        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
-      </div><a class="show-less-button-3 w-button" data-ix="hide-case-study-3" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
     </div>
   </div>
   <div class="footer">
@@ -176,5 +135,7 @@
   <script type="text/javascript" src="js-custom/viz/regionViz/ECA/viz-ECA-bar.js"></script>
   <!--  Noah - code for getting stat number  -->
   <script type="text/javascript" src="js-custom/countUp/region/ECA/getECAStat.js"></script>
+  <script type="text/javascript" src="js-custom/usecase/jquery.csv.min.js"></script>
+  <script type="text/javascript" src="js-custom/usecase/region/usecaseECA.js"></script>
 </body>
 </html>
