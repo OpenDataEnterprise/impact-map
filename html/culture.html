@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--  This site was created in Webflow. http://www.webflow.com -->
-<!--  Last Published: Wed Nov 09 2016 18:15:02 GMT+0000 (UTC)  -->
+<!--  Last Published: Tue Nov 15 2016 02:07:51 GMT+0000 (UTC)  -->
 <html data-wf-page="57b757c8ff90538c6e64e49c" data-wf-site="577440f9dee5efd30ed38e59">
 <head>
   <meta charset="utf-8">
@@ -39,13 +39,16 @@
   <!--  added by Noah - load D3  -->
   <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
   <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+  <style>
+    .show-less-button-1 {margin-left: 45%;}
+  </style>
 </head>
 <body>
   <div class="navigation">
     <div class="mobile-navigation-container w-clearfix"><a class="mobile-menu-button" data-ix="open-mobile-menu" href="#"><span class="fontawesome-icon"></span> Menu</a><a class="close-menu-button" data-ix="close-mobile-menu" href="#"><span class="fontawesome-icon"></span> Close</a>
       <div class="mobile-navigation-title">Open Data Impact Map</div>
     </div>
-    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="current-navigation navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a>
+    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="current-navigation navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a>
     </div>
   </div>
   <ol class="leftnav w-hidden-medium w-hidden-small w-hidden-tiny">
@@ -66,7 +69,7 @@
     </li>
   </ol>
   <div class="navigation-space-fix" id="findings"></div>
-  <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
+  <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
   </div>
   <div class="art-culture--tourism-header sector-detail-header-background">
     <h1 class="sector-detail-header">Art, Culture and Tourism</h1>
@@ -98,60 +101,19 @@
     </div>
     <div class="inpage_anchor" id="caseStudies"></div><img class="section-heading-topper" src="images/section-header-topper-22x.png">
     <h2 class="section-header">Use Cases</h2><img class="section-heading-bottom" src="images/section-header-bottom-22x.png">
-    <div class="case-study-1">
-      <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" sizes="(max-width: 479px) 75vw, 200px" src="images/CulturalRoutes_art_eca.png" srcset="images/CulturalRoutes_art_eca-p-500x311.png 500w, images/CulturalRoutes_art_eca.png 523w">
-        <h3 class="case-study-title">Cultural Routes</h3>
-        <div class="case-study-subtitle">App which helps users plan walking and biking routes, linking routes to historical and cultural sites in Moscow.</div>
-        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a href="http://culturalroutes.ru/" target="_blank">http://culturalroutes.ru/</a>
+    <div class="case-study-1" id="template">
+      <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" src="images/Farmlogs_agr_na.png">
+        <h3 class="case-study-title">Template</h3>
+        <div class="case-study-subtitle">template templatetemplate templatetemplate templatetemplate templatetemplate templatetemplate template</div>
+        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a href="https://farmlogs.com/" target="_blank" id="useCaseURL">https://farmlogs.com/</a>
         </div>
-        <p><strong>Country:&nbsp;</strong>Russia</p>
-        <p><strong>Impact:</strong> Reduces time spent browsing tourist information sites</p>
-        <p><strong>Data Used:</strong>&nbsp;Bicycle parking, museums, and city taxi parking datasets from the Department of Information Technology of the Government of Moscow</p>
+        <p id="countryPara"><strong>Country:&nbsp;</strong>United States</p>
+        <p id="impactPara"><strong>Impact:</strong> Farmers benefit from tools for better crop management and to measure environmental factors</p>
+        <p id="dataUsePara"><strong>Data Used:</strong>&nbsp;Rainfall data from US National Oceanic and Atmospheric Administration’s (NOAA) National Climatic Data Center, soil data from US Department of Agriculture</p>
       </div><a class="read-more-button-1 w-button" data-ix="show-case-study-1" href="#">Read More &nbsp;<span class="fontawesome-icon"></span></a>
       <div class="case-study-body-1">
-        <p>Cultural Routes is an app that plans walking and biking routes around historical and cultural sites in Moscow. The app takes the location of taxicab stands and bike share locations into account, and tracks which museums are accessible to visit for people with disabilities.</p><img class="case-study-image" sizes="100vw" src="images/CulturalRoutes_art_eca.png" srcset="images/CulturalRoutes_art_eca-p-500x311.png 500w, images/CulturalRoutes_art_eca.png 523w">
-        <p>Cultural Routes, one of several apps built by BNet, a Russian app developer company, takes all of its data from the Russian government’s open data portal. Currently, the application uses bicycle parking, museum, and city taxi parking datasets from data.mos.ru, and overlays this information onto a map. In addition to Cultural Routes’ original route function, BNet has added three other route recommendation functions: the first shows popular routes, the second takes the user’s location and finds nearby museums, the third lists museums most recommended by Cultural Routes users.</p>
-        <p>By mapping existing museum, bike, and taxi information from Russia’s government data portal, the app reduces the time spent for tourists and museum-goes looking through multiple websites and planning their day along bikeshare apps, google maps, and taxi services.</p>
+        <p id="mainPara">FarmLogs provides farmers with a free software and mobile application to map and analyze crop yields and environmental conditions for crop growth through government data. Their Farmlogs free Standard includes several features: Field Mapping, Scouting and Notes, Activity Tracking, Rainfall Tracking, GDD Accumulation, Soil Composition Maps, Growth Stage Analysis, Yield Maps, Input Planning. They also empower farmers to coordinate with the government to request data for their lands. On their website, FarmLogs details instructions on how to contact the US Department of Agriculture's Farm Service Agency for field boundary data. Upon receipt, FarmLogs interprets the data and creates field boundaries on mapping systems for farmers to demarcate their lands.</p><img class="case-study-image" src="images/Farmlogs_agr_na.png">
       </div><a class="show-less-button-1 w-button" data-ix="hide-case-study-1" href="#">Show Less &nbsp;<span class="fontawesome-icon"></span></a>
-    </div>
-    <div class="case-study-2">
-      <div class="case-study-intro-2 w-clearfix"><img class="case-study-thumbnail-image-2" sizes="(max-width: 479px) 60vw, 200px" src="images/MichaelCultureAssoc_art_eca.png" srcset="images/MichaelCultureAssoc_art_eca-p-500x103.png 500w, images/MichaelCultureAssoc_art_eca-p-800x164.png 800w, images/MichaelCultureAssoc_art_eca.png 999w">
-        <h3 class="case-study-title">Michael Culture Association</h3>
-        <div class="case-study-subtitle">A nonprofit that promotes digital cultural content and creates a network among cultural institutions throughout Europe</div>
-        <div class="case-study-url"><span class="fontawesome-icon"></span> &nbsp;<a target="_blank" href="http://www.michael-culture.eu/">http://www.michael-culture.eu/</a>
-        </div>
-        <p><strong>Country: </strong>France</p>
-        <p><strong>Impact:</strong> Consolidates and fosters growing digital cultural content from museums and libraries across Europe</p>
-        <p><strong>Data Used:</strong> Cultural data and inventories from public museums, libraries and archives across Europe</p>
-      </div><a class="read-more-button-2 w-button" data-ix="show-case-study-2" href="#">READ MORE &nbsp;<span class="fontawesome-icon"></span></a>
-      <div class="case-study-body-2">
-        <p>As the world increasingly moves towards digital formats, Michael Culture Association, commissioned in 2007, &nbsp;provides members with access to digital cultural resources. The nonprofit encompasses over 150 cultural institutions across Europe, and its main project is the Michael Culture portal, which allows users to browse through European digital cultural heritage material online.</p><img sizes="100vw" src="images/MichaelCultureAssoc_art_eca.png" srcset="images/MichaelCultureAssoc_art_eca-p-500x103.png 500w, images/MichaelCultureAssoc_art_eca-p-800x164.png 800w, images/MichaelCultureAssoc_art_eca.png 999w">
-        <p>The Michael Culture portal builds its content from public and private, museums, libraries, and archives. The content itself ranges from art to archaeology and spans all periods of European history, and is searchable by subject, author, date, as well as a number of other identifiers. Michael Culture Association also links users to national portals of digital cultural collections, thus consolidating a number of scattered resources within a single portal. Through its support for multiple languages and large collection, the Michael Culture portal is able to deliver a searchable digital database of cultural content that supersedes the traditional linguistic and physical barriers of European cultural institutions.</p>
-      </div><a class="show-less-button-2 w-button" data-ix="hide-case-study-2" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
-    </div>
-    <div class="case-study-3">
-      <div class="case-study-body-3">
-        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
-        <ul>
-          <li>Mauris egestas, nisi vitae cursus tincidunt</li>
-          <li>Nulla egestas adipiscing fermentum</li>
-          <li>Vivamus laoreet nulla diam</li>
-        </ul>
-        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
-        <div class="ordered-list-item w-clearfix">
-          <div class="ordered-list-number">1.</div>
-          <div class="ordered-list-text">Mauris egestas, nisi vitae cursus tincidunt</div>
-        </div>
-        <div class="ordered-list-item w-clearfix">
-          <div class="ordered-list-number">2.</div>
-          <div class="ordered-list-text">Nulla egestas adipiscing fermentum</div>
-        </div>
-        <div class="ordered-list-item w-clearfix">
-          <div class="ordered-list-number">3.</div>
-          <div class="ordered-list-text">Vivamus laoreet nulla diam</div>
-        </div>
-        <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
-      </div><a class="show-less-button-3 w-button" data-ix="hide-case-study-3" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
     </div>
   </div>
   <div class="footer">
@@ -169,5 +131,7 @@
   <script type="text/javascript" src="js-custom/viz/sectorViz/ACT/viz-ACT-dataTypeBar.js"></script>
   <!--  Noah - code for getting stat number  -->
   <script type="text/javascript" src="js-custom/countUp/sector/ACT/getACTStat.js"></script>
+  <script type="text/javascript" src="js-custom/usecase/jquery.csv.min.js"></script>
+  <script type="text/javascript" src="js-custom/usecase/sector/usecaseACT.js"></script>
 </body>
 </html>
