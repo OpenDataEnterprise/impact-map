@@ -34,11 +34,17 @@ If the URL does not work check `vm/basic/Vagrantfile` and check file Vagrant con
 1. [x-editable mock ajax and console](http://vitalets.github.io/x-editable/assets/demo-mock.js)
 
 # Credits
+### Version 2
+- Project Management: Audrey Ariss
+- Technical Lead: Myeong Lee
+- Development: Noah Song, Myeong Lee, Vinayak Pande, and Pooja Singh 
+- Contents: Laura Manley and Audrey Ariss 
+- Design: ThreeSpot.com
 
-- Survey content: Audrey Ariss, Gustavo Magalhaus and all of Center for Open Data Enterprise
-- Survey coding, CSS, Database and Adminstration: Noah Song, Myeong Lee, and Pooja Singh (v.2.0), Myeong Lee and Greg Elin from GovReady.com (v.1.0)
-- Design: Sumiko Carter, ThreeSpot.com
-- Map: Vinayak Pande (v.2.0) and BlueRaster (v.1.0)
+### Version 1
+- Impact Map: Greg Elin (GovReady.com), Sumiko Carter, ThreeSpot.com, Myeong Lee, and BlueRaster
+
+# Resources
 - Using ArcGIS Online
 - Using SlimPHP Framework
 - Using MySQL Database
