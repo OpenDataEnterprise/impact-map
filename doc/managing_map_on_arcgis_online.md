@@ -1,8 +1,8 @@
 Managing the Map Visualization and Data on ArcGIS Online
 ========================================================
 
-# Update the Map Visualization (Publishing profiles to ArcGIS Online)
 
+## Update the Map Visualization (Publishing profiles to ArcGIS Online)
 1. Opening a terminal
 2. Navagating to the directory with the `agol_integration.py` script
 3. Running bash script
