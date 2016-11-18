@@ -1,0 +1,18 @@
+module httpvboxpolicy 1.0;
+
+require {
+type httpd_t;
+type vmblock_t;
+class dir { search getattr };
+class file { read getattr open };
+}
+
+#============= httpd_t ==============
+allow httpd_t vmblock_t:dir search;
+
+#!!!! This avc is allowed in the current policy
+allow httpd_t vmblock_t:dir getattr;
+allow httpd_t vmblock_t:file getattr;
+
+#!!!! This avc is allowed in the current policy
+allow httpd_t vmblock_t:file { read open };

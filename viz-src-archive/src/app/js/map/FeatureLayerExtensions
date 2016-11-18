@@ -1,0 +1,30 @@
+/* global define */
+define([
+	"dojo/Deferred",
+	"map/map_config"
+], 
+function(
+    Deferred,
+    MapConfig
+) {
+	var o = {};
+
+	o.filter = function(){
+		L.esri.Layers.featureLayer._pro
+	}
+
+	o.create = function(map){
+		var featureURL = MapConfig.features;
+		var features = L.esri.Layers.featureLayer(featureURL, {});
+		var countryURL = MapConfig.countries;
+		var countries = L.esri.Layers.featureLayer(countryURL, {});
+		countries.addTo(map);
+		// features.addTo(map);
+
+		var control = {
+		};
+
+		return control;
+	}
+    return o;
+});

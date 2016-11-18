@@ -1,2 +1,37 @@
+# apple
 .DS_Store
+
+# Vagrant
+**/.vagrant/**
+
+# application
 credentials.inc.php
+phpinfo.php
+parseConfig.php
+scripts/agol-integration/migrate.sh
+
+# data
+scripts/data-etl/Inventory - Country Classification.csv
+Inventory.xlsx
+arcgis_flatfile.json
+org_profile.json
+
+assets/*
+html/grid/*
+
+# Data
+.~lock.Inventory.xlsx#
+
+# Temp
+cfr/
+CFR-2011/*
+html/cfr/*
+html/map/viz/app3
+html/map/viz/app3/*
+html/scap-security-guide/*
+scap-security-guide/
+
+* Gulp distribution files
+viz-src-archive/dist/*
+viz-src-archive/node_modules/*
+vm/basic/node_modules/*
