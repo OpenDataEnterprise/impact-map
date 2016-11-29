@@ -80,7 +80,7 @@ Image_File_Name.png
 ...
 ```
 
-####For all other fields, there is no formatting requirement.
+###For all other fields, there is no formatting requirement.
 
 #Sort the spreadsheet
 
