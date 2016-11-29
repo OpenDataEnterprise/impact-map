@@ -71,6 +71,7 @@ What displays on the website:
 
 ####How to link the image with the use case:
 Copy and paste the full image file name with the file suffix into the Image File Name fields.
+
 Examples of full image file name:
 ```
 Image_File_Name.jpg
