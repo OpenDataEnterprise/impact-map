@@ -13,8 +13,10 @@ To add, delete, and edit use cases, go to: https://docs.google.com/a/odenterpris
 ####For the sorting and filtering of use cases to work, there are formatting requirements for three fields - Sector/Region/Machine Readable(Yes/No/NA):
 Sector fields: 
 The sector name must match one from the drop-down list.
+
 Region fields: 
 The region name must match one from the drop-down list.
+
 Machine Readable(Yes/No/NA) fields: 
 The "Y" in "Yes" must be capitalized.
 
