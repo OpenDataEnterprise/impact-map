@@ -48,7 +48,8 @@
 		where org_profiles.profile_id = data_applications.profile_id 
 		and org_profiles.country_id = org_country_info.country_id 
 		and org_profiles.location_id = org_locations.location_id 
-		and org_profiles.machine_read = 'Yes';";
+		and org_profiles.machine_read = 'Yes'
+		and org_profiles.org_profile_status = 'publish';"
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
