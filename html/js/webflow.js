@@ -733,24 +733,25 @@
 	      doBranding = true;
 	    }
 
-	    if (doBranding) {
+	    if (doBranding && !Webflow.env('editor')) {
 	      var $branding = $('<div></div>');
 	      var $link = $('<a></a>');
 	      $link.attr('href', 'http://webflow.com?utm_campaign=brandjs');
 
 	      $branding.css({
 	        position: 'fixed',
-	        bottom: 0,
-	        right: 0,
+	        bottom: '12px',
+	        color: '#333',
+	        right: '12px',
 	        zIndex: 2147483647,
-	        borderTopLeftRadius: '5px',
-	        backgroundColor: '#2b3239',
-	        padding: '8px 12px 5px 15px',
-	        fontFamily: 'Arial',
-	        fontSize: '10px',
-	        textTransform: 'uppercase',
+	        backgroundColor: '#FFF',
+	        borderRadius: '3px',
+	        boxShadow: '0 0 0 1px rgba(0,0,0,0.1), 0px 1px 3px rgba(0, 0, 0, 0.1)',
+	        padding: '6px 8px 6px 6px',
+	        fontFamily: 'Segoe UI, Arial',
+	        fontSize: '12px',
 	        opacity: '0',
-	        transition: 'opacity 0.50s ease-in-out'
+	        lineHeight: '14px'
 	      });
 
 	      $link.css({
@@ -759,17 +760,21 @@
 	      });
 
 	      var $webflowLogo = $('<img>');
-	      $webflowLogo.attr('src', 'https://daks2k3a4ib2z.cloudfront.net/54153e6a3d25f2755b1f14ed/5445a4b1944ecdaa4df86d3e_subdomain-brand.svg');
+	      $webflowLogo.attr('src', 'https://d1otoma47x30pg.cloudfront.net/img/webflow-badge-icon.60efbf6ec9.svg');
 	      $webflowLogo.css({
-	        opacity: 0.9,
-	        width: '57px',
-	        verticalAlign: 'middle',
-	        paddingLeft: '4px',
-	        paddingBottom: '3px'
+	        marginRight: '8px',
+	        opacity: 1,
+	        width: '16px',
+	        verticalAlign: 'middle'
+	      });
+	      var $webflowTextLogo = $('<img>');
+	      $webflowTextLogo.attr('src', 'https://d1otoma47x30pg.cloudfront.net/img/webflow-badge-text.6faa6a38cd.svg');
+	      $webflowTextLogo.css({
+	        verticalAlign: 'middle'
 	      });
 
-	      $branding.text('Made in');
 	      $branding.append($webflowLogo);
+	      $branding.append($webflowTextLogo);
 	      $link.append($branding);
 
 	      $body.append($link);
