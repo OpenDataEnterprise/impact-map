@@ -1,7 +1,7 @@
 This manual explains how users can update use cases.
 
 The current solution allows you to input data in one spreadsheet and update all relevant pages in the website.
-Since it does not store anything in Webflow, it can hold much more use cases than using Webflow.
+Since it does not store anything in Webflow, the solution can handle much more use cases than using Webflow.
 (Webflow will become very slow after you input around 50 use cases in the Use Cases page.)
 
 #The spreadsheet
