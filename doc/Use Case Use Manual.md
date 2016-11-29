@@ -84,7 +84,7 @@ Image_File_Name.png
 ###For all other fields, there is no formatting requirement.
 
 #Export and upload the sheet
-1. Make a copy of the spreadsheet in Google Spreadsheet, delete unfinished rows in the copy. 
+1. Make a copy of the spreadsheet in Google Spreadsheet, in the copy, delete unfinished rows. 
 2. Sort the entire sheet alphabetically according to use case name.
 3. Go to "file" - "download as", then download the copy as a CSV file. 
 4. Remane the CSV file as "UseCaseData.csv".
