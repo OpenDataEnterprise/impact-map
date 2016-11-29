@@ -39,7 +39,7 @@ Second, insert the URL into the href quotation mark:
 ```
 <a target="_blank" href="the_URL_For_Your_Key_Phrase">YOUR_URL_KEY_PHRASE</a>
 ```
-- Here is a sample long description with URLs embedded with key phrase:
+- Here is a sample long description text that you would input:
 
 What you input in the Long Description field:
 ```
