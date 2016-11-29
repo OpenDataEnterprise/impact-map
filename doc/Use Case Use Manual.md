@@ -83,15 +83,12 @@ Image_File_Name.png
 
 ###For all other fields, there is no formatting requirement.
 
-#Sort the spreadsheet
-
-Before exporting the CSV file, sort the entire sheet alphabetically according to use case name.
-
 #Export and upload the sheet
 1. Make a copy of the spreadsheet in Google Spreadsheet, delete unfinished rows in the copy. 
-2. Go to "file" - "download as", then download the copy as a CSV file. 
-3. Remane the CSV file as "UseCaseData.csv".
-4. Copy the CSV file into "impact-map/html/js-custom/usecase" folder.
+2. Sort the entire sheet alphabetically according to use case name.
+3. Go to "file" - "download as", then download the copy as a CSV file. 
+4. Remane the CSV file as "UseCaseData.csv".
+5. Copy the CSV file into "impact-map/html/js-custom/usecase" folder.
 
 #Adding images
 Copy the corresponding image files into the folder "impact-map/html/UseCaseImage". The image file name matches the name you just copied into the Image File Name field in the spreasheet.
