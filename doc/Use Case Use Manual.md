@@ -31,6 +31,7 @@ The "Y" in "Yes" must be capitalized.
 <br><br>
 ```
 - To add an URL to a key phrase:
+
 First, surround the key phrase with the URL tag:
 ```
 <a target="_blank" href="">YOUR_URL_KEY_PHRASE</a>
