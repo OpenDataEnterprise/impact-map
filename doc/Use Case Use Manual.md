@@ -87,11 +87,11 @@ Image_File_Name.png
 1. Make a copy of the spreadsheet in Google Spreadsheet, in the copy, delete unfinished rows. 
 2. Sort the entire sheet alphabetically according to use case name.
 3. Go to "file" - "download as", then download the copy as a CSV file. 
-4. Remane the CSV file as "UseCaseData.csv".
+4. Rename the CSV file as "UseCaseData.csv".
 5. Copy the CSV file into "impact-map/html/js-custom/usecase" folder.
 
 #Adding images
-Copy the corresponding image files into the folder "impact-map/html/UseCaseImage". The image file name matches the name you just copied into the Image File Name field in the spreasheet.
+Copy the corresponding image files into the folder "impact-map/html/UseCaseImage". The image file name matches the name you just copied into the Image File Name field in the spreadsheet.
 
 #Git push to server
-Finally, use the same git commands that you use for updateing the website files, to push and pull all updated use case files.
+Finally, use the same git commands that you use for updating the website files, to push and pull all updated use case files.
