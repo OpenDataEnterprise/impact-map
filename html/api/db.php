@@ -1,11 +1,11 @@
 <?php
 // define db connection constants
-// //Noah local
+//Noah local
 // define("DB_HOST", "localhost:8889");
 // define("DB_USER", "root");
 // define("DB_PWD", "19880518");
 // define("DB_NAME", "ode_survey");
-//server
+server
 define("DBHOST", "localhost");
 define("DBNAME", "ode_survey");
 define("DBUSER", "root");
