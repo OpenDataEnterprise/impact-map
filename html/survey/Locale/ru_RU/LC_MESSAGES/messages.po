@@ -1,0 +1,539 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TestProject\n"
+"POT-Creation-Date: 2015-06-09 11:30-0500\n"
+"PO-Revision-Date: 2015-06-09 11:48-0500\n"
+"Last-Translator: \n"
+"Language-Team: MyTeam <team@example.com>\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#Test token 1
+msgid "HELLO_WORLD"
+msgstr ""
+
+#Test token 2
+msgid "TEST_TRANSLATION"
+msgstr ""
+
+#Thank you for participating in the Open Data Impact Map, the first centralized, searchable database of open data use cases from around the world.
+msgid "THANKS_PARTICIPATING"
+msgstr "Благодарим за участие в Карте использования Открытых данных, первой централизованной базе данных о практиках использования открытых данных по всему миру."
+
+#Your contribution makes it possible to better understand the value of open data and encourage its use globally.
+msgid "YOUR_CONTRIBUTION"
+msgstr "Ваш вклад даст возможность лучше понять ценность открытых данных и распространить их использование повсеместно."
+
+#Information collected will be displayed on the Map and will be made available as open data.
+msgid "INFO_COLLECTED"
+msgstr "Собранная информация будет показана на Карте и будет доступна как открытые данные."
+
+#ELIGIBILITY
+msgid "ELIGIBILITY"
+msgstr "Требования"
+
+#The Open Data Impact Map includes organizations that:
+msgid "MAP_INCLUDES_ORGS"
+msgstr "Карта включает организации, которые"
+
+#are companies, non-profits, or developer groups; and
+msgid "ARE_COMPANIES"
+msgstr "Ведут коммерческую и некоммерческую деятельность, зарегистрированы официально или нет (например, сообщества разработчиков)."
+
+#use open government data for advocacy, to develop products and services, improve operations, inform strategy and/or conduct research.
+msgid "USE_OPEN_GOVERNMENT_DATA"
+msgstr "Используют открытые государственные данные для разработки продуктов, сервисов, стратегий или в операционной деятельности."
+
+#We define open government data as publicly available data that is produced or commissioned by governments and that can be accessed and reused by anyone, free of charge.
+msgid "WE_DEFINE_OPEN"
+msgstr "Мы определяем «открытые государственные данные» как публично доступные данные (информация), публикуемая органами власти (или иными подведомственными организациями, организациями в которых государство является акционером), которые доступны для повторного использования для всех и без оплаты. Также в исследовании будут учтены данные, получаемые за символическую оплату, компенсирующая издержки владельцев данных."
+
+#1. Organizational Information
+msgid "ORG_INFO"
+msgstr "Информация об организации"
+
+#Name of organization
+msgid "ORG_NAME"
+msgstr "Название организации"
+
+#One sentence description of organization
+msgid "ORG_DESC"
+msgstr "Описание организации в одно предложение"
+
+#400 characters or less
+msgid "400_CHAR"
+msgstr "не более 400 символов"
+
+#Type of organization
+msgid "ORG_TYPE"
+msgstr "Тип организации"
+
+#For-profit
+msgid "FOR-PROFIT"
+msgstr "Коммерческие"
+
+#Nonprofit
+msgid "NONPROFIT"
+msgstr "Некоммерческие"
+
+#Developer group
+msgid "DEVELOPER_GROUP"
+msgstr "Сообщество разработчиков/независимые разработчики"
+
+#other
+msgid "OTHER"
+msgstr "Другое"
+
+#Website URL
+msgid "WEBSITE_URL"
+msgstr "Веб-сайт организации"
+
+#No URL
+msgid "NO_URL"
+msgstr "Нет адреса"
+
+#Location
+msgid "LOCATION"
+msgstr "Местоположение"
+
+#Please provide as specific as possible
+msgid "SPECIFIC_AS_POSSIBLE"
+msgstr "Пожалуйста, напишите как можно более подробно"
+
+#Industry/category of the organization
+msgid "IND"
+msgstr "Индустрия / категория организации"
+
+#select 1
+msgid "SELECT_1"
+msgstr "выберите один вариант"
+
+#Agriculture 
+msgid "AGR"
+msgstr "Сельское хозяйство"
+
+#Arts and culture 
+msgid "ART"
+msgstr "Искусство и культура"
+
+#Business & legal services 
+msgid "BUS"
+msgstr "Сервисы для бизнеса и юридические услуги"
+
+#Consumer services 
+msgid "CSM"
+msgstr "Услуги для потребителей"
+
+#Data/information technology 
+msgid "DAT"
+msgstr "Информационные технологии, работа с данными"
+
+#Education 
+msgid "EDU"
+msgstr "Образование"
+
+#Energy 
+msgid "NGY"
+msgstr "Энергетика"
+
+#Environment 
+msgid "ENV"
+msgstr "Экология"
+
+#Finance and investment
+msgid "FIN"
+msgstr "Финансы и инвестиции"
+
+#Geospatial/mapping 
+msgid "GEO"
+msgstr "Геоинформационные сервисы"
+
+#Governance 
+msgid "GOV"
+msgstr "Государство"
+
+#Healthcare 
+msgid "HLT"
+msgstr "Здравоохранение"
+
+#Housing and real estate 
+msgid "HOU"
+msgstr "Недвижимость"
+
+#Insurance 
+msgid "INS"
+msgstr "Страхование"
+
+#Media and communications 
+msgid "COM"
+msgstr "Медиа и коммуникации"
+
+#Mining/Manufacturing 
+msgid "MAN"
+msgstr "Добывающая и обрабатывающая промышленность"
+
+#Research and consulting 
+msgid "RSH"
+msgstr "Исследования и консалтинг"
+
+#Security and public safety
+msgid "SEC"
+msgstr "Обеспечение безопасности"
+
+#Scientific research 
+msgid "SCI"
+msgstr "Научные исследования"
+
+#Telecommunications/internet service providers (ISPs) 
+msgid "TEL"
+msgstr "Телекоммуникации, интернет провайдеры (ISPs)"
+
+#Tourism 
+msgid "TOR"
+msgstr "Туризм"
+
+#Transportation and logistics 
+msgid "TRN"
+msgstr "Транспорт и логистика"
+
+#Water and sanitation 
+msgid "WAT"
+msgstr "Вода и санитарные услуги"
+
+#Weather 
+msgid "WEA"
+msgstr "Погода"
+
+#Founding year
+msgid "FOUNDING_YEAR"
+msgstr "Год основания организации"
+
+#Size
+msgid "SIZE"
+msgstr "Размер"
+
+#1-10 employees
+msgid "1-10"
+msgstr "1-10 сотрудников"
+
+#11-50 employees
+msgid "11-50"
+msgstr "11-50 сотрудников"
+
+#51-200 employees
+msgid "51-200"
+msgstr "51-200 сотрудников"
+
+#201-1000 employees
+msgid "201-1000"
+msgstr "201-1000 сотрудников"
+
+#1000+ employees
+msgid "1000+"
+msgstr "1000+ сотрудников"
+
+#What is the greatest type of impact your organization has?
+msgid "GREATEST_IMPACT"
+msgstr "В какой сфере вы имеете наибольшее влияние?"
+
+#Economic
+msgid "ECONOMIC"
+msgstr "Экономический"
+
+#Environmental
+msgid "ENVIRONMENTAL"
+msgstr "Экологический"
+
+#Governance
+msgid "GOVERNANCE"
+msgstr "Государственный"
+
+#Social
+msgid "SOCIAL"
+msgstr "Социальный"
+
+#Provide details
+msgid "PROVIDE_DETAILS"
+msgstr "Предоставьте больше деталей"
+
+#2. Use of Open Data
+msgid "USE_OF_OPEN_DATA"
+msgstr "2. Использование открытых данных"
+
+#What are the most relevant types of open data your organization uses?
+msgid "MOST_RELEVANT_OPEN_DATA"
+msgstr "Какие открытые данные наиболее важны для вашей организации?"
+
+#most relevant
+msgid "MOST_RELEVANT"
+msgstr "наиболее актуальны"
+
+#types of data your organization uses?
+msgid "TYPES_OF_DATA"
+msgstr "типы данных, используемые вашей организацией"
+
+#select all that apply
+msgid "SELECT_ALL"
+msgstr "выберите все, что подходит"
+
+#Agriculture 
+msgid "AGRICULTURE"
+msgstr "Сельское хозяйство"
+
+#Arts and culture 
+msgid "ARTS_AND_CULTURE"
+msgstr "Искусство и культура"
+
+#Business 
+msgid "BUSINESS"
+msgstr "Бизнес"
+
+#Consumer 
+msgid "CONSUMER"
+msgstr "Потребительский сектор"
+
+#Demographics and social 
+msgid "DEMOGRAPHICS"
+msgstr "Демографические и социальные"
+
+#Economics 
+msgid "ECONOMICS"
+msgstr "Экономика"
+
+#Education 
+msgid "EDUCATION"
+msgstr "Образование"
+
+#Energy
+msgid "ENERGY"
+msgstr "Энергетика"
+
+#Environment 
+msgid "ENVIRONMENT"
+msgstr "Экология"
+
+#Finance 
+msgid "FINANCE"
+msgstr "Финансы"
+
+#Geospatial/mapping 
+msgid "GEOSPATIAL"
+msgstr "Географические и картографические данные"
+
+#Government operations 
+msgid "GOVERNMENT_OPS"
+msgstr "Информация о деятельности государственных органов"
+
+#Health/healthcare 
+msgid "HEALTH"
+msgstr "Здравоохранение"
+
+#Housing 
+msgid "HOUSING_CAT"
+msgstr "Недвижимость"
+
+#International/global development 
+msgid "INTERNATIONAL"
+msgstr "Международное/глобальное развитие"
+
+#Legal
+msgid "LEGAL"
+msgstr "Юридические услуги"
+
+#Manufacturing 
+msgid "MANUFACTURING"
+msgstr "Производство"
+
+#Science and research 
+msgid "SCIENCE_AND_RESEARCH"
+msgstr "Научные исследования"
+
+#Public safety 
+msgid "PUBLIC_SAFETY"
+msgstr "Общественная безопасность"
+
+#Tourism 
+msgid "TOURISM"
+msgstr "Туризм"
+
+#Transportation 
+msgid "TRANSPORTATION"
+msgstr "Транспорт"
+
+#Weather 
+msgid "WEATHER"
+msgstr "Погода"
+
+#Number of countries from which open data is provided
+msgid "NUM_OF_COUNTRIES"
+msgstr "Количество стран, открытые данные которых вы используете"
+
+#Indicate the country that provide the data, and whether the data is National or State / Local (state/province/city).
+msgid "INDICATE_COUNTRY_THAT"
+msgstr "Отметьте страны, данные которых вы используете и уровень (Федеральный или региональный/локальный - такие как Регион/Муниципалитет)."
+
+#Data source - Country
+msgid "DATA_SOURCE_COUNTRY"
+msgstr "Источник данных - Страна"
+
+#Select
+msgid "SELECT"
+msgstr "Выберите"
+
+#1 country 
+msgid "1_COUNTRY"
+msgstr "1 страна"
+
+#2-5 countries 
+msgid "2-5_COUNTRIES"
+msgstr "2-5 стран"
+
+#6-10 countries 
+msgid "6-10_COUNTRIES"
+msgstr "6-10 стран"
+
+#11-20 countries 
+msgid "11-20_COUNTRIES"
+msgstr "11-20 стран"
+
+#21-50 countries 
+msgid "21-50_COUNTRIES"
+msgstr "21-50 стран"
+
+#50+ countries
+msgid "50+_COUNTRIES"
+msgstr "Более 50 стран"
+
+#How does your organization use open data?
+msgid "HOW_USE_OPEN_DATA"
+msgstr "Как ваша организация использует открытые данные?"
+
+#advocacy
+msgid "ADVOCACY"
+msgstr "общественная деятельность"
+
+#new products, services, or applications
+msgid "PRODUCTS_SERVICES"
+msgstr "новые продукты, сервисы, приложения"
+
+#organizational optimization 
+msgid "ORG_OPTIMIZATION"
+msgstr "оптимизация работы организации"
+
+#(e.g. benchmarking, market analysis, improving efficiency, enhancing existing products and services)
+msgid "EG_BENCHMARKING"
+msgstr "(например, анализ рынка, повышение эффективности, улучшение существующих продуктов и сервисов)"
+
+#research
+msgid "RESEARCH"
+msgstr "исследования"
+
+#Which datasets are most valuable to your organization? 
+msgid "WHICH_DATASETS_MOST_VALUABLE"
+msgstr "Какие наборы данных наиболее ценны для вашей организации?"
+
+#What other types of data does your organization use in addition to open government data?
+msgid "WHAT_OTHER_TYPES_OF_DATA"
+msgstr "Какие другие виды данных ваша организация использует в дополнение к открытым государственным данным?"
+
+#Additional information
+msgid "ADDITIONAL_INFORMATION"
+msgstr "Дополнительная информация"
+
+#E.g. How could the open data your organization uses be improved? 
+msgid "EG_HOW_COULD"
+msgstr "Например, как открытые данные, используемые вашей организацией, могут быть улучшены?"
+
+#3. Contact Information
+msgid "CONTACT_INFORMATION"
+msgstr "Контактная информация"
+
+#optional
+msgid "OPTIONAL"
+msgstr "дополнительно"
+
+#This information will not be made public
+msgid "NOT_BE_MADE_PUBLIC"
+msgstr "Эта информация не будет опубликована"
+
+#First name
+msgid "FIRST_NAME"
+msgstr "Имя"
+
+#Last name
+msgid "LAST_NAME"
+msgstr "Фамилия"
+
+#Title
+msgid "TITLE"
+msgstr "Должность"
+
+#Email
+msgid "EMAIL"
+msgstr "Электронный адрес"
+
+#Phone
+msgid "PHONE"
+msgstr "Телефон"
+
+#All submissions will be reviewed before public display on the Open Data Impact Map.
+msgid "SUBMISSIONS_REVIEWED"
+msgstr "Информация будет опубликована на карте использования открытых данных после просмотра модератором."
+
+#SUBMIT
+msgid "SUBMIT"
+msgstr "Отправить"
+
+#"provide as much information as possible" 
+msgid "PROVIDE_AS_MUCH_INFO"
+msgstr "предоставьте информации как можно больше"
+
+#"provide examples" 
+msgid "PROVIDE_EXAMPLES"
+msgstr "приведите примеры"
+
+#"enter a location" 
+msgid "ENTER_LOCATION"
+msgstr "введите местоположение"
+
+#"Select countries providing data used by your organization"  
+msgid "SELECT_COUNTRIES_PROVIDING_DATA"
+msgstr "Выберите страны, данные которых вы используете"
+
+#"national/local" 
+msgid "NATIONAL_LO
+msgstr "Национальный/Местный"
+
+#"data source - country" 
+msgid "DATA_SOURCE"
+msgstr "источник данных - страна"
+
+#"Click national and/or local to show government level of data used" 
+msgid "SHOW_GOVERNMENT_LEVEL"
+msgstr "Нажмите национальный и/или локальный чтобы показать уровень государственных данных, которые вы используете"
+
+#"required" 
+msgid "REQUIRED"
+msgstr "обязательно"
+
+#"This field is required" 
+msgid "FIELD_REQUIRED"
+msgstr "Это поле обязательно"
+
+#"Please enter a valid URL."
+msgid "ENTER_VALID_URL"
+msgstr "Пожалуйста, введите корректный адрес сайта."
+
+#The Open Data Impact Map, a project of the Center for Open Data Enterprise as part of the OD4D network, is licensed under
+msgid "OD4D_ATTRIBUTION"
+msgstr "Карта использования открытых данных, проект Центра предпринимательства на открытых данных как часть сети OD4D под лицензией"
+
+#Creative Commons Attribution-Share Alike 4.0 International License
+msgid "CREATIVE_COMMONS_LICENSE"
+msgstr "Creative Commons Attribution-Share Alike 4.0 International License"	

@@ -1,0 +1,9 @@
+{
+    "require": {
+        "aws/aws-sdk-php": "2.*",
+        "slim/slim": "2.*",
+        "twilio/sdk": "3.12.4",
+        "twig/twig": "~1.0",
+        "mailgun/mailgun-php": "~1.7.2"
+    }
+}
