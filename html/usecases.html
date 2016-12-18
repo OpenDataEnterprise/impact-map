@@ -329,7 +329,7 @@
         var windowsize = $window.width();
         if (windowsize < 1160) {
             $('.column-row').hide();
-            $('.usecasedropdown').show();
+            $('.usecasedropdown').css({'display': 'inline-block', 'float': 'none'});
         }
         if (windowsize > 1160) {
             $('.column-row').show();
