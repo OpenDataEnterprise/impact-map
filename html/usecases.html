@@ -29,6 +29,11 @@
     .sector-case-container {text-align: center;}
     .mrble-case-container {text-align: center;}
     .use-case-container {vertical-align: top;}
+    .column-row {text-align: center;}
+    .w-col-3 {width: 17% !important; display: inline-block; float: none !important; }
+    .button {width: 235px !important;}
+    .usecasedropdownrow {margin-bottom: 50px !important; text-align: center;}
+    .use-case-filter-text {display: inline-block !important;}
   </style>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
   <script>
@@ -56,9 +61,18 @@
     <p class="landing-page-overview">The use cases below are highlighted examples from the Open Data Impact Map across sectors and regions.</p>
   </div>
   <div class="usecasedropdownrow w-clearfix">
-    <div class="use-case-filter-text"><strong>Sort by:</strong>
+    <div class="use-case-filter-text"><strong>SORT BY:</strong></div>
+    <div class="column-row w-row">
+      <div class="w-col w-col-3"><a class="button w-button" id="byTitle">Alphabetical</a>
+      </div>
+      <div class="w-col w-col-3"><a class="button w-button" id="byRegion">Region</a>
+      </div>
+      <div class="w-col w-col-3"><a class="button w-button" id="bySector">Sector</a>
+      </div>
+      <div class="w-col w-col-3"><a class="button w-button" id="byMR">Machine-Readability Project</a>
+      </div>
     </div>
-    <div class="usecasedropdown w-dropdown" data-delay="0">
+    <div class="usecasedropdown w-dropdown" data-delay="0" style="display: none;">
       <div class="dropdowntoggle w-dropdown-toggle">
         <div class="usecasedropmaintext" id="dropMainText"></div>
         <div class="dropdownarrow w-icon-dropdown-toggle"></div>
@@ -67,7 +81,7 @@
       </nav>
     </div>
   </div>
-  <div class="abc-case-container">
+  <div class="abc-case-container" style="display: none;">
     <div class="mrabletitlecontainer"><img class="mrable-header-img" src="images/section-header-topper-22x.png" width="150">
       <div class="section-header">Use Cases - Alphabetical</div><img class="mrable-bottom-img" src="images/section-header-bottom-12x.png" width="150">
     </div>
@@ -305,6 +319,29 @@
   <script src="js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
   <script>
+  // check window width and switch filters on the fly
+  $(document).ready(function() {
+    // Optimalisation: Store the references outside the event handler:
+    var $window = $(window);
+    var $pane = $('#pane1');
+
+    function checkWidth() {
+        var windowsize = $window.width();
+        if (windowsize < 1160) {
+            $('.column-row').hide();
+            $('.usecasedropdown').show();
+        }
+        if (windowsize > 1160) {
+            $('.column-row').show();
+            $('.usecasedropdown').hide();
+        }
+    }
+    // Execute on load
+    checkWidth();
+    // Bind event listener
+    $(window).resize(checkWidth);
+});
+  // change the drop down filter texts
     var caseTitle = document.getElementById("caseTitleLink");
       var region = document.getElementById("regionLink");
       var sector = document.getElementById("sectorLink");
