@@ -542,9 +542,10 @@ function processData(allText) {
         $('.modal-wrapper').hide();
     });
 
-    // interactions for four new filter buttons
+    // color interactions for four new filter buttons
+    //first
     $('#byTitle').on('click', function() {
-        $(this).css("background-color", "#d69f3e");
+        $(this).css("background-color", "#50b094");
         $('#byRegion').css("background-color", "#376d86");
         $('#bySector').css("background-color", "#376d86");
         $('#byMR').css("background-color", "#376d86");
@@ -554,8 +555,11 @@ function processData(allText) {
         $('.sector-case-container').hide();
         $('.mrble-case-container').hide();
     });
+   
+
+    //second
     $('#byRegion').on('click', function() {
-        $(this).css("background-color", "#d69f3e");
+        $(this).css("background-color", "#50b094");
         $('#byTitle').css("background-color", "#376d86");
         $('#bySector').css("background-color", "#376d86");
         $('#byMR').css("background-color", "#376d86");
@@ -565,8 +569,11 @@ function processData(allText) {
         $('.sector-case-container').hide();
         $('.mrble-case-container').hide();
     });
+    
+
+    //third
     $('#bySector').on('click', function() {
-        $(this).css("background-color", "#d69f3e");
+        $(this).css("background-color", "#50b094");
         $('#byRegion').css("background-color", "#376d86");
         $('#byTitle').css("background-color", "#376d86");
         $('#byMR').css("background-color", "#376d86");
@@ -576,8 +583,11 @@ function processData(allText) {
         $('.sector-case-container').show();
         $('.mrble-case-container').hide();
     });
+
+
+    //fourth
     $('#byMR').on('click', function() {
-        $(this).css("background-color", "#d69f3e");
+        $(this).css("background-color", "#50b094");
         $('#byRegion').css("background-color", "#376d86");
         $('#bySector').css("background-color", "#376d86");
         $('#byTitle').css("background-color", "#376d86");
@@ -587,5 +597,6 @@ function processData(allText) {
         $('.sector-case-container').hide();
         $('.mrble-case-container').show();
     });
+    
 
 }
