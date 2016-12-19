@@ -31,7 +31,7 @@
     .use-case-container {vertical-align: top;}
     .column-row {text-align: center;}
     .w-col-3 {width: 17% !important; display: inline-block; float: none !important; }
-    .button {width: 235px !important;}
+    .button {width: 188px !important; font-size: xx-small; !important;}
     .usecasedropdownrow {margin-bottom: 50px !important; text-align: center;}
     .use-case-filter-text {display: inline-block !important;}
     .button:hover {background-color:#50b094 !important;}
@@ -62,7 +62,7 @@
     <p class="landing-page-overview">The use cases below are highlighted examples from the Open Data Impact Map across sectors and regions.</p>
   </div>
   <div class="usecasedropdownrow w-clearfix">
-    <div class="use-case-filter-text"><strong>SORT BY:</strong></div>
+    <div class="use-case-filter-text">SORT BY:</div>
     <div class="column-row w-row">
       <div class="w-col w-col-3"><a class="button w-button" id="byTitle" style="background-color: #50b094;">Alphabetical</a>
       </div>
@@ -328,11 +328,11 @@
 
     function checkWidth() {
         var windowsize = $window.width();
-        if (windowsize < 1160) {
+        if (windowsize < 1095) {
             $('.column-row').hide();
             $('.usecasedropdown').css({'display': 'inline-block', 'float': 'none'});
         }
-        if (windowsize > 1160) {
+        if (windowsize > 1095) {
             $('.column-row').show();
             $('.usecasedropdown').hide();
         }
