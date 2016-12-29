@@ -40,6 +40,8 @@ function processData(allText) {
         $("#abc"+index).find('p.impactMark').html('<strong>Impact:</strong> '+value[6]);
         $("#abc"+index).find('p.dataMark').html('<strong>Data Used:</strong> '+value[7]);
         $("#abc"+index).find('p.longDesc').html(value[8]);
+        
+        $(".abc-case-container").show();
 
 
         // append case in region view
@@ -539,4 +541,62 @@ function processData(allText) {
     $('.close-case-modal').on('click', function() {
         $('.modal-wrapper').hide();
     });
+
+    // color interactions for four new filter buttons
+    //first
+    $('#byTitle').on('click', function() {
+        $(this).css("background-color", "#50b094");
+        $('#byRegion').css("background-color", "#376d86");
+        $('#bySector').css("background-color", "#376d86");
+        $('#byMR').css("background-color", "#376d86");
+
+        $('.abc-case-container').show();
+        $('.region-case-container').hide();
+        $('.sector-case-container').hide();
+        $('.mrble-case-container').hide();
+    });
+   
+
+    //second
+    $('#byRegion').on('click', function() {
+        $(this).css("background-color", "#50b094");
+        $('#byTitle').css("background-color", "#376d86");
+        $('#bySector').css("background-color", "#376d86");
+        $('#byMR').css("background-color", "#376d86");
+
+        $('.abc-case-container').hide();
+        $('.region-case-container').show();
+        $('.sector-case-container').hide();
+        $('.mrble-case-container').hide();
+    });
+    
+
+    //third
+    $('#bySector').on('click', function() {
+        $(this).css("background-color", "#50b094");
+        $('#byRegion').css("background-color", "#376d86");
+        $('#byTitle').css("background-color", "#376d86");
+        $('#byMR').css("background-color", "#376d86");
+
+        $('.abc-case-container').hide();
+        $('.region-case-container').hide();
+        $('.sector-case-container').show();
+        $('.mrble-case-container').hide();
+    });
+
+
+    //fourth
+    $('#byMR').on('click', function() {
+        $(this).css("background-color", "#50b094");
+        $('#byRegion').css("background-color", "#376d86");
+        $('#bySector').css("background-color", "#376d86");
+        $('#byTitle').css("background-color", "#376d86");
+
+        $('.abc-case-container').hide();
+        $('.region-case-container').hide();
+        $('.sector-case-container').hide();
+        $('.mrble-case-container').show();
+    });
+    
+
 }
