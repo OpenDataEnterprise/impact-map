@@ -1003,17 +1003,18 @@ $app->post('/2du/:surveyId/', function ($lastsurvey_id) use ($app) {
 // Many thanks, 
 // The Center for Open Data Enterprise
 // EOL;
-// 	    if ( strlen($allPostVars['survey_contact_email']) > 0 && SEND_MAIL) {
-// 			// Send email with mailgun
-// 			$result = $mgClient->sendMessage($domain, array(
-// 				'from'    => 'Center for Open Data Enterprise <mailgun@sandboxc1675fc5cc30472ca9bd4af8028cbcdf.mailgun.org>',
-// 				'to'      => '<'.$allPostVars['survey_contact_email'].'>',
-// 				'subject' => "Open Data Impact Map: SUBMISSION RECEIVED",
-// 				'text'    => $emailtext
-// 			));
-// 			// echo "<pre>";print_r($result); echo "</pre>";exit;
-// 	    }
-// 	    $app->redirect("/survey/submitted/".$lastsurvey_id);
+	  //   if ( strlen($allPostVars['survey_contact_email']) > 0 && SEND_MAIL) {
+			// // Send email with mailgun
+			// $result = $mgClient->sendMessage($domain, array(
+			// 	'from'    => 'Center for Open Data Enterprise <mailgun@sandboxc1675fc5cc30472ca9bd4af8028cbcdf.mailgun.org>',
+			// 	'to'      => '<'.$allPostVars['survey_contact_email'].'>',
+			// 	'subject' => "Open Data Impact Map: SUBMISSION RECEIVED",
+			// 	'text'    => $emailtext
+			// ));
+			// // echo "<pre>";print_r($result); echo "</pre>";exit;
+	  //   }
+		// leave this line for redirect when commenting out mailgun
+	    $app->redirect("/survey/submitted/".$lastsurvey_id);
 // 	}
 	// comment out mailgun temporarily - end
 });
