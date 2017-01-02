@@ -985,8 +985,8 @@ View the new profile here: http://${_SERVER['HTTP_HOST']}/survey/edit/${new_id}
 EOL;
 		// Send email with mailgun
 		$result = $mgClient->sendMessage($domain, array(
-			'from'    => 'Center for Open Data Enterprise <mailgun@sandboxc1675fc5cc30472ca9bd4af8028cbcdf.mailgun.org>',
-			'to'      => '<'.'audrey@odenterprise.org'.'>',
+			'from'    => 'Center for Open Data Enterprise <mailgun@test.opendataimpactmap.org>',
+			'to'      => '<'.'myeong@odenterprise.org'.'>',
 			'subject' => "Open Data Impact Map: EDIT FOR PROFILE ${new_id}",
 			'text'    => $emailtext
 		));
