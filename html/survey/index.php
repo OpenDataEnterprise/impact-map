@@ -50,8 +50,10 @@ require 'credentials.inc.php';
 require ('vendor/parse.com-php-library_v1/parse.php');
 // Include application functions
 require 'functions.inc.php';
+// comment out mailgun temporarily - begin
 // Use Mailgun
-use Mailgun\Mailgun;
+// use Mailgun\Mailgun;
+// comment out mailgun temporarily - end
 # Use Amazon Web Services Ec2 SDK to interact with EC2 instances
 # use Aws\Ec2\Ec2Client;
  
@@ -962,57 +964,58 @@ $app->post('/2du/:surveyId/', function ($lastsurvey_id) use ($app) {
 			}
 		}
 	}
-
+	// comment out mailgun temporarily - begin
 	// If we made it here, everything saved.
 	// ==========================================
 	// All data saved, send a confirmation email
 	// ==========================================
 	/* Send one per survey submission */
 	// Instantiate the client.
-	if ($allPostVars['org_profile_status'] == "edit"){
-			// Instantiate the client.
-		$mgClient = new Mailgun(MAILGUN_APIKEY);
-		$domain = MAILGUN_SERVER;
-		$org_name = $allPostVars['org_name'];
-		$old_id = $allPostVars['old_profile_id'];
-		$new_id = $allPostVars['new_profile_id'];
-		$emailtext = <<<EOL
-An EDIT was filled out for Org Profile.
-The organization name in the new survey: ${org_name}
-The old profile ID is: ${old_id} 
-The new profile ID is: ${new_id}
-View the new profile here: http://${_SERVER['HTTP_HOST']}/survey/edit/${new_id}
-EOL;
-		// Send email with mailgun
-		$result = $mgClient->sendMessage($domain, array(
-			'from'    => 'Center for Open Data Enterprise <mailgun@sandboxc1675fc5cc30472ca9bd4af8028cbcdf.mailgun.org>',
-			'to'      => '<'.'audrey@odenterprise.org'.'>',
-			'subject' => "Open Data Impact Map: EDIT FOR PROFILE ${new_id}",
-			'text'    => $emailtext
-		));
-		$app->redirect("/survey/submitted/".$new_id);
-	} else {
-		$mgClient = new Mailgun(MAILGUN_APIKEY);
-		$domain = MAILGUN_SERVER;
-		$emailtext = <<<EOL
-Thank you for participating in the Open Data Impact Map. Your contribution helps make the Map a truly global view of open data’s impact. You can view your submission here: http://${_SERVER['HTTP_HOST']}/survey/${lastsurvey_id}
-Please help us spread the word by sharing the survey http://www.opendataenterprise.org/survey
-If you know of any other organizations using open data, are interested in becoming a regional supporter, or have any questions, please email us at map@odenterprise.org.
-Many thanks, 
-The Center for Open Data Enterprise
-EOL;
-	    if ( strlen($allPostVars['survey_contact_email']) > 0 && SEND_MAIL) {
-			// Send email with mailgun
-			$result = $mgClient->sendMessage($domain, array(
-				'from'    => 'Center for Open Data Enterprise <mailgun@sandboxc1675fc5cc30472ca9bd4af8028cbcdf.mailgun.org>',
-				'to'      => '<'.$allPostVars['survey_contact_email'].'>',
-				'subject' => "Open Data Impact Map: SUBMISSION RECEIVED",
-				'text'    => $emailtext
-			));
-			// echo "<pre>";print_r($result); echo "</pre>";exit;
-	    }
-	    $app->redirect("/survey/submitted/".$lastsurvey_id);
-	}
+// 	if ($allPostVars['org_profile_status'] == "edit"){
+// 			// Instantiate the client.
+// 		$mgClient = new Mailgun(MAILGUN_APIKEY);
+// 		$domain = MAILGUN_SERVER;
+// 		$org_name = $allPostVars['org_name'];
+// 		$old_id = $allPostVars['old_profile_id'];
+// 		$new_id = $allPostVars['new_profile_id'];
+// 		$emailtext = <<<EOL
+// An EDIT was filled out for Org Profile.
+// The organization name in the new survey: ${org_name}
+// The old profile ID is: ${old_id} 
+// The new profile ID is: ${new_id}
+// View the new profile here: http://${_SERVER['HTTP_HOST']}/survey/edit/${new_id}
+// EOL;
+// 		// Send email with mailgun
+// 		$result = $mgClient->sendMessage($domain, array(
+// 			'from'    => 'Center for Open Data Enterprise <mailgun@sandboxc1675fc5cc30472ca9bd4af8028cbcdf.mailgun.org>',
+// 			'to'      => '<'.'audrey@odenterprise.org'.'>',
+// 			'subject' => "Open Data Impact Map: EDIT FOR PROFILE ${new_id}",
+// 			'text'    => $emailtext
+// 		));
+// 		$app->redirect("/survey/submitted/".$new_id);
+// 	} else {
+// 		$mgClient = new Mailgun(MAILGUN_APIKEY);
+// 		$domain = MAILGUN_SERVER;
+// 		$emailtext = <<<EOL
+// Thank you for participating in the Open Data Impact Map. Your contribution helps make the Map a truly global view of open data’s impact. You can view your submission here: http://${_SERVER['HTTP_HOST']}/survey/${lastsurvey_id}
+// Please help us spread the word by sharing the survey http://www.opendataenterprise.org/survey
+// If you know of any other organizations using open data, are interested in becoming a regional supporter, or have any questions, please email us at map@odenterprise.org.
+// Many thanks, 
+// The Center for Open Data Enterprise
+// EOL;
+// 	    if ( strlen($allPostVars['survey_contact_email']) > 0 && SEND_MAIL) {
+// 			// Send email with mailgun
+// 			$result = $mgClient->sendMessage($domain, array(
+// 				'from'    => 'Center for Open Data Enterprise <mailgun@sandboxc1675fc5cc30472ca9bd4af8028cbcdf.mailgun.org>',
+// 				'to'      => '<'.$allPostVars['survey_contact_email'].'>',
+// 				'subject' => "Open Data Impact Map: SUBMISSION RECEIVED",
+// 				'text'    => $emailtext
+// 			));
+// 			// echo "<pre>";print_r($result); echo "</pre>";exit;
+// 	    }
+// 	    $app->redirect("/survey/submitted/".$lastsurvey_id);
+// 	}
+	// comment out mailgun temporarily - end
 });
 // end du new post here
 // ************
@@ -1200,23 +1203,25 @@ $app->post('/:surveyId/editform', function ($lastsurvey_id) use ($app) {
      // Access post variables from submitted survey form
 	$allPostVars = $app->request->post();
 	$edits = print_r($allPostVars, true);
+	// comment out mailgun temporarily - begin
 	// Instantiate the client.
-	$mgClient = new Mailgun(MAILGUN_APIKEY);
-	$domain = MAILGUN_SERVER;
-	$emailtext = <<<EOL
-An EDIT was filled out for Org Profile: ${lastsurvey_id}} 
-View the current profile here: http://${_SERVER['HTTP_HOST']}/survey/${lastsurvey_id}
-The submitted changes are below:
-$edits
-EOL;
-	// Send email with mailgun
-	$result = $mgClient->sendMessage($domain, array(
-		'from'    => 'Center for Open Data Enterprise <mailgun@sandboxc1675fc5cc30472ca9bd4af8028cbcdf.mailgun.org>',
-		'to'      => '<'.'pooja@odenterprise.org'.'>',
-		'cc'      => '<'.'greg@odenterprise.org'.'>',
-		'subject' => "Open Data Impact Map: EDIT FOR PROFILE ${surveyId}",
-		'text'    => $emailtext
-	));
+// 	$mgClient = new Mailgun(MAILGUN_APIKEY);
+// 	$domain = MAILGUN_SERVER;
+// 	$emailtext = <<<EOL
+// An EDIT was filled out for Org Profile: ${lastsurvey_id}} 
+// View the current profile here: http://${_SERVER['HTTP_HOST']}/survey/${lastsurvey_id}
+// The submitted changes are below:
+// $edits
+// EOL;
+// 	// Send email with mailgun
+// 	$result = $mgClient->sendMessage($domain, array(
+// 		'from'    => 'Center for Open Data Enterprise <mailgun@sandboxc1675fc5cc30472ca9bd4af8028cbcdf.mailgun.org>',
+// 		'to'      => '<'.'pooja@odenterprise.org'.'>',
+// 		'cc'      => '<'.'greg@odenterprise.org'.'>',
+// 		'subject' => "Open Data Impact Map: EDIT FOR PROFILE ${surveyId}",
+// 		'text'    => $emailtext
+// 	));
+	// comment out mailgun temporarily - end
 	// exit;
 	// writeDataLog($allPostVars);
 	$app->log->info(date_format(date_create(), 'Y-m-d H:i:s')."; INFO; ". str_replace("\n", "||", print_r($allPostVars, true)) );
