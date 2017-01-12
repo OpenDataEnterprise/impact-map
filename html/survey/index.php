@@ -40,10 +40,16 @@ if ($fileinfo['name'] != "apache" && $fileinfo['name'] != "www-data") {
 	echo "My log file ".ODESURVEY_LOG." is is not owned by Apache!";
 	exit;
 } 
-// Set if sending email is on
-define("SEND_MAIL", false);
+// comment out mailgun temporarily - begin
+// // Set if sending email is on
+// define("SEND_MAIL", false);
+// comment out mailgun temporarily - end
 // Include libraries added with composer
 require 'vendor/autoload.php';
+// Include db handlers for API
+require 'db.php';
+// Include format function for API
+require 'common.php';
 // Include credentials
 require 'credentials.inc.php';
 // Include parse library
@@ -56,7 +62,7 @@ require 'functions.inc.php';
 // comment out mailgun temporarily - end
 # Use Amazon Web Services Ec2 SDK to interact with EC2 instances
 # use Aws\Ec2\Ec2Client;
- 
+
 // Functions
 //-------------------------------
 function TempLogger($message) {
@@ -161,6 +167,7 @@ $app->get('/index.html', function () use ($app) {
 	//its calling start function twice. One from index.html and then from survey.
   $app->redirect("/survey/start/");
 });
+
 // ************
 $app->get('/', function () use ($app) {
 	
@@ -1089,6 +1096,18 @@ $app->get('/edit/:profile_id', function ($profile_id) use ($app) {
 	$app->view()->setData(array('content' => $content, 'org_name' => $org_name ));
 	$app->render('survey/tp_profile_edit_msg.php');
 });
+
+// 
+// Data API endpoints
+//
+// $app->get('/org_profiles', function () {
+//     $db = new DBHandle();
+//     var_dump($db);
+//     echo "hello api";
+//     // echo $db->getorg_profiles, PHP_EOL;
+// 	// $apiResult = $apiDb->getorg_profiles();
+// 	// return $response->withJson(formatOutput(true, $apiResult, 'Request Succeeded'));
+// });
 
 /*
 * Editing an existing survey
