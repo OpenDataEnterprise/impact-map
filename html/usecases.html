@@ -31,7 +31,7 @@
     .use-case-container {vertical-align: top;}
     .column-row {text-align: center;}
     .w-col-3 {width: 17% !important; display: inline-block; float: none !important; }
-    .button {width: 188px !important; font-size: xx-small; !important;}
+    .button {width: 188px !important; font-size: xx-small !important;}
     .usecasedropdownrow {margin-bottom: 50px !important; text-align: center;}
     .use-case-filter-text {display: inline-block !important;}
     .button:hover {background-color:#50b094 !important;}
@@ -64,7 +64,7 @@
   <div class="usecasedropdownrow w-clearfix">
     <div class="use-case-filter-text">SORT BY:</div>
     <div class="column-row w-row">
-      <div class="w-col w-col-3"><a class="button w-button" id="byTitle" style="background-color: #50b094;">Alphabetical</a>
+      <div class="w-col w-col-3"><a class="button w-button" id="byTitle">Alphabetical</a>
       </div>
       <div class="w-col w-col-3"><a class="button w-button" id="byRegion">Region</a>
       </div>
@@ -380,22 +380,5 @@
   </script>
   <script type="text/javascript" src="js-custom/usecase/jquery.csv.min.js"></script>
   <script type="text/javascript" src="js-custom/usecase/usecase.js"></script>
-  <script type="text/javascript">
-  // show machine readability case view based on URL hash value
-  window.onload = function () {
-    var urlHash = window.location.hash;
-    if (urlHash == "#MachineReadabilityProject") {
-        $('#byMR').css("background-color", "#50b094");
-        $('#byRegion').css("background-color", "#376d86");
-        $('#bySector').css("background-color", "#376d86");
-        $('#byTitle').css("background-color", "#376d86");
-
-        $('.abc-case-container').hide();
-        $('.region-case-container').hide();
-        $('.sector-case-container').hide();
-        $('.mrble-case-container').show();
-    };
-  }
-  </script>
 </body>
 </html>

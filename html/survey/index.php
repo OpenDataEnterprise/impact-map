@@ -160,7 +160,6 @@ HTML;
 $app->post('/admin/login/', function () use ($app) {
 	echo "route to login";
 	return true;
-    
 });
 // ************
 $app->get('/admin/protected/', function () use ($app) {
