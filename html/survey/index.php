@@ -91,6 +91,10 @@ $app->notFound(function () use ($app) {
 	}
     $app->redirect('/404.html');
 });
+// redirect to machine readable use cases view
+$app->get('/usecases/MachineReadabilityProject', function () use ($app) {
+	$app->render("/usecases.html#MachineReadabilityProject");
+});
 // ************
 //-----------------------------------------------------
 // display placeholder landing page
