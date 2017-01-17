@@ -119,7 +119,9 @@ $app->notFound(function () use ($app) {
 	} 
 	elseif (isHashURLalias($actual_link)){		
 		$app->redirect("/survey" . $actual_link);
-	} else {
+	} elseif ($actual_link == "/phpmyadmin"){
+		// do nothing...
+	} else {		
     	$app->redirect('/404.html');
     }
 });
@@ -212,8 +214,7 @@ $app->get('/', function () use ($app) {
 	// Let's make sure we remove a trailing "/" on any not found paths
         $actual_link = rtrim($actual_link, '/');
 	// Any change to below array must also be made to identical array in route "/" around line 91
-	if (in_array($actual_link, array("/map", "/regions", "/sectors", "/usecases", "/contact" ))) {
-		echo "in array";
+	if (isURLalias($actual_link)) {			
 		$app->redirect($actual_link.".html");
 	}
     $app->redirect("index.html");
