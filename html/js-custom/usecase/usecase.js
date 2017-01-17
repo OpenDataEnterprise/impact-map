@@ -41,9 +41,6 @@ function processData(allText) {
         $("#abc"+index).find('p.dataMark').html('<strong>Data Used:</strong> '+value[7]);
         $("#abc"+index).find('p.longDesc').html(value[8]);
         
-        $(".abc-case-container").show();
-
-
         // append case in region view
         if (value[10] === 'East Asia & Pacific') {
             $("#templateRegion").clone(true).removeAttr('id').attr('id', 'region' + index).appendTo(".ea-case-container");
@@ -597,6 +594,32 @@ function processData(allText) {
         $('.sector-case-container').hide();
         $('.mrble-case-container').show();
     });
+
+    // show machine readability case view based on URL hash value
+  window.onload = function () {
+    var urlHash = window.location.hash;
+    if (urlHash == "#MachineReadabilityProject") {
+        $('#byMR').css("background-color", "#50b094");
+        $('#byRegion').css("background-color", "#376d86");
+        $('#bySector').css("background-color", "#376d86");
+        $('#byTitle').css("background-color", "#376d86");
+
+        $('.abc-case-container').hide();
+        $('.region-case-container').hide();
+        $('.sector-case-container').hide();
+        $('.mrble-case-container').show();
+    } else {
+        $('#byMR').css("background-color", "#376d86");
+        $('#byRegion').css("background-color", "#376d86");
+        $('#bySector').css("background-color", "#376d86");
+        $('#byTitle').css("background-color", "#50b094");
+
+        $('.abc-case-container').show();
+        $('.region-case-container').hide();
+        $('.sector-case-container').hide();
+        $('.mrble-case-container').hide();
+    };
+  }
     
 
 }
