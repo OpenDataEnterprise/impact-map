@@ -93,7 +93,7 @@ $app->notFound(function () use ($app) {
 });
 // redirect to machine readable use cases view
 $app->get('/usecases/MachineReadabilityProject', function () use ($app) {
-	$app->render("/usecases.html#MachineReadabilityProject");
+	$app->redirect("/usecases.html#MachineReadabilityProject");
 });
 // ************
 //-----------------------------------------------------
@@ -127,7 +127,6 @@ HTML;
 $app->post('/admin/login/', function () use ($app) {
 	echo "route to login";
 	return true;
-    
 });
 // ************
 $app->get('/admin/protected/', function () use ($app) {
