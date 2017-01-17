@@ -46,8 +46,8 @@
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
   window.onload = function () {
-    var url = window.location.href + "Stringify";
-    if (url.includes("?showTableStringify")) {
+    var urlHash = window.location.hash;
+    if (urlHash == "#DataView") {
       document.getElementById("mapDiv").setAttribute("style", "display: none"); 
       document.getElementById("tableDiv").removeAttribute("style"); 
       document.getElementById("tabItemmap").parentElement.className = "br-tab-items"; 
