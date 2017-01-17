@@ -46,10 +46,6 @@ if ($fileinfo['name'] != "apache" && $fileinfo['name'] != "www-data") {
 // comment out mailgun temporarily - end
 // Include libraries added with composer
 require 'vendor/autoload.php';
-// Include db handlers for API
-// require 'db.php';
-// Include format function for API
-// require 'common.php';
 // Include credentials
 require 'credentials.inc.php';
 // Include parse library
