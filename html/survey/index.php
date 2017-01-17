@@ -47,13 +47,13 @@ if ($fileinfo['name'] != "apache" && $fileinfo['name'] != "www-data") {
 // Include libraries added with composer
 require 'vendor/autoload.php';
 // Include db handlers for API
-require 'db.php';
+// require 'db.php';
 // Include format function for API
-require 'common.php';
+// require 'common.php';
 // Include credentials
 require 'credentials.inc.php';
 // Include parse library
-require ('vendor/parse.com-php-library_v1/parse.php');
+// require ('vendor/parse.com-php-library_v1/parse.php');
 // Include application functions
 require 'functions.inc.php';
 // comment out mailgun temporarily - begin
@@ -68,12 +68,41 @@ require 'functions.inc.php';
 function TempLogger($message) {
 	error_log( "Logger $message" );
 }
+
+/* List URLs that you want to make alias for "html" files */
+function isURLalias($suburl){
+	$aliases = array(
+		"/map", 
+		"/contact", 
+		"/sectors", 
+		"/regions", 
+		"/usecases"
+	);
+	if (in_array($suburl, $aliases)) {		
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/* List URLs that you want to make alias for hashtag-based files */
+function isHashURLalias($suburl){
+	$aliases = array(
+		"/usecases/MachineReadabilityProject"
+	);
+	if (in_array($suburl, $aliases)) {		
+		return true;
+	} else {
+		return false;
+	}
+}
 // Set up basic logging using slim built in logger
 // NOTE: Makes sure /var/log/odesurvey/ directory exists and owned by apache:apache
 $logWriter = new \Slim\LogWriter(fopen(ODESURVEY_LOG, 'a'));
 // Start Slim instance
 //-------------------------------
 $app = new \Slim\Slim(array('log.writer' => $logWriter));
+
 // Handle not found
 $app->notFound(function () use ($app) {
 	// Temporarily route /map, /viz to /map.html
@@ -82,18 +111,22 @@ $app->notFound(function () use ($app) {
 		$app->redirect("/map.html");
 	}
 	// Let's make sure we remove a trailing "/" on any not found paths
-        $actual_link = rtrim($actual_link, '/');
+    $actual_link = rtrim($actual_link, '/');
         
 	// Any change to below array must also be made to identical array in route "/" around line 210
-	if (in_array($actual_link, array("/about", "/contact", "/convene", "/implement", "/map", "/open-data-roundtables" ))) {
-		echo "in array";
+	if (isURLalias($actual_link)) {		
 		$app->redirect($actual_link.".html");
-	}
-    $app->redirect('/404.html');
+	} 
+	elseif (isHashURLalias($actual_link)){		
+		$app->redirect("/survey" . $actual_link);
+	} else {
+    	$app->redirect('/404.html');
+    }
 });
-// redirect to machine readable use cases view
-$app->get('/usecases/MachineReadabilityProject', function () use ($app) {
-	$app->render("/usecases.html#MachineReadabilityProject");
+
+$app->get("/usecases/MachineReadabilityProject", function() use($app) {
+	$app->redirect("/usecases.html#MachineReadabilityProject");
+	return true;
 });
 // ************
 //-----------------------------------------------------
