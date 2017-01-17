@@ -596,9 +596,8 @@ function processData(allText) {
     });
 
     // show machine readability case view based on URL hash value
-  window.onload = function () {
     var urlHash = window.location.hash;
-    if (urlHash == "#MachineReadabilityProject") {
+    if (urlHash === "#MachineReadabilityProject") {
         $('#byMR').css("background-color", "#50b094");
         $('#byRegion').css("background-color", "#376d86");
         $('#bySector').css("background-color", "#376d86");
@@ -618,8 +617,7 @@ function processData(allText) {
         $('.region-case-container').hide();
         $('.sector-case-container').hide();
         $('.mrble-case-container').hide();
-    };
-  }
+    }
     
 
 }
