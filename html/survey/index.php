@@ -1097,18 +1097,6 @@ $app->get('/edit/:profile_id', function ($profile_id) use ($app) {
 	$app->render('survey/tp_profile_edit_msg.php');
 });
 
-// 
-// Data API endpoints
-//
-// $app->get('/org_profiles', function () {
-//     $db = new DBHandle();
-//     var_dump($db);
-//     echo "hello api";
-//     // echo $db->getorg_profiles, PHP_EOL;
-// 	// $apiResult = $apiDb->getorg_profiles();
-// 	// return $response->withJson(formatOutput(true, $apiResult, 'Request Succeeded'));
-// });
-
 /*
 * Editing an existing survey
 */

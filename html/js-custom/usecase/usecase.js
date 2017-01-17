@@ -542,7 +542,7 @@ function processData(allText) {
         $('.modal-wrapper').hide();
     });
 
-    // color interactions for four new filter buttons
+    // show/hide four view containers and color interactions for four new filter buttons
     //first
     $('#byTitle').on('click', function() {
         $(this).css("background-color", "#50b094");
