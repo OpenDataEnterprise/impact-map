@@ -79,7 +79,20 @@ function isURLalias($suburl){
 		"/mna",
 		"/na",
 		"/sar",
-		"/afr"
+		"/afr",
+		"/agriculture",
+		"/culture",
+		"/businessservices",
+		"/consumer",
+		"/education",
+		"/energy",
+		"/finance",
+		"/governance",
+		"/health",
+		"/transportation",
+		"/media",
+		"/it",
+		"/housing"
 	);
 	if (in_array($suburl, $aliases)) {		
 		return true;
