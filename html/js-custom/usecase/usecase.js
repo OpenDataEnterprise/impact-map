@@ -28,18 +28,21 @@ function processData(allText) {
     // conditionally, clone and append template containers, add data to container
     $.each(dataArray, function(index, value) {
         // append case in alphabetical view
-        $("#templateAbc").clone(true).removeAttr('id').attr('id', 'abc' + index).appendTo(".abc-case-container");
-        $('img', "#abc"+index).attr('src', 'useCaseImage/'+value[9]);
-        $("#abc"+index).find('h3.case-study-title').text(value[1]);
-        $("#abc"+index).find('h1.expand-case-header').text(value[1]);
-        $("#abc"+index).find('div.case-study-subtitle').text(value[2]);
-        $("#abc"+index).find('div.full-use-case-para').text(value[2]);
-        $("#abc"+index).find('a.useCaseURL').text(value[3]).attr('href', value[3]);
-        $("#abc"+index).find('p.countryMark').html('<strong>Country:</strong> '+value[4]);
-        $("#abc"+index).find('p.sectorMark').html('<strong>Sector:</strong> '+value[5]);
-        $("#abc"+index).find('p.impactMark').html('<strong>Impact:</strong> '+value[6]);
-        $("#abc"+index).find('p.dataMark').html('<strong>Data Used:</strong> '+value[7]);
-        $("#abc"+index).find('p.longDesc').html(value[8]);
+        // replace all white spaces periods and paprenthese in the case tile with an underscore
+        var underscoreTitle = value[1].replace(/\.| |\(|\)/g, "");
+       
+        $("#templateAbc").clone(true).removeAttr('id').attr('id', underscoreTitle).appendTo(".abc-case-container");
+        $('img', "#"+underscoreTitle).attr('src', 'useCaseImage/'+value[9]);
+        $("#"+underscoreTitle).find('h3.case-study-title').text(value[1]);
+        $("#"+underscoreTitle).find('h1.expand-case-header').text(value[1]);
+        $("#"+underscoreTitle).find('div.case-study-subtitle').text(value[2]);
+        $("#"+underscoreTitle).find('div.full-use-case-para').text(value[2]);
+        $("#"+underscoreTitle).find('a.useCaseURL').text(value[3]).attr('href', value[3]);
+        $("#"+underscoreTitle).find('p.countryMark').html('<strong>Country:</strong> '+value[4]);
+        $("#"+underscoreTitle).find('p.sectorMark').html('<strong>Sector:</strong> '+value[5]);
+        $("#"+underscoreTitle).find('p.impactMark').html('<strong>Impact:</strong> '+value[6]);
+        $("#"+underscoreTitle).find('p.dataMark').html('<strong>Data Used:</strong> '+value[7]);
+        $("#"+underscoreTitle).find('p.longDesc').html(value[8]);
         
         // append case in region view
         if (value[10] === 'East Asia & Pacific') {
@@ -534,9 +537,14 @@ function processData(allText) {
     // interactions for show.hide modal popup
     $('.case-study-intro-1').on('click', function() {
         $(this).parent().find('div.modal-wrapper').show();
+        var caseId = $(this).parent().attr("id");
+        var stateObj = { foo: "bar" };
+        history.pushState(stateObj, "", "/usecases/"+caseId);
     });
     $('.close-case-modal').on('click', function() {
         $('.modal-wrapper').hide();
+        var stateObj = { foo: "bar" };
+        history.pushState(stateObj, "", "/usecases");
     });
 
     // show/hide four view containers and color interactions for four new filter buttons
@@ -607,6 +615,18 @@ function processData(allText) {
         $('.region-case-container').hide();
         $('.sector-case-container').hide();
         $('.mrble-case-container').show();
+    } else if (urlHash && urlHash!=="#MachineReadabilityProject") {
+        $('#byMR').css("background-color", "#376d86");
+        $('#byRegion').css("background-color", "#376d86");
+        $('#bySector').css("background-color", "#376d86");
+        $('#byTitle').css("background-color", "#50b094");
+
+        $('.abc-case-container').show();
+        $('.region-case-container').hide();
+        $('.sector-case-container').hide();
+        $('.mrble-case-container').hide();
+
+        $(urlHash).find('div.modal-wrapper').show();  
     } else {
         $('#byMR').css("background-color", "#376d86");
         $('#byRegion').css("background-color", "#376d86");
