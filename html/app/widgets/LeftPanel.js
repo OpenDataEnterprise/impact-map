@@ -503,7 +503,7 @@ define([
 						//React.createElement(SelectableGroup, {keys: props.tabs}), 			//Related to Statistics Tab
 						React.createElement("div", {className: 'tab-content'}, 
 							React.createElement("div", {className: 'input-container'}, 
-								React.createElement("input", {id: "search-box", placeholder: 'Search', onChange: _.debounce(this.submitSearch, 500)})
+								React.createElement("input", {id: "search-box", placeholder: 'Search: i.e. Org Name, Sector, Region', onChange: _.debounce(this.submitSearch, 500)})
 							), 
 							React.createElement("div", {className: 'accordian-container', style: accordianDisplay}, 
 								accordianItems
