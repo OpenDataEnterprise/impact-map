@@ -101,17 +101,17 @@ function isURLalias($suburl){
 	}
 }
 
-/* List URLs that you want to make alias for hashtag-based files */
-function isHashURLalias($suburl){
-	$aliases = array(
-		"/usecases/MachineReadabilityProject"
-	);
-	if (in_array($suburl, $aliases)) {		
-		return true;
-	} else {
-		return false;
-	}
-}
+// /* List URLs that you want to make alias for hashtag-based files */
+// function isHashURLalias($suburl){
+// 	$aliases = array(
+// 		"/usecases/MachineReadabilityProject"
+// 	);
+// 	if (in_array($suburl, $aliases)) {		
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// }
 
 // check if there is suburl after usecases/
 function hasSubURL($suburl) {
