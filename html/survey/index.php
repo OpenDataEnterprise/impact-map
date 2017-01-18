@@ -115,7 +115,7 @@ function isHashURLalias($suburl){
 
 // check if there is suburl after usecases/
 function hasSubURL($suburl) {
-	if (preg_match('\/usecases\/.*', $suburl)) {
+	if (preg_match('/\/usecases\/.*/', $suburl)) {
 		return true;
 	} else {
 		return false;
