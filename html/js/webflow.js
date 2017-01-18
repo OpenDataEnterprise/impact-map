@@ -1920,6 +1920,9 @@
     function styleApp(el, data) {
       var _tram = tram(el);
 
+      // Exit early when data is empty to avoid clearing upstream
+      if ($.isEmptyObject(data)) return;
+
       // Get computed transition value
       el.css('transition', '');
       var computed = el.css('transition');
