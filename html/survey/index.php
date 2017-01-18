@@ -72,7 +72,14 @@ function isURLalias($suburl){
 		"/contact", 
 		"/sectors", 
 		"/regions", 
-		"/usecases"
+		"/usecases",
+		"/eap",
+		"/eca",
+		"/lac",
+		"/mna",
+		"/na",
+		"/sar",
+		"/afr"
 	);
 	if (in_array($suburl, $aliases)) {		
 		return true;
