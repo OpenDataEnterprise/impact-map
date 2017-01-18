@@ -112,6 +112,15 @@ function isHashURLalias($suburl){
 		return false;
 	}
 }
+
+// check if there is suburl after usecases/
+function hasSubURL($suburl) {
+	if (preg_match('\/usecases\/.*', $suburl)) {
+		return true;
+	} else {
+		return false;
+	}
+}
 // Set up basic logging using slim built in logger
 // NOTE: Makes sure /var/log/odesurvey/ directory exists and owned by apache:apache
 $logWriter = new \Slim\LogWriter(fopen(ODESURVEY_LOG, 'a'));
@@ -133,17 +142,21 @@ $app->notFound(function () use ($app) {
 	if (isURLalias($actual_link)) {		
 		$app->redirect($actual_link.".html");
 	} 
-	elseif (isHashURLalias($actual_link)){		
+	// elseif (isHashURLalias($actual_link)) {		
+	// 	$app->redirect("/survey" . $actual_link);
+	// } 
+	elseif (hasSubURL($actual_link)) {
 		$app->redirect("/survey" . $actual_link);
-	} elseif ($actual_link == "/phpmyadmin"){
+	}
+	elseif ($actual_link == "/phpmyadmin"){
 		// do nothing...
 	} else {		
     	$app->redirect('/404.html');
     }
 });
 
-$app->get("/usecases/MachineReadabilityProject", function() use($app) {
-	$app->redirect("/usecases.html#MachineReadabilityProject");
+$app->get("/usecases/:substring", function($substring) use($app) {
+	$app->redirect("/usecases.html#".$substring);
 	return true;
 });
 // ************
