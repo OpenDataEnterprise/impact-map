@@ -4,7 +4,7 @@ Existing Admin Interface
 
 Internal
 -------------
-The Center identifies new use cases through research, in the news, or receives a list of use cases from a Regional Supporter
+The Center identifies new use cases through research, in the news, or receives a list of use cases from a Regional Supporter.
 
 Candidate use cases and any additional information provided are added to the spreadsheet of candidates, including the source of the suggestion. The spreadsheet is currently named *Inventory. 
 

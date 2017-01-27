@@ -1,5 +1,5 @@
 # Overview
-In addition to Webflow, some custom code are used to achieve certain UI features, D3 vizs/leaflet vizs, and data downloads. They share similar file structures and utilize one DB config file for connecting to DB. The code structure will be explained below.
+In addition to Webflow, custom code are used to achieve certain UI features, D3 vizs/leaflet vizs, and data downloads. They share similar file structures and utilize one DB config file for connecting to DB. The code structure will be explained below.
 
 On home page and each individual region/sector pages, there are counting up ticker numbers of countries or orgnizations. The counting up effect is achieved using custom code and will be explained below.
 
