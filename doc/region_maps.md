@@ -1,8 +1,10 @@
+### Overview
 * For every individual region map, we have a separate php files (code for map) and .js files (GeoJSON data) stored in /js-custom folder. 
 
 * The dbconnect.php file is common to all the individual map
 
 * The following are the files for individual map viz – 
+
 #### Leaflet code
 - EastAsiaMap.php
 - EuropeMap.php       
