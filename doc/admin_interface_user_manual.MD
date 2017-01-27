@@ -25,7 +25,7 @@ The reviewer marks the entries as follows:
 	2 or 3 are labeled as I = incomplete
     1 is labeled as N = not eligible
 
-Use cases marked as Y are added to the database. This is done by filling out an internal survey for each organization. Organizations added to the admin tool this way are marked as ‘Hold’ in the ‘org_profile_status’ field
+Use cases marked as Y are added to the database. This is done by filling out an internal survey for each organization. Organizations added to the admin tool this way are marked as ‘Hold’ in the ‘org_profile_status’ field.
 
 External
 ------------
