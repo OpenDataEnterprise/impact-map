@@ -28,7 +28,7 @@ This is a jQuery liibrary used for parsing CSV data.
 
 ###### File - html/js-custom/usecase/usecase.js
 
-This is the script for parsing data and creating use cases on the Use Cases page.
+This is the script for parsing data and creating containers, use cases, and URLs for use cases on the Use Cases page. (URL routing of use cases URLs can be found in html/survey/index.php file.)
 
 ###### File - html/js-custom/usecase/UseCaseData.csv
 
