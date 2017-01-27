@@ -24,14 +24,20 @@ function processData(allText) {
         $(".ig-mr-container").hide();
         $(".mc-mr-container").hide();
         $(".tl-mr-container").hide();
-
-    // conditionally, clone and append template containers, add data to container
+        
+//
+// below, conditionally, clone and append template containers, add data to container
+//
     $.each(dataArray, function(index, value) {
+        //
         // append case in alphabetical view
-        // replace all white spaces periods and paprenthese in the case tile with an underscore
+        //
+
+        // replace all white spaces periods and paprenthese in the case tile with an underscore, so that it can be used as an ID
         var underscoreTitle = value[1].replace(/\.| |\(|\)/g, "");
-       
+        // clone template / remove old ID / add new ID - new ID is also used in generating URL for this case popup at line 553
         $("#templateAbc").clone(true).removeAttr('id').attr('id', underscoreTitle).appendTo(".abc-case-container");
+        // append data into the container
         $('img', "#"+underscoreTitle).attr('src', 'useCaseImage/'+value[9]);
         $("#"+underscoreTitle).find('h3.case-study-title').text(value[1]);
         $("#"+underscoreTitle).find('h1.expand-case-header').text(value[1]);
@@ -44,7 +50,10 @@ function processData(allText) {
         $("#"+underscoreTitle).find('p.dataMark').html('<strong>Data Used:</strong> '+value[7]);
         $("#"+underscoreTitle).find('p.longDesc').html(value[8]);
         
+        //
         // append case in region view
+        // if condition check for regions and append
+        //
         if (value[10] === 'East Asia & Pacific') {
             $("#templateRegion").clone(true).removeAttr('id').attr('id', 'region' + index).appendTo(".ea-case-container");
             $('img', "#region"+index).attr('src', 'useCaseImage/'+value[9]);
@@ -144,7 +153,10 @@ function processData(allText) {
             $("#region"+index).find('p.longDesc').html(value[8]);
         }
 
+        //
         // append case in sector view
+        // if condition to check for sector and append
+        //
         if (value[5] === 'Agriculture') {
             $("#templateSector").clone(true).removeAttr('id').attr('id', 'sector' + index).appendTo(".agri-row-container");
             $('img', "#sector"+index).attr('src', 'useCaseImage/'+value[9]);
@@ -328,8 +340,10 @@ function processData(allText) {
             $("#sector"+index).find('p.longDesc').html(value[8]);
         }
 
+        //
         // append case in machine readable view
-        
+        // if condition to check for sector container (and machine readable yes) and append
+        //
         if (value[5] === 'Agriculture' && value[11] === 'Yes') {
             $(".agri-mr-container").show();
             $("#templateMrble").clone(true).removeAttr('id').attr('id', 'mrble' + index).appendTo(".agri-mr-container");
@@ -535,20 +549,24 @@ function processData(allText) {
     $('#templateMrble').remove();
     
     // interactions for show.hide modal popup
+    // fill address bar with the URL for this use case using the same rule as in index.php
     $('.case-study-intro-1').on('click', function() {
         $(this).parent().find('div.modal-wrapper').show();
         var caseId = $(this).parent().attr("id");
         var stateObj = { foo: "bar" };
         history.pushState(stateObj, "", "/usecases/"+caseId);
     });
+    // revert the URL in the address bar back to use case page URL
     $('.close-case-modal').on('click', function() {
         $('.modal-wrapper').hide();
         var stateObj = { foo: "bar" };
         history.pushState(stateObj, "", "/usecases");
     });
 
+    //
     // show/hide four view containers and color interactions for four new filter buttons
-    //first
+    //
+    //first - alphabetical
     $('#byTitle').on('click', function() {
         $(this).css("background-color", "#50b094");
         $('#byRegion').css("background-color", "#376d86");
@@ -562,7 +580,7 @@ function processData(allText) {
     });
    
 
-    //second
+    //second -  by regiom
     $('#byRegion').on('click', function() {
         $(this).css("background-color", "#50b094");
         $('#byTitle').css("background-color", "#376d86");
@@ -576,7 +594,7 @@ function processData(allText) {
     });
     
 
-    //third
+    //third - by sector
     $('#bySector').on('click', function() {
         $(this).css("background-color", "#50b094");
         $('#byRegion').css("background-color", "#376d86");
@@ -589,8 +607,8 @@ function processData(allText) {
         $('.mrble-case-container').hide();
     });
 
-
-    //fourth
+ 
+    //fourth - all machine readable use cases
     $('#byMR').on('click', function() {
         $(this).css("background-color", "#50b094");
         $('#byRegion').css("background-color", "#376d86");
@@ -603,7 +621,9 @@ function processData(allText) {
         $('.mrble-case-container').show();
     });
 
-    // show machine readability case view based on URL hash value
+    //
+    // show machine readability case view (or not) based on URL hash value
+    //
     var urlHash = window.location.hash;
     if (urlHash === "#MachineReadabilityProject") {
         $('#byMR').css("background-color", "#50b094");
