@@ -625,7 +625,7 @@ function processData(allText) {
     // show machine readability case view (or not) based on URL hash value
     //
     var urlHash = window.location.hash;
-    if (urlHash === "#MachineReadabilityProject") {
+    if (urlHash === "#MachineReadabilityProject" || urlHash === "#MachineReadable") {
         $('#byMR').css("background-color", "#50b094");
         $('#byRegion').css("background-color", "#376d86");
         $('#bySector').css("background-color", "#376d86");
