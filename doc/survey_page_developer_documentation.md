@@ -1,11 +1,11 @@
 Survey Interface
 ----------------------------
 ----------------------------
-### (http://www.opendataenterprise.org/map/survey)
+### (http://www.opendataimpactmap.org/survey)
 
 
 1. The layout of the interface is implemented at `/templates/survey/tp_survey.php`
-2. http://www.opendataenterprise.org/index.html calls  `map/survey/start` function in index.php file using slim framework.
+2. http://www.opendataimpactmap.org/survey calls  `survey/start` function in index.php file using slim framework.
 
 /start/ function
 ------------------------------------
@@ -13,15 +13,15 @@ Survey Interface
 		1. retrieve max object id from org-surveys table
 		2. Insert new object id with id as maxId + 1 into org_surveys table
 	
-3. Pass last inserted survey id to `map/survey/:surveyId/form` where surveyId is the passed surveyId
+3. Pass last inserted survey id to `survey/:surveyId/form` where surveyId is the passed surveyId
 	
 3. `:surveyId/form` function calls `survey/tp_survey.php` file
 
 4. User fills survey form and then submits it
 
-5. After form submission, it calls `/map/survey/2du/:surveyId` function in index.php
+5. After form submission, it calls `survey/2du/:surveyId` function in index.php
 
-6. All the insertion of data using mysql queries is done in `/map/survey/2du` function
+6. All the insertion of data using mysql queries is done in `survey/2du` function
 
 /2du/:surveyId Function
 ------------------------------------
@@ -43,14 +43,14 @@ Survey Interface
 				i. Retrieve country id from org_hq_country table based on org_hq_country name
 				ii. insert into org_data_sources with data_type, profile id and country id
 				
-3. Calls `/map/survey/:surveyId/thankyou` function after successful execution of all queries 
+3. Calls `survey/:surveyId/thankyou` function after successful execution of all queries 
 
 4. All survey related information along with profile id is passed to `survey/tp_thankyou.php` from `/:surveyId/thankyou` function
 
 Survey Edit
 ---------------------
 ---------------------
-`/map/survey/edit/:surveyId` is called from `/survey/tp_thankyou.php` file
+`survey/edit/:surveyId` is called from `/survey/tp_thankyou.php` file
 
 /edit/:profile_id function
 ---------------------------------
@@ -58,7 +58,7 @@ Survey Edit
 	Retrieve org_name from org_profiles table using profile id
 1. Calls `survey/tp_profile_edit_msg.php` file and passes `org_name` information.
 
-2. `survey/tp_profile_edit_msg.php` file calls `/map/survey/edit/:profileId/form` function from index.php file
+2. `survey/tp_profile_edit_msg.php` file calls `survey/edit/:profileId/form` function from index.php file
 
 /edit/:profileId/form function
 ----------------------------------
@@ -74,9 +74,5 @@ Survey Edit
 
 2. `survey/tp_profile_edit.php` file, it displays all information received from `/edit/:profileId/form` function 
 
-3. After submission of edited form, it calls `/map/survey/2du/:surveyId` function and process all information as described above for `/2du/:surveyId` function.
-
-
-	
-
+3. After submission of edited form, it calls `survey/2du/:surveyId` function and process all information as described above for `/2du/:surveyId` function.
 
