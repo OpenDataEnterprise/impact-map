@@ -50,3 +50,6 @@ $langs = array('es_MX' => 'Español', 'fr_FR' => 'Français', 'de_DE' => 'German
 ## Restart Apache servers
 - [ ] Login into target server
 - [ ] Run the following commands
+```
+sudo service apache2 restart
+```

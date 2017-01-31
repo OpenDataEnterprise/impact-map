@@ -4,7 +4,7 @@ Below is the sequence of terminal commands to update a server
 ```
 # ssh (e.g., login) to remote server. To have access to the server, you need to talk to admin users.
 # for test server
-ssh ubuntu@ec2-54-210-82-88.compute-1.amazonaws.com 
+ssh ubuntu@test.opendataimpactmap.org
 
 # for production server
 ssh ubuntu@opendataimpactmap.org
