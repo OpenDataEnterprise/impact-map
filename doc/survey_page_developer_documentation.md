@@ -12,7 +12,7 @@ Survey Interfaces
 	2. Insert a new object id with id as maxId + 1 into org_surveys table
 	3. Pass the last inserted survey id to `survey/:surveyId/form` where surveyId is the passed surveyId
 	
-2 `:surveyId/form` function calls `survey/tp_survey.php` file
+2. `:surveyId/form` function calls `survey/tp_survey.php` file
 
 3. When a user submits the form, `survey/tp_survey.php` calls `survey/2du/:surveyId` function in index.php
 
