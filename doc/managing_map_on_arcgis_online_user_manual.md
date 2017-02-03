@@ -26,5 +26,9 @@ bash migrate.sh production      # for production map update
 
 ```
 
-##NOTE
-If you receive an error, run the script one more time. It is possible that the script is disconnected from ArcGIS if there are many data. If the error occurs continusouly after 2 to 3 times of running the script, contact the administrator. 
+## Possible Bugs
+
+1. Bash error
+If there is an error when running `migrate.sh`, it's possible due to the line-ending issue. For example, Windows saves files with its own line endings and it's not working on Macs or in the Bash command line. So if this happens, open `migrate.sh` in one of your editor such as Sublime Text, and change the line endings into Unix (from Windows).
+2. ArcGIS update error
+If you receive an error while uploading data, run the script one more time. It is possible that the script is disconnected from ArcGIS if there are too many data. If the error occurs continusouly after 2 to 3 times of running the script, contact the administrator. 
