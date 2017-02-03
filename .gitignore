@@ -15,6 +15,7 @@ scripts/data-etl/Inventory - Country Classification.csv
 Inventory.xlsx
 arcgis_flatfile.json
 org_profile.json
+scripts/agol-integration/agol_success.json
 
 assets/*
 html/grid/*
