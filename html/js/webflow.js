@@ -1223,9 +1223,10 @@
     var retro = window.XDomainRequest && !window.atob;
     var namespace = '.w-form';
     var siteId;
-    var emailField = /e(\-)?mail/i;
+    var emailField = /e(-)?mail/i;
     var emailValue = /^\S+@\S+$/;
     var alert = window.alert;
+    var inApp = Webflow.env();
     var listening;
 
     // MailChimp domains: list-manage.com + mirrors
@@ -1235,16 +1236,14 @@
       alert('Oops! This page has improperly configured forms. Please contact your website administrator to fix this issue.');
     }, 100);
 
-    api.ready = function() {
+    api.ready = api.design = api.preview = function() {
       // Init forms
       init();
 
-      // Wire document events once
-      if (!listening) addListeners();
-    };
-
-    api.preview = api.design = function() {
-      init();
+      // Wire document events on published site only once
+      if (!inApp && !listening) {
+        addListeners();
+      }
     };
 
     function init() {
@@ -1596,6 +1595,9 @@
     };
 
     api.ready = function() {
+      // Redirect IX init while in design/preview modes
+      if (inApp) return env('design') ? api.design() : api.preview();
+
       // Ready should only be used after destroy, as a way to re-init
       if (config && destroyed) {
         destroyed = false;
@@ -3486,6 +3488,7 @@
     // Module methods
 
     api.ready = function() {
+      designer = Webflow.env('design');
       init();
     };
 
