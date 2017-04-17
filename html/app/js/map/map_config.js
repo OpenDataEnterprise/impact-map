@@ -2,20 +2,22 @@
  * Created by jnordling on 12/14/14.
  */
 define([],function(){
-  var agsserver = "http://services.arcgis.com/Fsk4zuQe2Ol9olZc/ArcGIS/rest/services";
+  // ArcGIS server has been migrated to the ODE one in April 2017
+  // var agsserver = "http://services.arcgis.com/Fsk4zuQe2Ol9olZc/ArcGIS/rest/services";
+  var agsserver = "https://services7.arcgis.com/6B5Of8bXgHVo93zg/ArcGIS/rest/services"
   var runAs = 'develop';
   if (location.host == "opendataimpactmap.org" || location.host == "www.opendataimpactmap.org"){
     runAs = 'production';
   } 
   
   var mode = {
-              'develop': 'ode_organizations_schema_07302015',
-              'staging': 'ode_organizations_schema_07302015',
-              'production': 'ode_organizations_prod_07302015'
+              'develop': 'ode_organizations_dev_2017',
+              'staging': 'ode_organizations_dev_2017',
+              'production': 'ode_organizations_prod_2017'
           }
   var features = [agsserver,mode[runAs],'FeatureServer/0'].join('/');
-  var countries = [agsserver,'country_centroids_20150715','FeatureServer/0'].join('/');
-  var countryPolys = [agsserver,'Countries_20150715','FeatureServer/0'].join('/');
+  var countries = [agsserver,'country_centroids_2017','FeatureServer/0'].join('/');
+  var countryPolys = [agsserver,'Countries_2017','FeatureServer/0'].join('/');
 
 //console.log(JSON.parse(JSON.stringify(features))); //Added by Vinayak
   

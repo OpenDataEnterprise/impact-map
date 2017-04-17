@@ -15,27 +15,24 @@ class DevelopmentSettings(BaseSettings):
 
     def __init__(self):
         BaseSettings.__init__(self)
-        self.environment = "AGOL Development"
-        # self.agol_feature_service_url = 'https://services5.arcgis.com/w1WEecz5ClslKH2Q/arcgis/rest/services/ode_organizations_dev04/FeatureServer/0'
-        # self.agol_feature_service_url = 'https://services.arcgis.com/Fsk4zuQe2Ol9olZc/arcgis/rest/services/ode_organizations_dev_0715/FeatureServer/0'
-        self.agol_feature_service_url = 'http://services.arcgis.com/Fsk4zuQe2Ol9olZc/arcgis/rest/services/ode_organizations_schema_07302015/FeatureServer/0'
+        self.environment = "AGOL Development"        
+        self.agol_feature_service_url = 'https://services7.arcgis.com/6B5Of8bXgHVo93zg/arcgis/rest/services/ode_organizations_dev_2017/FeatureServer/0'
 
 class StagingSettings(BaseSettings):
 
     def __init__(self):
         BaseSettings.__init__(self)
-        self.environment = "AGOL Staging"
-        # self.agol_feature_service_url = 'https://services5.arcgis.com/w1WEecz5ClslKH2Q/arcgis/rest/services/ode_organizations_staging/FeatureServer/0'
-        self.agol_feature_service_url = 'https://services.arcgis.com/Fsk4zuQe2Ol9olZc/arcgis/rest/services/ode_organizations_staging_jul13/FeatureServer/0'
-        # self.agol_feature_service_url = 'http://services.arcgis.com/Fsk4zuQe2Ol9olZc/arcgis/rest/services/ode_organizations_schema_07302015/FeatureServer/0'
+        self.environment = "AGOL Staging"        
+        self.agol_feature_service_url = 'https://services7.arcgis.com/6B5Of8bXgHVo93zg/arcgis/rest/services/ode_organizations_dev_2017/FeatureServer/0'
+        
 
 class ProductionSettings(BaseSettings):
 
     def __init__(self):
         BaseSettings.__init__(self)
-        self.environment = "AGOL Production"
-        # self.agol_feature_service_url = 'https://services.arcgis.com/Fsk4zuQe2Ol9olZc/arcgis/rest/services/ode_organizations_production_0715/FeatureServer/0'
-        self.agol_feature_service_url = 'https://services.arcgis.com/Fsk4zuQe2Ol9olZc/arcgis/rest/services/ode_organizations_prod_07302015/FeatureServer/0'
+        self.environment = "AGOL Production"        
+        #self.agol_feature_service_url = 'https://services.arcgis.com/Fsk4zuQe2Ol9olZc/arcgis/rest/services/ode_organizations_prod_07302015/FeatureServer/0'
+        self.agol_feature_service_url = 'https://services7.arcgis.com/6B5Of8bXgHVo93zg/arcgis/rest/services/ode_organizations_prod_2017/FeatureServer/0'
 
 # - set active environment to 'development', 'staging', or 'production' with default being 'development'
 agol_env = os.environ.get('AGOL_ENV', 'development')
