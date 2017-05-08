@@ -1,0 +1,1 @@
+/home/simsu/Other/projects/Web/Francium/logSys/sql/mysql.sql
