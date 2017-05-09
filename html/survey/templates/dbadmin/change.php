@@ -1,7 +1,7 @@
 <?php
 require "config.php";
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html>
   <head>
     <title>Change Password</title>

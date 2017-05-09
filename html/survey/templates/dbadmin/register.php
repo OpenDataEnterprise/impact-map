@@ -87,9 +87,9 @@ include "config.php";
             )
           );
           if($createAccount === "exists"){
-            echo "<label>User Exists.</label>";
+            echo "<label style='text-align: center;'>User Exists.</label>";
           }elseif($createAccount === true){
-            echo "<label>Success. Created account. <a href='login.php'>Log In</a></label>";
+            echo "<label style='text-align: center;'>Success. Created account. <a href='login.php'>Log In</a></label>";
           }
         }
       }
