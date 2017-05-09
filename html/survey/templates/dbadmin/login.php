@@ -56,7 +56,7 @@ if(isset($_POST['action_login'])){
 </head>
   <body>
     <div class="content">
-      <h1 style = "text-align: center;">Database Admin Tool</h1>
+      <h1 style = "text-align: center; margin-top: 3%">Database Admin Tool</h1>
       </br>
       <?php
       if(isset($msg)){
