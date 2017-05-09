@@ -260,7 +260,7 @@ $(document).ready(function() {
 				name: "org_country_info.org_hq_country_income"
 
 			},
-						{
+/*						{
 				label: "org_hq_country_income_code:",
 				name: "org_country_info.org_hq_country_income_code"
 
@@ -269,13 +269,13 @@ $(document).ready(function() {
 				label: "org_hq_country_locode:",
 				name: "org_country_info.org_hq_country_locode"
 
-			},
+			},*/
 						{
 				label: "org_hq_country_region:",
 				name: "org_country_info.org_hq_country_region"
 
 			},
-						{
+/*						{
 				label: "org_hq_country_region_code:",
 				name: "org_country_info.org_hq_country_region_code"
 
@@ -284,7 +284,7 @@ $(document).ready(function() {
 				label: "ISO2:",
 				name: "org_country_info.ISO2"
 
-			},
+			},*/
 									{
 				label: "c_lat:",
 				name: "org_country_info.c_lat"
@@ -356,7 +356,7 @@ $(document).ready(function() {
 
     // Setup - add a text input to each footer cell
    //  $('#example tfoot th').each( function () {
-     $('#example tfoot th:nth-child(39)').each( function () {
+     $('#example tfoot th:nth-child(35)').each( function () {
         var title = $(this).text();
         //console.log("this", $('#example tfoot th'));
         $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
@@ -431,24 +431,24 @@ $(document).ready(function() {
       { "width": "115px", "targets": 28 },
       { "width": "160px", "targets": 29 },
       { "width": "165px", "targets": 30 },
-      { "width": "120px", "targets": 31 },
-      { "width": "80px", "targets": 32 },
-      { "width": "200px", "targets": 33 },
-      { "width": "90px", "targets": 34 },
-      { "width": "40px", "targets": 35 },
-      { "width": "65px", "targets": 36 }, 
-      { "width": "70px", "targets": 37 },  
-      { "width": "200px", "targets": 38 },
-      { "width": "70px", "targets": 39 },  
-      { "width": "200px", "targets": 40 },  
-      { "width": "120px", "targets": 41 },  
-      { "width": "200px", "targets": 42 },  
-      { "width": "100px", "targets": 43 }, 
-      { "width": "200px", "targets": 44 },  
-      { "width": "150px", "targets": 45 },  
-      { "width": "200px", "targets": 46 },  
-      { "width": "70px", "targets": 47 },  
-      { "width": "200px", "targets": 48 }  
+/*      { "width": "120px", "targets": 31 },
+      { "width": "80px", "targets": 32 },*/
+      { "width": "200px", "targets": 31 }, //33
+/*      { "width": "90px", "targets": 34 },
+      { "width": "40px", "targets": 35 },*/
+       { "width": "65px", "targets": 32 }, //36
+       { "width": "70px", "targets": 33 }, //37
+      { "width": "200px", "targets": 34 }, //38
+       { "width": "70px", "targets": 35 }, //39
+      { "width": "200px", "targets": 36 }, //40
+      { "width": "120px", "targets": 37 }, //41
+      { "width": "200px", "targets": 38 }, //42
+      { "width": "100px", "targets": 39 }, //43
+      { "width": "200px", "targets": 40 }, //44
+      { "width": "150px", "targets": 41 }, //45
+      { "width": "200px", "targets": 42 }, //46
+       { "width": "70px", "targets": 43 }, //47
+      { "width": "200px", "targets": 44 }  //48
 
         ],
 
@@ -500,11 +500,11 @@ $(document).ready(function() {
 			
 			{ data: "org_country_info.org_hq_country", editField: ""},
 			{ data: "org_country_info.org_hq_country_income", editField: ""},
-			{ data: "org_country_info.org_hq_country_income_code", editField: ""},
-			{ data: "org_country_info.org_hq_country_locode", editField: ""},
+/*			{ data: "org_country_info.org_hq_country_income_code", editField: ""},
+			{ data: "org_country_info.org_hq_country_locode", editField: ""},*/
 			{ data: "org_country_info.org_hq_country_region", editField: ""},
-			{ data: "org_country_info.org_hq_country_region_code", editField: ""},
-			{ data: "org_country_info.ISO2", editField: ""},
+/*			{ data: "org_country_info.org_hq_country_region_code", editField: ""},
+			{ data: "org_country_info.ISO2", editField: ""},*/
 			{ data: "org_country_info.c_lat", editField: ""},
 			{ data: "org_country_info.c_lon", editField: ""},
 			{ data: "org_data_use", render: "[, ].data_type"},
@@ -613,7 +613,7 @@ window.open('../php/dependant/datause.php?id=' + data[0].org_profiles.profile_id
         ],
 
         initComplete: function () {
-            this.api().columns([3, 6, 7, 8, 10, 11, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 29, 30, 31, 32, 33, 34, 35, 39, 41, 43, 45, 47]).every( function () {
+            this.api().columns([3, 6, 7, 8, 10, 11, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 29, 30, 31, 35, 37, 39, 41, 43]).every( function () {
                 var column = this;
                 var select = $('<select><option value=""></option></select>')
                     .appendTo( $(column.footer()).empty() )
@@ -705,7 +705,7 @@ window.open('../php/dependant/datause.php?id=' + data[0].org_profiles.profile_id
 						<th>Type of entry</th>
 						<th>Entry source</th>
 						<th>Year</th>
-						<th>Type </th>
+						<th>Type</th>
 						<th>Type other</th>
 						<th>URL</th>
 						<th>Founding year</th>
@@ -719,12 +719,12 @@ window.open('../php/dependant/datause.php?id=' + data[0].org_profiles.profile_id
 						<th>Phone</th>
 						<th>Title</th>
 						<th>HQ country</th>
-						<th>Country</th>
-						<th>WB income code</th>
-						<th>UN locode</th>
+						<th>WB income level</th>
+<!-- 						<th>WB income code</th>
+						<th>UN locode</th> -->
 						<th>WB region</th>
-						<th>Region code</th>
-						<th>ISO2</th>
+<!-- 						<th>Region code</th>
+						<th>ISO2</th> -->
 						<th>Latitude</th>
 						<th>Longitude</th>
 						<th>Data type used</th>
@@ -788,10 +788,10 @@ window.open('../php/dependant/datause.php?id=' + data[0].org_profiles.profile_id
 				<th></th>	
 				<th></th>
 				<th></th>	
+<!-- 				<th></th>	
 				<th></th>	
 				<th></th>	
-				<th></th>	
-				<th></th>
+				<th></th> -->
 				</tr>
 				</tfoot>
 				</table>
