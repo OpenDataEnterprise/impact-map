@@ -1,8 +1,23 @@
+
+
 <?php
 require "config.php";
 include "viz/pie1.php";
+//echo $LS->isLoggedIn();
 
+//var_dump($cookieToken);
 
+/*if($LS->isLoggedIn()){
+  // User logged in
+}
+else
+{
+  print_r($LS->cookies());
+  echo'I am here';
+  echo '<p class="login">Please <a href="nesr-login.html">log in</a> to access this page.</p>';
+    exit();
+}
+*/
 /*if ($_SESSION['loggedin'] == true) {
 
     //echo "Welcome to the member's area, " . $_SESSION['username'] . "!";

@@ -46,7 +46,7 @@ use
 Editor::inst( $db, 'org_profiles' )
 ->pkey( 'profile_id' )
 	->fields(
-		Field::inst( 'org_profiles.profile_id' )->validator( 'Validate::notEmpty' ),
+		Field::inst( 'org_profiles.profile_id' ),
 		Field::inst( 'org_profiles.org_name' ),
 		Field::inst( 'org_profiles.org_description' ),
 		Field::inst( 'org_profiles.org_size' ),

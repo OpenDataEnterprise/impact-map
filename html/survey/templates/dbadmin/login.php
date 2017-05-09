@@ -7,19 +7,19 @@ if(isset($_POST['action_login'])){
 		$msg = array("Error!", "Wrong Username / Password!");
 	}else{
 		$login = $LS->login($identification, $password, isset($_POST['remember_me']));
+
 		if($login === false){
 			$msg = array("Error!", "Wrong Username / Password!");
 		}else if(is_array($login) && $login['status'] == "blocked"){
 			$msg = array("Error!", "Too many login attempts. You can attempt login after ". $login['minutes'] ." minutes (". $login['seconds'] ." seconds)");
 		}
-
 }
 }
 ?>
 <html>
   <head>
   <meta charset="utf-8">
-  <title>Login</title>
+  <title>Database Admin Tool - Login</title>
   <meta content="Open Data Impact Map" property="og:title">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
