@@ -53,7 +53,9 @@ Editor::inst( $db, 'org_profiles' )
 		Field::inst( 'org_profiles.org_profile_status' ),
 
 		Field::inst( 'org_profiles.industry_id' )
-				->validator( 'Validate::dbValues' ),
+				->validator( 'Validate::dbValues' , array( 'table' => 'org_profiles',
+					'field' => 'industry_id',
+					'message' => "Value not valid!" ) ),
 		Field::inst( 'org_profiles.industry_other' ),
 		Field::inst( 'org_profiles.org_additional' ),
 		Field::inst( 'org_profiles.org_confidence' ),

@@ -12,6 +12,8 @@ if (!isset($_SESSION['login_true']))
 //    header('location: home.php');
     }
 
+    //echo 'Current PHP version: ' . phpversion();
+
 //echo $LS->isLoggedIn();
 
 //var_dump($cookieToken);

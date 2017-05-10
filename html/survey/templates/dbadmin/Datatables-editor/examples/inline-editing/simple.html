@@ -524,7 +524,8 @@ $(document).ready(function() {
 		],
 		keys: {
             columns: ':not(:first-child)',
-            editor:  editor
+            editor:  editor,
+            editorKeys: 'tab-only'
         },
 
 		select: {
@@ -651,7 +652,7 @@ window.open('../php/dependant/datause.php?id=' + data[0].org_profiles.profile_id
 			table.keys.enable();
 		} );
 
-//for serach box
+//for serach box data use
     table.columns().every( function () {
         var that = this;
  
