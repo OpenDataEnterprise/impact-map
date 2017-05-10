@@ -49,28 +49,59 @@ Editor::inst( $db, 'org_profiles' )
 		Field::inst( 'org_profiles.profile_id' ),
 		Field::inst( 'org_profiles.org_name' ),
 		Field::inst( 'org_profiles.org_description' ),
-		Field::inst( 'org_profiles.org_size' ),
-		Field::inst( 'org_profiles.org_profile_status' ),
+		Field::inst( 'org_profiles.org_size' )
+				->validator( 'Validate::dbValues' , array( 'table' => 'org_profiles',
+					'field' => 'org_size',
+					'message' => "Invalid Size" ) ),
+
+		Field::inst( 'org_profiles.org_profile_status' )
+				->validator( 'Validate::dbValues' , array( 'table' => 'org_profiles',
+					'field' => 'org_profile_status',
+					'message' => "Invalid Status" ) ),
 
 		Field::inst( 'org_profiles.industry_id' )
 				->validator( 'Validate::dbValues' , array( 'table' => 'org_profiles',
 					'field' => 'industry_id',
-					'message' => "Value not valid!" ) ),
+					'message' => "Invalid Sector" ) ),
+
 		Field::inst( 'org_profiles.industry_other' ),
 		Field::inst( 'org_profiles.org_additional' ),
-		Field::inst( 'org_profiles.org_confidence' ),
-		Field::inst( 'org_profiles.org_greatest_impact' ),
+
+		Field::inst( 'org_profiles.org_confidence' )
+				->validator( 'Validate::numeric' , array( 'table' => 'org_profiles',
+					'field' => 'org_confidence',
+					'message' => "Value not numeric" ) ),
+		
+		Field::inst( 'org_profiles.org_greatest_impact' )
+				->validator( 'Validate::dbValues' , array( 'table' => 'org_profiles',
+					'field' => 'org_greatest_impact',
+					'message' => "Invalid Impact" ) ),
+		
 		Field::inst( 'org_profiles.org_greatest_impact_detail' ),
-		Field::inst( 'org_profiles.org_profile_category' ),
+		
+		Field::inst( 'org_profiles.org_profile_category' )
+				->validator( 'Validate::dbValues' , array( 'table' => 'org_profiles',
+					'field' => 'org_profile_category',
+					'message' => "Invalid Type of Entry" ) ),
+		
 		Field::inst( 'org_profiles.org_profile_src' ),
+
 		Field::inst( 'org_profiles.org_profile_year' ),
-		Field::inst( 'org_profiles.org_type' ),
+
+		Field::inst( 'org_profiles.org_type' )
+				->validator( 'Validate::dbValues' , array( 'table' => 'org_profiles',
+					'field' => 'org_type',
+					'message' => "Invalid Type" ) ),
+
 		Field::inst( 'org_profiles.org_type_other' ),
 		Field::inst( 'org_profiles.org_url' ),
 		Field::inst( 'org_profiles.org_year_founded' ),
 		Field::inst( 'org_profiles.createdAt' ),
 		Field::inst( 'org_profiles.updatedAt' ),
-		Field::inst( 'org_profiles.machine_read' ),
+		Field::inst( 'org_profiles.machine_read' )
+				->validator( 'Validate::dbValues' , array( 'table' => 'org_profiles',
+					'field' => 'machine_read',
+					'message' => "Invalid Machine-Readability" ) ),
 
 /*			->validator( 'Validate::dbValues' ),*/
 //		Field::inst( 'org_profiles.org_type' )
@@ -115,7 +146,6 @@ Editor::inst( $db, 'org_profiles' )
          Field::inst( 'org_country_info.ISO2' ),
  		 Field::inst( 'org_country_info.c_lat' ),
          Field::inst( 'org_country_info.c_lon' ),
-         	        
 
          Field::inst( 'data_applications.advocacy_desc' ),
          Field::inst( 'data_applications.org_opt_desc' ),
