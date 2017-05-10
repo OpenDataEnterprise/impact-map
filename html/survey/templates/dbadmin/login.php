@@ -6,9 +6,20 @@ if(isset($_POST['action_login'])){
 	if($identification == "" || $password == ""){
 		$msg = array("Error!", "Wrong Username / Password!");
 	}else{
-		$login = $LS->login($identification, $password, isset($_POST['remember_me']));
+		$login = $LS->login($identification, $password, isset($_POST['remember_me']), false);
+    
+    if (is_numeric($login)) 
+    {
+    echo 'login value is ' .$login;
+    session_start();
+    $_SESSION['login_true'] = $login;
+    print_r($_SESSION); 
+    header("Location: home.php"); /* Redirect browser */
+    exit();
+//    header('location: home.php');
+    }
 
-		if($login === false){
+    	if($login === false){
 			$msg = array("Error!", "Wrong Username / Password!");
 		}else if(is_array($login) && $login['status'] == "blocked"){
 			$msg = array("Error!", "Too many login attempts. You can attempt login after ". $login['minutes'] ." minutes (". $login['seconds'] ." seconds)");

@@ -201,7 +201,7 @@ class LS {
        */
       "expire" => "+30 days",
       "path" => "/",
-      "domain" => "",
+      "domain" => "opendataimpactmap.org",
 
       /**
        * Names of cookies created
@@ -616,6 +616,7 @@ class LS {
 
       if( !isset($blocked) && ($password === false || password_verify($password . $this->config['keys']['salt'], $us_pass) ) ){
         if($cookies === true){
+
 
           $_SESSION[$this->config["cookies"]["names"]["current_user"]] = $us_id;
 

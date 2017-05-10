@@ -1,11 +1,18 @@
 <?php
 require "config.php";
-if( isset($_POST['newName']) ){
+/*if( isset($_POST['newName']) ){
 	$_POST['newName'] = $_POST['newName'] == "" ? "Dude" : $_POST['newName'];
 	$LS->updateUser(array(
 		"name" => $_POST['newName']
 	));
-}
+}*/
+session_start();
+if (!isset($_SESSION['login_true'])) 
+    {
+     echo '<p class="login">Please <a href="login.php">log in</a> to access this page.</p>';
+    exit();
+//    header('location: home.php');
+    }
 ?>
 <html>
 	<!-- <head></head> -->

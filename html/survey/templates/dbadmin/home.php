@@ -3,9 +3,28 @@
 <?php
 require "config.php";
 include "viz/pie1.php";
+
+session_start();
+if (!isset($_SESSION['login_true'])) 
+    {
+     echo '<p class="login">Please <a href="login.php">log in</a> to access this page.</p>';
+    exit();
+//    header('location: home.php');
+    }
+
 //echo $LS->isLoggedIn();
 
 //var_dump($cookieToken);
+
+/*if($LS->getUser("username") != "")
+{
+
+}
+else
+{
+  echo '<p class="login">Please <a href="nesr-login.html">log in</a> to access this page.</p>';
+    exit();
+}*/
 
 /*if($LS->isLoggedIn()){
   // User logged in
