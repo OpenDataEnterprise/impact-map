@@ -85,14 +85,14 @@ while ( $i<= $counter)
 	{
 		$query_use = "UPDATE org_data_use SET DATA_TYPE = '$data_type', DATA_USE_TYPE_OTHER = '$data_use_type_other', DATA_SRC_GOV_LEVEL = '$data_src_gov_level', SRC_COUNTRY_ID = '$stud_id', MACHINE_READ = '$machine_read' WHERE OBJECT_ID = '$object_id'";
 
-		echo 'object id '.$object_id;
+/*		echo 'object id '.$object_id;
 		echo "</br>";
 		echo $query_use;
-		echo "</br>";
+		echo "</br>";*/
 
 		$data_query_use = mysqli_query($dbc, $query_use);
-		echo 'Data query use ' .$data_query_use;
-		echo "</br>";
+/*		echo 'Data query use ' .$data_query_use;
+		echo "</br>";*/
 	if (!$data_query_use) {
       die ('Invalid Query: ' . mysql_error()) ;
     }
