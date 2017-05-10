@@ -938,8 +938,8 @@ class LS {
    * @return boolean          Whether it was a success
    */
   public function updateUser($toUpdate = array(), $user = null){
+
     if( is_array($toUpdate) && !isset($toUpdate['id']) ){
-      
       if($user === null){
         $user = $this->userID;
       }

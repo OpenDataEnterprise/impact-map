@@ -73,9 +73,11 @@ if (!isset($_SESSION['login_true']))
           
         if($new_password != $retype_password){
           echo "<p><h2>Passwords Doesn't match</h2><p>The passwords you entered didn't match. Try again.</p></p>";
-        }else if($LS->login($LS->getUser("username"), $curpass, false, false) == false){
+        }
+        else if($LS->login($LS->getUser("username"), $curpass, false, false) == false){
           echo "<h2>Current Password Wrong!</h2><p>The password you entered for your account is wrong.</p>";
-        }else{
+        }
+        else{
           $change_password = $LS->changePassword($new_password);
           if($change_password === true){
             echo "<h2>Password Changed Successfully</h2>";
@@ -99,7 +101,7 @@ if (!isset($_SESSION['login_true']))
         <p>Retype New Password</p>
         <input type='password' name='retype_password' />
       </label>
-      <button style="text-align: center;width:150px; color:white; margin-top: 20px" class = "button" name='change_password' type='submit'>Change Password</button>
+      <button style="text-align: center;width:150px; color:white; margin-top: 20px" class = "button" name='change_password' type='submit'>Submit</button>
     </form>
   </div>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>

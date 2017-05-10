@@ -92,19 +92,23 @@ if (!isset($_SESSION['login_true']))
 			$details = $LS->getUser();
 			print_r($details);
 			?></pre>
-		<p>
+<!-- 		<p>
 			Change the name of your account :
 		</p>
 		<form action="home.php" method="POST">
 			<input name="newName" placeholder="New name" />
 			<button>Change Name</button>
 		</form>
-    <p>
-      <a href="change.php">Change Password</a>
+
+ -->    <p>
+     </br>
+<!--       <a href="change.php">Change Password</a> -->
+<!--       <a style="width:150px; color:white" class="button" href="change.php">Change Password</a> -->
     </p>
+    </br>
           <p>
-        <p>Don't have an account ?</p>
-        <a style="width:150px; color:white" class="button" href="register.php">Register</a>
+<!--         <p>Don't have an account ?</p> -->
+        <a style="width:150px; color:white" class="button" href="register.php">Register User</a>
       </p>
 <!-- 
     <p>

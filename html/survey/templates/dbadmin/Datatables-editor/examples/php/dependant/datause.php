@@ -6,7 +6,6 @@
   <link href="../../../../css/webflow.css" rel="stylesheet" type="text/css">
   <link href="../../../../css/open-data-impact-map.webflow.css" rel="stylesheet" type="text/css">
   
-
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script type="text/javascript">
     WebFont.load({
@@ -92,7 +91,7 @@ while ( $i<= $counter)
 		echo "</br>";*/
 
 		$data_query_use = mysqli_query($dbc, $query_use);
-
+		echo 'Data q use ' .$data_query_use;
 	if (!$data_query_use) {
       die ('Invalid Query: ' . mysql_error()) ;
     }
