@@ -120,7 +120,7 @@ $count = 1;
 		
                 $object_id = $row['object_id'];
 
-                echo '<input type="hidden" name="object_id'.$count.'" value='.$object_id.'">';
+                echo '<input type="hidden" name="object_id'.$count.'" value='.$object_id.'>';
 
                 $data_type = $row['data_type'];
                 //echo 'Data type: <input type="text" name="data_type" value = '.$data_type. '></input><br/>';
