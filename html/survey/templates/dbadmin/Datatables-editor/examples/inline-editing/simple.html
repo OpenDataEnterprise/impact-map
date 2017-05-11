@@ -397,7 +397,6 @@ $(document).ready(function() {
         "scrollX": true,
         "scrollCollapse": true,
         "pageLength": 50,
-        idSrc: 'DT_RowId',
 /*        "paging":         false,*/
 
         columnDefs: [
@@ -674,14 +673,16 @@ window.open('../php/dependant/datause.php?id=' + data[0].org_profiles.profile_id
 <body class="dt-example">
   <div class="navigation">
     <div class="navigation-container w-clearfix w-hidden-medium w-hidden-small w-hidden-tiny">
-<a class="navigation-link" href="../../../home.php"><span class="fontawesome-icon"></span>&nbsp;Visualization</a><a class="navigation-link" href="../../../Datatables-editor/examples/inline-editing/simple.html"><span class="fontawesome-icon"></span>&nbsp;Management</a><a class="navigation-link secondary-navigation-link" href="../../../logout.php"><span class="fontawesome-icon"></span>&nbsp;Logout</a><a class="navigation-link secondary-navigation-link" href="../../../settings.php"><span class="fontawesome-icon"></span>&nbsp;Settings</a>
+<a class="navigation-link" href="../../../home.php"><span class="fontawesome-icon"></span>&nbsp;Visualization</a><a class="navigation-link" href="simple.html"><span class="fontawesome-icon"></span>&nbsp;Management</a><a class="navigation-link secondary-navigation-link" href="../../../logout.php"><span class="fontawesome-icon"></span>&nbsp;Logout</a><a class="navigation-link secondary-navigation-link" href="../../../settings.php"><span class="fontawesome-icon"></span>&nbsp;Settings</a>
 
     </div>
     <div class="mobile-navigation-container w-clearfix w-hidden-main"><a class="mobile-menu-button" data-ix="open-mobile-menu" href="#"><span class="fontawesome-icon"></span> Menu</a><a class="close-menu-button" data-ix="close-mobile-menu" href="#"><span class="fontawesome-icon"></span> Close</a>
       <div class="mobile-navigation-title">Open Data Impact Map</div>
     </div>
   </div>
-  <div class="navigation-space-fix" id="top"></div>
+    <div class="navigation-space-fix" id="top"></div>
+    <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="../../../home.php"><span class="fontawesome-icon"></span>&nbsp;Visualization</a><a class="mobile-navigation-item w-clearfix" href="simple.html"><span class="fontawesome-icon"></span>&nbsp;Management</a><a class="mobile-navigation-item w-clearfix" href="../../../settings.php"><span class="fontawesome-icon"></span>&nbsp;Settings</a><a class="mobile-navigation-item w-clearfix" href="../../../Logout.php"><span class="fontawesome-icon"></span>&nbsp;Logout</a>
+  </div>
 
 	<div class="container">
 <!-- 			<h1>Editor example <span>Simple inline editing</span></h1> -->

@@ -74,7 +74,8 @@ if (!isset($_SESSION['login_true']))
     </div>
   </div>
   <div class="navigation-space-fix" id="top"></div>
-
+    <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="home.php"><span class="fontawesome-icon"></span>&nbsp;Visualization</a><a class="mobile-navigation-item w-clearfix" href="Datatables-editor/examples/inline-editing/simple.html"><span class="fontawesome-icon"></span>&nbsp;Management</a><a class="mobile-navigation-item w-clearfix" href="settings.php"><span class="fontawesome-icon"></span>&nbsp;Settings</a><a class="mobile-navigation-item w-clearfix" href="Logout.php"><span class="fontawesome-icon"></span>&nbsp;Logout</a>
+  </div>
 
 <!-- 		<h1>Welcome</h1>
 		<p>You have been successfully logged in.</p> -->

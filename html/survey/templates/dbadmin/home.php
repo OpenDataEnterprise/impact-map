@@ -140,9 +140,11 @@ echo 'alert($alert1)';
       <div class="mobile-navigation-title">Open Data Impact Map</div>
     </div>
   </div>
-  <div class="navigation-space-fix" id="top"></div> -->
-<!--   <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
-  </div> -->
+  <div class="navigation-space-fix" id="top"></div>
+  <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
+  </div>
+ -->
+
   <div class="navigation">
     <div class="navigation-container w-clearfix w-hidden-medium w-hidden-small w-hidden-tiny">
 <a class="navigation-link" href="home.php"><span class="fontawesome-icon"></span>&nbsp;Visualization</a><a class="navigation-link" href="Datatables-editor/examples/inline-editing/simple.html"><span class="fontawesome-icon"></span>&nbsp;Management</a><a class="navigation-link secondary-navigation-link" href="logout.php"><span class="fontawesome-icon"></span>&nbsp;Logout</a><a class="navigation-link secondary-navigation-link" href="settings.php"><span class="fontawesome-icon"></span>&nbsp;Settings</a>
@@ -153,6 +155,8 @@ echo 'alert($alert1)';
     </div>
   </div>
   <div class="navigation-space-fix" id="top"></div>
+    <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="home.php"><span class="fontawesome-icon"></span>&nbsp;Visualization</a><a class="mobile-navigation-item w-clearfix" href="Datatables-editor/examples/inline-editing/simple.html"><span class="fontawesome-icon"></span>&nbsp;Management</a><a class="mobile-navigation-item w-clearfix" href="settings.php"><span class="fontawesome-icon"></span>&nbsp;Settings</a><a class="mobile-navigation-item w-clearfix" href="Logout.php"><span class="fontawesome-icon"></span>&nbsp;Logout</a>
+  </div>
 
 
 		<h1 style="margin-left: 10%;">Welcome</h1>

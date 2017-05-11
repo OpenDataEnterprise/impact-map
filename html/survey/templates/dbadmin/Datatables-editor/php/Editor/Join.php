@@ -688,7 +688,8 @@ class Join extends DataTables\Ext {
 			$stmt = $db
 				->query( 'delete' )
 				->table( $this->_table )
-				->where_group( function ( $q ) use ( $that ) {
+				//->where_group( function ( $q ) use ( $that ) { Commented by Vinayak
+				->where_group( function ( $q ) use ( $that, $ids ) {
 					$q->or_where( $that->_join['child'], $ids );
 				} );
 

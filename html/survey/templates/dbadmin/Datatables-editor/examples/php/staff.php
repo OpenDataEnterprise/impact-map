@@ -43,8 +43,8 @@ use
 	->process( $_POST )
 	->json();*/
 
-Editor::inst( $db, 'org_profiles' )
-->pkey( 'profile_id' )
+Editor::inst( $db, 'org_profiles' , 'profile_id' )
+//->pkey( 'profile_id' )
 	->fields(
 		Field::inst( 'org_profiles.profile_id' ),
 		Field::inst( 'org_profiles.org_name' ),
@@ -103,21 +103,14 @@ Editor::inst( $db, 'org_profiles' )
 					'field' => 'machine_read',
 					'message' => "Invalid Machine-Readability" ) ),
 
-/*			->validator( 'Validate::dbValues' ),*/
-//		Field::inst( 'org_profiles.org_type' )
-/*			->validator( 'Validate::numeric' )*/
-//			->setFormatter( 'Format::ifEmpty', null ),
-//		Field::inst( 'org_profiles.org_profile_year' )
-/*			->validator( 'Validate::numeric' )*/
-//			->setFormatter( 'Format::ifEmpty', null ),
-
-		Field::inst( 'org_profiles.location_id' )
+/*		Field::inst( 'org_profiles.location_id' )
 		        ->options( Options::inst()
                 ->table( 'org_locations' )
                 ->value( 'location_id' )
                 ->label( 'org_hq_city' )
             )
-            ->validator( 'Validate::dbValues' ),
+            ->validator( 'Validate::dbValues' ), //Commented by Vinayak
+            */
 		Field::inst( 'org_locations.org_hq_city' ),
 		Field::inst( 'org_locations.org_hq_st_prov' ),
 
@@ -128,22 +121,22 @@ Editor::inst( $db, 'org_profiles' )
 		Field::inst( 'org_contacts.survey_contact_phone' ),
 		Field::inst( 'org_contacts.survey_contact_title' ),
 		
-				Field::inst( 'org_profiles.country_id' )
+/*		Field::inst( 'org_profiles.country_id' )
 		        ->options( Options::inst()
                 ->table( 'org_country_info' )
                 ->value( 'country_id' )
                 ->label( 'org_hq_country' )
             )
-            ->validator( 'Validate::dbValues' ),
+            ->validator( 'Validate::dbValues' ),*/ //Commented by Vinayak
 
          Field::inst( 'org_country_info.org_hq_country' ),
 
          Field::inst( 'org_country_info.org_hq_country_income' ),
-         Field::inst( 'org_country_info.org_hq_country_income_code' ),
-         Field::inst( 'org_country_info.org_hq_country_locode' ),
+/*         Field::inst( 'org_country_info.org_hq_country_income_code' ),
+         Field::inst( 'org_country_info.org_hq_country_locode' ),*/
          Field::inst( 'org_country_info.org_hq_country_region' ),
-         Field::inst( 'org_country_info.org_hq_country_region_code' ),
-         Field::inst( 'org_country_info.ISO2' ),
+/*         Field::inst( 'org_country_info.org_hq_country_region_code' ),
+         Field::inst( 'org_country_info.ISO2' ),*/
  		 Field::inst( 'org_country_info.c_lat' ),
          Field::inst( 'org_country_info.c_lon' ),
 
@@ -158,24 +151,11 @@ Editor::inst( $db, 'org_profiles' )
          Field::inst( 'data_applications.use_other' ),
          Field::inst( 'data_applications.prod_srvc' ),
          Field::inst( 'data_applications.research' )
-
-        // Field::inst( 'org_data_use.data_type' )
-
-
-		
-/*			->validator( 'Validate::dateFormat', array(
-				"format"  => Format::DATE_ISO_8601,
-				"message" => "Please enter a date in the format yyyy-mm-dd"
-			) )
-			->getFormatter( 'Format::date_sql_to_format', Format::DATE_ISO_8601 )
-			->setFormatter( 'Format::date_format_to_sql', Format::DATE_ISO_8601 )*/
 	)
 	->leftJoin( 'org_locations', 'org_locations.location_id', '=', 'org_profiles.location_id' )
 	->leftJoin( 'org_contacts', 'org_contacts.profile_id', '=', 'org_profiles.profile_id' )
 	->leftJoin( 'org_country_info', 'org_country_info.country_id', '=', 'org_profiles.country_id' )
 	->leftJoin( 'data_applications', 'data_applications.profile_id', '=', 'org_profiles.profile_id' )
-	//->leftJoin( 'org_data_use', 'org_data_use.profile_id', '=', 'org_profiles.profile_id' )
-
 
 	->join(
 		Mjoin::inst( 'org_data_use' )
