@@ -19,7 +19,7 @@ if(isset($_POST['action_login'])){
 //    header('location: home.php');
     }
 
-    	if($login === false){
+    	if($login === false){  
 			$msg = array("Error!", "Wrong Username / Password!");
 		}else if(is_array($login) && $login['status'] == "blocked"){
 			$msg = array("Error!", "Too many login attempts. You can attempt login after ". $login['minutes'] ." minutes (". $login['seconds'] ." seconds)");
@@ -101,8 +101,10 @@ if(isset($_POST['action_login'])){
           width: 230px;
         }
       </style> 
-        <p style = "text-align: center;">Don't have an account ?</p>
-        <a style="width:150px; color:white" class="button" href="register.php">Register</a>
+
+<!--   Readd to add the first user -->
+<!--         <p style = "text-align: center;">Don't have an account ?</p>
+        <a style="width:150px; color:white" class="button" href="register.php">Register</a> -->
       
 
     </div>

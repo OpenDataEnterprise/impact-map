@@ -99,7 +99,9 @@
 	</script>
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/keytable/2.2.0/js/dataTables.keyTable.min.js">
 	</script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.colVis.min.js">
+<!-- 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.colVis.min.js">
+	</script> -->
+	<script type="text/javascript" language="javascript" src="../../js/buttons.colVis.min.js">
 	</script>
 	<script type="text/javascript" language="javascript" src="../../js/dataTables.editor.min.js">
 	</script>
@@ -362,7 +364,6 @@ $(document).ready(function() {
         $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
     } );
 
-
 	// Activate an inline edit on click of a table cell
 	$('#example').on( 'click', 'tbody td:not(:first-child, :nth-child(2))', function (e) {
 		editor.inline( this , {
@@ -405,7 +406,7 @@ $(document).ready(function() {
       { "width": "150px", "targets": 2 },
       { "width": "255px", "targets": 3 },
       { "width": "110px", "targets": 4 },
-      { "width": "200px", "targets": 5 },
+      { "width": "600px", "targets": 5 },
       { "width": "85px", "targets": 6 },
       { "width": "145px", "targets": 7 },
       { "width": "145px", "targets": 8 },
