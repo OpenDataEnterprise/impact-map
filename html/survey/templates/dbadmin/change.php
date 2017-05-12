@@ -84,7 +84,7 @@ if (!isset($_SESSION['login_true']))
         echo '<br>';*/
 
         if($new_password != $retype_password){
-          echo "<p><h2>Passwords Doesn't match</h2><p>The passwords you entered didn't match. Try again.</p></p>";
+          echo '<p><h2 style = "color:red;">Passwords do not match</h2><p style = "color:red;">Please retype passwords and try again.</p></p>';
         }
 /*        else if($LS->login($LS->getUser("username"), $curpass, false, false) == false){
           echo "<h2>Current Password Wrong!</h2><p>The password you entered for your account is wrong.</p>";
@@ -97,7 +97,7 @@ if (!isset($_SESSION['login_true']))
           }
         }
       }else{
-        echo "<p><h2>Password Fields was blank</h2><p>Form fields were left blank</p></p>";
+        echo '<p><h2 style = "color:red;">Password fields were left blank</h2></p>';
       }
     }
     ?>
