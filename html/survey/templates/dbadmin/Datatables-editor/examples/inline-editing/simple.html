@@ -30,6 +30,10 @@
 
   <style>
     li { display: list-item; }
+
+    #example_filter{
+    	padding-top: 15px;
+    }
   </style>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
   <script>
@@ -384,7 +388,7 @@ $(document).ready(function() {
      $('#example tfoot th:nth-child(35)').each( function () {
         var title = $(this).text();
         //console.log("this", $('#example tfoot th'));
-        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+        $(this).html( '<input type="text" placeholder="Search Data type used'+title+'" />' );
     } );
 
 	// Activate an inline edit on click of a table cell
@@ -430,21 +434,21 @@ $(document).ready(function() {
       { "width": "255px", "targets": 3 },
       { "width": "110px", "targets": 4 },
       { "width": "600px", "targets": 5 },
-      { "width": "85px", "targets": 6 },
+      { "width": "100px", "targets": 6 },
       { "width": "145px", "targets": 7 },
       { "width": "145px", "targets": 8 },
       { "width": "200px", "targets": 9 },
-      { "width": "80px", "targets": 10 },
+      { "width": "135px", "targets": 10 },
       { "width": "110px", "targets": 11 },
       { "width": "200px", "targets": 12 },
-      { "width": "130px", "targets": 13 },
+      { "width": "140px", "targets": 13 },
       { "width": "360px", "targets": 14 },
-      { "width": "40px", "targets": 15 },
+      { "width": "100px", "targets": 15 },
       { "width": "150px", "targets": 16 },
       { "width": "235px", "targets": 17 },
       { "width": "200px", "targets": 18 },
-      { "width": "110px", "targets": 19 },
-      { "width": "135px", "targets": 20 },
+      { "width": "150px", "targets": 19 },
+      { "width": "190px", "targets": 20 },
       { "width": "85px", "targets": 21 },
       { "width": "235px", "targets": 22 },
       { "width": "270px", "targets": 23 },
@@ -463,15 +467,15 @@ $(document).ready(function() {
        { "width": "65px", "targets": 32 }, //36
        { "width": "70px", "targets": 33 }, //37
       { "width": "200px", "targets": 34 }, //38
-       { "width": "70px", "targets": 35 }, //39
+       { "width": "120px", "targets": 35 }, //39
       { "width": "200px", "targets": 36 }, //40
-      { "width": "120px", "targets": 37 }, //41
+      { "width": "170px", "targets": 37 }, //41
       { "width": "200px", "targets": 38 }, //42
-      { "width": "100px", "targets": 39 }, //43
+      { "width": "120px", "targets": 39 }, //43
       { "width": "200px", "targets": 40 }, //44
-      { "width": "150px", "targets": 41 }, //45
+      { "width": "190px", "targets": 41 }, //45
       { "width": "200px", "targets": 42 }, //46
-       { "width": "70px", "targets": 43 }, //47
+       { "width": "115px", "targets": 43 }, //47
       { "width": "200px", "targets": 44 }  //48
 
         ],
@@ -484,65 +488,65 @@ $(document).ready(function() {
 				orderable: false
 			},
 			//{ data: "org_profiles.profile_id", editField: "", "visible" : false},
-			{ data: "org_profiles.profile_id", editField: ""},
+			{ data: "org_profiles.profile_id", editField: "", "visible" : false},
 			{ data: "org_profiles.org_name" },
 			
 			{ data: "org_profiles.industry_id", editField: "org_profiles.industry_id"},
-			{ data: "org_profiles.industry_other" , editField: "org_profiles.industry_other"},
+			{ data: "org_profiles.industry_other" , editField: "org_profiles.industry_other", "visible" : false},
 
 			{ data: "org_profiles.org_description" },
 			{ data: "org_profiles.org_profile_status"},
 			{ data: "org_profiles.createdAt" , editField: "" },
-			{ data: "org_profiles.updatedAt" , editField: ""},
+			{ data: "org_profiles.updatedAt" , editField: "", "visible" : false},
 
-			{ data: "org_profiles.org_additional" , editField: "org_profiles.org_additional"},
-			{ data: "org_profiles.org_confidence" , editField: "org_profiles.org_confidence"},
-			{ data: "org_profiles.org_greatest_impact" , editField: "org_profiles.org_greatest_impact"},
-			{ data: "org_profiles.org_greatest_impact_detail" , editField: "org_profiles.org_greatest_impact_detail"},
-			{ data: "org_profiles.org_profile_category" , editField: "org_profiles.org_profile_category"},
-			{ data: "org_profiles.org_profile_src" , editField: "org_profiles.org_profile_src" },
-			{ data: "org_profiles.org_profile_year" , editField: "org_profiles.org_profile_year"},
-			{ data: "org_profiles.org_type" , editField:  "org_profiles.org_type"},
-			{ data: "org_profiles.org_type_other" , editField: "org_profiles.org_type_other"},
-			{ data: "org_profiles.org_url" , editField: "org_profiles.org_url"},
-			{ data: "org_profiles.org_year_founded" , editField: "org_profiles.org_year_founded" },
+			{ data: "org_profiles.org_additional" , editField: "org_profiles.org_additional", "visible" : false},
+			{ data: "org_profiles.org_confidence" , editField: "org_profiles.org_confidence", "visible" : false},
+			{ data: "org_profiles.org_greatest_impact" , editField: "org_profiles.org_greatest_impact", "visible" : false},
+			{ data: "org_profiles.org_greatest_impact_detail" , editField: "org_profiles.org_greatest_impact_detail", "visible" : false},
+			{ data: "org_profiles.org_profile_category" , editField: "org_profiles.org_profile_category", "visible" : false},
+			{ data: "org_profiles.org_profile_src" , editField: "org_profiles.org_profile_src" , "visible" : false},
+			{ data: "org_profiles.org_profile_year" , editField: "org_profiles.org_profile_year", "visible" : false},
+			{ data: "org_profiles.org_type" , editField:  "org_profiles.org_type", "visible" : false},
+			{ data: "org_profiles.org_type_other" , editField: "org_profiles.org_type_other", "visible" : false},
+			{ data: "org_profiles.org_url" , editField: "org_profiles.org_url", "visible" : false},
+			{ data: "org_profiles.org_year_founded" , editField: "org_profiles.org_year_founded" , "visible" : false},
 
-			{ data: "org_profiles.machine_read" , editField: "org_profiles.machine_read"},
+			{ data: "org_profiles.machine_read" , editField: "org_profiles.machine_read", "visible" : false},
 
 
-			{ data: "org_profiles.org_size" },
+			{ data: "org_profiles.org_size" , "visible" : false},
 
 			
-			{ data: "org_locations.org_hq_city", editField: ""},
-			{ data: "org_locations.org_hq_st_prov", editField: ""},
+			{ data: "org_locations.org_hq_city", editField: "", "visible" : false},
+			{ data: "org_locations.org_hq_st_prov", editField: "", "visible" : false},
 			
-			{ data: "org_contacts.survey_contact_email", editField: "org_contacts.survey_contact_email"},
-			{ data: "org_contacts.survey_contact_first", editField: "org_contacts.survey_contact_first"},
-			{ data: "org_contacts.survey_contact_last", editField: "org_contacts.survey_contact_last"},
-			{ data: "org_contacts.survey_contact_phone", editField: "org_contacts.survey_contact_phone"},
-			{ data: "org_contacts.survey_contact_title", editField: "org_contacts.survey_contact_title"},
+			{ data: "org_contacts.survey_contact_email", editField: "org_contacts.survey_contact_email", "visible" : false},
+			{ data: "org_contacts.survey_contact_first", editField: "org_contacts.survey_contact_first", "visible" : false},
+			{ data: "org_contacts.survey_contact_last", editField: "org_contacts.survey_contact_last", "visible" : false},
+			{ data: "org_contacts.survey_contact_phone", editField: "org_contacts.survey_contact_phone", "visible" : false},
+			{ data: "org_contacts.survey_contact_title", editField: "org_contacts.survey_contact_title", "visible" : false},
 			
 			{ data: "org_country_info.org_hq_country", editField: ""},
-			{ data: "org_country_info.org_hq_country_income", editField: ""},
+			{ data: "org_country_info.org_hq_country_income", editField: "", "visible" : false},
 /*			{ data: "org_country_info.org_hq_country_income_code", editField: ""},
 			{ data: "org_country_info.org_hq_country_locode", editField: ""},*/
-			{ data: "org_country_info.org_hq_country_region", editField: ""},
+			{ data: "org_country_info.org_hq_country_region", editField: "", "visible" : false},
 /*			{ data: "org_country_info.org_hq_country_region_code", editField: ""},
 			{ data: "org_country_info.ISO2", editField: ""},*/
-			{ data: "org_country_info.c_lat", editField: ""},
-			{ data: "org_country_info.c_lon", editField: ""},
-			{ data: "org_data_use", render: "[, ].data_type"},
+			{ data: "org_country_info.c_lat", editField: "", "visible" : false},
+			{ data: "org_country_info.c_lon", editField: "", "visible" : false},
+			{ data: "org_data_use", render: "[, ].data_type", "visible" : false},
 
-			{ data: "data_applications.advocacy", editField: "data_applications.advocacy"},
-			{ data: "data_applications.advocacy_desc", editField: "data_applications.advocacy_desc"},
-			{ data: "data_applications.org_opt", editField: "data_applications.org_opt"},
-			{ data: "data_applications.org_opt_desc", editField: "data_applications.org_opt_desc"},
-			{ data: "data_applications.use_other", editField: "data_applications.use_other"},
-			{ data: "data_applications.use_other_desc", editField: "data_applications.use_other_desc"},
-			{ data: "data_applications.prod_srvc", editField: "data_applications.prod_srvc"},
-			{ data: "data_applications.prod_srvc_desc", editField: "data_applications.prod_srvc_desc"},
-			{ data: "data_applications.research", editField: "data_applications.research"},
-			{ data: "data_applications.research_desc", editField: "data_applications.research_desc"}
+			{ data: "data_applications.advocacy", editField: "data_applications.advocacy", "visible" : false},
+			{ data: "data_applications.advocacy_desc", editField: "data_applications.advocacy_desc", "visible" : false},
+			{ data: "data_applications.org_opt", editField: "data_applications.org_opt", "visible" : false},
+			{ data: "data_applications.org_opt_desc", editField: "data_applications.org_opt_desc", "visible" : false},
+			{ data: "data_applications.use_other", editField: "data_applications.use_other", "visible" : false},
+			{ data: "data_applications.use_other_desc", editField: "data_applications.use_other_desc", "visible" : false},
+			{ data: "data_applications.prod_srvc", editField: "data_applications.prod_srvc", "visible" : false},
+			{ data: "data_applications.prod_srvc_desc", editField: "data_applications.prod_srvc_desc", "visible" : false},
+			{ data: "data_applications.research", editField: "data_applications.research", "visible" : false},
+			{ data: "data_applications.research_desc", editField: "data_applications.research_desc", "visible" : false}
 
 		],
 		keys: {

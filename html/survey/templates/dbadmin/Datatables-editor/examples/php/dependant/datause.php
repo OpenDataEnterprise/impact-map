@@ -227,6 +227,8 @@ echo '</select>';
    	            
             
         $count++;
+echo '</br>';
+echo '<hr>';        
         }
 
 $count--;
