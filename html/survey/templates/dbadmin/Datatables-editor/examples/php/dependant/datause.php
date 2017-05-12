@@ -111,6 +111,10 @@ else
 
 <?php
 $id = intval($_GET['id']);
+$orgname = $_GET['name'];
+
+echo '<h3 style = "text-align: center;">Organization: '.$orgname.'</h3>';
+
 $count = 1;
  $query = "select object_id, data_type, data_use_type_other, data_src_gov_level, src_country_id, machine_read from org_data_use where profile_id = $id";
 

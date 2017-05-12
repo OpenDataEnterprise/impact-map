@@ -529,7 +529,8 @@ $(document).ready(function() {
         },
 
 		select: {
-			style:    'os',
+			//style:    'os',
+			style:    'multi',
 			selector: 'td:first-child'
 		},
 		buttons: [
@@ -588,9 +589,19 @@ $(document).ready(function() {
  text: "Internal Survey",
   action: function ( e, dt, node, config ) {
 //window.open('pdf_conv_bon.php?sumdare=<?php echo $sumdare?>&sumavere=<?php echo $sumavere?>','mywindow','width=1200,height=1200,left=200,top=200,screenX=0,screenY=100');
-                                    var rdata=table.rows( { selected: true }).data();
-
-window.open('http://opendataimpactmap.org/survey/edit/' + rdata[0].org_profiles.profile_id + '/form','mywindow');
+/*                                    var rdata=table.rows( { selected: true }).data();
+                                  window.open('http://opendataimpactmap.org/survey/edit/' + rdata[0].org_profiles.profile_id + '/form','mywindow');*/
+          						  
+          						  var rdata=table.rows( { selected: true }).data();
+                                    //console.log('rdata',rdata);
+                                    //console.log('rdata length',rdata.length);
+                                    var c_survey = 0;
+                                    while(c_survey < rdata.length)
+                                    {
+                                    //console.log('c_survey',c_survey);
+									window.open('http://opendataimpactmap.org/survey/edit/' + rdata[c_survey].org_profiles.profile_id + '/form','_blank');
+									c_survey++;
+                                    }							
 }
 },
 	
@@ -604,7 +615,17 @@ window.open('http://opendataimpactmap.org/survey/edit/' + rdata[0].org_profiles.
                                      console.log("data---", data); 
                                      console.log("data.profile_id", data[0].org_profiles.profile_id); 
 
-window.open('../php/dependant/datause.php?id=' + data[0].org_profiles.profile_id,'mywindow');
+/*window.open('../php/dependant/datause.php?id=' + data[0].org_profiles.profile_id,'mywindow');*/
+
+                                    var c_duse = 0;
+                                    while(c_duse < data.length)
+                                    {
+                                    console.log('data[c_duse].org_profiles.org_name',data[c_duse].org_profiles.org_name);
+			window.open('../php/dependant/datause.php?id=' + data[c_duse].org_profiles.profile_id + '&name=' + data[c_duse].org_profiles.org_name ,'_blank');
+									c_duse++;
+                                    }
+
+
 }
 },
 {text: 'Migrate to Dev'},
@@ -664,6 +685,8 @@ window.open('../php/dependant/datause.php?id=' + data[0].org_profiles.profile_id
             }
         } );
     } );
+
+
 
 
 } );
