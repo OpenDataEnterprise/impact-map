@@ -1,22 +1,36 @@
 <?php
 require "config.php";
+include("credentials.php");
 if(isset($_POST['action_login'])){
 	$identification = $_POST['login'];
 	$password = $_POST['password'];
 	if($identification == "" || $password == ""){
 		$msg = array("Error!", "Wrong Username / Password!");
 	}else{
+
 		$login = $LS->login($identification, $password, isset($_POST['remember_me']), false);
-    
+
     if (is_numeric($login)) 
     {
     echo 'login value is ' .$login;
     session_start();
     $_SESSION['login_true'] = $login;
     print_r($_SESSION); 
+  
+  $sql = 'SELECT id
+      from users
+      where username = "'.$identification.'" or email="'.$identification.'"';
+
+  if(!$result = $db->query($sql)){
+      die('There was an error running the query [' . $db->error . ']');
+  }
+  while($rowuser = $result->fetch_assoc()){
+    $uid = $rowuser["id"];
+  }
+  //echo $uid;
+  $_SESSION['uid'] = $uid;
     header("Location: home.php"); /* Redirect browser */
     exit();
-//    header('location: home.php');
     }
 
     	if($login === false){  

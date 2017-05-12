@@ -12,6 +12,9 @@ if (!isset($_SESSION['login_true']))
 //    header('location: home.php');
     }
 
+//echo $_SESSION['uid'];
+
+
     //echo 'Current PHP version: ' . phpversion();
 
 //echo $LS->isLoggedIn();

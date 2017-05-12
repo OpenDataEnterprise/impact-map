@@ -7,6 +7,9 @@ if (!isset($_SESSION['login_true']))
     exit();
 //    header('location: home.php');
     }
+    //echo $_SESSION['uid'];
+
+    $uid_change = $_SESSION['uid'];
 ?>
 <!-- <!DOCTYPE html> -->
 <html>
@@ -65,20 +68,30 @@ if (!isset($_SESSION['login_true']))
 </br>
     <?php
     if(isset($_POST['change_password'])){
-      if(isset($_POST['current_password']) && $_POST['current_password'] != "" && isset($_POST['new_password']) && $_POST['new_password'] != "" && isset($_POST['retype_password']) && $_POST['retype_password'] != "" && isset($_POST['current_password']) && $_POST['current_password'] != ""){
+/*      if(isset($_POST['current_password']) && $_POST['current_password'] != "" && isset($_POST['new_password']) && $_POST['new_password'] != "" && isset($_POST['retype_password']) && $_POST['retype_password'] != "" && isset($_POST['current_password']) && $_POST['current_password'] != ""){*/
           
-        $curpass = $_POST['current_password'];
+      if(isset($_POST['new_password']) && $_POST['new_password'] != "" && isset($_POST['retype_password']) && $_POST['retype_password'] != ""){
+
+        //$curpass = $_POST['current_password'];
         $new_password = $_POST['new_password'];
         $retype_password = $_POST['retype_password'];
           
+        /*echo 'current pass ' .$curpass;
+        echo '<br>';
+        echo 'new pass ' .$new_password;
+        echo '<br>';
+        echo 'retype pass ' .$retype_password;
+        echo '<br>';*/
+
         if($new_password != $retype_password){
           echo "<p><h2>Passwords Doesn't match</h2><p>The passwords you entered didn't match. Try again.</p></p>";
         }
-        else if($LS->login($LS->getUser("username"), $curpass, false, false) == false){
+/*        else if($LS->login($LS->getUser("username"), $curpass, false, false) == false){
           echo "<h2>Current Password Wrong!</h2><p>The password you entered for your account is wrong.</p>";
-        }
+        }*/
         else{
-          $change_password = $LS->changePassword($new_password);
+//          $change_password = $LS->changePassword($new_password);
+          $change_password = $LS->changePassword($new_password, $uid_change);
           if($change_password === true){
             echo "<h2>Password Changed Successfully</h2>";
           }
@@ -89,10 +102,10 @@ if (!isset($_SESSION['login_true']))
     }
     ?>
     <form action="<?php echo $LS->curPageURL();?>" method='POST'>
-      <label>
+<!--       <label>
         <p>Current Password</p>
         <input type='password' name='current_password' />
-      </label>
+      </label> -->
       <label>
         <p>New Password</p>
         <input type='password' name='new_password' />

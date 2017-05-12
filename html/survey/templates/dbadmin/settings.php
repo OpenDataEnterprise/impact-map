@@ -83,7 +83,7 @@ if (!isset($_SESSION['login_true']))
 			<a href="logout.php">Log Out</a>
 		</p> -->
 <!-- 		<p>
-			You registered on this website <strong><?php echo $LS->joinedSince(); ?></strong> ago.
+
 		</p>
 		<p>
 			Here is the full data, the database stores on this user :
@@ -96,7 +96,7 @@ if (!isset($_SESSION['login_true']))
 <!-- 		<p>
 			Change the name of your account :
 		</p>
-		<form action="home.php" method="POST">
+		<form action="home.php" method="POST">  
 			<input name="newName" placeholder="New name" />
 			<button>Change Name</button>
 		</form>
@@ -104,7 +104,7 @@ if (!isset($_SESSION['login_true']))
  -->    <p>
      </br>
 <!--       <a href="change.php">Change Password</a> -->
-<!--       <a style="width:150px; color:white" class="button" href="change.php">Change Password</a> -->
+      <a style="width:150px; color:white" class="button" href="change.php">Change Password</a>
     </p>
     </br>
           <p>

@@ -928,6 +928,7 @@ class LS {
     if( !is_array($what) ){
       $data = $what == "*" ? $data : $data[$what];
     }
+    //echo 'data '.$data;
     return $data;
   }
 
