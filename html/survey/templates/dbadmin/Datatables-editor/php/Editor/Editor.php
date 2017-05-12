@@ -5,7 +5,7 @@
  * PHP libraries for DataTables and DataTables Editor, utilising PHP 5.3+.
  *
  *  @author    SpryMedia
- *  @version   1.6.1
+ *  @version   1.6.2
  *  @copyright 2012 SpryMedia ( http://sprymedia.co.uk )
  *  @license   http://editor.datatables.net/license DataTables Editor
  *  @link      http://editor.datatables.net
@@ -143,7 +143,7 @@ class Editor extends Ext {
 	 */
 
 	/** @var string */
-	public $version = '1.6.1';
+	public $version = '1.6.2';
 
 
 
@@ -188,13 +188,7 @@ class Editor extends Ext {
 	private $_whereSet = false;
 
 	/** @var array */
-	private $_out = array(
-		"fieldErrors" => array(),
-		"error" => "",
-		"data" => array(),
-		"ipOpts" => array(),
-		"cancelled" => array()
-	);
+	private $_out = array();
 
 	/** @var array */
 	private $_events = array();
@@ -614,27 +608,33 @@ class Editor extends Ext {
 	 * @param  string  $value The id that should be split apart
 	 * @param  boolean $flat  Flag to indicate if the returned array should be
 	 *   flat (useful for `where` conditions) or nested for join tables.
+	 * @param  string[] $pkey The primary key name - will use the instance value
+	 *   if not given
 	 * @return array          Array of field values that the id was made up of.
 	 * @throws \Exception If the primary key value does not match the expected
 	 *   length based on the primary key configuration, an exception will be
 	 *   thrown.
 	 */
-	public function pkeyToArray ( $value, $flat=false )
+	public function pkeyToArray ( $value, $flat=false, $pkey=null )
 	{
 		$arr = array();
 		$value = str_replace( $this->idPrefix(), '', $value );
 		$idParts = explode( $this->_pkey_separator(), $value );
 
-		if ( count($this->_pkey) !== count($idParts) ) {
+		if ( $pkey === null ) {
+			$pkey = $this->_pkey;
+		}
+
+		if ( count($pkey) !== count($idParts) ) {
 			throw new \Exception("Primary key data doesn't match submitted data", 1);
 		}
 
 		for ( $i=0, $ien=count($idParts) ; $i<$ien ; $i++ ) {
 			if ( $flat ) {
-				$arr[ $this->_pkey[$i] ] = $idParts[$i];
+				$arr[ $pkey[$i] ] = $idParts[$i];
 			}
 			else {
-				$this->_writeProp( $arr, $this->_pkey[$i], $idParts[$i] );
+				$this->_writeProp( $arr, $pkey[$i], $idParts[$i] );
 			}
 		}
 
@@ -835,6 +835,14 @@ class Editor extends Ext {
 	 */
 	private function _process( $data )
 	{
+		$this->_out = array(
+			"fieldErrors" => array(),
+			"error" => "",
+			"data" => array(),
+			"ipOpts" => array(),
+			"cancelled" => array()
+		);
+
 		$this->_processData = $data;
 		$this->_formData = isset($data['data']) ? $data['data'] : null;
 		$validator = $this->_validator;
@@ -1003,11 +1011,13 @@ class Editor extends Ext {
 		// Field options
 		$options = array();
 
-		foreach ($this->_fields as $field) {
-			$opts = $field->optionsExec( $this->_db );
+		if ( $id === null ) {
+			foreach ($this->_fields as $field) {
+				$opts = $field->optionsExec( $this->_db );
 
-			if ( $opts !== false ) {
-				$options[ $field->name() ] = $opts;
+				if ( $opts !== false ) {
+					$options[ $field->name() ] = $opts;
+				}
 			}
 		}
 
@@ -1055,6 +1065,8 @@ class Editor extends Ext {
 			$this->_join[$i]->create( $this, $id, $values );
 		}
 
+		$this->_trigger( 'writeCreate', $id, $values );
+
 		// Full data set for the created row
 		$row = $this->_get( $id );
 		$row = count( $row['data'] ) > 0 ?
@@ -1089,6 +1101,8 @@ class Editor extends Ext {
 		// Was the primary key altered as part of the edit, if so use the
 		// submitted values
 		$getId = $this->_pkey_submit_merge( $id, $values );
+
+		$this->_trigger( 'writeEdit', $id, $values );
 
 		// Full data set for the modified row
 		$row = $this->_get( $getId );
@@ -1210,6 +1224,13 @@ class Editor extends Ext {
 			throw new \Exception("Unknown upload field name submitted");
 		}
 
+		$res = $this->_trigger( 'preUpload', $data );
+		
+		// Allow the event to be cancelled and inform the client-side
+		if ( $res === false ) {
+			return;
+		}
+
 		$upload = $field->upload();
 		if ( ! $upload ) {
 			throw new \Exception("File uploaded to a field that does not have upload options configured");
@@ -1228,6 +1249,8 @@ class Editor extends Ext {
 
 			$this->_out['files'] = $files;
 			$this->_out['upload']['id'] = $res;
+		
+			$this->_trigger( 'postUpload', $res, $files, $data );
 		}
 	}
 
@@ -1382,9 +1405,9 @@ class Editor extends Ext {
 	 *  @param int $index Index in the DataTables' submitted data
 	 *  @returns string DB field name
 	 *  @throws \Exception Unknown fields
-	 *  @private
+	 *  @private Note that it is actually public for PHP 5.3 - thread 39810
 	 */
-	private function _ssp_field( $http, $index )
+	public function _ssp_field( $http, $index )
 	{
 		$name = $http['columns'][$index]['data'];
 		$field = $this->_find_field( $name, 'name' );
@@ -1785,7 +1808,7 @@ class Editor extends Ext {
 				->table( $table );
 
 			for ( $i=0, $ien=count($ids) ; $i<$ien ; $i++ ) {
-				$cond = $this->pkeyToArray( $ids[$i], true );
+				$cond = $this->pkeyToArray( $ids[$i], true, $pkey );
 
 				$q->or_where( function ($q2) use ($cond) {
 					$q2->where( $cond );
@@ -1974,7 +1997,7 @@ class Editor extends Ext {
 			$field = $this->_find_field( $column, 'db' );
 
 			if ( ! $field || ! $field->apply("set", $row) ) {
-				throw new Exception( "When inserting into a compound key table, ".
+				throw new \Exception( "When inserting into a compound key table, ".
 					"all fields that are part of the compound key must be ".
 					"submitted with a specific value.", 1
 				);

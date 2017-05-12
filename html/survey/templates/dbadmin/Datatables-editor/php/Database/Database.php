@@ -50,7 +50,7 @@ class Database {
 	 */
 	function __construct( $opts )
 	{
-		$types = array( 'Mysql', 'Oracle', 'Postgres', 'Sqlite', 'Sqlserver' );
+		$types = array( 'Mysql', 'Oracle', 'Postgres', 'Sqlite', 'Sqlserver', 'Db2' );
 
 		if ( ! in_array( $opts['type'], $types ) ) {
 			throw new \Exception(

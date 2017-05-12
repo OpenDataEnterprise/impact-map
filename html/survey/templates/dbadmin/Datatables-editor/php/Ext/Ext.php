@@ -32,7 +32,11 @@ class Ext {
 	public static function instantiate ()
 	{
 		$rc = new \ReflectionClass( get_called_class() );
-		return $rc->newInstanceArgs( func_get_args() );
+		$args = func_get_args();
+
+		return count( $args ) === 0 ?
+			$rc->newInstance() :
+			$rc->newInstanceArgs( $args );
 	}
 
 	/**
@@ -44,22 +48,15 @@ class Ext {
 	 *  @return \DataTables\Editor|\DataTables\Editor\Field|\DataTables\Editor\Join|\DataTables\Editor\Upload class
 	 *  @static
 	 */
-/*	public static function inst ()
+	public static function inst ()
 	{
 		$rc = new \ReflectionClass( get_called_class() );
-		return $rc->newInstanceArgs( func_get_args() );
+		$args = func_get_args();
+
+		return count( $args ) === 0 ?
+			$rc->newInstance() :
+			$rc->newInstanceArgs( $args );
 	}
-*/
-//Added by Vinayak
-	public static function inst ()
-{
-    $rc = new \ReflectionClass( get_called_class() );
-    $args = func_get_args();
- 
-    return count( $args ) === 0 ?
-        $rc->newInstance() :
-        $rc->newInstanceArgs( $args );
-}
 
 	/**
 	 * Common getter / setter function for DataTables classes.

@@ -321,9 +321,7 @@ class Query {
 			}
 			else {
 				// String argument so split into pieces and add
-				// TODO - This limits the ability to use functions. Need to
-				// parse the string so it will split when not in a function
-				$fields = explode(",", $args[$i]);
+				$fields = preg_split( "/,(?![^()]*+\\))/", $args[$i] );
 
 				for ( $j=0 ; $j<count($fields) ; $j++ ) {
 					$this->_field[] = trim( $fields[$j] );

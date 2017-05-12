@@ -75,6 +75,8 @@ class DriverSqliteQuery extends Query {
 
 	protected function _prepare( $sql )
 	{
+		$this->database()->debugInfo( $sql, $this->_bindings );
+
 		$resource = $this->database()->resource();
 		$this->_stmt = $resource->prepare( $sql );
 
@@ -88,8 +90,6 @@ class DriverSqliteQuery extends Query {
 				$binding['type'] ? $binding['type'] : \PDO::PARAM_STR
 			);
 		}
-
-		$this->database()->debugInfo( $sql, $this->_bindings );
 	}
 
 

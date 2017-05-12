@@ -64,7 +64,7 @@ class DriverOracleQuery extends Query {
 			exit(0);
 		}
 
-		$conn = @oci_connect($user, $pass, $host.$port.'/'.$db);
+		$conn = @oci_connect($user, $pass, $host.$port.'/'.$db, 'utf8');
 
 		if ( ! $conn ) {
 			// If we can't establish a DB connection then we return a DataTables
@@ -111,13 +111,16 @@ class DriverOracleQuery extends Query {
 
 	protected function _prepare( $sql )
 	{
+
 		$resource = $this->database()->resource();
 		$pkey = $this->pkey();
 
 		// If insert, add the pkey column
 		if ( $this->_type === 'insert' && $pkey ) {
-			$sql .= ' RETURNING '.$pkey[0].' INTO :editor_pkey_value';
+			$sql .= ' RETURNING '.(is_array($pkey) ? $pkey[0] : $pkey).' INTO :editor_pkey_value';
 		}
+
+		$this->database()->debugInfo( $sql, $this->_bindings );
 
 		$this->_stmt = oci_parse( $resource, $sql );
 
@@ -141,8 +144,6 @@ class DriverOracleQuery extends Query {
 				$binding['value']
 			);
 		}
-
-		$this->database()->debugInfo( $sql, $this->_bindings );
 	}
 
 
@@ -152,7 +153,7 @@ class DriverOracleQuery extends Query {
 
 		if ( ! $res ) {
 			$e = oci_error( $this->_stmt );
-			// $e['message']
+			throw new \Exception( "Oracle SQL error: ".$e['message'] );
 
 			return false;
 		}
@@ -179,5 +180,25 @@ class DriverOracleQuery extends Query {
 		}
 
 		return ' '.implode(', ', $out).' ';
+	}
+
+
+	// Oracle 12c+ only
+	protected function _build_limit()
+	{
+		$out = '';
+
+		if ( $this->_offset ) {
+			$out .= ' OFFSET '.$this->_offset.' ROWS';
+		}
+		
+		if ( $this->_limit ) {
+			if ( ! $this->_offset ) {
+				$out .= ' OFFSET 0 ROWS';
+			}
+			$out .= ' FETCH NEXT '.$this->_limit. ' ROWS ONLY';
+		}
+
+		return $out;
 	}
 }

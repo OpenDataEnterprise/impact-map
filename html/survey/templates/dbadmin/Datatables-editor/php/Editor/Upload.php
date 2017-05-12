@@ -55,7 +55,7 @@ use DataTables;
  *						'fileSize'    => Upload::DB_FILE_SIZE,
  *						'systemPath'  => Upload::DB_SYSTEM_PATH
  *					) )
- *					->allowedExtensions( [ 'png', 'jpg' ], "Please upload an image file" )
+ *					->allowedExtensions( array( 'png', 'jpg' ), "Please upload an image file" )
  *			)
  *	</code>
  *
@@ -72,7 +72,7 @@ use DataTables;
  *						'fileSize'    => Upload::DB_FILE_SIZE,
  *						'systemPath'  => Upload::DB_SYSTEM_PATH
  *					) )
- *					->allowedExtensions( [ 'png', 'jpg' ], "Please upload an image file" )
+ *					->allowedExtensions( array( 'png', 'jpg' ), "Please upload an image file" )
  *			)
  *	</code>
  */
@@ -113,6 +113,10 @@ class Upload extends DataTables\Ext {
 	 */
 	const DB_WEB_PATH     = 'editor-webPath';
 
+	/** Read from the database - don't write to it
+	 */
+	const DB_READ_ONLY    = 'editor-readOnly';
+
 
 	/*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
 	 * Private parameters
@@ -128,6 +132,7 @@ class Upload extends DataTables\Ext {
 	private $_extnError = null;
 	private $_error = null;
 	private $_validators = array();
+	private $_where = array();
 
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -271,6 +276,22 @@ class Upload extends DataTables\Ext {
 	}
 
 
+	/**
+	 * Add a condition to the data to be retrieved from the database. This
+	 * must be given as a function to be executed (usually anonymous) and
+	 * will be passed in a single argument, the `Query` object, to which
+	 * conditions can be added. Multiple calls to this method can be made.
+	 *
+	 * @param  callable $fn Where function.
+	 * @return self Current instance, used for chaining
+	 */
+	public function where ( $fn )
+	{
+		$this->_where[] = $fn;
+
+		return $this;
+	}
+
 
 	/*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
 	 * Internal methods
@@ -304,6 +325,10 @@ class Upload extends DataTables\Ext {
 
 		if ( $id !== null ) {
 			$q->where( $this->_dbPKey, $id );
+		}
+
+		for ( $i=0, $ien=count($this->_where) ; $i<$ien ; $i++ ) {
+			$q->where( $this->_where[$i] );
 		}
 
 		$result = $q->exec()->fetchAll();
@@ -561,10 +586,14 @@ class Upload extends DataTables\Ext {
 		// Insert the details requested, for the columns requested
 		$q = $db
 			->query( 'insert' )
-			->table( $this->_dbTable );
+			->table( $this->_dbTable )
+			->pkey( $this->_dbPKey );
 
 		foreach ( $this->_dbFields as $column => $prop ) {
 			switch ( $prop ) {
+				case self::DB_READ_ONLY:
+					break;
+
 				case self::DB_CONTENT:
 					$q->set( $column, file_get_contents($upload['tmp_name']) );
 					break;

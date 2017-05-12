@@ -431,7 +431,8 @@ class Validate {
 
 		$min = is_array($opts) ? $opts['min'] : $opts;
 		$cfg = Validate::_extend( $opts, 'min', array(
-			'message' => "Number is too small, must be ".$min." or larger"
+			'message' => "Number is too small, must be ".$min." or larger",
+			'decimal' => '.'
 		) );
 
 		if ( $cfg['decimal'] !== '.' ) {
@@ -467,7 +468,8 @@ class Validate {
 
 		$max = is_array($opts) ? $opts['max'] : $opts;
 		$cfg = Validate::_extend( $opts, 'min', array(
-			'message' => "Number is too large, must be ".$max." or smaller"
+			'message' => "Number is too large, must be ".$max." or smaller",
+			'decimal' => '.'
 		) );
 
 		if ( $cfg['decimal'] !== '.' ) {

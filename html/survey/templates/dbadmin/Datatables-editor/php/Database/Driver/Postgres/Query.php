@@ -82,6 +82,8 @@ class DriverPostgresQuery extends Query {
 
 	protected function _prepare( $sql )
 	{
+		$this->database()->debugInfo( $sql, $this->_bindings );
+	
 		$resource = $this->database()->resource();
 		
 		// Add a RETURNING command to postgres insert queries so we can get the
@@ -120,8 +122,6 @@ class DriverPostgresQuery extends Query {
 				$binding['type'] ? $binding['type'] : \PDO::PARAM_STR
 			);
 		}
-
-		$this->database()->debugInfo( $sql, $this->_bindings );
 	}
 
 
