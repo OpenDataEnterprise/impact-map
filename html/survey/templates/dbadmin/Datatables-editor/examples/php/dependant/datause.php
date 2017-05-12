@@ -153,17 +153,23 @@ echo '</select>';
                 $data_src_gov_level = $row['data_src_gov_level'];
                 //echo 'Data source government level: <input type="text" name="data_src_gov_level" value = '.$data_src_gov_level. '></input><br/>';
 				$query2 = "SELECT DISTINCT data_src_gov_level FROM org_data_use";
+				//$query2 = "SELECT DISTINCT data_src_gov_level FROM org_data_use WHERE data_src_gov_level <> ''";
 $result2 = @mysqli_query ($dbc, $query2);
 echo 'Data source - level: <select name = "data_src_gov_level'.$count.'">';
 while ($row2 = mysqli_fetch_array($result2, MYSQL_ASSOC))
 {
+
 	if ($row2['data_src_gov_level'] == $data_src_gov_level) 
 	{
 		echo '<option name="data_src_gov_level" value="'.$row2['data_src_gov_level'].'" selected="selected">' . 	$row2['data_src_gov_level'] . '</option>';
 	}
 	else 
-	{
-		echo '<option name="data_src_gov_level" value="'.$row2['data_src_gov_level'].'">' . 	$row2['data_src_gov_level'] . '</option>';
+	{	
+		if ($row2['data_src_gov_level'] != '' ) //Added if loop Vinayak
+		{
+		echo '<option name="data_src_gov_level" value="'.$row2['data_src_gov_level'].'">' . $row2['data_src_gov_level'] . '</option>';			
+		}
+
 	}   
 }
 echo '</select>';

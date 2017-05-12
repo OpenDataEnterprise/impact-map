@@ -638,20 +638,30 @@ $(document).ready(function() {
         initComplete: function () {
             this.api().columns([3, 6, 7, 8, 10, 11, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 29, 30, 31, 35, 37, 39, 41, 43]).every( function () {
                 var column = this;
-                var select = $('<select><option value=""></option></select>')
+
+                //console.log('column',column.header().innerHTML);
+
+                var filter_text = column.header().innerHTML;
+                var select = $('<select><option value="">Filter '+filter_text+'</option></select>')
                     .appendTo( $(column.footer()).empty() )
                     .on( 'change', function () {
                         var val = $.fn.dataTable.util.escapeRegex(
                             $(this).val()
                         );
- 
+
                         column
                             .search( val ? '^'+val+'$' : '', true, false )
                             .draw();
                     } );
  
                 column.data().unique().sort().each( function ( d, j ) {
-                    select.append( '<option value="'+d+'">'+d+'</option>' )
+                	console.log('d',d);
+                	//Added if Vinayak	
+                	if(d != '' & d != null)
+                	{
+                    select.append( '<option value="'+d+'">'+d+'</option>' )                		
+                	}
+
                 } );
             } );
         }
