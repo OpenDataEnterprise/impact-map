@@ -2,7 +2,7 @@
 
 <?php
 require "config.php";
-include "0";
+include "viz/pie1.php";
 
 session_start();
 if (!isset($_SESSION['login_true'])) 
@@ -199,6 +199,7 @@ echo 'alert($alert1)';
       "text": false}
       )
     .title("Research vs Survey Entries") 
+    .title("Research vs Survey Entries")  
      
     .font({"family":"Palanquin, sans-serif"})
     .draw()
