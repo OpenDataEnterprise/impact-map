@@ -117,8 +117,8 @@ if(isset($_POST['action_login'])){
       </style> 
 
 <!--   Readd to add the first user -->
-<!--         <p style = "text-align: center;">Don't have an account ?</p>
-        <a style="width:150px; color:white" class="button" href="register.php">Register</a> -->
+        <p style = "text-align: center;">Don't have an account ?</p>
+        <a style="width:150px; color:white" class="button" href="register.php">Register</a>
       
 
     </div>

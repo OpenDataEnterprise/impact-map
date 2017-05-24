@@ -161,7 +161,7 @@ Editor::inst( $db, 'org_profiles' , 'profile_id' )
 		Mjoin::inst( 'org_data_use' )
 			->link( 'org_data_use.profile_id', 'org_profiles.profile_id' )
 			//->link( 'permission.id', 'user_permission.permission_id' )
-			//->order( 'name asc' )
+			//->order( 'name abs(number)sc' )
 			->fields(
 				Field::inst( 'object_id' )
 					//->validator( 'Validate::required' )

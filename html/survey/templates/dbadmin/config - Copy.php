@@ -2,12 +2,10 @@
 /**
  * For Development Purposes
  */
-
-
 date_default_timezone_set('America/New_York'); 
 
-ini_set("display_errors", "off");
-require_once "credentials.php";
+ini_set("display_errors", "on");
+
 require __DIR__ . "/src/LS.php";
 $LS = new \Fr\LS(array(
   "basic" => array(
@@ -18,15 +16,11 @@ $LS = new \Fr\LS(array(
 }*/
   ),
   "db" => array(
-    "host" => DBHOST,
-    //"host" => "******t",
+    "host" => "localhost",
     "port" => 3306,
-    "username" => DBUSER,
-    //"username" => "r******",
-    "password" => DBPASS,
-    //"password" => "S******",
-    "name" => DBNAME,
-    //"name" => "o******",
+    "username" => "root",
+    "password" => "Sep@2016",
+    "name" => "ode_survey",
     "table" => "users"
   ),
   "features" => array(
