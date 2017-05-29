@@ -1,6 +1,10 @@
 <?php
 require "config.php";
-include("credentials.php");
+$db = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
+if($db->connect_errno > 0){
+    die('Unable to connect to database [' . $db->connect_error . ']');
+}
+
 if(isset($_POST['action_login'])){
 	$identification = $_POST['login'];
 	$password = $_POST['password'];
@@ -12,16 +16,17 @@ if(isset($_POST['action_login'])){
 
     if (is_numeric($login)) 
     {
-    echo 'login value is ' .$login;
+    // echo 'login value is ' .$login;
     session_start();
     $_SESSION['login_true'] = $login;
-    print_r($_SESSION); 
+    // print_r($_SESSION); 
   
   $sql = 'SELECT id
       from users
       where username = "'.$identification.'" or email="'.$identification.'"';
-
+  
   if(!$result = $db->query($sql)){
+      echo "hello";
       die('There was an error running the query [' . $db->error . ']');
   }
   while($rowuser = $result->fetch_assoc()){

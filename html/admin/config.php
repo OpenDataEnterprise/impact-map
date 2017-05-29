@@ -1,14 +1,10 @@
 <?php
-/**
- * For Development Purposes
- */
-
-
 date_default_timezone_set('America/New_York'); 
 
 ini_set("display_errors", "off");
-require_once "credentials.php";
+require_once "../survey/credentials.inc.php";
 require __DIR__ . "/src/LS.php";
+
 $LS = new \Fr\LS(array(
   "basic" => array(
     "company" => "Vinayak Website",
@@ -47,3 +43,5 @@ $LS = new \Fr\LS(array(
     "home_page" => "home.php"
   )
 ));
+
+

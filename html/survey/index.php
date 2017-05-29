@@ -130,8 +130,9 @@ $app = new \Slim\Slim(array('log.writer' => $logWriter));
 
 // Handle not found
 $app->notFound(function () use ($app) {
+
 	// Temporarily route /map, /viz to /map.html
-	$actual_link = "$_SERVER[REQUEST_URI]";
+	$actual_link = "$_SERVER[REQUEST_URI]";	
 	if ("/index.html" == "$actual_link" || "/viz/index.html" == "$actual_link") {
 		$app->redirect("/map.html");
 	}
@@ -174,60 +175,15 @@ HTML;
 	$app->view()->setData(array('content' => $content));
 	$app->render('survey/tp_start.php');
 });
+
 // ************
-$app->get('/admin/login/', function () use ($app) {
-	
-    $content['title'] = "Open Data Impact Map Admin";
-    $content['intro'] = <<<HTML
-		<p>Open Data Impact Map Admin</p>
-HTML;
-	// return $app->response->setBody($response);
-	// Render content with simple bespoke templates
-	$app->view()->setData(array('content' => $content));
-	$app->render('admin/tp_login.php');
-    
-});
+// $app->get('/admin/', function () use ($app) {
+
+// 	$app->redirect("/survey/admin/index.php");
+// 	return true;
+// });
 // ************
-$app->post('/admin/login/', function () use ($app) {
-	echo "route to login";
-	return true;
-});
-// ************
-$app->get('/admin/protected/', function () use ($app) {
-	//echo "protected";
-	// Requires login to access
-	$app->render('admin/tp_admin_home.php');
-	// if ( !isset($_SESSION['username']) ) {
-	// 	// echo "<br> no username";
-	// 	$app->redirect("/survey/admin/login/");
-	// }
-    $paramValue = $app->request->get('param');
-    
-    $content['title'] = "ODE Survery Studies";
-    $content['intro'] = <<<HTML
-		<p>Home ODE Survey Studies</p>
-HTML;
-	// return $app->response->setBody($response);
-	// Render content with simple bespoke templates
-	$app->view()->setData(array('content' => $content));
-	//$app->render('admin/tp_admin_home.php');
-});
-// ************
-$app->get('/admin/', function () use ($app) {
-	// Requires login to access
-	if ( !isset($_SESSION['username']) ) {
-		// echo "<br> no username";
-		$app->redirect("/survey/admin/login/");
-	}
-	echo "<br><br>This is a protected route/path/page";
-	return true;
-});
-// ************
-$app->get('/admin/logout/', function () use ($app) {
-	session_unset();
-	session_destroy();
-	$app->redirect("/survey/admin/login/");
-});
+
 // ************
 $app->get('/index.html', function () use ($app) {
 	// Route /survey/index.html to /start/
@@ -241,7 +197,8 @@ $app->get('/', function () use ($app) {
 	$actual_link = "$_SERVER[REQUEST_URI]";
 	
 	// Let's make sure we remove a trailing "/" on any not found paths
-        $actual_link = rtrim($actual_link, '/');
+    $actual_link = rtrim($actual_link, '/');
+    
 	// Any change to below array must also be made to identical array in route "/" around line 91
 	if (isURLalias($actual_link)) {			
 		$app->redirect($actual_link.".html");
