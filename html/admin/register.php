@@ -2,12 +2,12 @@
 include "config.php";
 
 session_start();
-// if (!isset($_SESSION['login_true'])) 
-//     {
-//      echo '<p class="login">Please <a href="login.php">log in</a> to access this page.</p>';
-//     exit();
-// //    header('location: home.php');
-//     }
+if (!isset($_SESSION['login_true'])) 
+    {
+     echo '<p class="login">Please <a href="login.php">log in</a> to access this page.</p>';
+    exit();
+//    header('location: home.php');
+    }
 
 ?>
 <!DOCTYPE html>
