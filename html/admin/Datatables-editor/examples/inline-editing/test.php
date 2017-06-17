@@ -30,7 +30,6 @@ $output = shell_exec($command);
 echo $output;
 */
 
-
 ob_start();
 passthru('/usr/bin/python2.7 /home/ubuntu/impact-map/scripts/agol-integration.py');
 $output = ob_get_clean(); 
