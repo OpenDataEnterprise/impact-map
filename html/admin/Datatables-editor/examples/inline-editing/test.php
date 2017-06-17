@@ -25,7 +25,7 @@ echo "</br>AGOL_USER " . $user;
 echo "</br>AGOL_PASS " . $pass;
 echo "</br>AGOL_ENV " . $env. "</br>";
 
-$command = escapeshellcmd('/usr/bin/python /home/ubuntu/impact-map/scripts/agol-integration.py');
+$command = escapeshellcmd('/home/ubuntu/impact-map/scripts/agol-integration.py');
 $output = shell_exec($command);
 echo $output;
 
