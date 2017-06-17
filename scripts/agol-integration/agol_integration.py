@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # - std lib
 
 #

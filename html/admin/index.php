@@ -2,6 +2,7 @@
 require "config.php";
 header('location: login.php');
 ?>
+
 <!DOCTYPE html>
 <html>
 	<head></head>

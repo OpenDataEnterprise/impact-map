@@ -664,7 +664,17 @@ $(document).ready(function() {
 
 }
 },
-{text: 'Migrate to Dev'},
+
+{
+
+	 Extends: "ajax",
+	 text: 'Migrate to Dev',
+  action: function ( e, dt, node, config ) {
+
+  	window.open('test.php','_blank');
+}
+
+},
 {text: 'Migrate to Prod'},
             
             {
