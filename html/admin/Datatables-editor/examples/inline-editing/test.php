@@ -23,12 +23,17 @@ $env = getenv('AGOL_ENV');
 
 echo "</br>AGOL_USER " . $user;
 echo "</br>AGOL_PASS " . $pass;
-echo "</br>AGOL_ENV " . $env;
+echo "</br>AGOL_ENV " . $env. "</br>";
 
-$command = escapeshellcmd('../../../../../scripts/agol-integration/agol_integration.py');
+$command = escapeshellcmd('/usr/bin/python /home/ubuntu/impact-map/scripts/agol-integration.py');
 $output = shell_exec($command);
 echo $output;
 
+/*
+$command = escapeshellcmd('../../../../../scripts/agol-integration/agol_integration.py');
+$output = shell_exec($command);
+echo $output;
+*/
 
 ?>
 </body>
