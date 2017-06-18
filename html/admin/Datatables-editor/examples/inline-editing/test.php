@@ -25,15 +25,20 @@ echo "</br>AGOL_USER " . $user;
 echo "</br>AGOL_PASS " . $pass;
 echo "</br>AGOL_ENV " . $env. "</br>";
 
+echo exec('whoami');
+
+echo exec('/home/ubuntu/impact-map/scripts/agol-integration.py');
+
 /*$command = escapeshellcmd('/home/ubuntu/impact-map/scripts/agol-integration.py');
 $output = shell_exec($command);
 echo $output;
 */
 
-ob_start();
+/*ob_start();
 passthru('/usr/bin/python2.7 /home/ubuntu/impact-map/scripts/agol-integration.py');
 $output = ob_get_clean(); 
 echo $output;
+*/
 
 ?>
 </body>
