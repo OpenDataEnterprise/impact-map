@@ -32,6 +32,7 @@ echo exec('/home/ubuntu/impact-map/scripts/agol-integration.py');
 
 shell_exec("/home/ubuntu/impact-map/scripts/agol-integration.py");
 
+
 echo exec('/home/ubuntu/impact-map/scripts/agol-integration.py');
 
 $command = escapeshellcmd('/home/ubuntu/impact-map/scripts/agol-integration.py');
