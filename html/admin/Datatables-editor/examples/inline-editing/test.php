@@ -12,6 +12,8 @@ require_once "../../../../survey/credentials.inc.php";
 
 <?php
 
+ini_set('display_errors', 1);
+
 $AGOLENV = 'development';
 
 putenv("AGOL_USER=$AGOLUSER");
