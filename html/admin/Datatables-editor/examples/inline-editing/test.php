@@ -38,7 +38,9 @@ echo "</br>AGOL_ENV " . $env. "</br>";
 /*$output = shell_exec("/home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py");
 echo $output;
 */
-passthru('sudo python /home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py  2>&1');
+passthru('python /home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py  2>&1');
+
+passthru('python ../../../../../../../home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py  2>&1');
 
 /*$command = escapeshellcmd('/home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py');
 $output = shell_exec($command);
