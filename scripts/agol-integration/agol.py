@@ -72,7 +72,7 @@ def dataframe_to_point_features(df, x_field, y_field, wkid=4326):
         f['geometry']['spatialReference'] = {'wkid':wkid}
         return f
 
-    dicts = df.to_dict(outtype='records')
+    dicts = df.to_dict(orient='records')
     return [create_point_feature(d) for d in dicts]
 
 def do_post(url, param_dict, proxy_url=None, proxy_port=None):
