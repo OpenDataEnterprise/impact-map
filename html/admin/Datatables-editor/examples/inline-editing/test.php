@@ -45,17 +45,13 @@ $command = escapeshellcmd('/home/ubuntu/impact-map/scripts/agol-integration/agol
 $output = shell_exec($command);
 echo $output;
 
-/*echo exec('/home/ubuntu/impact-map/scripts/agol-integration.py');
-
-$command = escapeshellcmd('/home/ubuntu/impact-map/scripts/agol-integration.py');
-$output = shell_exec($command);
-echo $output;
+echo exec('/home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py');
 
 ob_start();
-passthru('/usr/bin/python2.7 /home/ubuntu/impact-map/scripts/agol-integration.py');
+passthru('/usr/bin/python2.7 /home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py');
 $output = ob_get_clean(); 
 echo $output;
-*/
+
 
 ?>
 </body>
