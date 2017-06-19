@@ -1,3 +1,6 @@
+<?php
+require_once "../../../../survey/credentials.inc.php";
+?>
 <html>  
 <head>
 
@@ -9,8 +12,6 @@
 
 <?php
 
-$AGOLUSER = 'gregelin2';
-$AGOLPASS ='orange-x39';
 $AGOLENV = 'development';
 
 putenv("AGOL_USER=$AGOLUSER");
@@ -30,8 +31,7 @@ echo "</br>AGOL_ENV " . $env. "</br>";
 echo exec('/home/ubuntu/impact-map/scripts/agol-integration.py');
 */
 
-shell_exec("/home/ubuntu/impact-map/scripts/agol-integration.py");
-
+echo shell_exec("/home/ubuntu/impact-map/scripts/agol-integration.py");
 
 echo exec('/home/ubuntu/impact-map/scripts/agol-integration.py');
 
