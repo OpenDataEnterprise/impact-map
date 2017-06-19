@@ -52,6 +52,7 @@ passthru('/usr/bin/python2.7 /home/ubuntu/impact-map/scripts/agol-integration/ag
 $output = ob_get_clean(); 
 echo $output;
 
+echo "command executed 2.11";
 
 ?>
 </body>
