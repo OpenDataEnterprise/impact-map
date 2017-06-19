@@ -26,14 +26,19 @@ echo "</br>AGOL_USER " . $user;
 echo "</br>AGOL_PASS " . $pass;
 echo "</br>AGOL_ENV " . $env. "</br>";
 
+echo shell_exec("export AGOL_USER");
+echo shell_exec("export AGOL_PASS");
+echo shell_exec("export AGOL_ENV");
+
+
 /*echo exec('whoami');
 
 echo exec('/home/ubuntu/impact-map/scripts/agol-integration.py');
 */
 
-echo shell_exec("/home/ubuntu/impact-map/scripts/agol-integration.py");
+echo shell_exec("/home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py");
 
-echo exec('/home/ubuntu/impact-map/scripts/agol-integration.py');
+/*echo exec('/home/ubuntu/impact-map/scripts/agol-integration.py');
 
 $command = escapeshellcmd('/home/ubuntu/impact-map/scripts/agol-integration.py');
 $output = shell_exec($command);
@@ -43,7 +48,7 @@ ob_start();
 passthru('/usr/bin/python2.7 /home/ubuntu/impact-map/scripts/agol-integration.py');
 $output = ob_get_clean(); 
 echo $output;
-
+*/
 
 ?>
 </body>
