@@ -103,7 +103,7 @@ def main(environment):
     refresh_agol(df, environment.agol_feature_service_url, token=agol_token)
     # print "skipping refresh_agol"
     # print df['org_name']
-    return True
+    return env.environment + " has been successfully updated."
 
 if __name__ == '__main__':
 
@@ -112,4 +112,5 @@ if __name__ == '__main__':
         sys.exit(0)
 
     from settings import env
-    main(env)
+    return main(env)
+

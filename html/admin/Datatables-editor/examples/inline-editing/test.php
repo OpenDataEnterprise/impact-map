@@ -14,31 +14,33 @@ require_once "../../../../survey/credentials.inc.php";
 
 ini_set('display_errors', 1);
 
-$AGOLENV = 'development';
+$AGOL_ENV = 'development';
 
-putenv("AGOL_USER=$AGOLUSER");
+putenv("AGOL_USER=" . AGOL_USER);
+putenv("AGOL_PASS=" . AGOL_PASS);
+putenv("AGOL_ENV=$AGOL_ENV");
 shell_exec("export AGOL_USER");
-
-putenv("AGOL_PASS=$AGOLPASS");
 shell_exec("export AGOL_PASS");
-
-putenv("AGOL_ENV=$AGOLENV");
 shell_exec("export AGOL_ENV");
 
 $user = getenv('AGOL_USER');
 $pass = getenv('AGOL_PASS');
 $env = getenv('AGOL_ENV');
 
-echo "</br>AGOL_USER " . $user;
-echo "</br>AGOL_PASS " . $pass;
-echo "</br>AGOL_ENV " . $env. "</br>";
+echo "</br>AGOL_USER: " . $user;
+echo "</br>AGOL_PASS: " . $pass;
+echo "</br>AGOL_ENV: " . $env. "</br>";
 
 //echo exec('sudo python /home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py');
 
-/*$output = shell_exec("/home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py");
+// $output = shell_exec("/home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py");
+$output = shell_exec("/var/scripts/agol-integration/agol_integration.py");
+// $output = shell_exec("/home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py");
 echo $output;
-*/
-passthru('python /home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py 2>&1');
+
+
+
+// passthru('python /home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py 2>&1');
 
 /*$command = escapeshellcmd('/home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py');
 $output = shell_exec($command);
