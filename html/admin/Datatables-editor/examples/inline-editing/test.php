@@ -34,24 +34,14 @@ echo "</br>AGOL_ENV: " . $env. "</br>";
 //echo exec('sudo python /home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py');
 
 // $output = shell_exec("/home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py");
-$output = shell_exec("/var/scripts/agol-integration/agol_integration.py");
-// $output = shell_exec("/home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py");
+//$output = shell_exec("/var/scripts/agol-integration/agol_integration.py");
+echo "Migrating...";
+$output = exec("agol-integration/agol_integration.py");
 echo $output;
+echo "Done..";
 
 
 
-// passthru('python /home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py 2>&1');
-
-/*$command = escapeshellcmd('/home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py');
-$output = shell_exec($command);
-echo $output;
-
-echo exec('/home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py');
-
-ob_start();
-passthru('/usr/bin/python2.7 /home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py');
-$output = ob_get_clean(); 
-echo $output;*/
 
 ?>
 </body>

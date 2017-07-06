@@ -9,7 +9,7 @@ import requests
 import pandas
 from settings import get_logger
 
-logger = get_logger('agol_integration.log', __name__)
+#logger = get_logger('agol_integration.log', __name__)
 
 def chunker(seq, size):
     return (seq[pos:pos + size] for pos in xrange(0, len(seq), size))
@@ -362,7 +362,7 @@ def query_layer(layer, where='1=1', token=None, outFields='*',
     params['returnIdsOnly'] = False
     params['where'] = ''
     if not ids_response:
-        logger.warn('Empty response:' + str(ids_req.json()) )
+        #logger.warn('Empty response:' + str(ids_req.json()) )
         featureset = {}
         featureset['features'] = []
         return featureset

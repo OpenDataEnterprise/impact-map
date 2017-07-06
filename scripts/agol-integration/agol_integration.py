@@ -24,6 +24,7 @@ import pandas
 # - local
 import agol
 
+
 def get_parse_content(json_file):
     print "Parsing data from json file %s" % json_file
 
@@ -110,7 +111,6 @@ if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == 'build_schema':
         create_schema_file(sys.argv[2], sys.argv[3])
         sys.exit(0)
-
     from settings import env
-    return main(env)
+    main(env)
 
