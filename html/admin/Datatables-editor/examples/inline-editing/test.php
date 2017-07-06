@@ -27,20 +27,14 @@ $user = getenv('AGOL_USER');
 $pass = getenv('AGOL_PASS');
 $env = getenv('AGOL_ENV');
 
-echo "</br>AGOL_USER: " . $user;
-echo "</br>AGOL_PASS: " . $pass;
-echo "</br>AGOL_ENV: " . $env. "</br>";
-
 //echo exec('sudo python /home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py');
 
 // $output = shell_exec("/home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py");
 //$output = shell_exec("/var/scripts/agol-integration/agol_integration.py");
-echo "Migrating...";
+echo "Migrating... <br><br>";
 $output = exec("agol-integration/agol_integration.py");
 echo $output;
-echo "Done..";
-
-
+echo "<br><br>Done..";
 
 
 ?>
