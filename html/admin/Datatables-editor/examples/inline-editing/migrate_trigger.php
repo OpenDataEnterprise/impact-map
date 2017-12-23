@@ -32,7 +32,8 @@ $env = getenv('AGOL_ENV');
 //$output = shell_exec("/var/scripts/agol-integration/agol_integration.py");
 echo "Migrating... <br><br>";
 // $output = exec("agol-integration/agol_integration.py");
-echo passthru("agol-integration/agol_integration.py");
+passthru("agol-integration/agol_integration.py", $output_text);
+echo $output_text . "<br>";
 // echo $output;
 echo "<br><br>Done..";
 
