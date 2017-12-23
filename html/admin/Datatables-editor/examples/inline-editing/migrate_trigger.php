@@ -14,11 +14,10 @@ require_once "../../../../survey/credentials.inc.php";
 
 ini_set('display_errors', 1);
 
-$AGOL_ENV = 'development';
 
 putenv("AGOL_USER=" . AGOL_USER);
 putenv("AGOL_PASS=" . AGOL_PASS);
-putenv("AGOL_ENV=$AGOL_ENV");
+putenv("AGOL_ENV=" . AGOL_ENV);
 shell_exec("export AGOL_USER");
 shell_exec("export AGOL_PASS");
 shell_exec("export AGOL_ENV");
@@ -32,8 +31,9 @@ $env = getenv('AGOL_ENV');
 // $output = shell_exec("/home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py");
 //$output = shell_exec("/var/scripts/agol-integration/agol_integration.py");
 echo "Migrating... <br><br>";
-$output = exec("agol-integration/agol_integration.py");
-echo $output;
+// $output = exec("agol-integration/agol_integration.py");
+echo passthru("agol-integration/agol_integration.py");
+// echo $output;
 echo "<br><br>Done..";
 
 
