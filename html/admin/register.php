@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['login_true'])) 
     {
      echo '<p class="login">Please <a href="login.php">log in</a> to access this page.</p>';
-    // exit();
+    exit();
 //    header('location: home.php');
     }
 
