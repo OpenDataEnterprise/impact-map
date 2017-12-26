@@ -1,19 +1,25 @@
 <?php
 require_once "../../../../survey/credentials.inc.php";
-?>
-<html>  
-<head>
+ini_set("display_errors", "off");
+require "../../../src/LS.php";
 
-  <title> Edit Data Use</title>
+session_start();
 
-</head>
-<body>
-<H1 style="text-align: center;">Test Page</H1>
-
-<?php
+if (!isset($_SESSION['login_true'])) {
+    echo '<p class="login">Please <a href="../../../login.php">log in</a> to access this page.</p>';
+    exit();
+}
 
 ini_set('display_errors', 1);
+ini_set('output_buffering', 'off');
+ini_set('zlib.output_compression', false);
 
+while (@ob_end_flush());
+ini_set('implicit_flush', true);
+ob_implicit_flush(true);
+
+echo str_pad("",1024," ");
+echo "<br />";
 
 putenv("AGOL_USER=" . AGOL_USER);
 putenv("AGOL_PASS=" . AGOL_PASS);
@@ -31,6 +37,8 @@ $env = getenv('AGOL_ENV');
 // $output = shell_exec("/home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py");
 //$output = shell_exec("/var/scripts/agol-integration/agol_integration.py");
 echo "Migrating... <br><br>";
+sleep(1);
+flush();
 // $output = exec("agol-integration/agol_integration.py");
 //passthru("agol-integration/agol_integration.py", $output_text);
 
@@ -51,7 +59,8 @@ if (is_resource($proc)) {
         $out = fgets($pipes[1], 300);
 	echo $out . "<br>\n";
 	$pos = strpos($out, "Number of features written to AGOL");
-	sleep(1);
+        sleep(1);
+        flush();
    }
    fclose($pipes[1]);
 
@@ -64,5 +73,3 @@ echo "<br><br>Done..";
 
 
 ?>
-</body>
-</html>
