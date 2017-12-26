@@ -32,10 +32,10 @@ $user = getenv('AGOL_USER');
 $pass = getenv('AGOL_PASS');
 $env = getenv('AGOL_ENV');
 
-//echo exec('sudo python /home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py');
+// On development, this shouldn't be running.
+echo "Migrating to production is prohibited now...";
+exit();
 
-// $output = shell_exec("/home/ubuntu/impact-map/scripts/agol-integration/agol-integration.py");
-//$output = shell_exec("/var/scripts/agol-integration/agol_integration.py");
 echo "Migrating... Wait for a minute until log messages show up below...<br><br>";
 sleep(1);
 flush();

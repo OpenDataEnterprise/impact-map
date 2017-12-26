@@ -667,23 +667,27 @@ $(document).ready(function() {
 
 {
 
-	 Extends: "ajax",
-	 text: 'Migrate to Dev',
+  Extends: "ajax",
+  text: 'Migrate to Dev',
   action: function ( e, dt, node, config ) {
-
-  	window.open('migrate_trigger.php','_blank');
-}
-
+    window.open('migrate_trigger.php','_blank');
+  }
 },
-{text: 'Migrate to Prod'},
+{
+  Extends: "ajax",
+  text: 'Migrate to Prod',
+  action: function ( e, dt, node, config ) {
+    window.open('migrate_trigger_prod.php','_blank');
+  }
+},
             
-            {
-				extend: 'excelHtml5',
-				text: 'Download Excel',
-				exportOptions: {
-					columns: ':visible'
-				}
-			}
+{
+  extend: 'excelHtml5',
+  text: 'Download Excel',
+  exportOptions: {
+    columns: ':visible'
+  }
+}
 
 
         ],
