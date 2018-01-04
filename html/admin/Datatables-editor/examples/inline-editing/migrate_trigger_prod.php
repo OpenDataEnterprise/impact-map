@@ -23,7 +23,7 @@ echo "<br />";
 
 putenv("AGOL_USER=" . AGOL_USER);
 putenv("AGOL_PASS=" . AGOL_PASS);
-putenv("AGOL_ENV=" . AGOL_ENV);
+putenv("AGOL_ENV=production");
 shell_exec("export AGOL_USER");
 shell_exec("export AGOL_PASS");
 shell_exec("export AGOL_ENV");
