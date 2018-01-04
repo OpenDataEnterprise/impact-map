@@ -32,9 +32,6 @@ $user = getenv('AGOL_USER');
 $pass = getenv('AGOL_PASS');
 $env = getenv('AGOL_ENV');
 
-// On development, this shouldn't be running.
-echo "Migrating to production is prohibited now...";
-exit();
 
 echo "Migrating... Wait for a minute until log messages show up below...<br><br>";
 sleep(1);
