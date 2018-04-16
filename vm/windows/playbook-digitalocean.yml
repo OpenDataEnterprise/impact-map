@@ -1,0 +1,86 @@
+---
+ - hosts: all
+
+   # Playbook for configuring a DigitalOcean CentOS droplet.
+
+   su: yes
+   su_user: root
+
+   vars:
+     useComposer: true
+
+   handlers:
+
+   - name: restart iptables
+     service: name=iptables state=restarted
+
+   - name: restart httpd
+     service: name=httpd state=restarted
+
+   tasks: 
+
+   - name: be sure libselinux-python and selinux policy utils are installed
+     yum: pkg={{ item }} state=installed
+     with_items:
+        - libselinux-python
+        - policycoreutils-python
+
+   - name: copy custom selinux policy httpvboxpolicy to allow apache to access synched virtualbox/vagrant folder
+     copy: src=templates/selinux/httpvboxpolicy.pp dest=/tmp/httpvboxpolicy.pp 
+
+   - name: install custom selinux policy httpvboxpolicy to allow apache to access synched virtualbox/vagrant folder
+     command: sudo /usr/sbin/semodule -i /tmp/httpvboxpolicy.pp
+     sudo: yes
+     sudo_user: vagrant
+
+   - name: copy firewall template
+     copy: src=templates/etc/sysconfig/iptables dest=/etc/sysconfig/iptables owner=root group=root mode=0600
+     notify: restart iptables
+
+   - name: gettext
+     yum: pkg={{ item }} state=installed
+     with_items:
+        - gettext
+
+   - name: Install http and php etc
+     yum: pkg={{ item }} state=installed
+     with_items:
+        - httpd
+        - php
+        - php-common
+        - php-xml
+        - php-mysql
+        - php-gd
+        - php-tidy
+        - php-pear
+        - php-posix
+
+   - name: Ensure Apache running
+     service: name=httpd state=started enabled=yes
+
+   - name: Copy Apache vhost config file for default web pages 
+     copy: src=templates/etc/httpd/conf.d/15-default.conf dest=/etc/httpd/conf.d/15-default.conf
+     notify: restart httpd
+
+   - name: Copy gettext.ini file 
+     copy: src=templates/etc/php.d/gettext.ini dest=/etc/php.d/gettext.ini
+     notify: restart httpd
+
+   - name: Create application log directory
+     file: path=/var/log/odesurvey state=directory owner=apache group=apache
+
+   - name: Set application log file permissions
+     file: path=/var/log/odesurvey/odesurvey.log state=touch owner=apache group=apache
+
+   - name: Install git
+     yum: pkg=git state=installed
+
+   # - name: install composer
+   #   shell: >
+   #       curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
+   #   when: "useComposer == true"
+
+   # - name: move composer.phar to /usr/local/bin/composer
+   #   shell: >
+   #      mv /usr/local/bin/composer.phar /usr/local/bin/composer
+   #   when: "useComposer == true"

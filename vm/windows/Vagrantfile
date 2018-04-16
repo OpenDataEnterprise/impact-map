@@ -1,0 +1,39 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  # All Vagrant configuration is done here. The most common configuration
+  # options are documented and commented below. For a complete reference,
+  # please see the online documentation at vagrantup.com.
+  # Configure GovReady Centos 6.5 vm
+  config.vm.define "centos65govready_php" do |centos65govready_php|
+
+    centos65govready_php.vm.boot_timeout = 600
+
+    centos65govready_php.vm.box = "govready-centos-6.5-x86_64-noX-apache+php-0.2.1-server-0.8.1"
+    #centos65govready_php.vm.box_url = "https://a7240500425256e5d77a-9064bd741f55664f44e550bdad2949f9.ssl.cf5.rackcdn.com/govready-centos-6.5-x86_64-noX-apache+php-0.2.1-server-0.8.1.box"
+
+    #centos65govready_php.vm.box_url = "https://github.com/2creatives/vagrant-centos/releases/download/v6.5.3/centos65-x86_64-20140116.box"
+    config.vm.hostname = "odesurvey"
+
+    # network config
+    centos65govready_php.vm.network :private_network, ip: "192.168.56.101"
+    centos65govready_php.vm.network :forwarded_port, guest: 80, host: 8081
+    centos65govready_php.vm.network :forwarded_port, id: 'ssh', guest: 22, host: 2322, auto_correct: false,  d: "ssh"
+
+    # Sync overall cloudstart directory on host machine with "/vagrant" directory on guest machine
+    centos65govready_php.vm.synced_folder "../../html", "/var/www/html", group: "apache", owner: "apache", create: true
+    centos65govready_php.vm.synced_folder "../../scripts", "/var/scripts", group: "apache", owner: "apache", create: true
+    centos65govready_php.vm.synced_folder "templates", "/var/templates", group: "apache", owner: "apache", create: true
+    
+    # Launch virtualbox GUI window
+    centos65govready_php.vm.provider "virtualbox" do |v|
+      v.gui = true
+      v.memory = 1024
+    end
+  end
+
+  config.vm.provision :shell, :path => "install.sh" 
+
+
+end
