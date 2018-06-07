@@ -23,9 +23,10 @@ Vagrant.configure("2") do |config|
     centos65govready_php.vm.network :forwarded_port, id: 'ssh', guest: 22, host: 2322, auto_correct: false,  d: "ssh"
 
     # Sync overall cloudstart directory on host machine with "/vagrant" directory on guest machine
-    centos65govready_php.vm.synced_folder "../../html", "/var/www/html", group: "www-data", owner: "www-data", create: true
+    centos65govready_php.vm.synced_folder "../../html", "/var/www/impact-map", group: "www-data", owner: "www-data", create: true
     centos65govready_php.vm.synced_folder "../../scripts", "/var/scripts", group: "www-data", owner: "www-data", create: true
     centos65govready_php.vm.synced_folder "templates", "/var/templates", group: "www-data", owner: "www-data", create: true
+    centos65govready_php.vm.synced_folder "../../db_dump", "/tmp/db_dump", group: "root", owner: "root", create: true
     
     # Launch virtualbox GUI window
     centos65govready_php.vm.provider "virtualbox" do |v|
