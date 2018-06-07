@@ -6,6 +6,8 @@
   vars:
     apache_user: www-data
     apache_group: www-data
+    mysql_username: root
+    mysql_password: Sep@2016
 
   handlers:
 
@@ -34,11 +36,15 @@
         - apache2
         - git
         - libapache2-mod-php5
+        - libmysqlclient-dev
         - php5
         - php5-common
         - php5-gd
         - php5-mysql
         - php5-tidy
+        - python-dev
+        - python-pip
+        - mysql-server
   
     # httpd.conf update necessary to address vagrant/virtualbox issue so changes to synched folder static html files work 
     #- name: Set 'EnableSendfile off' in Apache2 httpd.conf 
@@ -92,3 +98,26 @@
         name: apache2
         state: started
         enabled: yes
+
+    - name: Install Python MySQL module
+      pip:
+        name: MySQL-python
+
+    - name: Change root MySQL user password
+      mysql_user:
+        user: '{{ mysql_username }}'
+        password: '{{ mysql_password }}'
+
+    - name: Copy my.cnf with MySQL root credentials
+      template:
+        src: templates/root/.my.cnf.j2
+        dest: /root/.my.cnf
+        owner: root
+        group: root
+        mode: 0600
+
+    - name: Restore MySQL from data dump
+      mysql_db:
+        name: ode_survey
+        state: import
+        target: /tmp/db_dump/ode_survey.sql
