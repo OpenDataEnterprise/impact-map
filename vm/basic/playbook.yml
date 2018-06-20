@@ -58,6 +58,14 @@
         group: root
         mode: 0644
   
+    - name: Copy Apache vhost config file to disable Sendfile
+      copy:
+        src: templates/etc/apache2/conf.d/sendfile.conf
+        dest: /etc/apache2/conf-available/sendfile.conf
+        owner: root
+        group: root
+        mode: 0644
+
     - name: Create symlink
       file:
         src: /etc/apache2/conf-available/servername.conf
