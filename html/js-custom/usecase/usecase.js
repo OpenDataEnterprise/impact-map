@@ -4,33 +4,23 @@ $(document).ready(function() {
       (obj, key) => (obj && key in obj) ? obj[key] : undefined, object);
   }
 
-  function getRegionAbbr (regionObj) {
-    var regionAbbr = getNestedValue(regionObj, ['abbreviation']);
-
-    if (typeof regionAbbr !== 'undefined') {
-      regionAbbr = regionAbbr.toLowerCase();
-    }
-
-    return regionAbbr;
-  }
-
   $.ajax({
     url: 'http://localhost:3000/api/v1/use-cases',
     success: function(results) {
       $.each(results, function(index, result) {
-        var title = getNestedValue(result, ['profile', 'org_name']);
-        var image = getNestedValue(result, ['image_url']);
-        var subtitle = getNestedValue(result, ['short_description']);
-        var url = getNestedValue(result, ['profile', 'org_url']);
-        var country = getNestedValue(result,
-          ['profile', 'location', 'country', 'name']);
+        var title = result.name;
+        var image = result.image_url;
+        var subtitle = result.short_description;
+        var url = result.url;
+        var country = getNestedValue(result, ['country', 'name']);
+        var regionAbbr = getNestedValue(result,
+          ['country', 'region', 'abbreviation']);
         var sector = getNestedValue(result,
-          ['profile', 'industry', 'industry']);
-        var impact = getNestedValue(result, ['impact']);
-        var dataUse = getNestedValue(result, ['data_used']);
-        var description = getNestedValue(result, ['long_description']);
-        var machineReadable = getNestedValue(result,
-          ['profile', 'machine_readable']);
+          ['sector', 'sector']);
+        var impact = result.impact;
+        var dataUse = result.data_used;
+        var description = result.long_description;
+        var machineReadable = result.machine_readable;
 
         var underscoreTitle = title.replace(/[\.\s\(\){}]/g, '');
 
@@ -50,15 +40,11 @@ $(document).ready(function() {
         $("#"+underscoreTitle).find('p.dataMark').html('<strong>Data Used:</strong> ' + dataUse);
         $("#"+underscoreTitle).find('p.longDesc').html(description);
 
-        var regionObj = getNestedValue(
-          result, ['profile', 'location', 'country', 'region']);
-        var regionAbbr = getRegionAbbr(regionObj);
-
         $('#templateRegion')
           .clone(true)
           .removeAttr('id')
           .attr('id', 'region' + index)
-          .appendTo('.' + regionAbbr + '-case-container');
+          .appendTo('.' + regionAbbr.toLowerCase() + '-case-container');
 
         $('img', '#region' + index).attr('src', 'useCaseImage/' + image);
         $('#region' + index).find('h3.case-study-title').text(title);
