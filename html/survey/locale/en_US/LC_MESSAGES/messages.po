@@ -14,519 +14,530 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#Test token 1
+# Test token 1
 msgid "HELLO_WORLD"
 msgstr "Hello World! TEST"
 
-#Test token 2
+# Test token 2
 msgid "TEST_TRANSLATION"
 msgstr "Test translation..."
 
-#Thank you for participating in the Open Data Impact Map, the first centralized, searchable database of open data use cases from around the world.
+# Thank you for participating in the Open Data Impact Map, the first centralized, searchable database of open data use cases from around the world.
 msgid "THANKS_PARTICIPATING"
 msgstr "Thank you for participating in the Open Data Impact Map, the first centralized, searchable database of open data use cases from around the world"
 
-#Your contribution makes it possible to better understand the value of open data and encourage its use globally.
+# Your contribution makes it possible to better understand the value of open data and encourage its use globally.
 msgid "YOUR_CONTRIBUTION"
 msgstr "Your contribution makes it possible to better understand the value of open data and encourage its use globally."
 
-#Information collected will be displayed on the Map and will be made available as open data.
+# Information collected will be displayed on the Map and will be made available as open data.
 msgid "INFO_COLLECTED"
 msgstr "Information collected will be displayed on the Map and will be made available as open data."
 
-#ELIGIBILITY
+# ELIGIBILITY
 msgid "ELIGIBILITY"
 msgstr "Eligibility"
 
-#The Open Data Impact Map includes organizations that:
+# The Open Data Impact Map includes organizations that:
 msgid "MAP_INCLUDES_ORGS"
 msgstr "The Open Data Impact Map includes organizations that:"
 
-#are companies, non-profits, or developer groups; and
+# are companies, non-profits, or developer groups; and
 msgid "ARE_COMPANIES"
 msgstr "are companies, non-profits, or developer groups; and"
 
-#use open government data for advocacy, to develop products and services, improve operations, inform strategy and/or conduct research.
+# use open government data for advocacy, to develop products and services, improve operations, inform strategy and/or conduct research.
 msgid "USE_OPEN_GOVERNMENT_DATA"
 msgstr "use open government data for advocacy, to develop products and services, improve operations, inform strategy and/or conduct research."
 
-#We define open government data as publicly available data that is produced or commissioned by governments and that can be accessed and reused by anyone, free of charge.
+# We define open government data as publicly available data that is produced or commissioned by governments and that can be accessed and reused by anyone, free of charge.
 msgid "WE_DEFINE_OPEN"
 msgstr "We define open government data as publicly available data that is produced or commissioned by governments and that can be accessed and reused by anyone, free of charge."
 
-#1. Organizational Information
+# 1. Organizational Information
 msgid "ORG_INFO"
-msgstr "1. Organizational Information"
+msgstr "Organizational Information"
 
-#Name of organization
+# Name of organization
 msgid "ORG_NAME"
 msgstr "Name of organization"
 
-#One sentence description of organization
+# One sentence description of organization
 msgid "ORG_DESC"
 msgstr "One sentence description of organization"
 
-#400 characters or less
+# 400 characters or less
 msgid "400_CHAR"
 msgstr "400 characters or less"
 
-#Type of organization
+# Type of organization
 msgid "ORG_TYPE"
 msgstr "Type of organization"
 
-#For-profit
+# For-profit
 msgid "FOR-PROFIT"
 msgstr "For profit"
 
-#Nonprofit
+# Nonprofit
 msgid "NONPROFIT"
 msgstr "Nonprofit"
 
-#Developer group
+# Developer group
 msgid "DEVELOPER_GROUP"
 msgstr "Developer group"
 
-#other
+# Academic Institution
+msgid "ACADEMIC_INSTITUTION"
+msgstr "Academic Institution"
+
+# Other
 msgid "OTHER"
 msgstr "Other"
 
-#Website URL
+# Website URL
 msgid "WEBSITE_URL"
 msgstr "Website URL"
 
-#No URL
+# No URL
 msgid "NO_URL"
 msgstr "No URL"
 
-#Location
+# Location
 msgid "LOCATION"
 msgstr "Location"
 
-#Please provide as specific as possible
+# Please provide as specific as possible
 msgid "SPECIFIC_AS_POSSIBLE"
 msgstr "Please provide as specific as possible"
 
-#Industry/category of the organization
+# Sectors Header
 msgid "IND"
-msgstr "Industry/category of the organization"
+msgstr "Sector"
 
-#Agriculture 
+# Select 1
+msgid "SELECT_1"
+msgstr "Select one"
+
+# Agriculture 
 msgid "AGR"
 msgstr "Agriculture"
 
-#Arts and culture 
+# Arts and culture 
 msgid "ART"
-msgstr "Arts and culture"
+msgstr "Arts, culture and tourism"
 
-#Business & legal services 
+# Business & legal services 
 msgid "BUS"
-msgstr "Business and legal services"
+msgstr "Business, research and consulting"
 
-#Consumer 
+# Consumer 
 msgid "CSM"
 msgstr "Consumer"
 
-#Data/information technology 
+# Data/information technology 
 msgid "DAT"
 msgstr "Data/information technology"
 
-#Education 
+# Education 
 msgid "EDU"
 msgstr "Education"
 
-#Energy 
+# Energy 
 msgid "NGY"
-msgstr "Energy"
+msgstr "Energy and climate"
 
-#Environment 
+# Environment 
 msgid "ENV"
 msgstr "Environment"
 
-#Finance and investment
+# Finance and investment
 msgid "FIN"
-msgstr "Finance and investment"
+msgstr "Finance and insurance"
 
-#Geospatial/mapping 
+# Geospatial/mapping 
 msgid "GEO"
 msgstr "Geospatial/mapping"
 
-#Governance 
+# Governance 
 msgid "GOV"
 msgstr "Governance"
 
-#Healthcare 
+# Healthcare 
 msgid "HLT"
 msgstr "Healthcare"
 
-#Housing and real estate 
+# Housing and real estate 
 msgid "HOU"
 msgstr "Housing and real estate"
 
-#Insurance 
+# Insurance 
 msgid "INS"
 msgstr "Insurance"
 
-#Media and communications 
+# Media and communications 
 msgid "COM"
 msgstr "Media and communications"
 
-#Mining/Manufacturing 
+# Mining/Manufacturing 
 msgid "MAN"
 msgstr "Mining/manufacturing"
 
-#Research and consulting 
+# Research and consulting 
 msgid "RSH"
 msgstr "Research and consulting"
 
-#Security and public safety
+# Security and public safety
 msgid "SEC"
 msgstr "Security and public safety"
 
-#Scientific research 
+# Scientific research 
 msgid "SCI"
 msgstr "Scientific research"
 
-#Telecommunications/internet service providers (ISPs) 
+# Telecommunications/internet service providers (ISPs) 
 msgid "TEL"
-msgstr "Telecommunications/internet service providers (ISPs)"
+msgstr "IT and geospatial"
 
-#Tourism 
+# Tourism 
 msgid "TOR"
 msgstr "Tourism"
 
-#Transportation and logistics 
+# Transportation and logistics 
 msgid "TRN"
 msgstr "Transportation and logistics"
 
-#Water and sanitation 
+# Water and sanitation 
 msgid "WAT"
 msgstr "Water and sanitation"
 
-#Weather 
+# Weather 
 msgid "WEA"
 msgstr "Weather"
 
-#Founding year
+# Founding year
 msgid "FOUNDING_YEAR"
 msgstr "Founding year"
 
-#Size
+# Size
 msgid "SIZE"
 msgstr "Size"
 
-#1-10 employees
+# 1-10 employees
 msgid "1-10"
 msgstr "1-10 employees"
 
-#11-50 employees
+# 11-50 employees
 msgid "11-50"
 msgstr "11-50 employees"
 
-#51-200 employees
+# 51-200 employees
 msgid "51-200"
 msgstr "51-200 employees"
 
-#201-1000 employees
+# 201-1000 employees
 msgid "201-1000"
 msgstr "201-1000 employees"
 
-#1000+ employees
+# 1000+ employees
 msgid "1000+"
 msgstr "1000+ employees"
 
-#What is the greatest type of impact your organization has?
+# What is the greatest type of impact your organization has?
 msgid "GREATEST_IMPACT"
 msgstr "What is the greatest type of impact your organization has?"
 
-#Economic
+# Economic
 msgid "ECONOMIC"
 msgstr "Economic"
 
-#Environmental
+# Environmental
 msgid "ENVIRONMENTAL"
 msgstr "Environmental"
 
-#Governance
+# Governance
 msgid "GOVERNANCE"
 msgstr "Governance"
 
-#Social
+# Social
 msgid "SOCIAL"
 msgstr "Social"
 
-#Provide details
+# Provide details
 msgid "PROVIDE_DETAILS"
 msgstr "Provide details"
 
-#2. Use of Open Data
+# 2. Use of Open Data
 msgid "USE_OF_OPEN_DATA"
-msgstr "2. Use of Open Data"
+msgstr "Use of Open Data"
 
-#What are the most relevant types of data your organization uses?
-msgid "WHAT_ARE_THE"
-msgstr "What are the <u>most relevant</u> types of data your organization uses?"
+# What are the most relevant types of open data your organization uses?
+msgid "MOST_RELEVANT_OPEN_DATA"
+msgstr "What are the most relevant types of data your organization uses?"
 
-#most relevant
+# most relevant
 msgid "MOST_RELEVANT"
 msgstr "What are the <u>most relevant</u> types of data your organization uses?"
 
-#types of data your organization uses?
+# types of data your organization uses?
 msgid "TYPES_OF_DATA"
 msgstr "types of data your organization uses?"
 
-
-#select all that apply
+# select all that apply
 msgid "SELECT_ALL"
 msgstr "Select all that apply"
 
-#Agriculture 
+# Agriculture 
 msgid "AGRICULTURE"
 msgstr "Agriculture"
 
-#Arts and culture 
+# Arts and culture 
 msgid "ARTS_AND_CULTURE"
 msgstr "Arts and culture"
 
-#Business 
+# Business 
 msgid "BUSINESS"
 msgstr "Business"
 
-#Consumer 
+# Consumer 
 msgid "CONSUMER"
 msgstr "Consumer"
 
-#Demographics and social 
+# Demographics and social 
 msgid "DEMOGRAPHICS"
 msgstr "Demographics"
 
-#Economics 
+# Economics 
 msgid "ECONOMICS"
 msgstr "Economics"
 
-#Education 
+# Education 
 msgid "EDUCATION"
 msgstr "Education"
 
-#Energy
+# Energy
 msgid "ENERGY"
 msgstr "Energy"
 
-#Environment 
+# Environment 
 msgid "ENVIRONMENT"
 msgstr "Environment"
 
-#Finance 
+# Finance 
 msgid "FINANCE"
 msgstr "Finance"
 
-#Geospatial/mapping 
+# Geospatial/mapping 
 msgid "GEOSPATIAL"
 msgstr "Geospatial"
 
-#Government operations 
+# Government operations 
 msgid "GOVERNMENT_OPS"
 msgstr "Government operations"
 
-#Health/healthcare 
+# Health/healthcare 
 msgid "HEALTH"
 msgstr "Health"
 
-#Housing 
+# Housing 
 msgid "HOUSING_CAT"
 msgstr "Housing"
 
-#International/global development 
+# International/global development 
 msgid "INTERNATIONAL"
 msgstr "International/global development"
 
-#Legal
+# Legal
 msgid "LEGAL"
 msgstr "Legal"
 
-#Manufacturing 
+# Manufacturing 
 msgid "MANUFACTURING"
 msgstr "Manufacturing"
 
-#Science and research 
+# Science and research 
 msgid "SCIENCE_AND_RESEARCH"
 msgstr "Science and research"
 
-#Public safety 
+# Public safety 
 msgid "PUBLIC_SAFETY"
 msgstr "Public safety"
 
-#Tourism 
+# Tourism 
 msgid "TOURISM"
 msgstr "Tourism"
 
-#Transportation 
+# Transportation 
 msgid "TRANSPORTATION"
 msgstr "Transportation"
 
-#Weather 
+# Weather 
 msgid "WEATHER"
 msgstr "Weather"
 
-#Number of countries from which open data is used
+# Number of countries from which open data is used
 msgid "NUM_OF_COUNTRIES"
 msgstr "Number of countries from which open data is used"
 
-#Indicate the country that provide the data, and whether the data is National or Regional / Local (state/province/city).
+# Indicate the country that provide the data, and whether the data is National or Regional / Local (state/province/city).
 msgid "INDICATE_COUNTRY_THAT"
 msgstr "Indicate the country that provide the data, and whether the data is National or Regional / Local (state/province/city)."
 
-#Data source - Country
+# Data source - Country
 msgid "DATA_SOURCE_COUNTRY"
 msgstr "Data source - Country"
 
-#Select
+# Select
 msgid "SELECT"
 msgstr "Select"
 
-#1 country 
+# 1 country 
 msgid "1_COUNTRY"
 msgstr "1 country"
 
-#2-5 countries 
+# 2-5 countries 
 msgid "2-5_COUNTRIES"
 msgstr "2-5 countries"
 
-#6-10 countries 
+# 6-10 countries 
 msgid "6-10_COUNTRIES"
 msgstr "6-10 countries"
 
-#11-20 countries 
+# 11-20 countries 
 msgid "11-20_COUNTRIES"
 msgstr "11-20 countries"
 
-#21-50 countries 
+# 21-50 countries 
 msgid "21-50_COUNTRIES"
 msgstr "21-50 countries"
 
-50+ countries
+# 50+ countries
 msgid "50+_COUNTRIES"
 msgstr "50+ countries"
 
-#How does your organization use open data?
+# How does your organization use open data?
 msgid "HOW_USE_OPEN_DATA"
 msgstr "How does your organization use open data?"
 
-#advocacy
+# Advocacy
 msgid "ADVOCACY"
 msgstr "Advocacy"
 
-#new products, services, or applications
+# New products, services, or applications
 msgid "PRODUCTS_SERVICES"
-msgstr "new products, services, or applications"
+msgstr "New products, services, or applications"
 
-#organizational optimization 
+# Organizational optimization 
 msgid "ORG_OPTIMIZATION"
-msgstr "organizational optimization"
+msgstr "Organizational optimization"
 
-#(e.g. benchmarking, market analysis, improving efficiency, enhancing existing products and services)
+# (e.g. benchmarking, market analysis, improving efficiency, enhancing existing products and services)
 msgid "EG_BENCHMARKING"
-msgstr "(e.g. benchmarking, market analysis, improving efficiency, enhancing existing products and services)"
+msgstr "e.g. benchmarking, market analysis, improving efficiency, enhancing existing products and services"
 
-#Additional information
+# Research
+msgid "RESEARCH"
+msgstr "Research"
+
+# Additional information
 msgid "ADDITIONAL_INFORMATION"
 msgstr "Additional information"
 
-#optional
+# Optional
 msgid "OPTIONAL"
 msgstr "optional"
 
-#E.g. How could the open data your organization uses be improved? 
+# E.g. How could the open data your organization uses be improved? 
 msgid "EG_HOW_COULD"
 msgstr "E..g. How could the open data your organization uses be improved?"
 
-#Which datasets are most valuable to your organization? 
+# Which datasets are most valuable to your organization? 
 msgid "WHICH_DATASETS_MOST_VALUABLE"
 msgstr "Which datasets are most valuable to your organization? "
 
-#What other types of data does your organization use in addition to open government data?
+# What other types of data does your organization use in addition to open government data?
 msgid "WHAT_OTHER_TYPES_OF_DATA"
 msgstr "What other types of data does your organization use in addition to open government data?"
 
-#3. Contact Information
+# 3. Contact Information
 msgid "CONTACT_INFORMATION"
-msgstr "3. Contact Information"
+msgstr "Contact Information"
 
-#This information will not be made public
+# This information will not be made public
 msgid "NOT_BE_MADE_PUBLIC"
 msgstr "This information will not be made public"
 
-#First name
+# First name
 msgid "FIRST_NAME"
 msgstr "First name"
 
-#Last name
+# Last name
 msgid "LAST_NAME"
 msgstr "Last/Family name"
 
-#Title
+# Title
 msgid "TITLE"
 msgstr "Title"
 
-#Email
+# Email
 msgid "EMAIL"
 msgstr "Email"
 
-#Phone
+# Phone
 msgid "PHONE"
 msgstr "Phone"
 
-#All submissions will be reviewed before public display on the Open Data Impact Map.
+# All submissions will be reviewed before public display on the Open Data Impact Map.
 msgid "SUBMISSIONS_REVIEWED"
 msgstr "All submissions will be reviewed before public display on the Open Data Impact Map."
 
-#SUBMIT
+# SUBMIT
 msgid "SUBMIT"
 msgstr "Submit"
 
-#The Open Data Impact Map, a project of the Center for Open Data Enterprise as part of the OD4D network, is licensed under
+# The Open Data Impact Map, a project of the Center for Open Data Enterprise as part of the OD4D network, is licensed under
 msgid "OD4D_ATTRIBUTION"
 msgstr "The Open Data Impact Map, a project of the Center for Open Data Enterprise as part of the OD4D network, is licensed under"
 
-#Creative Commons Attribution-Share Alike 4.0 International License
+# Creative Commons Attribution-Share Alike 4.0 International License
 msgid "CREATIVE_COMMONS_LICENSE"
 msgstr "Creative Commons Attribution-Share Alike 4.0 International License"
 
-#provide as much information as possible
+# provide as much information as possible
 msgid "PROVIDE_AS_MUCH_INFO"
 msgstr "Provide as much information as possible"
 
-#provide examples 
+# provide examples 
 msgid "PROVIDE_EXAMPLES"
 msgstr "provide examples" 
 
-#enter a location 
+# enter a location 
 msgid "ENTER_LOCATION"
 msgstr "Enter a location"
 
-#Select countries providing data used by your organization 
+# Select countries providing data used by your organization 
 msgid "SELECT_COUNTRIES_PROVIDING_DATA"
 msgstr "Select countries providing data used by your organization"
 
-#national/local
+# national/local
 msgid "NATIONAL_LOCAL"
 msgstr "national/local"
 
-#data source - country 
+# data source - country 
 msgid "DATA_SOURCE"
 msgstr "data source - country"
 
-#Click national and/or local to show government level of data used 
+# Click national and/or local to show government level of data used 
 msgid "SHOW_GOVERNMENT_LEVEL"
 msgstr "Click national and/or local to show government level of data used"
 
-#required
+# required
 msgid "REQUIRED"
 msgstr "required"
 
-#This field is required 
+# This field is required 
 msgid "FIELD_REQUIRED"
 msgstr "This field is required"
 
-#Please enter a valid URL.
+# Please enter a valid URL.
 msgid "ENTER_VALID_URL"
 msgstr "Please enter a valid URL"

@@ -60,7 +60,7 @@ msgstr "Wir definieren offene Verwaltungsdaten als öffentlich verfügbare Daten
 
 # 1. Organizational Information
 msgid "ORG_INFO"
-msgstr "1. Informationen über die Organisation"
+msgstr "Informationen über die Organisation"
 
 # Name of organization
 msgid "ORG_NAME"
@@ -272,7 +272,7 @@ msgstr "Details ergänzen"
 
 # 2. Use of Open Data
 msgid "USE_OF_OPEN_DATA"
-msgstr "2. Nutzung von Open Data"
+msgstr "Nutzung von Open Data"
 
 # What are the most relevant types of open data your organization uses?
 msgid "MOST_RELEVANT_OPEN_DATA"

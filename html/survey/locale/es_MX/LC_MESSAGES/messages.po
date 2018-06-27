@@ -52,7 +52,7 @@ msgstr "Definimos los datos gubernamentales abiertos como datos públicos que so
 
 # 1. Organizational Information
 msgid "ORG_INFO"
-msgstr "1. Información organizativa"
+msgstr "Información organizativa"
 
 # Name of organization
 msgid "ORG_NAME"
