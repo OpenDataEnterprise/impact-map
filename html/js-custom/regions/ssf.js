@@ -12,6 +12,6 @@
   renderCounter('region', region, config);
   renderRegionOrgMap(region, regionGeoJSON, bounds, view, config);
   renderPieCharts('region', region, config);
-  renderRegionBarCharts(region);
+  renderRegionBarCharts(region, config);
   renderUseCases('region', region, config);
 })(jQuery, config);

@@ -1,6 +1,6 @@
 // draw org dist global chart
-function renderRegionBarCharts (region) {
-  var apiBaseURL = 'http://localhost:3000/api/v1/';
+function renderRegionBarCharts (region, config) {
+  var apiBaseURL = config.apiBaseURL;
   var encodedRegion = encodeURIComponent(region);
 
   // global variabls for all three charts

@@ -1,5 +1,5 @@
-(function () {
-  var apiBaseURL = 'http://localhost:3000/api/v1/';
+(function (config) {
+  var apiBaseURL = config.apiBaseURL;
 
   (function ($) {
     $.fn.countTo = function (options) {
@@ -76,4 +76,4 @@
       console.error(error);
     },
   });
-})();
+})(config);
