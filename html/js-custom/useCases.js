@@ -14,43 +14,8 @@ $(document).ready(function() {
     return regionAbbr;
   }
 
-  /*var $window = $(window);
-  var $pane = $('#pane1');
-
-  function checkWidth() {
-    var windowsize = $window.width();
-    if (windowsize < 1095) {
-      $('.column-row').hide();
-      $('.usecasedropdown').css({'display': 'inline-block', 'float': 'none'});
-    }
-    if (windowsize > 1095) {
-      $('.column-row').show();
-      $('.usecasedropdown').hide();
-    }
-  }
-
-  // Execute on load
-  checkWidth();
-  // Bind event listener
-  $(window).resize(checkWidth);
-
-  // stop scrolling underneath
-  Webflow.push(function () {
-    $('.case-study-intro-1').click(function (e) {
-      e.preventDefault();
-      $('body').css('overflow', 'hidden');
-    });
-    $('.close-case-modal').click(function (e) {
-      e.preventDefault();
-      $('body').css('overflow', 'auto');
-    });
-  });*/
-
-  console.log(config);
-  var queryURL = config.apiBaseURL + 'impact-map/use-cases' ;
-
   $.ajax({
-    url: queryURL,
+    url: config.apiBaseURL + 'impact-map/use-cases',
     success: function(results) {
       $.each(results, function(index, result) {
         var title = getNestedValue(result, ['name']);
@@ -66,6 +31,9 @@ $(document).ready(function() {
         var description = getNestedValue(result, ['long_description']);
         var machineReadable = getNestedValue(result,
           ['profile', 'machine_readable']);
+        var regionObj = getNestedValue(
+          result, ['country', 'region']);
+        var regionAbbr = getRegionAbbr(regionObj);
 
         var underscoreTitle = title.replace(/[\.\s\(\){}]/g, '');
 
@@ -84,10 +52,6 @@ $(document).ready(function() {
         $("#"+underscoreTitle).find('p.impactMark').html('<strong>Impact:</strong> ' + impact);
         $("#"+underscoreTitle).find('p.dataMark').html('<strong>Data Used:</strong> ' + dataUse);
         $("#"+underscoreTitle).find('p.longDesc').html(description);
-
-        var regionObj = getNestedValue(
-          result, ['profile', 'location', 'country', 'region']);
-        var regionAbbr = getRegionAbbr(regionObj);
 
         $('#templateRegion')
           .clone(true)
