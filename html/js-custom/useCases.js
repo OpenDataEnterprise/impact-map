@@ -1,4 +1,4 @@
-$(document).ready(function(config) {
+$(document).ready(function() {
   function getNestedValue (object, keys) {
     return keys.reduce(
       (obj, key) => (obj && key in obj) ? obj[key] : undefined, object);
@@ -14,18 +14,53 @@ $(document).ready(function(config) {
     return regionAbbr;
   }
 
+  /*var $window = $(window);
+  var $pane = $('#pane1');
+
+  function checkWidth() {
+    var windowsize = $window.width();
+    if (windowsize < 1095) {
+      $('.column-row').hide();
+      $('.usecasedropdown').css({'display': 'inline-block', 'float': 'none'});
+    }
+    if (windowsize > 1095) {
+      $('.column-row').show();
+      $('.usecasedropdown').hide();
+    }
+  }
+
+  // Execute on load
+  checkWidth();
+  // Bind event listener
+  $(window).resize(checkWidth);
+
+  // stop scrolling underneath
+  Webflow.push(function () {
+    $('.case-study-intro-1').click(function (e) {
+      e.preventDefault();
+      $('body').css('overflow', 'hidden');
+    });
+    $('.close-case-modal').click(function (e) {
+      e.preventDefault();
+      $('body').css('overflow', 'auto');
+    });
+  });*/
+
+  console.log(config);
+  var queryURL = config.apiBaseURL + 'impact-map/use-cases' ;
+
   $.ajax({
-    url: config.apiBaseURL + 'impact-map/use-cases',
+    url: queryURL,
     success: function(results) {
       $.each(results, function(index, result) {
-        var title = getNestedValue(result, ['profile', 'org_name']);
+        var title = getNestedValue(result, ['name']);
         var image = getNestedValue(result, ['image_url']);
         var subtitle = getNestedValue(result, ['short_description']);
-        var url = getNestedValue(result, ['profile', 'org_url']);
+        var url = getNestedValue(result, ['url']);
         var country = getNestedValue(result,
-          ['profile', 'location', 'country', 'name']);
+          ['country', 'name']);
         var sector = getNestedValue(result,
-          ['profile', 'industry', 'industry']);
+          ['sector', 'sector']);
         var impact = getNestedValue(result, ['impact']);
         var dataUse = getNestedValue(result, ['data_used']);
         var description = getNestedValue(result, ['long_description']);
