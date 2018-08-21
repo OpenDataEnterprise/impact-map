@@ -231,15 +231,13 @@ define([/*"esri/map",*/
         ]
         })
                     .setView([lat, lng], zoom);
-        
-        //basemap = L.esri.basemapLayer("Topographic").addTo(brmap);
 
-       basemap = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+       basemap = L.tileLayer(
+        'http://services.arcgisonline.com/arcgis/rest/services/Canvas/' +
+          'World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+        {
+          attribution: 'Sources: Esri, DeLorme, HERE, MapmyIndia'
 }).addTo(brmap);
-        //basemap = L.esri.basemapLayer("Gray").addTo(brmap);
-        //L.esri.basemapLayer("GrayLabels").addTo(brmap);
         L.control.scale().addTo(brmap);
         brmap.layerControl = LayerControl.create(brmap);
 
