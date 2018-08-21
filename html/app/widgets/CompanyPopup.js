@@ -65,10 +65,7 @@ define([
 				React.createElement("div", {className: 'company-popup'}, 
 					React.createElement(SelectableItem, {keys: props.title}), 
 					React.createElement("div", {style: contentDisplay, className: 'company-popup-content'}, 
-						properties, 
-						React.createElement("div", {className: "edit-button-holder"}, 
-							React.createElement("button", {className: "edit-button", onClick: this.sendToEdit}, "Edit")
-						)
+						properties
 					)
 				)
 			);
