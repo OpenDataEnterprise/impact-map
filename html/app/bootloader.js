@@ -1,5 +1,6 @@
+'use strict';
+
 (function(win, document) {
-    'use strict';
     // This is the launcher bootloader function
     // Takes loades the config
     var launch = function(){
@@ -44,7 +45,6 @@
         aliases: [
             // Add Aliases to CDN Modules here like below
             ['react', 'app/includes/react/react2.js'],
-
             ['leaflet', 'app/includes/leaflet/leaflet.js'],
             ['esrileaflet','http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/1.0.0-rc.5/esri-leaflet.js' ],
             ['cluster','app/includes/markercluster/js/leaflet.markercluster-src.js'],
@@ -80,10 +80,5 @@
         $("head").append( script );
     };
 
-
-
     win.onload = launch();
-    
-
-
 })(window, document);

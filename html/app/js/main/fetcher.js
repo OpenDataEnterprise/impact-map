@@ -32,7 +32,7 @@ define([
     exports.uniqueFields = function(url,field,where,groupBy){
         var deferred = new Deferred();
         L.esri.get(
-            url+"/query",
+            url + '/query',
             {
                 'f':'json',
                 'outFields': [field],
@@ -49,21 +49,15 @@ define([
                     deferred.resolve(error);
                 }
                 else{
-                    //console.log(response.features); //Vinayak
                     var values = _.pluck(response.features,'attributes');
-
-                    //console.log(values); //Vinayak
                     deferred.resolve(values);
                 }
             }
         );
-        //console.log(JSON.parse(JSON.stringify(deferred))); //Vinayak
                 return deferred;
     }
 
     exports.getQueryString = function(fieldQueryArray){
-        //fieldQueryArray = [{fieldName: '', value: '', valueType: '', operator: ''},...]
-
         //hack for application because it needs to be nested in an AND
         var exceptionList = ['use_advocacy', 'use_org_opt', 'use_other', 'use_prod_srvc', 'use_research']
         var exceptionSQL = [];
@@ -72,17 +66,12 @@ define([
             _.forEach(fieldQueryArray, function(query){
 
             if(_.contains(exceptionList, query.fieldName)){
-                //do special
-
                 var value = query.valueType === 'number' ? query.value : "'{}'".replace('{}',query.value);
                 var sql = [query.fieldName,query.operator,query.value].join(' ');
                 exceptionSQL.push(sql);
             } else {
-                                //console.log("query.valueType", query.valueType); //Vinayak
                 var value = query.valueType === 'number' ? query.value : "'{}'".replace('{}',query.value);
                 var sql = [query.fieldName,query.operator,query.value].join(' ');
-                                //console.log("value", value); //Vinayak
-                                //console.log("sql", sql); //Vinayak
                 queryStrings.push(sql);
             }
 
