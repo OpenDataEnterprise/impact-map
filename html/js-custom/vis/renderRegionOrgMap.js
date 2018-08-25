@@ -17,8 +17,9 @@ function renderRegionOrgMap (region, geojson, bounds, view, config) {
     };
   }
 
-  function highlightFeature (e) {
+  function highlightFeature (e, geoLayer, mapLayer, info) {
     mapLayer.bringToFront();
+
     var layer = e.target;
     info.update(layer.feature.properties);
 
@@ -36,6 +37,7 @@ function renderRegionOrgMap (region, geojson, bounds, view, config) {
       fillOpacity: 1.0,
       fillColor: '#375F79'
     });
+
     if (!L.Browser.ie && !L.Browser.opera) {
       layer.bringToFront();
     }
@@ -43,8 +45,7 @@ function renderRegionOrgMap (region, geojson, bounds, view, config) {
     mapLayer.setOpacity(0.2);
   }
 
-  function resetHighlight (e) {
-    var layer = e.target;
+  function resetHighlight (e, geoLayer, mapLayer, info) {
     info.update();
 
     geoLayer.resetStyle(e.target);
@@ -56,13 +57,6 @@ function renderRegionOrgMap (region, geojson, bounds, view, config) {
     });
 
     mapLayer.setOpacity(1.0);
-  }
-
-  function onEachFeature (feature, layer) {
-    layer.on({
-      mouseover: highlightFeature,
-      mouseout: resetHighlight
-    });
   }
 
   var apiBaseURL = config.apiBaseURL;
@@ -93,7 +87,7 @@ function renderRegionOrgMap (region, geojson, bounds, view, config) {
     mapLayer.addTo(map);
 
     //control that shows state info on hover
-    var info = L.control({position: 'topright'});
+    var info = L.control({ position: 'topright' });
 
     info.onAdd = function (map) {
       this._div = L.DomUtil.create('div', 'info');
@@ -134,7 +128,16 @@ function renderRegionOrgMap (region, geojson, bounds, view, config) {
 
     var geoLayer = L.geoJson(geojson, {
       style: style,
-      onEachFeature: onEachFeature,
+      onEachFeature: function (feature, layer) {
+        layer.on({
+          mouseover: function (e) {
+            highlightFeature(e, geoLayer, mapLayer, info);
+          },
+          mouseout: function (e) {
+            resetHighlight(e, geoLayer, mapLayer, info);
+          }
+        });
+      },
     }).addTo(map);
 
     // Add color legend to map.
