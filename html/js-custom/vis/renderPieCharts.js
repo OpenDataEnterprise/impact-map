@@ -6,6 +6,24 @@ function getOrganizationCount (data) {
   return total;
 }
 
+function getArcLegend (chart, arc) {
+  var legendClass = '';
+  var classRegex = /arc-[\d]+/;
+  var arcClass = d3.select(arc).attr('class');
+  var classMatch = arcClass.match(classRegex);
+
+  if (classMatch[0]) {
+    var indexRegex = /[\d]+/;
+    var indexMatch = classMatch[0].match(indexRegex);
+
+    if (indexMatch[0]) {
+      legendClass = 'legend-' + indexMatch[0];
+    }
+  }
+
+  return chart.select('.' + legendClass);
+}
+
 function renderChart (width, height, radius, id, data, dataKey, colors) {
   var pie = d3.layout.pie()
     .sort(null)
@@ -15,93 +33,150 @@ function renderChart (width, height, radius, id, data, dataKey, colors) {
     .outerRadius(radius)
     .innerRadius(radius - 35);
 
-  var formatPercent = d3.format(",.0%");
+  var formatPercent = d3.format(',.0%');
 
-  var svg = d3.select("#threePie").append("svg")
-    .attr("id", id)
-    .attr("class", "pieSvg")
-    .attr("width", width)
-    .attr("height", height)
-    .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+  var svg = d3.select('#threePie')
+    .append('svg')
+    .attr('id', id)
+    .attr('class', 'pieSvg')
+    .attr('width', width)
+    .attr('height', height)
+    .attr('overflow', 'visible')
+    .append('g')
+    .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
 
-  var g = svg.selectAll(".arc")
+  var g = svg.selectAll('.arc')
     .data(pie(data))
-    .enter().append("g")
-    .attr("class", "arc");
+    .enter()
+    .append('g')
+    .attr('class', function (d, i) {
+      return 'arc arc-' + (i + 1);
+    })
+    .on('mouseover', function (d) {
+      var chart = d3.select('#' + id);
+      var arc = d3.select(this);
+      var legend = getArcLegend(svg, this);
+
+      // Define legend transformations.
+      var x = legend.attr('data-coord-x');
+      var y = legend.attr('data-coord-y');
+      var scale = 'scale(1.3)';
+      var translate = 'translate(' + x + ', ' + y + ')';
+
+      // Make the legend entry of the current arc pop out.
+      legend.attr('transform-origin', '90% 0');
+      legend.attr('transform', translate + scale);
+
+      // Display data through tooltip.
+      var percentage = formatPercent(d.value / total);
+      tooltip.select('text').text(percentage);
+      tooltip.style('visibility', 'visible');
+
+      // Bring legend node forward in z-axis.
+      legend.node().parentElement.appendChild(legend.node());
+    })
+    .on('mousemove', function () {
+      var domRect = tooltip.node().getBoundingClientRect();
+      var xBound = 300 - domRect.width;
+      var yBound = 300 - domRect.height;
+
+      var x = d3.mouse(svg.node())[0] + (width / 2) + 10;
+      var y = d3.mouse(svg.node())[1] + (height / 2) + 10;
+
+      // Ensure that tooltip doesn't go out of visible bounds.
+      if (x > xBound) {
+        x = xBound;
+      }
+      if (y > yBound) {
+        y = yBound;
+      }
+
+      // Move tooltip with the cursor.
+      tooltip.attr('transform', 'translate(' + x + ',' + y + ')');
+    })
+    .on('mouseout', function () {
+      tooltip.style('visibility', 'hidden');
+
+      var arc = d3.select(this);
+      var legend = getArcLegend(svg, this);
+
+      var x = legend.attr('data-coord-x');
+      var y = legend.attr('data-coord-y');
+      var scale = 'scale(1)';
+      var translate = 'translate(' + x + ', ' + y + ')';
+
+      // Revert legend entry to original appearance.
+      legend.attr('transform', translate + scale);
+    });
 
   var tooltip = d3.select('#' + id)
-    .append("g")
-    .attr("class", "tooltip")
-    .style("visibility", "visible");
+    .append('g')
+    .attr('class', 'tooltip')
+    .style('visibility', 'visible');
 
-  tooltip.append("text")
-    .attr("x", 15)
-    .attr("dy", "1em")
-    .style("text-anchor", "middle")
-    .attr("font-size", "12px")
-    .attr("font-weight", "bold");
+  tooltip.append('text')
+    .attr('x', 15)
+    .attr('dy', '1em')
+    .style('text-anchor', 'middle')
+    .style('font-size', '1.25em')
+    .style('font-weight', 'bold');
 
   total = getOrganizationCount(data);
 
-  g.append("path")
-    .attr("d", arc)
-    .style("fill", function (d) {
+  g.append('path')
+    .attr('d', arc)
+    .style('fill', function (d) {
       return colors(d.data[dataKey]);
-    })
-    .on("mouseover", function (d) {
-      tooltip.style("visibility", "visible");
-      var percentage = formatPercent(d.value / total);
-      tooltip.select("text").text(percentage);
-    })
-    .on("mousemove", function () {
-      var x = d3.mouse(d3.select('#' + id).node())[0] - 20;
-      var y = d3.mouse(d3.select('#' + id).node())[1] - 20;
-      tooltip.attr("transform", "translate(" + x + "," + y + ")");
-    })
-    .on("mouseout", function () {
-      tooltip.style("visibility", "hidden");
     });
 
   return svg;
 }
 
 function renderLegend (title, width, svg, data, colors) {
-  var legend = svg.selectAll(".legend")
+  var legend = svg.selectAll('.legend')
     .data(colors.domain().slice())
-    .enter().append("g")
-    .attr("class", "legend")
-    .attr("transform",
-      function (d, i) {
-        return "translate(-245," + (i-1) * 20 + ")";
-      }
-    );
+    .enter()
+    .append('g')
+    .attr('class', function (d, i) {
+      return 'legend legend-' + (i + 1);
+    })
+    .attr('transform', function (d, i) {
+      var x = -245;
+      var y = (i - 1) * 20;
+      var legend = d3.select(this);
 
-  var legendTitle = svg.selectAll(".legendTitle")
+      legend.attr('data-coord-x', x);
+      legend.attr('data-coord-y', y);
+
+      return 'translate(' + x + ', ' + y + ')';
+    });
+
+  var legendTitle = svg.selectAll('.legendTitle')
     .data([title])
-    .enter().append("g")
-    .attr("class", "legendTitle")
-    .attr("transform", "translate(-175,-25)")
-    .append("text")
-    .attr("x", width - 80)
-    .attr("y", -10)
-    .style("text-anchor", "end")
-    .style("font-weight", "bold")
-    .style("font-size", "12px")
+    .enter()
+    .append('g')
+    .attr('class', 'legendTitle')
+    .attr('transform', 'translate(-175, -25)')
+    .append('text')
+    .attr('x', width - 80)
+    .attr('y', -10)
+    .style('text-anchor', 'end')
+    .style('font-weight', 'bold')
+    .style('font-size', '12px')
     .text(title);
 
-  legend.append("rect")
-    .attr("x", width - 40)
-    .attr("y", -5)
-    .attr("width", 18)
-    .attr("height", 18)
-    .style("fill", colors);
+  legend.append('rect')
+    .attr('x', width - 40)
+    .attr('y', -5)
+    .attr('width', 18)
+    .attr('height', 18)
+    .style('fill', colors);
 
-  legend.append("text")
-    .attr("x", width - 45)
-    .attr("y", 8)
-    .style("text-anchor", "end")
-    .style("font-size", "12px")
+  legend.append('text')
+    .attr('x', width - 45)
+    .attr('y', 8)
+    .style('text-anchor', 'end')
+    .style('font-size', '12px')
     .text(function (d) { return d; });
 }
 
@@ -123,7 +198,7 @@ function renderPieCharts (type, value, config) {
     }
 
     var colors = d3.scale.ordinal().range(
-      ["#50b094", "#73bfa9", "#96cfbe", "#b9dfd4", "#dcefe9"]
+      ['#50b094', '#73bfa9', '#96cfbe', '#b9dfd4', '#dcefe9']
     );
 
     var svg = renderChart(
@@ -147,7 +222,7 @@ function renderPieCharts (type, value, config) {
     }
 
     var colors = d3.scale.ordinal().range(
-      ["#f3ddd9", "#e7bbb3", "#dc998d", "#d07767", "#c55542"]
+      ['#f3ddd9', '#e7bbb3', '#dc998d', '#d07767', '#c55542']
     );
 
     var svg = renderChart(
@@ -159,7 +234,7 @@ function renderPieCharts (type, value, config) {
       'organization_size',
       colors
     );
-    renderLegend("Organization Size", width, svg, data, colors);
+    renderLegend('Organization Size', width, svg, data, colors);
   });
 
   // pie three --- breakdown by org age
@@ -171,7 +246,7 @@ function renderPieCharts (type, value, config) {
     }
 
     var colors = d3.scale.ordinal().range(
-      ["#e0c7de", "#c28fbe", "#a4579e"]
+      ['#e0c7de', '#c28fbe', '#a4579e']
     );
 
     var svg = renderChart(
@@ -183,6 +258,6 @@ function renderPieCharts (type, value, config) {
       'age_group',
       colors
     );
-    renderLegend("Founding Year", width, svg, data, colors);
+    renderLegend('Founding Year', width, svg, data, colors);
   });
 }
