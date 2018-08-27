@@ -52,13 +52,11 @@ function renderChart (width, height, radius, id, data, dataKey, colors) {
     .on("mouseover", function (d) {
       tooltip.style("visibility", "visible");
       var percentage = formatPercent(d.value / total);
-      console.log(percentage);
       tooltip.select("text").text(percentage);
     })
     .on("mousemove", function () {
       var x = d3.mouse(d3.select('#' + id).node())[0] - 20;
       var y = d3.mouse(d3.select('#' + id).node())[1] - 20;
-      console.log("x: " + x, "y: " + y);
       tooltip.attr("transform", "translate(" + x + "," + y + ")");
     })
     .on("mouseout", function () {
