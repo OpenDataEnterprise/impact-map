@@ -157,7 +157,7 @@ $(document).ready(function() {
 
       // interactions for show.hide modal popup
       // fill address bar with the URL for this use case using the same rule as in index.php
-      $('.case-study-intro-1').on('click', function() {
+      $('.read-more-button-1').on('click', function() {
         $(this).parent().find('div.modal-wrapper').show();
         var caseId = $(this).parent().attr('id');
         var stateObj = { foo: 'bar' };
