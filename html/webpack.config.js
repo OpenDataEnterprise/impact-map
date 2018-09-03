@@ -13,6 +13,10 @@ const entryFiles = [
     outputName: 'index.js',
   },
   {
+    entryFiles: './scripts/useCases.js',
+    outputName: 'useCases.js',
+  },
+  {
     entryFiles: glob.sync('./scripts/regions/*.js'),
     outputName: defaultFilename,
   },
