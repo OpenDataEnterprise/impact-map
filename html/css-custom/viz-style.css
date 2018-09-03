@@ -1,5 +1,5 @@
 body {
-  font: 12px Palanquin;
+  font: 12px Palanquin, sans-serif;
 }
 
 .axis path,
@@ -36,8 +36,8 @@ path.domain {
   pointer-events: all;
 }
 
-#LACbar:hover {
-  fill: #FFD700!important;
+.bar:hover {
+  fill: #ffd700!important;
   pointer-events: all;
 }
 

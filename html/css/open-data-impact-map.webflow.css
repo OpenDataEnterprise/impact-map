@@ -1435,7 +1435,6 @@ li {
 .case-study-intro-1.use_cases_pages_smaller {
   display: inline-block;
   margin-right: 5px;
-  margin-bottom: 10px;
   margin-left: 5px;
   padding: 20px 15px;
   text-align: left;
@@ -1473,7 +1472,7 @@ li {
   display: block;
   width: 130px;
   margin: 0px auto 30px;
-  padding-top: 0px;
+  padding-top: 5px;
   padding-bottom: 15px;
   border-style: none;
   border-right-width: 5px;
