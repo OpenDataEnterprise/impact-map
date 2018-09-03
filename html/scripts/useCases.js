@@ -19,8 +19,8 @@ $(document).ready(function() {
 
   $.ajax({
     url: config.apiBaseURL + 'impact-map/use-cases',
-    success: function(results) {
-      $.each(results, function(index, result) {
+    success: function (results) {
+      $.each(results, function (index, result) {
         let title = getNestedValue(result, ['name']);
         let image = getNestedValue(result, ['image_url']);
         let subtitle = getNestedValue(result, ['short_description']);
@@ -40,7 +40,8 @@ $(document).ready(function() {
 
         let underscoreTitle = title.replace(/[\.\s\(\){}]/g, '');
 
-        // clone template / remove old ID / add new ID - new ID is also used in generating URL for this case popup at line 553
+        // clone template / remove old ID / add new ID - new ID is also used in
+        // generating URL for this case popup at line 553
         $("#templateAbc")
           .clone(true)
           .removeAttr('id')
@@ -206,16 +207,37 @@ $(document).ready(function() {
             .appendTo(mrContainerName);
 
           $('img', '#mrble' + index).attr('src', 'useCaseImage/' + image);
-          $('#mrble' + index).find('h3.case-study-title').text(title);
-          $('#mrble' + index).find('h1.expand-case-header').text(title);
-          $('#mrble' + index).find('div.case-study-subtitle').text(subtitle);
-          $('#mrble' + index).find('div.full-use-case-para').text(subtitle);
-          $('#mrble' + index).find('a.useCaseURL').text(url).attr('href', url);
-          $('#mrble' + index).find('p.countryMark').html('<strong>Country:</strong> ' + country);
-          $('#mrble' + index).find('p.sectorMark').html('<strong>Sector:</strong> ' + sector);
-          $('#mrble' + index).find('p.impactMark').html('<strong>Impact:</strong> ' + impact);
-          $('#mrble' + index).find('p.dataMark').html('<strong>Data Used:</strong> ' + dataUse);
-          $('#mrble' + index).find('p.longDesc').html(description);
+          $('#mrble' + index)
+            .find('h3.case-study-title')
+            .text(title);
+          $('#mrble' + index)
+            .find('h1.expand-case-header')
+            .text(title);
+          $('#mrble' + index)
+            .find('div.case-study-subtitle')
+            .text(subtitle);
+          $('#mrble' + index)
+            .find('div.full-use-case-para')
+            .text(subtitle);
+          $('#mrble' + index)
+            .find('a.useCaseURL')
+            .text(url)
+            .attr('href', url);
+          $('#mrble' + index)
+            .find('p.countryMark')
+            .html('<strong>Country:</strong> ' + country);
+          $('#mrble' + index)
+            .find('p.sectorMark')
+            .html('<strong>Sector:</strong> ' + sector);
+          $('#mrble' + index)
+            .find('p.impactMark')
+            .html('<strong>Impact:</strong> ' + impact);
+          $('#mrble' + index)
+            .find('p.dataMark')
+            .html('<strong>Data Used:</strong> ' + dataUse);
+          $('#mrble' + index)
+            .find('p.longDesc')
+            .html(description);
         }
       });
 

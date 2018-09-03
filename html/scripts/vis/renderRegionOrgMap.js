@@ -19,7 +19,6 @@ function style (feature) {
 }
 
 function highlightFeature (e, geoLayer, mapLayer, info) {
-  console.log('Highlighting feature');
   mapLayer.bringToFront();
 
   let layer = e.target;
