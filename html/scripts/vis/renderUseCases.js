@@ -1,4 +1,4 @@
-import $ from 'jQuery';
+import $ from 'jquery';
 import { config } from 'config/config';
 
 function getNestedValue (object, keys) {

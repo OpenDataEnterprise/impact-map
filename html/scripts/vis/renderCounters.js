@@ -1,4 +1,4 @@
-import $ from 'jQuery';
+import $ from 'jquery';
 
 export function counter (options) {
   options = $.extend({}, $.fn.countTo.defaults, options || {});
