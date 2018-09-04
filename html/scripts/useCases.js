@@ -33,7 +33,7 @@ $(document).ready(function() {
         let dataUse = getNestedValue(result, ['data_used']);
         let description = getNestedValue(result, ['long_description']);
         let machineReadable = getNestedValue(result,
-          ['profile', 'machine_readable']);
+          ['machine_readable']);
         let regionObj = getNestedValue(
           result, ['country', 'region']);
         let regionAbbr = getRegionAbbr(regionObj);
