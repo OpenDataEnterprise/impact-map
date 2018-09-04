@@ -1,5 +1,6 @@
 const glob = require("glob");
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const entryPlus = require('webpack-entry-plus');
 
 function defaultFilename (filename) {
@@ -44,6 +45,9 @@ module.exports = () => {
         }
       ]
     },
+    plugins: [
+      new UglifyJsPlugin({ test: /\.js$/ }),
+    ],
     resolve: {
       modules: [
         path.resolve('./scripts'),
