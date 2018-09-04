@@ -1,5 +1,4 @@
 import { renderRegionPage } from 'renderRegionPage';
-import { regionGeoJSON } from 'geojson/geojson-eas.js';
 
 (function () {
   let region = 'East Asia & Pacific';

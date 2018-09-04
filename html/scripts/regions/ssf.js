@@ -1,5 +1,4 @@
 import { renderRegionPage } from 'renderRegionPage';
-import { regionGeoJSON } from 'geojson/geojson-ssf.js';
 
 (function () {
   let region = 'Sub-Saharan Africa';

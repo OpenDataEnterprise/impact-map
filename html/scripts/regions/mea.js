@@ -1,5 +1,4 @@
 import { renderRegionPage } from 'renderRegionPage';
-import { regionGeoJSON } from 'geojson/geojson-mea.js';
 
 (function () {
   let region = 'Middle East & North Africa';
