@@ -1,5 +1,4 @@
 import { renderRegionPage } from 'renderRegionPage';
-import { regionGeoJSON } from 'geojson/geojson-sas.js';
 
 (function () {
   let region = 'South Asia';

@@ -1,5 +1,4 @@
 import { renderRegionPage } from 'renderRegionPage';
-import { regionGeoJSON } from 'geojson/geojson-lcn.js';
 
 (function () {
   let region = 'Latin America & Caribbean';
