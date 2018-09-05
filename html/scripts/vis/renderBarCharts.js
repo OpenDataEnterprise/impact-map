@@ -102,6 +102,13 @@ export function renderBarChart (width, height, margin, chartID, dataKey,
       .attr('class', 'tooltip')
       .style('visibility', 'hidden');
 
+    tooltip.append('text')
+      .attr('x', 15)
+      .attr('dy', '1em')
+      .style('text-anchor', 'middle')
+      .style('font-size', '1.25em')
+      .style('font-weight', 'bold');
+
     chartWrapper.selectAll('.bar')
       .data(data)
       .enter().append('rect')
@@ -122,8 +129,10 @@ export function renderBarChart (width, height, margin, chartID, dataKey,
         tooltip.select('text').text(d.organization_count);
       })
       .on('mousemove', function () {
-        let x = d3.mouse(this)[0] + 50;
-        let y = d3.mouse(this)[1] - 20;
+        let svgNode = svg.node();
+
+        let x = d3.mouse(svgNode)[0] + 10;
+        let y = d3.mouse(svgNode)[1] + 10;
         tooltip.attr('transform', 'translate(' + x + ',' + y + ')');
       })
       .on('mouseout', function () {
