@@ -968,11 +968,11 @@ $app->get('/data/flatfile.json', function () use ($app) {
     $properties['industry_id'] = $profile['sector'];
     $properties['industry_other'] = $profile['sector_other'];
     $properties['latitude'] =
-      (floatval($profile['location_latitude']) == 0)
+      (floatval($profile['location_latitude']) != 0)
         ? floatval($profile['location_latitude'])
         : floatval($profile['country_latitude']);
     $properties['longitude'] =
-      (floatval($profile['location_longitude']) == 0)
+      (floatval($profile['location_longitude']) != 0)
         ? floatval($profile['location_longitude'])
         : floatval($profile['country_longitude']);
     $properties['org_description'] = $profile['org_description'];
@@ -1039,11 +1039,11 @@ $app->get('/data/flatfile.json', function () use ($app) {
       $use_temp['industry_id'] = $profile['sector'];
       $use_temp['industry_other'] = $profile['sector_other'];
       $use_temp['latitude'] =
-        (floatval($profile['latitude']) == 0)
+        (floatval($profile['latitude']) != 0)
           ? floatval($profile['location_latitude'])
           : floatval($profile['country_latitude']);
       $use_temp['longitude'] =
-        (floatval($profile['location_longitude']) == 0)
+        (floatval($profile['location_longitude']) != 0)
           ? floatval($profile['location_longitude'])
           : floatval($profile['country_longitude']);
       $use_temp['org_description'] = $profile['org_description'];
