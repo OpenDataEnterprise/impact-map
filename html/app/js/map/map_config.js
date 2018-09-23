@@ -140,9 +140,9 @@ define([],function(){
                 },
              //Start of Comment by Vinayak 07.12.16
             //To remove Industry Category from filters
-                /*{
-                    label: 'Industry Category',
-                    value: 'industry',
+                {
+                    label: 'Sector',
+                    value: 'sector',
                     selected: false,
                     source: {
                       url:features, 
@@ -150,7 +150,7 @@ define([],function(){
                     },
                     items: [
                     ]
-                },*/
+                },
             //End of Comment by Vinayak 07.12.16
                 {
                     label: 'Type of Data Used',

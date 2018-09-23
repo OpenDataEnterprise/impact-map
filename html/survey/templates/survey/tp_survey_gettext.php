@@ -1,70 +1,66 @@
 <?php 
 // I18N support information here
-// $language = "fr_FR";
-$language = $content['language'];
-if ($language== 'ko_KR') $language="ko_KR.utf8";
+$language = $content['language'] . '.utf8';
 
-putenv("LANG=" . $language); 
+putenv('LANG=' . $language);
+putenv('LC_ALL=' . $language);
 setlocale(LC_ALL, $language);
- 
-// Set the text domain as "messages"
-$domain = "messages";
-bindtextdomain($domain, "Locale"); 
-bind_textdomain_codeset($domain, 'UTF-8');
- 
-textdomain($domain);
-?>
-<?php include __DIR__.'/'.'tp_pt_header.php'; ?>
 
+// Set the text domain as "messages"
+$domain = 'messages';
+bindtextdomain($domain, './locale');
+bind_textdomain_codeset($domain, 'UTF-8');
+textdomain($domain);
+
+include __DIR__ . '/' . 'tp_pt_header.php'; ?>
 
 <!-- Main Content Section -->
 <div class="container lg-font col-md-12" style="border:0px solid black;">
 
- <form id="survey_form" class="form-horizontal" style="border:0px dotted black;" action="/survey/2du/<?php echo $content['surveyId']; ?>" method="post">
+ <form id="survey_form" class="form-horizontal" style="border:0px dotted black;" action="/survey/2du/" method="post">
 
     <div class="col-md-12" role="Intro" id="role-intro">
       <div style="text-align:center;font-size:1.1em;margin-top:20px;">
         <div class="col-md-6 small">&nbsp;</div>
         <div class="col-md-6 pull-right small" style="font-size:14px;">
-        <a href="/survey/start">English</a>&nbsp;&nbsp;
-          <?php
-            // 'fr_FR' => 'Français','ko_KR' => '한국어 조선말', 'ru_RU' => 'русский', 
-            $langs = array('es_MX' => 'Español',  'de_DE' => 'Deutsch', 'pt_BR' => 'Português');
-            foreach ($langs as $key => $value) {
-              if ($language == $key) {
-                echo "$value &nbsp;&nbsp;";
-              } else {
-                echo "<a href=\"/survey/" . strval($content['surveyId']) . "/form/$key\">$value</a> &nbsp;&nbsp; ";
-              }
+        <?php
+          $langs = array(
+            'en_US' => 'English',
+            'es_MX' => 'Español',
+            'de_DE' => 'Deutsch',
+            'pt_BR' => 'Português',
+          );
+
+          foreach ($langs as $key => $value) {
+            if ($language == $key) {
+              echo "$value &nbsp;&nbsp;";
+            } else {
+              echo "<a href=\"/survey/form/$key\">$value</a> &nbsp;&nbsp; ";
             }
-          ?>        
-        </div>
-        <!--         
-        <?php 
-        //echo _("YOUR_CONTRIBUTION"); 
+          }
         ?>
-        <?php 
-        //echo _("INFO_COLLECTED"); 
-        ?> -->
+        </div>
       </div>
       <br />
     </div>
      
     <div class="col-md-12" role="eligibility" id="role-eligibility">
       <div>
-        <b><?php echo _("MAP_INCLUDES_ORGS") ?></b>
-          <ul>
-              <li><?php echo _("ARE_COMPANIES") ?></li>
-              <li><?php echo _("USE_OPEN_GOVERNMENT_DATA") ?></li>
-            </ul>
+        <h4><?php echo _("MAP_INCLUDES_ORGS") ?></h4>
+        <ul>
+          <li><?php echo _("ARE_COMPANIES") ?></li>
+          <li><?php echo _("USE_OPEN_GOVERNMENT_DATA") ?></li>
+        </ul>
         <?php echo _("WE_DEFINE_OPEN") ?> 
       </div>
     </div>
 
-<br />
+    <br />
 
     <div class="col-md-12" role="orgInfo-titlebar"  id="role-orgInfo-titlebar">
-      <div class="section-title"><h3> <?php echo _("ORG_INFO") ?></h3></div>
+      <div class="section-title">
+        <h3>1. <?php echo _("ORG_INFO") ?></h3>
+      </div>
     </div>
 
     <div class="col-md-12" role="orgInfo"  id="role-orgInfo">
@@ -72,40 +68,44 @@ textdomain($domain);
       <div class="row col-md-12">
         <div class="form-group col-md-12">
           <div class="form-group col-md-10">
-            <label for="org_name"> <?php echo _("ORG_NAME") ?><small class="required">*</small></label>
+            <label for="org_name">
+              <?php echo _("ORG_NAME") ?><small class="required">*</small>
+            </label>
             <input type="text" class="form-control" id="org_name" name="org_name" placeholder="" required minlength="2">
-        </div>
+          </div>
         </div>
       </div>
 
       <!-- Description of organization -->
       <div class="form-group col-md-12">
         <div class="form-group col-md-10">
-          <label for="org_description"> <?php echo _("ORG_DESC") ?> <small class="required">(<?php echo _("400_CHAR") ?>)*</small></label>
-          <textarea type="text" class="form-control " id="org_description" name="org_description" required></textarea>
+          <label for="org_description">
+            <?php echo _("ORG_DESC") ?> <small class="required">(<?php echo _("400_CHAR") ?>)*</small>
+          </label>
+          <textarea type="text" class="form-control" id="org_description" name="org_description" required></textarea>
         </div>
       </div>
 
       <!-- Type of organization -->
       <div class="form-group col-md-12" id="org_type">
-          <label for="org_type"> <?php echo _("ORG_TYPE") ?><small class="required">*</small></label>
-          <label id="org_type-error" class="error" for="org_type"></label>
+        <label for="org_type"> <?php echo _("ORG_TYPE") ?><small class="required">*</small></label>
+        <label id="org_type-error" class="error" for="org_type"></label>
         <div class="col-md-10">
           <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
-                <input type="radio" name="org_type" id="For-profit" value="For-profit" required="True">  <?php echo _("FOR-PROFIT") ?>
+              <input type="radio" name="org_type" id="For-profit" value="For-profit" required="True">  <?php echo _("FOR-PROFIT") ?>
             </label>
             <label class="btn btn-default">
-                <input type="radio" name="org_type" id="Nonprofit" value="Nonprofit">  <?php echo _("NONPROFIT") ?>
+              <input type="radio" name="org_type" id="Nonprofit" value="Nonprofit">  <?php echo _("NONPROFIT") ?>
             </label>
             <label class="btn btn-default">
-                <input type="radio" name="org_type" id="Developer group" value="Developer group">  <?php echo _("DEVELOPER_GROUP") ?>
+              <input type="radio" name="org_type" id="Developer group" value="Developer group">  <?php echo _("DEVELOPER_GROUP") ?>
             </label>
             <label class="btn btn-default">
-                <input type="radio" name="org_type" id="Academic_institution" value="Academic institution"> <?php echo _("ACADEMIC_INSTITUTION") ?>
+              <input type="radio" name="org_type" id="Academic_institution" value="Academic institution"> <?php echo _("ACADEMIC_INSTITUTION") ?>
             </label>
             <label class="btn btn-default">
-                <input type="radio" name="org_type" id="Other" value="Other">  <?php echo _("OTHER") ?>
+              <input type="radio" name="org_type" id="Other" value="Other">  <?php echo _("OTHER") ?>
             </label>
           </div>
         </div>
@@ -115,12 +115,12 @@ textdomain($domain);
       <div class="form-group col-md-12">
         <label for="org_url"><?php echo _("WEBSITE_URL") ?></label>
         <div class="row">      
-            <div class="col-md-8">
-              <input type="url" class="form-control" id="org_url" name="org_url" placeholder="http://" value="http://">
-            </div>
-            <div class="col-md-4">
-              <input type="checkbox" name="no_org_url" id="no_org_url" value="True"> <?php echo _("NO_URL") ?>
-            </div>
+          <div class="col-md-8">
+            <input type="url" class="form-control" id="org_url" name="org_url" placeholder="http://" value="http://">
+          </div>
+          <div class="col-md-4">
+            <input type="checkbox" name="no_org_url" id="no_org_url" value="True"> <?php echo _("NO_URL") ?>
+          </div>
         </div>
       </div>
 
@@ -172,7 +172,7 @@ textdomain($domain);
           <br /><input type="radio" name="industry_id" class="industry_id" value="Media and communications">&nbsp; <?php echo _("COM") ?>     
           <br /><input type="radio" name="industry_id" class="industry_id" value="Transportation and logistics">&nbsp; <?php echo _("TRN") ?>
           <br /><input type="radio" name="industry_id" class="industry_id" value="Other">&nbsp; <?php echo _("OTHER") ?>
-                <input type="text" class="form-control" style="display:none" name="industry_other" placeholder="<?php echo _("PROVIDE_DETAILS") ?>">
+          <input type="text" class="form-control" style="display:none" name="industry_other" placeholder="<?php echo _("PROVIDE_DETAILS") ?>">
         </div>
         </fieldset>
       </div>
@@ -240,7 +240,7 @@ textdomain($domain);
 <br />
 
     <div class="col-md-12" role="dataUse-titlebar"  id="role-dataUse-titlebar">
-      <div class="section-title"><h3><?php echo _("USE_OF_OPEN_DATA") ?></h3></div>
+      <div class="section-title"><h3>2. <?php echo _("USE_OF_OPEN_DATA") ?></h3></div>
     </div>
 
     <div class="col-md-12" role="dataUse" id="role-dataUse">

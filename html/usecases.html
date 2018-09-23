@@ -98,6 +98,7 @@
         <p class="impactMark use-case-para"><strong>Impact:</strong> </p>
         <p class="dataMark use-case-para"><strong>Data Used:</strong> </p>
       </div>
+      <button class="read-more-button-1 w-button">Read More</button>
       <div class="modal-wrapper">
         <div class="case-wrapper w-clearfix"><a class="close-case-modal" data-ix="hide-use-case-modal">X</a>
           <h1 class="expand-case-header">title</h1>
@@ -145,25 +146,25 @@
       </div>
     </div>
     <!-- template container for region order ends -->
-    <div class="ea-case-container">
+    <div class="eas-case-container">
       <div class="region-case-container-title">East Asia &amp; Pacific</div>
     </div>
-    <div class="eca-case-container">
+    <div class="ecs-case-container">
       <div class="region-case-container-title">Europe &amp; Central Asia</div>
     </div>
-    <div class="lac-case-container">
+    <div class="lcn-case-container">
       <div class="region-case-container-title">Latin America &amp; Caribbean</div>
     </div>
-    <div class="mena-case-container">
+    <div class="mea-case-container">
       <div class="region-case-container-title">Middle East &amp; North Africa</div>
     </div>
-    <div class="na-case-container">
+    <div class="nac-case-container">
       <div class="region-case-container-title">North America</div>
     </div>
-    <div class="sa-case-container">
+    <div class="sas-case-container">
       <div class="region-case-container-title">South Asia</div>
     </div>
-    <div class="ssa-case-container">
+    <div class="ssf-case-container">
       <div class="region-case-container-title">Sub-Saharan Africa</div>
     </div>
   </div>
@@ -242,7 +243,7 @@
     <div class="mrabletitlecontainer"><img class="mrable-header-img" src="images/section-header-topper-22x.png" width="150">
       <div class="section-header">Machine-Readability Project</div><img class="mrable-bottom-img" src="images/section-header-bottom-12x.png" width="150">
     </div>
-    <div class="body-copy mrable-header-text">The following use cases were developed as part of the ‘Open Data Impact Map - Machine Readability Project’. This project was conducted by the <a target="_blank" href="http://opendataenterprise.org/index.html">Center for Open Data Enterprise</a> in collaboration with <a target="_blank" href="http://opendatawatch.com">Open Data Watch</a>. It was supported by the <a target="_blank" href="http://www.worldbank.org/">World Bank</a>, with funding from the Trust Fund for Statistical Capacity Building. They represent examples of open data use in low to lower-middle income countries that showed evidence of use machine-readable open data. To download the data collected for the project, click <a target="_blank" href="/js-custom/indi_data_download/download_MR_orgs.php">here</a>.</div>
+    <div class="body-copy mrable-header-text">The following use cases were developed as part of the ‘Open Data Impact Map - Machine Readability Project’. This project was conducted by the <a target="_blank" href="http://opendataenterprise.org/index.html">Center for Open Data Enterprise</a> in collaboration with <a target="_blank" href="http://opendatawatch.com">Open Data Watch</a>. It was supported by the <a target="_blank" href="http://www.worldbank.org/">World Bank</a>, with funding from the Trust Fund for Statistical Capacity Building. They represent examples of open data use in low to lower-middle income countries that showed evidence of use machine-readable open data. To download the data collected for the project, click <a target="_blank" href="/scripts/data_export/download_MR_orgs.php">here</a>.</div>
     <!-- template container for mrble order starts -->
     <div class="use-case-container" id="templateMrble">
       <div class="case-study-intro-1 use_cases_pages_smaller w-clearfix" data-ix="show-use-case-modal"><img class="case-study-thumbnail-image-1" src="images/Aidin_hea_na.png">
@@ -319,66 +320,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
-  <script type="text/javascript">
-  // check window width and switch filters on the fly
-  $(document).ready(function() {
-    // Optimalisation: Store the references outside the event handler:
-    var $window = $(window);
-    var $pane = $('#pane1');
-
-    function checkWidth() {
-        var windowsize = $window.width();
-        if (windowsize < 1095) {
-            $('.column-row').hide();
-            $('.usecasedropdown').css({'display': 'inline-block', 'float': 'none'});
-        }
-        if (windowsize > 1095) {
-            $('.column-row').show();
-            $('.usecasedropdown').hide();
-        }
-    }
-    // Execute on load
-    checkWidth();
-    // Bind event listener
-    $(window).resize(checkWidth);
-  });
-
-  // // change the drop down filter texts / no longer used after switch to button filters
-      //var caseTitle = document.getElementById("caseTitleLink");
-      //var region = document.getElementById("regionLink");
-      //var sector = document.getElementById("sectorLink");
-      //var Mread = document.getElementById("MRLink");
-      //$('#dropMainText').text("Alphabetical");
-      //caseTitle.onclick = setText1;
-      //region.onclick = setText2;
-      //sector.onclick = setText3;
-      //Mread.onclick = setText4;
-      //function setText1() {
-      	//$('#dropMainText').text("Alphabetical");
-      //}
-      //function setText2() {
-      	//$('#dropMainText').text("Region");
-      //}
-      //function setText3() {
-      	//$('#dropMainText').text("Sector");
-      //}
-      //function setText4() {
-      	//$('#dropMainText').text("Machine-Readability Project");
-      //}
-
-      // stop scrolling underneath
-  	Webflow.push(function() {
-    $('.case-study-intro-1').click(function(e) {
-      e.preventDefault();
-  	$('body').css('overflow', 'hidden');
-    });
-    $('.close-case-modal').click(function(e) {
-      e.preventDefault();
-  	$('body').css('overflow', 'auto');
-    });
-  });
-  </script>
-  <script type="text/javascript" src="js-custom/usecase/jquery.csv.min.js"></script>
-  <script type="text/javascript" src="js-custom/usecase/usecase.js"></script>
+  <script type="text/javascript" src="dist/js/vendor.js"></script>
+  <script src="dist/js/useCases.js"></script>
 </body>
 </html>
