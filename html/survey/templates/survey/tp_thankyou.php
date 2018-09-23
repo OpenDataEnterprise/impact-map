@@ -37,9 +37,6 @@ textdomain($domain);
         <div>
           Thank you contributing to the Open Data Impact Map. All submissions will be reviewed before public display.  
         </div>
-        <br />
-        <b>View my submission</b>:  <a href ="http://<?php echo $content['HTTP_HOST']; ?>/survey/edit/<?php echo $content['surveyId'] ?>">http://<?php echo $content['HTTP_HOST']; ?>/survey/edit/<?php echo $content['surveyId'] ?></a>
-        <br />Use this unique URL to make changes.
 
         <br /><br />
         Please help us spread the word!<br /><br />
@@ -64,7 +61,7 @@ textdomain($domain);
           </div>
           <br /><br />
 
-        If you have any questions, email us at map@odenterprise.org.
+        If you have any questions, please email us at map@odenterprise.org.
         <br />
     </div>
 

@@ -159,7 +159,6 @@ $app->get('/form/', function () use ($app) {
 
 
 
-
 $app->get('/form/:lang/', function ($lang) use ($app) {
   $languages = array(
     'en_US',
@@ -822,7 +821,7 @@ $app->post('/2du/', function () use ($app) {
 
 
 
-// Thank you page for submission confirmation.
+// Submission confirmation page.
 $app->get('/submitted/:surveyId/', function ($profile_id) use ($app) {
   $content['surveyId'] = $profile_id;
   $content['HTTP_HOST'] = $_SERVER['HTTP_HOST'];
@@ -891,6 +890,7 @@ $app->get('/showduplicates', function () use ($app) {
     }
   }
 });
+
 
 
 // ************** on development.. by Myeong .. .
@@ -1098,6 +1098,7 @@ $app->get('/data/flatfile.json', function () use ($app) {
   $jsonArray = array('results' => $final_array);
   echo json_encode($jsonArray);
 });
+
 
 
 $app->get('/argis/auth/', function () use ($app) {
