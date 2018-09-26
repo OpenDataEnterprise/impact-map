@@ -167,7 +167,7 @@ body {
 
 </div>
 
-<!-- I think I am missing a closing </div> gut things are working.
-<!--/end container - where is the tag?-->
-
 <?php include __DIR__.'/'.'tp_pt_footer.php'; ?>
+<?php include __DIR__.'/'.'tp_pt_footer_scripts.php'; ?>
+</body>
+</html>
