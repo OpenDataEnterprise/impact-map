@@ -45,6 +45,7 @@ if ($fileinfo['name'] != "apache" && $fileinfo['name'] != "www-data") {
 require 'vendor/autoload.php';
 // Include credentials
 require 'credentials.inc.php';
+require 'connect_db.php';
 // Include parse library
 // require ('vendor/parse.com-php-library_v1/parse.php');
 // Include application functions
