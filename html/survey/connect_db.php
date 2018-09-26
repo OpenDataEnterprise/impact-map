@@ -1,6 +1,4 @@
 <?php
-require 'credentials.inc.php';
-
 function connect_db() {
   $dbhost = DBHOST;
   $dbname = DBNAME;
