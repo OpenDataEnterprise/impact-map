@@ -1,5 +1,6 @@
 <?php
   include_once('../../../../survey/credentials.inc.php');
+  include_once('../../../../survey/connect_db.php');
 
   $date = date('Y_m_d');
   // This is for the filename.
