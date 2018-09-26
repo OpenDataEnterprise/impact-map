@@ -19,10 +19,6 @@ $_SESSION['discard_after'] = $now + 3600;
 // echo "<pre>top of script\n"; print_r($_SESSION);
 // Configuration
 //-------------------------------
-// error_reporting(E_ERROR | E_WARNING | E_PARSE);
-error_reporting(E_ALL);
-define("ERROR_LOG_FILE", "/tmp/php-error.log");
-ini_set("error_log", ERROR_LOG_FILE);
 date_default_timezone_set('America/New_York');
 if (!file_exists('credentials.inc.php')) {
    echo "My credentials are missing!";
@@ -62,10 +58,6 @@ require 'functions.inc.php';
 
 // Functions
 //-------------------------------
-function TempLogger($message) {
-  error_log( "Logger $message" );
-}
-
 /* List URLs that you want to make alias for "html" files */
 function isURLalias($suburl){
   $aliases = array(
@@ -787,9 +779,9 @@ $app->post('/2du/', function () use ($app) {
           $stmt = $dbh->prepare($data_type_query);
           $stmt->bindParam('data_type', $type);
           if ($type == 'Other') {
-            $stmt->bindParam('data_type_other', $other);
+            $stmt->bindParam(':data_type_other', $other, PDO::PARAM_STRING);
           } else {
-            $stmt->bindParam('data_type_other', null);
+            $stmt->bindParam(':data_type_other', null, PDO::PARAM_STRING);
           }
           $stmt->execute();
           $rows = $stmt->fetch(PDO::FETCH_ASSOC);
