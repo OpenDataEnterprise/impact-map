@@ -19,10 +19,6 @@ $_SESSION['discard_after'] = $now + 3600;
 // echo "<pre>top of script\n"; print_r($_SESSION);
 // Configuration
 //-------------------------------
-// error_reporting(E_ERROR | E_WARNING | E_PARSE);
-error_reporting(E_ALL);
-define("ERROR_LOG_FILE", "/tmp/php-error.log");
-ini_set("error_log", ERROR_LOG_FILE);
 date_default_timezone_set('America/New_York');
 if (!file_exists('credentials.inc.php')) {
    echo "My credentials are missing!";
@@ -62,10 +58,6 @@ require 'functions.inc.php';
 
 // Functions
 //-------------------------------
-function TempLogger($message) {
-  error_log( "Logger $message" );
-}
-
 /* List URLs that you want to make alias for "html" files */
 function isURLalias($suburl){
   $aliases = array(
@@ -153,6 +145,17 @@ $app->get('/', function () use ($app) {
 
 
 
+$app->get('/error/', function () use ($app) {
+  $content['surveyName'] = "opendata";
+  $content['title'] = "Open Data Enterprise Survey - Internal Server Error";
+  $content['HTTP_HOST'] = $_SERVER['HTTP_HOST'];
+
+  $app->view()->setData(array('content' => $content ));
+  $app->render('survey/tp_oops.php');
+});
+
+
+
 $app->get('/form/', function () use ($app) {
   $app->redirect('/survey/form/en_US');
 });
@@ -195,7 +198,8 @@ $app->post('/2du/', function () use ($app) {
   try {
     $dbh = connect_db();
   } catch (PDOException $e) {
-    echo '{ "error": { "text": '. $e->getMessage() .' } }';
+    error_log($e->getMessage());
+    $app->redirect("/survey/error/");
   }
 
   // Retrieve country
@@ -218,7 +222,8 @@ $app->post('/2du/', function () use ($app) {
         $country_id = $row['id'];
       }
     } catch(PDOException $e) {
-      echo '{ "error": { "text": '. $e->getMessage() .' } }';
+      error_log($e->getMessage());
+      $app->redirect("/survey/error/");
     }
   }
 
@@ -252,7 +257,8 @@ $app->post('/2du/', function () use ($app) {
 
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
     } catch(PDOException $e) {
-      echo '{ "error": { "text": '. $e->getMessage() .' } }';
+      error_log($e->getMessage());
+      $app->redirect("/survey/error/");
     }
 
     if (isset($row['id'])) {
@@ -284,7 +290,8 @@ $app->post('/2du/', function () use ($app) {
 
         $location_id = $dbh->lastInsertId();
       } catch(PDOException $e) {
-        echo '{ "error": { "text": '. $e->getMessage() .' } }';
+        error_log($e->getMessage());
+        $app->redirect("/survey/error/");
       }
     }
   }
@@ -314,7 +321,8 @@ $app->post('/2du/', function () use ($app) {
         $sector_id = $row['id'];
       }
     } catch(PDOException $e) {
-      echo '{ "error": { "text": '. $e->getMessage() .' } }';
+      error_log($e->getMessage());
+      $app->redirect("/survey/error/");
     }
   }
 
@@ -339,7 +347,8 @@ $app->post('/2du/', function () use ($app) {
         $category_id = $row['id'];
       }
     } catch(PDOException $e) {
-      echo '{ "error": { "text": '. $e->getMessage() .' } }';
+      error_log($e->getMessage());
+      $app->redirect("/survey/error/");
     }
   }
 
@@ -368,7 +377,8 @@ $app->post('/2du/', function () use ($app) {
         $org_type_id = $row['id'];
       }
     } catch(PDOException $e) {
-      echo '{ "error": { "text": '. $e->getMessage() .' } }';
+      error_log($e->getMessage());
+      $app->redirect("/survey/error/");
     }
   }
 
@@ -393,7 +403,8 @@ $app->post('/2du/', function () use ($app) {
         $org_size_id = $row['id'];
       }
     } catch(PDOException $e) {
-      echo '{ "error": { "text": '. $e->getMessage() .' } }';
+      error_log($e->getMessage());
+      $app->redirect("/survey/error/");
     }
   }
 
@@ -417,7 +428,8 @@ $app->post('/2du/', function () use ($app) {
         $country_count_id = $row['id'];
       }
     } catch(PDOException $e) {
-      echo '{ "error": { "text": '. $e->getMessage() .' } }';
+      error_log($e->getMessage());
+      $app->redirect("/survey/error/");
     }
   }
 
@@ -441,7 +453,8 @@ $app->post('/2du/', function () use ($app) {
         $status_id = $row['id'];
       }
     } catch(PDOException $e) {
-      echo '{ "error": { "text": '. $e->getMessage() .' } }';
+      error_log($e->getMessage());
+      $app->redirect("/survey/error/");
     }
   }
 
@@ -519,8 +532,8 @@ $app->post('/2du/', function () use ($app) {
     $profile_id = $dbh->lastInsertId();
     $app->log->info(date_format(date_create(), 'Y-m-d H:i:s') . '; INFO; ' . str_replace('\n', '||', print_r('Survey ' . strval($profile_id) . ' created.', true)));
   } catch(PDOException $e) {
-    echo '{ "error": { "text": '. $e->getMessage() .' } }';
-    print_r($org_profile_query);
+    error_log($e->getMessage());
+    $app->redirect("/survey/error/");
   }
 
   /* org_contacts */
@@ -586,14 +599,12 @@ $app->post('/2du/', function () use ($app) {
       $stmt->bindParam('survey_contact_phone', $survey_contact_phone);
       $stmt->execute();
     } catch (PDOException $e) {
-      echo '<br>' . $contact_upsert_query;
-      echo '<br>';
-      echo '{ "error": { "text": '. $e->getMessage() .' } }<br>';
+      error_log($e->getMessage());
+      $app->redirect("/survey/error/");
     }
   } catch (PDOException $e) {
-    echo '<br>' . $contact_query;
-    echo '<br>';
-      echo '{ "error": { "text": '. $e->getMessage() .' } }';
+    error_log($e->getMessage());
+    $app->redirect("/survey/error/");
   }
 
   /* Data Applications */
@@ -665,8 +676,8 @@ $app->post('/2du/', function () use ($app) {
         )';
     }
   } catch (PDOException $e) {
-    echo '<br>' . $check_app_query . '<br>';
-    echo '{ "error": { "text":'. $e->getMessage() .' } }';
+    error_log($e->getMessage());
+    $app->redirect("/survey/error/");
   }
 
   try {
@@ -684,8 +695,8 @@ $app->post('/2du/', function () use ($app) {
     $stmt->bindParam('use_research_desc', $use_research_desc);
     $stmt->execute();
   } catch (PDOException $e) {
-    echo '<br>' . $data_application_upsert_query . '<br>';
-    echo '{ "error": { "text": '. $e->getMessage() .' } }';
+    error_log($e->getMessage());
+    $app->redirect("/survey/error/");
   }
 
   $idSuffixNum = 1;
@@ -730,7 +741,8 @@ $app->post('/2du/', function () use ($app) {
           }
           array_push($type_to_input, $temp);
         } catch (PDOException $e) {
-          echo '{ "error": { "text": '. $e->getMessage() .' } }';
+          error_log($e->getMessage());
+          $app->redirect("/survey/error/");
         }
       }
     }
@@ -748,7 +760,8 @@ $app->post('/2du/', function () use ($app) {
     $stmt->bindParam('profile_id', $profile_id);
     $stmt->execute();
   } catch(PDOException $e) {
-      echo '{"error":{"text":'. $e->getMessage() .'}}';
+    error_log($e->getMessage());
+    $app->redirect("/survey/error/");
   }
 
   $other = isset($allPostVars['data_use_type_other']) ? htmlspecialchars($allPostVars['data_use_type_other']) : null;
@@ -766,9 +779,9 @@ $app->post('/2du/', function () use ($app) {
           $stmt = $dbh->prepare($data_type_query);
           $stmt->bindParam('data_type', $type);
           if ($type == 'Other') {
-            $stmt->bindParam('data_type_other', $other);
+            $stmt->bindParam(':data_type_other', $other, PDO::PARAM_STRING);
           } else {
-            $stmt->bindParam('data_type_other', null);
+            $stmt->bindParam(':data_type_other', null, PDO::PARAM_STRING);
           }
           $stmt->execute();
           $rows = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -777,7 +790,8 @@ $app->post('/2du/', function () use ($app) {
             $data_type_id = $rows['id'];
           }
         } catch (PDOException $e) {
-          echo '{ "error": { "text": '. $e->getMessage() .' } }';
+          error_log($e->getMessage());
+          $app->redirect("/survey/error/");
         }
 
         foreach ($scopes as $data_scope) {
@@ -809,7 +823,8 @@ $app->post('/2du/', function () use ($app) {
             $stmt->bindParam('machine_readable', $machine_readable);
             $stmt->execute();
           } catch (PDOException $e) {
-            echo '{ "error": { "text": '. $e->getMessage() .' } }';
+            error_log($e->getMessage());
+            $app->redirect("/survey/error/");
           }
         }
       }
