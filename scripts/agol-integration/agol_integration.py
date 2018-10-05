@@ -112,5 +112,7 @@ if __name__ == '__main__':
         create_schema_file(sys.argv[2], sys.argv[3])
         sys.exit(0)
     from settings import env
+    #agol_token = agol.generate_token(env.agol_user, env.agol_pass)
+    #agol.delete_features(env.agol_feature_service_url, where='objectid > 0', token=agol_token)
     main(env)
 
