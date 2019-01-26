@@ -1,0 +1,26 @@
+---
+- hosts: "all"
+  roles:
+    - "geerlingguy.git"
+    - "geerlingguy.nginx"
+    - "geerlingguy.mysql"
+    - "geerlingguy.php"
+    - "geerlingguy.nodejs"
+    - "common"
+    - "nginx"
+    - "yarn"
+  become: yes
+  become_method: sudo
+
+  vars:
+    nginx_remove_default_vhost: true
+    nginx_ppa_use: true
+    nginx_ppa_version: "stable"
+    php_version: "7.2"
+    php_packages:
+      - "php-cli"
+      - "php-mysql"
+      - "php-fpm"
+      - "php-gettext"
+    php_webserver_daemon: "nginx"
+    node_version: "10.x"

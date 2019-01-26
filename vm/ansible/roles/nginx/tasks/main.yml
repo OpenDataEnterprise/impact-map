@@ -1,0 +1,11 @@
+---
+- name: Compile site configurations.
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  with_items:
+    - { src: "web.j2", dest: "/etc/nginx/conf.d/web.conf" }
+  notify: Restart nginx

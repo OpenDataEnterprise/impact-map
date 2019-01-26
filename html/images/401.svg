@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="68px" viewBox="0 0 48 68" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>Lock</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Final-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Password-Utility-Page" transform="translate(-574.000000, -307.000000)" fill="#333333">
+            <path d="M580,337 L574,337 L574,375 L622,375 L622,337 L616,337 L616,325 C616,315.058875 607.941125,307 598,307 C588.058875,307 580,315.058875 580,325 L580,337 Z M586,337 L610,337 L610,325 C610,318.372583 604.627417,313 598,313 C591.372583,313 586,318.372583 586,325 L586,337 Z M600,357.583956 L600,364 L596,364 L596,357.583956 C594.234095,356.8124 593,355.050319 593,353 C593,350.238576 595.238576,348 598,348 C600.761424,348 603,350.238576 603,353 C603,355.050319 601.765905,356.8124 600,357.583956 L600,357.583956 Z" id="Lock"></path>
+        </g>
+    </g>
+</svg>

@@ -3,7 +3,7 @@
 # Greg's Notes
 
 add the rest/admin -- add the 'admin'
-https://services5.arcgis.com/w1WEecz5ClslKH2Q/arcgis/rest/admin/services/agol_service_schema/FeatureServer
+https://services7.arcgis.com/6B5Of8bXgHVo93zg/arcgis/rest/admin/services/agol_service_schema/FeatureServer
 click the 'Update Definition' to change the record count
 
 change in agol_service_schema and dev, production, etc. inherit from it
@@ -16,13 +16,13 @@ Addressing seeing items
 The following code synchronizes data from a local JSON file to an ArcGIS Online hosted-feature-service.
 
 #####Development Version:
-- https://services5.arcgis.com/w1WEecz5ClslKH2Q/ArcGIS/rest/services/ode_organizations_dev/FeatureServer/0
+- https://services7.arcgis.com/6B5Of8bXgHVo93zg/arcgis/rest/services/ode_organizations_dev_2017/FeatureServer/0
 
 #####Staging Version:
-- https://services5.arcgis.com/w1WEecz5ClslKH2Q/ArcGIS/rest/services/ode_organizations_staging/FeatureServer/0
+- https://services7.arcgis.com/6B5Of8bXgHVo93zg/arcgis/rest/services/ode_organizations_dev_2017/FeatureServer/0
 
 #####Production Version:
-- https://services5.arcgis.com/w1WEecz5ClslKH2Q/ArcGIS/rest/services/ode_organizations_production/FeatureServer/0
+- https://services7.arcgis.com/6B5Of8bXgHVo93zg/arcgis/rest/services/ode_organizations_prod_2018/FeatureServer/0
 
 ####Setup
 
@@ -69,7 +69,7 @@ This schema file(.csv) can then be uploaded into ArcGIS Online > My Content and 
 
 - Once a template service is created, browse to the rest admin endpoint:
 
-    `https://services5.arcgis.com/w1WEecz5ClslKH2Q/ArcGIS/rest/admin/services/agol_service_schema/FeatureServer`
+    `https://services7.arcgis.com/6B5Of8bXgHVo93zg/arcgis/rest/admin/services/agol_service_schema/FeatureServer`
 
 - At the bottom of the screen, you should see a link to `Update Definition`
 
