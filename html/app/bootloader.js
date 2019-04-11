@@ -46,7 +46,7 @@
             // Add Aliases to CDN Modules here like below
             ['react', 'app/includes/react/react2.js'],
             ['leaflet', 'app/includes/leaflet/leaflet.js'],
-            ['esrileaflet','http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/1.0.0-rc.5/esri-leaflet.js' ],
+            ['esrileaflet','https://cdn-geoweb.s3.amazonaws.com/esri-leaflet/1.0.0-rc.5/esri-leaflet.js' ],
             ['cluster','app/includes/markercluster/js/leaflet.markercluster-src.js'],
 
         ],
