@@ -1,0 +1,35 @@
+server {
+  listen 80;
+  listen [::]:80;
+
+  root /srv/impact-map;
+
+  index index.html index.htm index.php;
+
+  server_name localhost;
+
+  location / {
+    # First attempt to serve request as file, then
+    # as directory, then as a PHP request to the Slim
+    # framework, then fall back to displaying a 404.
+    try_files $uri $uri/ /survey/index.php?$args;
+  }
+
+  # Pass PHP requests to PHP-FPM
+  location ~* \.php$ {
+    fastcgi_pass unix:/run/php/php{{ php_version }}-fpm.sock;
+    fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    fastcgi_intercept_errors on;
+
+    include         fastcgi_params;
+    fastcgi_param   SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+    fastcgi_param   SCRIPT_NAME        $fastcgi_script_name;
+
+    fastcgi_index /survey/index.php;
+  }
+
+  # Deny access to .htaccess files
+  location ~ /\.ht {
+    deny all;
+  }
+}

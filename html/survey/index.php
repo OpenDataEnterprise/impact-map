@@ -7,13 +7,14 @@ ini_set('session.gc_maxlifetime', 3600);
 session_set_cookie_params(3600);
 session_start();
 $now = time();
-// echo "discard after: $now<br>";
+
 if (isset($_SESSION['discard_after']) && $now > $_SESSION['discard_after']) {
     // this session has worn out its welcome; kill it and start a brand new one
     session_unset();
     session_destroy();
     session_start();
 }
+
 // either new or old, it should live at most for another hour
 $_SESSION['discard_after'] = $now + 3600;
 // echo "<pre>top of script\n"; print_r($_SESSION);
@@ -37,105 +38,27 @@ if ($fileinfo['name'] != "apache" && $fileinfo['name'] != "www-data") {
   exit;
 }
 
-// comment out mailgun temporarily - begin
-// // Set if sending email is on
-// define("SEND_MAIL", false);
-// comment out mailgun temporarily - end
 // Include libraries added with composer
 require 'vendor/autoload.php';
 // Include credentials
 require 'credentials.inc.php';
 require 'connect_db.php';
-// Include parse library
-// require ('vendor/parse.com-php-library_v1/parse.php');
 // Include application functions
 require 'functions.inc.php';
-// comment out mailgun temporarily - begin
-// Use Mailgun
-// use Mailgun\Mailgun;
-// comment out mailgun temporarily - end
-# Use Amazon Web Services Ec2 SDK to interact with EC2 instances
-# use Aws\Ec2\Ec2Client;
 
-// Functions
-//-------------------------------
-/* List URLs that you want to make alias for "html" files */
-function isURLalias($suburl){
-  $aliases = array(
-    "/map",
-    "/contact",
-    "/sectors",
-    "/regions",
-    "/usecases",
-    "/eap",
-    "/eca",
-    "/lac",
-    "/mna",
-    "/na",
-    "/sar",
-    "/afr",
-    "/agriculture",
-    "/culture",
-    "/businessservices",
-    "/consumer",
-    "/education",
-    "/energy",
-    "/finance",
-    "/governance",
-    "/health",
-    "/transportation",
-    "/media",
-    "/it",
-    "/housing"
-  );
-  if (in_array($suburl, $aliases)) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-// check if there is suburl after usecases/
-function hasSubURL($suburl) {
-  if (preg_match('/\/usecases\/.*/', $suburl)) {
-    return true;
-  } else {
-    return false;
-  }
-}
 // Set up basic logging using slim built in logger
 // NOTE: Makes sure /var/log/odesurvey/ directory exists and owned by apache:apache
 $logWriter = new \Slim\LogWriter(fopen(ODESURVEY_LOG, 'a'));
+
 // Start Slim instance
 //-------------------------------
 $app = new \Slim\Slim(array('log.writer' => $logWriter));
 
+
+
 // Handle not found
 $app->notFound(function () use ($app) {
-
-  // Temporarily route /map, /viz to /map.html
-  $actual_link = "$_SERVER[REQUEST_URI]";
-  if ("/index.html" == "$actual_link" || "/viz/index.html" == "$actual_link") {
-    $app->redirect("/map.html");
-  }
-  // Let's make sure we remove a trailing "/" on any not found paths
-    $actual_link = rtrim($actual_link, '/');
-
-  // Any change to below array must also be made to identical array in route "/" around line 210
-  if (isURLalias($actual_link)) {
-    $app->redirect($actual_link.".html");
-  }
-  // elseif (isHashURLalias($actual_link)) {
-  //   $app->redirect("/survey" . $actual_link);
-  // }
-  elseif (hasSubURL($actual_link)) {
-    $app->redirect("/survey" . $actual_link);
-  }
-  elseif ($actual_link == "/phpmyadmin"){
-    // do nothing...
-  } else {
-      $app->redirect('/404.html');
-    }
+  $app->redirect('/404.html');
 });
 
 
